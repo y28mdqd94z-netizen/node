@@ -27,6 +27,12 @@ Outputs must be production-quality, secure-by-default, and usable directly in a 
 - Core agents defined in `.agent-os/agents.json`
 - Specialist micro-skills defined in `.agent-os/skills.json`
 
+## Orchestration (Mandatory)
+- The Orchestrator must be invoked at the start of every task
+- Orchestrator decides routing to core agents and enforces phase order
+- Outputs must include Orchestrator routing notes
+- If Orchestrator is not invoked, stop and request a re-run with Orchestrator
+
 ## UX/UI Knowledgebase (Local)
 - Location: `.agent-os/lib/ux-ui-knowledgebase`
 - Use taxonomy to map **laws → principles → patterns → components**

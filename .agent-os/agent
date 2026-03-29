@@ -147,6 +147,7 @@ write_output_template() {
 - Command: ${cmd}
 - Timestamp: $(timestamp)
 - Risk level: ${RISK_LEVEL}
+- Orchestrator: required (routing notes below)
 
 ## 2. DESIGN DECISION
 - Discovery: intent, user goals, constraints, risks
@@ -192,6 +193,9 @@ append_task() {
 - Title: ${title}
 - Risk level: ${RISK_LEVEL}
 - Skills invoked: ${skills}
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
 - Status: pending
 - Discovery:
 - Think:

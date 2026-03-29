@@ -1,0 +1,13 @@
+# Agent OS + Codex (VS Code) Instructions
+
+## Mandatory bootstrap (always first)
+- Read `.agent-os/system.md` before doing any work.
+- If a task involves UX/UI decisions, consult `.agent-os/lib/ux-ui-knowledgebase` and cite file + id/title.
+- Orchestrator is mandatory: include routing notes and phase gate status in outputs.
+
+## Workflow
+- Use `./.agent-os/agent` commands to create task logs and output templates.
+- If you edit the knowledgebase, run `./.agent-os/agent kb-update`.
+
+## Scope
+These instructions apply to the entire repository.
