@@ -22,7 +22,19 @@ pattern_empty_state:
   implementation_notes: "Tailor copy based on user role."
   evaluation_criteria:
     - "Users take the next action."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [empty, loading, error, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users take the next action."
 pattern_loading_skeleton:
   pattern_name: "Skeleton Loading"
   problem_solved: "Improves perceived performance while content loads."
@@ -46,7 +58,19 @@ pattern_loading_skeleton:
   implementation_notes: "Limit animation to reduce motion."
   evaluation_criteria:
     - "Users perceive the UI as responsive."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [empty, loading, error, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users perceive the UI as responsive."
 pattern_error_state:
   pattern_name: "Error State"
   problem_solved: "Explains failures and helps recovery."
@@ -72,7 +96,19 @@ pattern_error_state:
   implementation_notes: "Log errors and include an error ID when needed."
   evaluation_criteria:
     - "Users can recover without support."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [empty, loading, error, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can recover without support."
 pattern_no_results:
   pattern_name: "No Results"
   problem_solved: "Clarifies search results when nothing matches."
@@ -96,4 +132,17 @@ pattern_no_results:
     - "No results with no suggestion."
   implementation_notes: "Show most common filters to remove."
   evaluation_criteria:
+    - "Users can recover to a valid result set."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [empty, loading, error, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Users can recover to a valid result set."

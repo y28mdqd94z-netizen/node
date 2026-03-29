@@ -23,7 +23,19 @@ pattern_pricing_table:
   implementation_notes: "Show inclusive pricing and taxes where possible."
   evaluation_criteria:
     - "Users can choose a plan confidently."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [billing, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can choose a plan confidently."
 pattern_subscription_manage:
   pattern_name: "Subscription Management"
   problem_solved: "Lets users view and change their plan."
@@ -48,7 +60,19 @@ pattern_subscription_manage:
   implementation_notes: "Offer cancellation survey but allow skip."
   evaluation_criteria:
     - "Users can modify plans without support."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [billing, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can modify plans without support."
 pattern_invoice_history:
   pattern_name: "Invoice History"
   problem_solved: "Provides access to past invoices and receipts."
@@ -71,4 +95,17 @@ pattern_invoice_history:
     - "No access to historical invoices."
   implementation_notes: "Support PDF and email receipt."
   evaluation_criteria:
+    - "Users can find and download invoices quickly."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [billing, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Users can find and download invoices quickly."

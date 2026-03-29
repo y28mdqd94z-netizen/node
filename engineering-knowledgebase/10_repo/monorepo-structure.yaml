@@ -1,0 +1,182 @@
+version: 1
+entries:
+  - id: repo.domain-packages
+    title: Domain based packages
+    category: repo
+    summary: Organize code by domain boundaries rather than technical layers.
+    definition: Group features by business domain to improve ownership and clarity.
+    why_it_matters: Reduces cross-team coupling and improves maintainability.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - monorepos with multiple teams or domains
+    avoid_when:
+      - very small projects with limited scope
+    implementation_rules:
+      - define package boundaries by domain
+      - enforce ownership and dependencies
+    tradeoffs:
+      - requires strong governance
+    anti_patterns:
+      - technical layer packages with unclear ownership
+    override_allowed: true
+    override_conditions:
+      - single team with low coordination cost
+    override_risks:
+      - ownership confusion as repo grows
+    required_justification:
+      - rationale for layer based organization
+    safer_alternatives:
+      - hybrid domain and layer structure
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: modest governance cost
+    agent_rules:
+      - prefer domain based packages in monorepos
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - repo growth causes coupling issues
+    deprecation_signals:
+      - migration to multi-repo strategy
+    sources:
+      - Monorepo management practices
+  - id: repo.boundary-enforcement
+    title: Boundary enforcement
+    category: repo
+    summary: Enforce package boundaries with tooling and reviews.
+    definition: Use linting and CI checks to prevent cross-boundary imports.
+    why_it_matters: Prevents architectural erosion.
+    priority_level: P1
+    confidence_score: 0.76
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - monorepos with multiple packages
+    avoid_when:
+      - tiny repos with no boundaries
+    implementation_rules:
+      - define dependency rules in tooling
+      - fail builds on boundary violations
+    tradeoffs:
+      - initial setup cost
+    anti_patterns:
+      - relying on conventions without enforcement
+    override_allowed: true
+    override_conditions:
+      - experimental code with short lifetime
+    override_risks:
+      - dependency sprawl
+    required_justification:
+      - why enforcement is temporarily disabled
+    safer_alternatives:
+      - manual review with explicit approvals
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: moderate tooling cost
+    agent_rules:
+      - enforce boundaries once repo exceeds single team
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - repeated boundary violations
+    deprecation_signals:
+      - new build system with built-in enforcement
+    sources:
+      - Monorepo governance practices
+  - id: repo.shared-platform-libs
+    title: Shared platform libraries
+    category: repo
+    summary: Maintain shared libraries for cross-cutting concerns.
+    definition: Provide shared libraries for logging, auth, and configuration with clear ownership.
+    why_it_matters: Prevents duplicated logic and inconsistent behavior.
+    priority_level: P2
+    confidence_score: 0.72
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - multiple services need the same functionality
+    avoid_when:
+      - single service with no reuse
+    implementation_rules:
+      - version shared libs and document contracts
+      - keep APIs stable and minimal
+    tradeoffs:
+      - shared libraries can become bottlenecks
+    anti_patterns:
+      - global shared libraries with unclear ownership
+    override_allowed: true
+    override_conditions:
+      - teams can iterate faster independently
+    override_risks:
+      - duplicated and inconsistent implementations
+    required_justification:
+      - why duplication is acceptable
+    safer_alternatives:
+      - internal templates or reference implementations
+    performance_impact: neutral
+    security_impact: positive when shared security libraries are used
+    cost_impact: modest maintenance cost
+    agent_rules:
+      - prefer shared libs for cross-cutting security concerns
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - repeated duplication of core logic
+    deprecation_signals:
+      - shared libs become too coupled and are split
+    sources:
+      - Platform engineering practices
+  - id: repo.tooling-automation
+    title: Tooling and automation
+    category: repo
+    summary: Automate builds, tests, and releases in CI.
+    definition: Use standardized CI pipelines to enforce quality gates.
+    why_it_matters: Prevents manual errors and ensures consistency.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - any shared codebase with multiple contributors
+    avoid_when:
+      - single developer prototypes
+    implementation_rules:
+      - automate linting, tests, and deployments
+      - enforce required checks before merge
+    tradeoffs:
+      - CI maintenance cost
+    anti_patterns:
+      - manual deploys without validation
+    override_allowed: true
+    override_conditions:
+      - urgent hotfix with manual verification
+    override_risks:
+      - regressions reaching production
+    required_justification:
+      - documented manual verification steps
+    safer_alternatives:
+      - limited CI pipeline with core checks only
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: moderate CI cost
+    agent_rules:
+      - require automated checks before production deploys
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - CI failures or pipeline instability
+    deprecation_signals:
+      - migration to new CI system
+    sources:
+      - DevOps CI practices

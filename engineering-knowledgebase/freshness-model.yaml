@@ -1,0 +1,22 @@
+version: 1
+knowledge_layers:
+  stable_core:
+    description: Fundamentals unlikely to change.
+    freshness_requirement: none
+  semi_volatile:
+    description: Practices influenced by ecosystem changes.
+    freshness_requirement: periodic_review
+  volatile:
+    description: Vendor-specific or fast-changing guidance.
+    freshness_requirement: must_verify_live
+volatility_levels:
+  low:
+    review_cadence: yearly
+  medium:
+    review_cadence: quarterly
+  high:
+    review_cadence: monthly_or_event_triggered
+update_triggers:
+  - framework or platform major release
+  - security advisory affecting dependencies
+  - incident or repeated agent failure

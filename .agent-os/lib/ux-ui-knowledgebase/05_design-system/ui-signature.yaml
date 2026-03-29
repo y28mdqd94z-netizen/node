@@ -1,0 +1,52 @@
+ui_signature:
+  name: "Calm Systems UI"
+  intent: "High-signal, low-noise interfaces that feel engineered and action-oriented."
+  influences:
+    - "Apple iOS"
+    - "Apple Notes"
+    - "Linear"
+    - "Notion"
+    - "Braun / Dieter Rams"
+    - "Industrial design"
+
+  tone:
+    - "calm"
+    - "minimal"
+    - "high-signal"
+    - "systems-first"
+    - "action-oriented"
+    - "low cognitive load"
+    - "structurally elegant"
+
+  layout_bias:
+    prefer:
+      - "single-column reading flow"
+      - "list + detail split"
+      - "sheet-based flows for focused tasks"
+      - "edge-to-edge lists with hairline separators"
+      - "dense information grouped into sections"
+    avoid:
+      - "card walls and equal-weight tiles"
+      - "decorative illustration as primary content"
+      - "multi-accent color screens"
+      - "busy dashboards without a clear primary action"
+
+  hierarchy_rules:
+    - "One primary action per view by default; secondary actions are visually quieter."
+    - "Pair the primary heading with a short status or context line."
+    - "Promote structure with section headers and spacing, not extra borders."
+    - "Prefer typography and spacing over color for hierarchy."
+
+  interaction_bias:
+    - "Progressive disclosure for advanced or destructive actions."
+    - "Inline feedback for state changes; avoid toasts for every action."
+    - "Use sheets, drawers, or inspectors for focused edits."
+
+  content_bias:
+    - "Lead with the task and next action; supporting detail comes after."
+    - "Keep copy terse and directive; favor verbs."
+
+  guardrails:
+    - "If more than one primary action appears, add justification and a visual hierarchy plan."
+    - "If a layout uses more than two surface elevations, simplify to one."
+    - "If color is doing the work of hierarchy, reduce and use typography or spacing instead."

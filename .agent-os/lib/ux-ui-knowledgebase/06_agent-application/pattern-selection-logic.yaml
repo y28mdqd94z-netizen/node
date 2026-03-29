@@ -1,22 +1,131 @@
 pattern_selection_logic:
   navigation:
-    - if: "sections <= 5 and primary device is desktop"
+    - id: nav_top
+      if: "sections <= 5 and primary device is desktop"
       use: "Top Navigation Bar"
-    - if: "sections > 5 or deep hierarchy"
+      priority: P1
+      evidence_level: C
+      confidence: 0.7
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Deep hierarchy or long labels require vertical space."
+      override_risks: "Top nav becomes crowded and hard to scan."
+      required_justification: "Explain hierarchy depth or label length constraints."
+      safer_alternatives: "Use grouped top nav with overflow or a hybrid sidebar."
+      decision_checks:
+        - "All primary sections reachable in <= 2 clicks."
+
+    - id: nav_sidebar
+      if: "sections > 5 or deep hierarchy"
       use: "Sidebar Navigation"
-    - if: "mobile and sections between 3 and 5"
+      priority: P1
+      evidence_level: C
+      confidence: 0.75
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Primary device is mobile or limited horizontal space."
+      override_risks: "Sidebar consumes content space and reduces focus."
+      required_justification: "Provide device constraints and content-density rationale."
+      safer_alternatives: "Top nav with grouped sections or mega menu."
+      decision_checks:
+        - "Active section is visible and discoverable without extra clicks."
+
+    - id: nav_bottom
+      if: "mobile and sections between 3 and 5"
       use: "Bottom Navigation"
-    - if: "mobile and sections > 5"
+      priority: P1
+      evidence_level: B
+      confidence: 0.75
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Primary tasks are not destination-based or require deep nesting."
+      override_risks: "Key destinations become harder to access on mobile."
+      required_justification: "Explain why bottom nav does not map to user goals."
+      safer_alternatives: "Hybrid bottom nav with More menu."
+      decision_checks:
+        - "Primary mobile tasks reachable within one tap."
+
+    - id: nav_hamburger
+      if: "mobile and sections > 5"
       use: "Hamburger with grouped sections"
+      priority: P2
+      evidence_level: C
+      confidence: 0.65
+      enforcement: soft
+      stability: evolving
+      override_allowed: true
+      override_conditions: "Usage data shows low menu discovery or frequent navigation."
+      override_risks: "Hidden navigation reduces discoverability."
+      required_justification: "Provide evidence and mitigation (education, labels, onboarding)."
+      safer_alternatives: "Bottom nav with secondary drawer."
+      decision_checks:
+        - "Menu discovery rate remains above baseline."
 
   forms:
-    - if: "fields <= 5"
+    - id: form_single_column
+      if: "fields <= 5"
       use: "Single-Column Form"
-    - if: "fields > 5"
+      priority: P1
+      evidence_level: B
+      confidence: 0.8
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Fields are tightly coupled and benefit from inline pairing."
+      override_risks: "Multi-column layout increases scan errors."
+      required_justification: "Explain coupling and add visual grouping."
+      safer_alternatives: "Single-column with grouped sections."
+      decision_checks:
+        - "Error rate does not increase after layout change."
+
+    - id: form_multi_step
+      if: "fields > 5"
       use: "Multi-Step Form"
+      priority: P2
+      evidence_level: B
+      confidence: 0.7
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Users are experts and need fast single-page scanning."
+      override_risks: "Long forms increase abandonment."
+      required_justification: "Provide evidence of expert usage and error rates."
+      safer_alternatives: "Single-page with anchors and progressive disclosure."
+      decision_checks:
+        - "Completion rate remains stable for long forms."
 
   data_display:
-    - if: "rows <= 25 and simple columns"
+    - id: data_basic_table
+      if: "rows <= 25 and simple columns"
       use: "Basic Table"
-    - if: "rows > 25 or needs editing"
+      priority: P2
+      evidence_level: C
+      confidence: 0.7
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Users require bulk edit or complex sorting."
+      override_risks: "Basic tables fail to support power tasks."
+      required_justification: "Explain the editing or analysis requirement."
+      safer_alternatives: "Expandable rows or inline actions."
+      decision_checks:
+        - "Users complete top data tasks without exporting."
+
+    - id: data_grid
+      if: "rows > 25 or needs editing"
       use: "Data Grid"
+      priority: P2
+      evidence_level: C
+      confidence: 0.7
+      enforcement: soft
+      stability: evolving
+      override_allowed: true
+      override_conditions: "Performance or complexity costs outweigh benefit."
+      override_risks: "Large data becomes difficult to manage."
+      required_justification: "Provide performance or complexity constraints."
+      safer_alternatives: "Pagination with batch actions."
+      decision_checks:
+        - "Users can filter/sort without performance issues."

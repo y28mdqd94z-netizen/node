@@ -23,7 +23,19 @@ pattern_basic_table:
   implementation_notes: "Provide sorting for common columns."
   evaluation_criteria:
     - "Users can scan and compare rows quickly."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [table, data, grid, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can scan and compare rows quickly."
 pattern_data_grid:
   pattern_name: "Data Grid"
   problem_solved: "Supports complex data interaction and editing."
@@ -49,7 +61,19 @@ pattern_data_grid:
   implementation_notes: "Support export and batch operations."
   evaluation_criteria:
     - "Users can edit or manage data with minimal clicks."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [table, data, grid, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can edit or manage data with minimal clicks."
 pattern_bulk_actions:
   pattern_name: "Bulk Actions"
   problem_solved: "Allows users to apply actions to many items."
@@ -73,4 +97,17 @@ pattern_bulk_actions:
     - "Destructive bulk actions with no confirmation."
   implementation_notes: "Show count and affected items before apply."
   evaluation_criteria:
+    - "Users can apply bulk actions safely."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [table, data, grid, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Users can apply bulk actions safely."

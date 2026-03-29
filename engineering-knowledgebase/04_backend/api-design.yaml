@@ -1,0 +1,227 @@
+version: 1
+entries:
+  - id: api.resource-modeling
+    title: Resource oriented API modeling
+    category: backend
+    summary: Model APIs around resources and standard HTTP verbs.
+    definition: Use nouns for resources and standard verbs for actions to keep APIs predictable.
+    why_it_matters: Improves developer experience and interoperability.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - designing RESTful APIs
+    avoid_when:
+      - RPC or event-driven interfaces are more suitable
+    implementation_rules:
+      - use consistent naming and plural resources
+      - avoid action verbs in paths when possible
+    tradeoffs:
+      - some operations fit awkwardly in pure REST
+    anti_patterns:
+      - inconsistent naming across endpoints
+    override_allowed: true
+    override_conditions:
+      - RPC style needed for complex operations
+    override_risks:
+      - inconsistent API surface
+    required_justification:
+      - why resource modeling is insufficient
+    safer_alternatives:
+      - hybrid approach with clear RPC prefixes
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: neutral
+    agent_rules:
+      - default to resource oriented design for HTTP APIs
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - consumer confusion over API design
+    deprecation_signals:
+      - shift to a different API style
+    sources:
+      - HTTP API design practices
+  - id: api.error-model
+    title: Consistent error model
+    category: backend
+    summary: Return structured errors with consistent fields.
+    definition: Errors should include a stable code, message, and optional details.
+    why_it_matters: Enables reliable client handling and debugging.
+    priority_level: P1
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any API consumed by clients or services
+    avoid_when:
+      - internal-only functions without external callers
+    implementation_rules:
+      - define a standard error schema
+      - avoid leaking sensitive data in messages
+    tradeoffs:
+      - requires consistent error mapping
+    anti_patterns:
+      - ad hoc error formats per endpoint
+    override_allowed: true
+    override_conditions:
+      - legacy APIs with fixed error format
+    override_risks:
+      - inconsistent client behavior
+    required_justification:
+      - compatibility constraints with legacy clients
+    safer_alternatives:
+      - wrap legacy errors in a consistent envelope
+    performance_impact: neutral
+    security_impact: positive when messages are sanitized
+    cost_impact: neutral
+    agent_rules:
+      - require stable error codes and schema
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - frequent client bugs due to error handling
+    deprecation_signals:
+      - API version change with new error model
+    sources:
+      - API error handling practices
+  - id: api.pagination-filtering
+    title: Pagination, filtering, and sorting
+    category: backend
+    summary: Provide consistent pagination and query controls.
+    definition: Use stable pagination and predictable filter semantics to manage large datasets.
+    why_it_matters: Prevents client timeouts and reduces server load.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - list endpoints that can grow large
+    avoid_when:
+      - fixed size datasets
+    implementation_rules:
+      - use cursor based pagination for large lists
+      - define filter and sort fields explicitly
+    tradeoffs:
+      - cursor pagination adds complexity for clients
+    anti_patterns:
+      - unbounded list responses
+    override_allowed: true
+    override_conditions:
+      - small lists with strict limits
+    override_risks:
+      - performance issues and timeouts
+    required_justification:
+      - evidence list size is bounded
+    safer_alternatives:
+      - hard caps with warning headers
+    performance_impact: positive
+    security_impact: neutral
+    cost_impact: lower compute cost
+    agent_rules:
+      - enforce pagination on any list endpoint
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - list endpoints causing timeouts
+    deprecation_signals:
+      - migration to a different API style
+    sources:
+      - API pagination guidance
+  - id: api.versioning
+    title: API versioning strategy
+    category: backend
+    summary: Version APIs when making breaking changes.
+    definition: Use explicit versioning to preserve backward compatibility.
+    why_it_matters: Prevents breaking client integrations.
+    priority_level: P1
+    confidence_score: 0.77
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - public or third party APIs
+    avoid_when:
+      - internal APIs with coordinated releases only
+    implementation_rules:
+      - choose a versioning scheme and document it
+      - keep multiple versions only as long as needed
+    tradeoffs:
+      - operational overhead for multiple versions
+    anti_patterns:
+      - breaking changes without notice
+    override_allowed: true
+    override_conditions:
+      - tightly coupled internal clients with coordinated release
+    override_risks:
+      - client breakage and outages
+    required_justification:
+      - why backward compatibility is guaranteed without versioning
+    safer_alternatives:
+      - additive changes only with deprecation periods
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: higher maintenance for multiple versions
+    agent_rules:
+      - version any breaking change for external consumers
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - client outages from breaking changes
+    deprecation_signals:
+      - API consolidates to single stable version
+    sources:
+      - API lifecycle practices
+  - id: api.idempotent-mutations
+    title: Idempotent mutation endpoints
+    category: backend
+    summary: Design mutations to be safe on retries.
+    definition: Mutating endpoints should handle retries without duplicate side effects.
+    why_it_matters: Prevents double writes during network failures.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any endpoint that creates or charges
+    avoid_when:
+      - purely idempotent operations by design
+    implementation_rules:
+      - accept idempotency keys or deterministic IDs
+      - store deduplication records with expiry
+    tradeoffs:
+      - storage for idempotency records
+    anti_patterns:
+      - retrying POST without idempotency
+    override_allowed: true
+    override_conditions:
+      - mutation already deterministic and idempotent
+    override_risks:
+      - duplicate records or charges
+    required_justification:
+      - proof of idempotency guarantees
+    safer_alternatives:
+      - convert to PUT with client-generated IDs
+    performance_impact: slight negative
+    security_impact: neutral
+    cost_impact: small storage cost
+    agent_rules:
+      - enforce idempotency for all external mutations
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - duplicate mutation incidents
+    deprecation_signals:
+      - adoption of deterministic IDs across API
+    sources:
+      - API reliability practices

@@ -19,6 +19,15 @@ ux_law_hicks:
   accessibility_notes: "Ensure keyboard and screen-reader navigation still reveal all options (e.g. by expand/collapse). Use clear headings for hidden sections."
   agent_rules: "If option count > 5, group or hide some. Order by frequency. Provide search or quick-access as needed."
   confidence: 0.9
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["decision-making", "cognitive_load", "menu_design"]
   sources: ["Laws of UX: Hick’s Law【2†L36-L42】", "Interaction Design Foundation: Hick’s Law【26†L65-L73】"]
 
@@ -43,6 +52,15 @@ ux_law_fitts:
   accessibility_notes: "Follow minimum touch-size guidelines (e.g. 44px on mobile). Ensure space between items to avoid overlap."
   agent_rules: "Maximize clickable area for important buttons. Check spacing between clickable elements. Place critical actions at UI boundaries if on desktop."
   confidence: 0.9
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["input_performance", "touch_targets", "menu_design"]
   sources: ["Nielsen Norman Group: Fitts’s Law【4†L125-L134】【6†L178-L186】"]
 
@@ -67,6 +85,15 @@ ux_law_jakobs:
   accessibility_notes: "Provide descriptive labels/tooltips for icons to reinforce meaning; ensure no critical functionality is hidden behind nonstandard controls."
   agent_rules: "Default to common patterns from mature platforms; if a new design deviates, ensure guidance or alternative familiar modes."
   confidence: 0.85
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["convention", "user_expectation", "pattern_library"]
   sources: ["Laws of UX: Jakob’s Law【8†L36-L41】【8†L44-L50】"]
 
@@ -91,6 +118,15 @@ ux_law_millers:
   accessibility_notes: "Maintain visible context (breadcrumbs, progress indicator) to reduce reliance on memory. Ensure toggles/sections are announced in screen readers."
   agent_rules: "Limit visible options to ~5-7 at a time; use progressive disclosure for additional items; test with novices."
   confidence: 0.9
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["memory_limits", "chunking", "menu_design"]
   sources: ["Laws of UX: Miller’s Law【10†L36-L40】【10†L44-L49】"]
 
@@ -115,6 +151,15 @@ ux_law_teslers:
   accessibility_notes: "Ensure that any automation still allows user override; provide explanations for unexpected behavior (e.g. accessible tooltips)."
   agent_rules: "Favor designs that automate user work when safe. Identify user pain points and reduce manual steps. If complexity stays, surface guidance."
   confidence: 0.85
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["complexity", "automation", "user-control"]
   sources: ["Laws of UX: Tesler’s Law【12†L36-L44】"]
 
@@ -139,6 +184,15 @@ ux_law_peak_end:
   accessibility_notes: "Ensure any animations or sound at end can be skipped or are friendly. Provide text alternatives for visual cues."
   agent_rules: "Identify the ‘end’ of each user journey and optimize it (clear messaging, simple choices). Highlight accomplishments (percent complete, milestones)."
   confidence: 0.8
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["memory_bias", "emotional_design", "user_satisfaction"]
   sources: ["Laws of UX: Peak–End Rule【14†L34-L40】【14†L47-L52】"]
 
@@ -163,6 +217,15 @@ ux_law_serial_position:
   accessibility_notes: "Screen reader or focus order naturally announces first/last items; ensure context (aria labels) to reinforce position."
   agent_rules: "Always check order of menu items; if changing order, consider user testing or heuristics about position recall."
   confidence: 0.85
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["memory", "navigation", "list_order"]
   sources: ["Laws of UX: Serial Position Effect【16†L36-L44】【16†L42-L50】"]
 
@@ -187,6 +250,15 @@ ux_law_von_restorff:
   accessibility_notes: "Use more than just color (icons, patterns, text boldness). For motion highlights, provide pause/stop controls for sensitive users【18†L44-L52】."
   agent_rules: "Limit highlighted targets to <2 per view. Prioritize by user goals. Verify contrast ratio and non-color indicators."
   confidence: 0.9
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["visual_design", "memory", "attention"]
   sources: ["Laws of UX: Von Restorff Effect【18†L34-L42】【18†L44-L52】"]
 
@@ -211,6 +283,15 @@ ux_law_zeigarnik:
   accessibility_notes: "Ensure progress indicators (bars, steps) have text labels or aria roles so assistive tech conveys incomplete state."
   agent_rules: "Include visible progress for any multi-step flow. Prompt users about unfinished items (e.g. cart items, incomplete profile)."
   confidence: 0.8
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["motivation", "task_completion", "progress"]
   sources: ["Laws of UX: Zeigarnik Effect【20†L36-L43】", "NNGroup: Zeigarnik Effect in UX【20†L42-L48】"]
 
@@ -235,6 +316,15 @@ ux_law_doherty:
   accessibility_notes: "Ensure loading indicators are announced to screen readers. Don’t use rapid flashing animations during progress."
   agent_rules: "Check critical actions for feedback time. Always provide feedback within 400ms or a progress cue."
   confidence: 0.9
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["performance", "feedback", "user_engagement"]
   sources: ["Laws of UX: Doherty Threshold【30†L36-L44】【30†L42-L50】"]
 
@@ -258,6 +348,15 @@ ux_law_pareto:
   implementation_notes: "Use analytics to identify top-used features. Trim or hide peripheral features. Iterate core workflows."
   agent_rules: "Rank features by usage metrics. If unsure, default to Pareto to suggest focus, then adjust with user research."
   confidence: 0.8
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["prioritization", "analytics", "impact"]
   sources: ["Laws of UX: Pareto Principle【22†L36-L44】"]
 
@@ -281,6 +380,15 @@ ux_law_occams:
   implementation_notes: "During design critique, ask: 'What can be removed?' Use user feedback to identify rarely used features. Implement iterative refinements."
   agent_rules: "Encourage minimal viable interface first. If adding elements, justify each by user need. Use usability metrics to verify simplicity gains."
   confidence: 0.8
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["simplicity", "minimalism", "feature_review"]
   sources: ["Occam's Razor (Radiant Digital)【24†L107-L114】"]
 
@@ -304,5 +412,14 @@ ux_law_progressive_disclosure:
   implementation_notes: "Label disclosure controls clearly. Use progressive steps (wizard). Keep visible cues (e.g. 'More options')."
   agent_rules: "Default to progressive reveal when option count is large; ensure navigation paths exist to hidden sections; favor initial simplicity."
   confidence: 0.9
+  priority: P1
+  evidence_level: B
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Violating the law increases cognitive load or error rate."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional cues instead of full deviation."
   tags: ["simplicity", "learnability", "complexity_management"]
   sources: ["Nielsen Norman Group: Progressive Disclosure【26†L65-L73】【26†L85-L94】"]

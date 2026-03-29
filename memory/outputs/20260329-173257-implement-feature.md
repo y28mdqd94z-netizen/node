@@ -1,0 +1,33 @@
+## 1. SUMMARY
+- Title: Engineering knowledgebase for modern web app development
+- Command: implement-feature
+- Timestamp: 2026-03-29 17:32:57 +1100
+- Risk level: low
+- Orchestrator: required (routing notes below)
+
+## 2. DESIGN DECISION
+- Discovery: intent, user goals, constraints, risks
+- Think: key reasoning and tradeoffs
+- UX design: flows, 1-2 actions per task, apply Hick/Fitts/Miller/Jakob/Tesler
+- States, transitions, feedback, empty/error/loading
+- Knowledgebase refs: laws/principles/patterns/components (file + id/title)
+
+## 3. ARCHITECTURE
+- Boundaries
+- Data flow
+- API contracts
+- State ownership
+- Failure points + fallback UX + retry logic + safe error messages
+- Observability (privacy-safe logging, error tracking, performance)
+
+## 4. IMPLEMENTATION
+- Real code (React + Tailwind default for UI)
+- Clear component structure, predictable state patterns, minimal abstraction
+- Validation: type safety, input validation, error handling, edge cases
+
+## 5. SECURITY REVIEW
+- Data exposure, auth weaknesses, API vulnerabilities, frontend risks, dependency risks
+- PII handling, token storage, API exposure, logging leaks, XSS, dependencies
+
+## 6. NEXT ACTIONS
+1.

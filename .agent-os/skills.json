@@ -2,6 +2,11 @@
   "version": "0.1.0",
   "micro_skills": [
     {
+      "id": "market-analysis",
+      "domain": "research",
+      "description": "Research industry examples and derive patterns/features/components/styling before UX decisions."
+    },
+    {
       "id": "choose-ui-pattern",
       "domain": "design",
       "description": "Select appropriate UI patterns for the task context."

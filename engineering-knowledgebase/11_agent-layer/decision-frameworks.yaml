@@ -1,0 +1,182 @@
+version: 1
+entries:
+  - id: agent.decision-ladder
+    title: Decision ladder
+    category: agent_layer
+    summary: Use a consistent stepwise decision process.
+    definition: Identify goals, constraints, options, tradeoffs, and choose the safest viable option.
+    why_it_matters: Improves decision quality and auditability.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: medium
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - choosing architecture or implementation approaches
+    avoid_when:
+      - trivial decisions with no impact
+    implementation_rules:
+      - list options and their tradeoffs
+      - choose the highest priority with acceptable risk
+    tradeoffs:
+      - additional decision time
+    anti_patterns:
+      - choosing options without documenting tradeoffs
+    override_allowed: true
+    override_conditions:
+      - decision is low impact and time critical
+    override_risks:
+      - inconsistent or low quality decisions
+    required_justification:
+      - rationale for skipping decision process
+    safer_alternatives:
+      - minimal decision note with key tradeoffs
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: low
+    agent_rules:
+      - document decisions for medium and high impact work
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - repeated decision reversals
+    deprecation_signals:
+      - adoption of new decision framework
+    sources:
+      - Engineering decision practices
+  - id: agent.evidence-volatility-matrix
+    title: Evidence and volatility matrix
+    category: agent_layer
+    summary: Match confidence to evidence and volatility.
+    definition: Use higher evidence and lower volatility for strong recommendations.
+    why_it_matters: Reduces reliance on outdated or weak guidance.
+    priority_level: P1
+    confidence_score: 0.76
+    evidence_level: medium
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - selecting patterns from the knowledgebase
+    avoid_when:
+      - none
+    implementation_rules:
+      - prefer high evidence and stable_core entries
+      - verify volatile guidance before use
+    tradeoffs:
+      - slower decision process for volatile topics
+    anti_patterns:
+      - using low evidence guidance as default
+    override_allowed: true
+    override_conditions:
+      - validated by fresh testing or docs
+    override_risks:
+      - choosing outdated approaches
+    required_justification:
+      - evidence of current validity
+    safer_alternatives:
+      - fall back to stable_core defaults
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: neutral
+    agent_rules:
+      - verify volatile items before implementation
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - discovery of outdated guidance
+    deprecation_signals:
+      - new evidence supersedes old guidance
+    sources:
+      - Engineering governance practices
+  - id: agent.safe-defaults-when-uncertain
+    title: Safe defaults when uncertain
+    category: agent_layer
+    summary: Choose the safest option when context is incomplete.
+    definition: When uncertainty is high, use conservative patterns that minimize risk.
+    why_it_matters: Prevents harmful decisions with insufficient context.
+    priority_level: P0
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - missing requirements or unclear constraints
+    avoid_when:
+      - explicit direction provides necessary context
+    implementation_rules:
+      - choose P0 and P1 guidance
+      - prefer reversible changes
+    tradeoffs:
+      - may be slower or less optimized
+    anti_patterns:
+      - aggressive optimization without evidence
+    override_allowed: true
+    override_conditions:
+      - clear evidence that a non-default option is safer
+    override_risks:
+      - increased risk from unproven choices
+    required_justification:
+      - evidence that alternative is safe and necessary
+    safer_alternatives:
+      - staged rollout to reduce risk
+    performance_impact: neutral to negative
+    security_impact: positive
+    cost_impact: neutral
+    agent_rules:
+      - default to safe, reversible options
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - incidents from aggressive choices
+    deprecation_signals:
+      - organization changes risk tolerance policy
+    sources:
+      - Risk management practices
+  - id: agent.tradeoff-explicitness
+    title: Tradeoff explicitness
+    category: agent_layer
+    summary: Always state tradeoffs in recommendations.
+    definition: Each recommendation must include pros, cons, and risks.
+    why_it_matters: Supports transparent decision making and accountability.
+    priority_level: P1
+    confidence_score: 0.75
+    evidence_level: medium
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - recommending architecture or tooling changes
+    avoid_when:
+      - trivial fixes with no meaningful tradeoffs
+    implementation_rules:
+      - list key tradeoffs and risks
+      - note any assumptions
+    tradeoffs:
+      - slightly longer decision notes
+    anti_patterns:
+      - one-sided recommendations
+    override_allowed: true
+    override_conditions:
+      - low impact decision with no material tradeoffs
+    override_risks:
+      - hidden risks and surprises
+    required_justification:
+      - rationale for omitting tradeoffs
+    safer_alternatives:
+      - brief tradeoff summary
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: low
+    agent_rules:
+      - always include at least one downside and one risk
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - decision reversals due to hidden tradeoffs
+    deprecation_signals:
+      - policy changes to decision documentation
+    sources:
+      - Engineering decision practices

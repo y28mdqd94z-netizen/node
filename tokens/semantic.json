@@ -1,0 +1,29 @@
+{
+  "color": {
+    "text": {
+      "primary": "{color.neutral.900}",
+      "secondary": "{color.neutral.600}",
+      "muted": "{color.neutral.500}"
+    },
+    "bg": {
+      "canvas": "{color.neutral.0}",
+      "surface": "{color.neutral.50}",
+      "muted": "{color.neutral.100}"
+    },
+    "border": {
+      "default": "{color.neutral.200}",
+      "strong": "{color.neutral.300}"
+    },
+    "action": {
+      "primary": "{color.accent.500}",
+      "primary_hover": "{color.accent.600}",
+      "primary_pressed": "{color.accent.700}",
+      "primary_text": "{color.neutral.0}"
+    },
+    "status": {
+      "success": "{color.semantic.success}",
+      "warning": "{color.semantic.warning}",
+      "danger": "{color.semantic.danger}"
+    }
+  }
+}

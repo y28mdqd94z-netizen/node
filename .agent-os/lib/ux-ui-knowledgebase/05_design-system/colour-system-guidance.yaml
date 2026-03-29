@@ -1,8 +1,8 @@
 color_system:
   palette:
-    primary: "Brand color for primary actions and highlights."
-    secondary: "Supportive accents used sparingly."
-    neutral: "Grays from 0-900 for backgrounds and text."
+    primary: "Ink-like neutral used for text and key emphasis."
+    secondary: "Subtle accent used sparingly for highlights and primary actions."
+    neutral: "Warm or cool grays for surfaces, dividers, and backgrounds."
     semantic:
       success: "Green for positive status."
       warning: "Amber for caution."
@@ -10,25 +10,26 @@ color_system:
 
   semantic_tokens:
     - name: "color.text.primary"
-      usage: "Default text on light background."
+      usage: "High-contrast text on light backgrounds."
     - name: "color.text.secondary"
       usage: "Secondary text and metadata."
     - name: "color.bg.surface"
-      usage: "Cards and elevated surfaces."
+      usage: "Primary surfaces and panels."
     - name: "color.bg.muted"
-      usage: "Subtle backgrounds and sections."
+      usage: "Subtle section backgrounds."
     - name: "color.border.default"
-      usage: "Default border color."
+      usage: "Hairline dividers and field borders."
 
   state_tokens:
     - name: "color.action.primary"
-      usage: "Primary buttons and highlights."
+      usage: "Primary buttons and active states."
     - name: "color.action.primary_hover"
       usage: "Hover state for primary actions."
     - name: "color.action.primary_disabled"
       usage: "Disabled state for primary actions."
 
   guidelines:
+    - "Use one accent per screen; reserve it for the primary action or active state."
+    - "Prefer neutral surfaces with hairline dividers over tinted cards."
+    - "Pair status color with icons or labels, not color alone."
     - "Ensure text contrast meets WCAG AA."
-    - "Avoid relying on color alone for status."
-    - "Use a single accent color per screen."

@@ -1,0 +1,74 @@
+version: 1
+categories:
+  foundations:
+    description: Core engineering and architecture principles.
+    files:
+      - 01_foundations/engineering-principles.yaml
+      - 01_foundations/architecture-principles.yaml
+  architecture:
+    description: System and architectural patterns.
+    files:
+      - 02_architecture/architecture-patterns.yaml
+      - 02_architecture/system-design-patterns.yaml
+  frontend:
+    description: Frontend standards and React patterns.
+    files:
+      - 03_frontend/frontend-standards.yaml
+      - 03_frontend/react-patterns.yaml
+  backend:
+    description: Backend standards and API design.
+    files:
+      - 04_backend/backend-standards.yaml
+      - 04_backend/api-design.yaml
+  data:
+    description: Data modeling and database design.
+    files:
+      - 05_data/database-design.yaml
+  security:
+    description: Auth and security practices.
+    files:
+      - 06_security/auth-patterns.yaml
+      - 06_security/security-best-practices.yaml
+  devops:
+    description: Deployment and platform practices.
+    files:
+      - 07_devops/vercel-deployment.yaml
+  ai:
+    description: AI integration patterns and safety.
+    files:
+      - 08_ai/ai-integration.yaml
+  system_quality:
+    description: Performance and resilience.
+    files:
+      - 09_system-quality/performance.yaml
+      - 09_system-quality/error-handling.yaml
+  repo:
+    description: Repository structure and governance.
+    files:
+      - 10_repo/monorepo-structure.yaml
+  agent_layer:
+    description: Agent decisioning and codegen rules.
+    files:
+      - 11_agent-layer/decision-frameworks.yaml
+      - 11_agent-layer/code-generation-rules.yaml
+      - 11_agent-layer/audit-checklists.yaml
+      - 11_agent-layer/override-rules.yaml
+  maintenance:
+    description: Freshness and maintenance policies.
+    files:
+      - 12_maintenance/update-triggers.yaml
+      - 12_maintenance/review-cadences.yaml
+      - 12_maintenance/deprecation-policy.yaml
+tags:
+  - name: security
+    description: Protects confidentiality, integrity, and availability.
+  - name: performance
+    description: Reduces latency and resource usage.
+  - name: reliability
+    description: Improves resilience and uptime.
+  - name: cost
+    description: Manages infrastructure and operational cost.
+  - name: ai
+    description: Applies to AI integration or safety.
+  - name: ux
+    description: Affects user experience or accessibility.

@@ -1,18 +1,31 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "typography": {
-    "primary": "",
-    "secondary": ""
+    "primary": "SF Pro Text, SF Pro Display, -apple-system, system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif",
+    "secondary": "SF Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace",
+    "notes": "Base size 16 with a restrained scale; use weight and spacing for hierarchy before new sizes."
   },
   "colors": {
-    "primary": "",
-    "secondary": "",
-    "accent": "",
-    "neutral": ""
+    "primary": "Ink-like neutral for text and key emphasis",
+    "secondary": "Subtle accent used sparingly for highlights and primary actions",
+    "accent": "Single accent per screen for primary actions",
+    "neutral": "Warm or cool grays for surfaces and dividers"
   },
   "spacing": {
-    "scale": []
+    "scale": [4, 8, 12, 16, 24, 32, 48, 64]
   },
-  "components": [],
-  "notes": "Generated baseline on 2026-03-29 14:52:59 +1100. See architecture.md for stack details."
+  "tokens": {
+    "base": "tokens/base.json",
+    "semantic": "tokens/semantic.json"
+  },
+  "components": [
+    "SectionHeader",
+    "List",
+    "Table",
+    "Button",
+    "Form",
+    "Drawer",
+    "Inspector"
+  ],
+  "notes": "Refined to a calm, systems-first UI signature: minimal chrome, strong hierarchy, progressive disclosure, and clear next action. Token values live in tokens/."
 }

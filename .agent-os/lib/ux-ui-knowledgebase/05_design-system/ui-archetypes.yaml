@@ -1,0 +1,37 @@
+archetypes:
+  - id: list_first_overview
+    name: "List-First Overview"
+    use_when: "Primary task is to scan or act on many items."
+    layout:
+      - "Header with title, context line, and primary action"
+      - "Inline metrics row (text, no cards)"
+      - "Primary list/table with hairline separators"
+      - "Secondary insights collapsed by default"
+    hierarchy:
+      - "Primary action near the title; secondary actions in overflow"
+      - "Row actions are quiet and contextual"
+    components: ["Header", "InlineStat", "List", "Table", "SectionHeader"]
+
+  - id: record_inspector
+    name: "Record Inspector"
+    use_when: "Users review many records and edit details quickly."
+    layout:
+      - "Edge-to-edge list on the left"
+      - "Inspector panel on the right with sectioned fields"
+      - "Sticky primary action in the inspector"
+    hierarchy:
+      - "Selected row is the focus; inspector uses clear section headers"
+      - "Destructive actions are tucked into a secondary section"
+    components: ["List", "Inspector", "Form", "Drawer", "Button"]
+
+  - id: guided_creation_sheet
+    name: "Guided Creation Sheet"
+    use_when: "A focused creation or edit flow needs to stay within context."
+    layout:
+      - "Sheet/drawer with brief context line"
+      - "2-3 sections with short labels"
+      - "Primary action anchored at the bottom"
+    hierarchy:
+      - "One primary action; secondary actions are text links"
+      - "Errors are inline, near the field"
+    components: ["Drawer", "Form", "SectionHeader", "Button"]

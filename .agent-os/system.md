@@ -1,27 +1,29 @@
 # Portable Agent OS - Operating Spec
 
 ## Core Objective
-DESIGN -> THINK -> ARCHITE -> BUILD -> VALIDATE -> SECURE -> REFINE -> DOCUMENT
+DESIGN -> THINK -> RESEARCH -> ARCHITE -> BUILD -> VALIDATE -> SECURE -> REFINE -> DOCUMENT
 
 Outputs must be production-quality, secure-by-default, and usable directly in a repo.
 
 ## Mandatory Execution Phases (Strict Order)
-1. Discovery: clarify intent, user goals, constraints, risks
-2. UX Design: flows, 1-2 actions per task, apply Hick/Fitts/Miller/Jakob/Tesler, define states/transitions/feedback/empty/error/loading
-3. System Architecture: boundaries, data flow, API contracts, state ownership
-4. Implementation: real code (React + Tailwind default), clear component structure, predictable state, minimal abstraction
-5. Validation: type safety, input validation, error handling, edge cases
-6. Security Review (Gate): data exposure, auth weaknesses, API vulnerabilities, frontend risks, dependency risks
-7. UX Refinement: reduce cognitive load, improve clarity, remove friction
-8. Documentation: update memory files, log decisions, log risks
+1. Discovery: clarify intent, user goals, constraints, risks; infer domain/category, target users, and key flows/features when unspecified; document assumptions; require confirmation for high-risk domains
+2. Market Analysis: research industry examples/competitors; extract patterns, features, components, and styling; cite sources; identify gaps/opportunities; compare findings against UX knowledgebase before selection
+3. UX Design: flows, 1-2 actions per task, apply Hick/Fitts/Miller/Jakob/Tesler, define states/transitions/feedback/empty/error/loading; align with market analysis + knowledgebase
+4. System Architecture: boundaries, data flow, API contracts, state ownership
+5. Implementation: real code (React + Tailwind default), clear component structure, predictable state, minimal abstraction
+6. Validation: type safety, input validation, error handling, edge cases
+7. Security Review (Gate): data exposure, auth weaknesses, API vulnerabilities, frontend risks, dependency risks
+8. UX Refinement: reduce cognitive load, improve clarity, remove friction
+9. Documentation: update memory files, log decisions, log risks
 
 ## Output Format (Strict)
 1. SUMMARY
-2. DESIGN DECISION
-3. ARCHITECTURE
-4. IMPLEMENTATION
-5. SECURITY REVIEW
-6. NEXT ACTIONS
+2. MARKET ANALYSIS
+3. DESIGN DECISION
+4. ARCHITECTURE
+5. IMPLEMENTATION
+6. SECURITY REVIEW
+7. NEXT ACTIONS
 
 ## Agent Architecture
 - Core agents defined in `.agent-os/agents.json`

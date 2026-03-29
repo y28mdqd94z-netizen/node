@@ -1,0 +1,368 @@
+{
+  "version": 1,
+  "generated_at": "2026-03-29",
+  "root": "engineering-knowledgebase",
+  "schema": "v1",
+  "files": [
+    {
+      "path": "README.md",
+      "type": "doc"
+    },
+    {
+      "path": "changelog.md",
+      "type": "doc"
+    },
+    {
+      "path": "taxonomy.yaml",
+      "type": "taxonomy"
+    },
+    {
+      "path": "ranking-model.yaml",
+      "type": "model"
+    },
+    {
+      "path": "override-model.yaml",
+      "type": "model"
+    },
+    {
+      "path": "freshness-model.yaml",
+      "type": "model"
+    },
+    {
+      "path": "01_foundations/architecture-principles.yaml",
+      "entry_count": 4,
+      "entries": [
+        "architecture.bounded-contexts",
+        "architecture.data-ownership-single-writer",
+        "architecture.dependency-direction",
+        "architecture.build-for-failure"
+      ]
+    },
+    {
+      "path": "01_foundations/engineering-principles.yaml",
+      "entry_count": 5,
+      "entries": [
+        "foundation.correctness-over-convenience",
+        "foundation.simplicity-and-cohesion",
+        "foundation.explicit-contracts",
+        "foundation.testability-first",
+        "foundation.observability-as-feature"
+      ]
+    },
+    {
+      "path": "02_architecture/architecture-patterns.yaml",
+      "entry_count": 4,
+      "entries": [
+        "pattern.modular-monolith",
+        "pattern.hexagonal-architecture",
+        "pattern.event-driven-architecture",
+        "pattern.microservices"
+      ]
+    },
+    {
+      "path": "02_architecture/system-design-patterns.yaml",
+      "entry_count": 5,
+      "entries": [
+        "design.caching-strategy",
+        "design.rate-limiting-backpressure",
+        "design.idempotency-keys",
+        "design.circuit-breakers",
+        "design.sagas-compensations"
+      ]
+    },
+    {
+      "path": "03_frontend/frontend-standards.yaml",
+      "entry_count": 5,
+      "entries": [
+        "frontend.accessibility-baseline",
+        "frontend.performance-budgets",
+        "frontend.resilient-ui-states",
+        "frontend.state-boundaries",
+        "frontend.design-tokens"
+      ]
+    },
+    {
+      "path": "03_frontend/react-patterns.yaml",
+      "entry_count": 5,
+      "entries": [
+        "react.composition-over-inheritance",
+        "react.controlled-vs-uncontrolled",
+        "react.hooks-rules",
+        "react.memoization-measured",
+        "react.server-render-when-needed"
+      ]
+    },
+    {
+      "path": "04_backend/api-design.yaml",
+      "entry_count": 5,
+      "entries": [
+        "api.resource-modeling",
+        "api.error-model",
+        "api.pagination-filtering",
+        "api.versioning",
+        "api.idempotent-mutations"
+      ]
+    },
+    {
+      "path": "04_backend/backend-standards.yaml",
+      "entry_count": 5,
+      "entries": [
+        "backend.validate-at-boundary",
+        "backend.stateless-services",
+        "backend.async-jobs",
+        "backend.structured-logging",
+        "backend.config-and-secrets"
+      ]
+    },
+    {
+      "path": "05_data/database-design.yaml",
+      "entry_count": 5,
+      "entries": [
+        "data.schema-migrations",
+        "data.indexing-strategy",
+        "data.transactions-consistency",
+        "data.soft-delete",
+        "data.retention-privacy"
+      ]
+    },
+    {
+      "path": "06_security/auth-patterns.yaml",
+      "entry_count": 5,
+      "entries": [
+        "auth.session-vs-token",
+        "auth.least-privilege",
+        "auth.mfa-privileged",
+        "auth.secure-password-storage",
+        "auth.separate-authn-authz"
+      ]
+    },
+    {
+      "path": "06_security/security-best-practices.yaml",
+      "entry_count": 5,
+      "entries": [
+        "security.encryption-transit-rest",
+        "security.secrets-management",
+        "security.headers-csp",
+        "security.dependency-vuln-management",
+        "security.audit-logging"
+      ]
+    },
+    {
+      "path": "07_devops/vercel-deployment.yaml",
+      "entry_count": 4,
+      "entries": [
+        "devops.vercel.environment-separation",
+        "devops.vercel.preview-deployments",
+        "devops.vercel.edge-vs-serverless",
+        "devops.vercel.rollback-strategy"
+      ]
+    },
+    {
+      "path": "08_ai/ai-integration.yaml",
+      "entry_count": 5,
+      "entries": [
+        "ai.data-minimization",
+        "ai.prompt-injection-defense",
+        "ai.rag-attribution",
+        "ai.evals-guardrails",
+        "ai.human-in-the-loop"
+      ]
+    },
+    {
+      "path": "09_system-quality/error-handling.yaml",
+      "entry_count": 5,
+      "entries": [
+        "errors.user-safe-messages",
+        "errors.retry-backoff",
+        "errors.circuit-breaker",
+        "errors.idempotent-retry",
+        "errors.centralized-error-model"
+      ]
+    },
+    {
+      "path": "09_system-quality/performance.yaml",
+      "entry_count": 5,
+      "entries": [
+        "perf.budgets",
+        "perf.caching-layering",
+        "perf.query-optimization",
+        "perf.batching-and-async",
+        "perf.load-testing"
+      ]
+    },
+    {
+      "path": "10_repo/monorepo-structure.yaml",
+      "entry_count": 4,
+      "entries": [
+        "repo.domain-packages",
+        "repo.boundary-enforcement",
+        "repo.shared-platform-libs",
+        "repo.tooling-automation"
+      ]
+    },
+    {
+      "path": "11_agent-layer/audit-checklists.yaml",
+      "entry_count": 4,
+      "entries": [
+        "agent.audit.security",
+        "agent.audit.privacy",
+        "agent.audit.performance",
+        "agent.audit.ai-safety"
+      ]
+    },
+    {
+      "path": "11_agent-layer/code-generation-rules.yaml",
+      "entry_count": 4,
+      "entries": [
+        "agent.codegen.safe-defaults",
+        "agent.codegen.repo-conventions",
+        "agent.codegen.no-hidden-deps",
+        "agent.codegen.tests-for-critical"
+      ]
+    },
+    {
+      "path": "11_agent-layer/decision-frameworks.yaml",
+      "entry_count": 4,
+      "entries": [
+        "agent.decision-ladder",
+        "agent.evidence-volatility-matrix",
+        "agent.safe-defaults-when-uncertain",
+        "agent.tradeoff-explicitness"
+      ]
+    },
+    {
+      "path": "11_agent-layer/override-rules.yaml",
+      "entry_count": 2,
+      "entries": [
+        "agent.override.process",
+        "agent.override.p0-exception"
+      ]
+    },
+    {
+      "path": "12_maintenance/deprecation-policy.yaml",
+      "entry_count": 2,
+      "entries": [
+        "maint.deprecation.mark-entry",
+        "maint.deprecation.migrate-archive"
+      ]
+    },
+    {
+      "path": "12_maintenance/review-cadences.yaml",
+      "entry_count": 2,
+      "entries": [
+        "maint.cadence.volatility-mapping",
+        "maint.cadence.verification-methods"
+      ]
+    },
+    {
+      "path": "12_maintenance/update-triggers.yaml",
+      "entry_count": 4,
+      "entries": [
+        "maint.trigger.framework-update",
+        "maint.trigger.security-advisory",
+        "maint.trigger.platform-change",
+        "maint.trigger.agent-failure"
+      ]
+    }
+  ],
+  "entry_index": {
+    "architecture.bounded-contexts": "01_foundations/architecture-principles.yaml",
+    "architecture.data-ownership-single-writer": "01_foundations/architecture-principles.yaml",
+    "architecture.dependency-direction": "01_foundations/architecture-principles.yaml",
+    "architecture.build-for-failure": "01_foundations/architecture-principles.yaml",
+    "foundation.correctness-over-convenience": "01_foundations/engineering-principles.yaml",
+    "foundation.simplicity-and-cohesion": "01_foundations/engineering-principles.yaml",
+    "foundation.explicit-contracts": "01_foundations/engineering-principles.yaml",
+    "foundation.testability-first": "01_foundations/engineering-principles.yaml",
+    "foundation.observability-as-feature": "01_foundations/engineering-principles.yaml",
+    "pattern.modular-monolith": "02_architecture/architecture-patterns.yaml",
+    "pattern.hexagonal-architecture": "02_architecture/architecture-patterns.yaml",
+    "pattern.event-driven-architecture": "02_architecture/architecture-patterns.yaml",
+    "pattern.microservices": "02_architecture/architecture-patterns.yaml",
+    "design.caching-strategy": "02_architecture/system-design-patterns.yaml",
+    "design.rate-limiting-backpressure": "02_architecture/system-design-patterns.yaml",
+    "design.idempotency-keys": "02_architecture/system-design-patterns.yaml",
+    "design.circuit-breakers": "02_architecture/system-design-patterns.yaml",
+    "design.sagas-compensations": "02_architecture/system-design-patterns.yaml",
+    "frontend.accessibility-baseline": "03_frontend/frontend-standards.yaml",
+    "frontend.performance-budgets": "03_frontend/frontend-standards.yaml",
+    "frontend.resilient-ui-states": "03_frontend/frontend-standards.yaml",
+    "frontend.state-boundaries": "03_frontend/frontend-standards.yaml",
+    "frontend.design-tokens": "03_frontend/frontend-standards.yaml",
+    "react.composition-over-inheritance": "03_frontend/react-patterns.yaml",
+    "react.controlled-vs-uncontrolled": "03_frontend/react-patterns.yaml",
+    "react.hooks-rules": "03_frontend/react-patterns.yaml",
+    "react.memoization-measured": "03_frontend/react-patterns.yaml",
+    "react.server-render-when-needed": "03_frontend/react-patterns.yaml",
+    "api.resource-modeling": "04_backend/api-design.yaml",
+    "api.error-model": "04_backend/api-design.yaml",
+    "api.pagination-filtering": "04_backend/api-design.yaml",
+    "api.versioning": "04_backend/api-design.yaml",
+    "api.idempotent-mutations": "04_backend/api-design.yaml",
+    "backend.validate-at-boundary": "04_backend/backend-standards.yaml",
+    "backend.stateless-services": "04_backend/backend-standards.yaml",
+    "backend.async-jobs": "04_backend/backend-standards.yaml",
+    "backend.structured-logging": "04_backend/backend-standards.yaml",
+    "backend.config-and-secrets": "04_backend/backend-standards.yaml",
+    "data.schema-migrations": "05_data/database-design.yaml",
+    "data.indexing-strategy": "05_data/database-design.yaml",
+    "data.transactions-consistency": "05_data/database-design.yaml",
+    "data.soft-delete": "05_data/database-design.yaml",
+    "data.retention-privacy": "05_data/database-design.yaml",
+    "auth.session-vs-token": "06_security/auth-patterns.yaml",
+    "auth.least-privilege": "06_security/auth-patterns.yaml",
+    "auth.mfa-privileged": "06_security/auth-patterns.yaml",
+    "auth.secure-password-storage": "06_security/auth-patterns.yaml",
+    "auth.separate-authn-authz": "06_security/auth-patterns.yaml",
+    "security.encryption-transit-rest": "06_security/security-best-practices.yaml",
+    "security.secrets-management": "06_security/security-best-practices.yaml",
+    "security.headers-csp": "06_security/security-best-practices.yaml",
+    "security.dependency-vuln-management": "06_security/security-best-practices.yaml",
+    "security.audit-logging": "06_security/security-best-practices.yaml",
+    "devops.vercel.environment-separation": "07_devops/vercel-deployment.yaml",
+    "devops.vercel.preview-deployments": "07_devops/vercel-deployment.yaml",
+    "devops.vercel.edge-vs-serverless": "07_devops/vercel-deployment.yaml",
+    "devops.vercel.rollback-strategy": "07_devops/vercel-deployment.yaml",
+    "ai.data-minimization": "08_ai/ai-integration.yaml",
+    "ai.prompt-injection-defense": "08_ai/ai-integration.yaml",
+    "ai.rag-attribution": "08_ai/ai-integration.yaml",
+    "ai.evals-guardrails": "08_ai/ai-integration.yaml",
+    "ai.human-in-the-loop": "08_ai/ai-integration.yaml",
+    "errors.user-safe-messages": "09_system-quality/error-handling.yaml",
+    "errors.retry-backoff": "09_system-quality/error-handling.yaml",
+    "errors.circuit-breaker": "09_system-quality/error-handling.yaml",
+    "errors.idempotent-retry": "09_system-quality/error-handling.yaml",
+    "errors.centralized-error-model": "09_system-quality/error-handling.yaml",
+    "perf.budgets": "09_system-quality/performance.yaml",
+    "perf.caching-layering": "09_system-quality/performance.yaml",
+    "perf.query-optimization": "09_system-quality/performance.yaml",
+    "perf.batching-and-async": "09_system-quality/performance.yaml",
+    "perf.load-testing": "09_system-quality/performance.yaml",
+    "repo.domain-packages": "10_repo/monorepo-structure.yaml",
+    "repo.boundary-enforcement": "10_repo/monorepo-structure.yaml",
+    "repo.shared-platform-libs": "10_repo/monorepo-structure.yaml",
+    "repo.tooling-automation": "10_repo/monorepo-structure.yaml",
+    "agent.audit.security": "11_agent-layer/audit-checklists.yaml",
+    "agent.audit.privacy": "11_agent-layer/audit-checklists.yaml",
+    "agent.audit.performance": "11_agent-layer/audit-checklists.yaml",
+    "agent.audit.ai-safety": "11_agent-layer/audit-checklists.yaml",
+    "agent.codegen.safe-defaults": "11_agent-layer/code-generation-rules.yaml",
+    "agent.codegen.repo-conventions": "11_agent-layer/code-generation-rules.yaml",
+    "agent.codegen.no-hidden-deps": "11_agent-layer/code-generation-rules.yaml",
+    "agent.codegen.tests-for-critical": "11_agent-layer/code-generation-rules.yaml",
+    "agent.decision-ladder": "11_agent-layer/decision-frameworks.yaml",
+    "agent.evidence-volatility-matrix": "11_agent-layer/decision-frameworks.yaml",
+    "agent.safe-defaults-when-uncertain": "11_agent-layer/decision-frameworks.yaml",
+    "agent.tradeoff-explicitness": "11_agent-layer/decision-frameworks.yaml",
+    "agent.override.process": "11_agent-layer/override-rules.yaml",
+    "agent.override.p0-exception": "11_agent-layer/override-rules.yaml",
+    "maint.deprecation.mark-entry": "12_maintenance/deprecation-policy.yaml",
+    "maint.deprecation.migrate-archive": "12_maintenance/deprecation-policy.yaml",
+    "maint.cadence.volatility-mapping": "12_maintenance/review-cadences.yaml",
+    "maint.cadence.verification-methods": "12_maintenance/review-cadences.yaml",
+    "maint.trigger.framework-update": "12_maintenance/update-triggers.yaml",
+    "maint.trigger.security-advisory": "12_maintenance/update-triggers.yaml",
+    "maint.trigger.platform-change": "12_maintenance/update-triggers.yaml",
+    "maint.trigger.agent-failure": "12_maintenance/update-triggers.yaml"
+  }
+}

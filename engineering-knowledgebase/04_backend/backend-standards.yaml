@@ -1,0 +1,231 @@
+version: 1
+entries:
+  - id: backend.validate-at-boundary
+    title: Validate at system boundaries
+    category: backend
+    summary: Validate all external inputs before processing.
+    definition: Input from users, APIs, and queues must be validated and normalized at entry points.
+    why_it_matters: Prevents injection, data corruption, and crashes.
+    priority_level: P0
+    confidence_score: 0.9
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any API endpoint or message consumer
+    avoid_when:
+      - internal trusted calls with validated payloads
+    implementation_rules:
+      - enforce schemas at request boundaries
+      - reject or sanitize invalid input
+      - log validation failures without sensitive data
+    tradeoffs:
+      - added validation work
+    anti_patterns:
+      - trusting client data without validation
+    override_allowed: true
+    override_conditions:
+      - payload originates from trusted and validated source
+    override_risks:
+      - injection and data quality issues
+    required_justification:
+      - proof of upstream validation and trust boundary
+    safer_alternatives:
+      - lightweight validation on critical fields
+    performance_impact: slight negative due to validation
+    security_impact: positive
+    cost_impact: neutral
+    agent_rules:
+      - require validation for all public inputs
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - security incident due to invalid input
+    deprecation_signals:
+      - boundary moved to a gateway with validation
+    sources:
+      - OWASP and API security guidance
+  - id: backend.stateless-services
+    title: Stateless services by default
+    category: backend
+    summary: Keep services stateless to improve scaling and reliability.
+    definition: Do not store user session state in service memory; use external stores for state.
+    why_it_matters: Enables horizontal scaling and easier deployments.
+    priority_level: P1
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - building web APIs and workers
+    avoid_when:
+      - single process tools with no scaling needs
+    implementation_rules:
+      - store session state in databases or caches
+      - avoid reliance on local file system for shared state
+    tradeoffs:
+      - extra external storage complexity
+    anti_patterns:
+      - sticky sessions required for correctness
+    override_allowed: true
+    override_conditions:
+      - controlled environment with no scaling requirement
+    override_risks:
+      - scaling limitations and state loss on deploy
+    required_justification:
+      - why stateless design is infeasible
+    safer_alternatives:
+      - minimal in-memory cache with safe invalidation
+    performance_impact: neutral to slight negative
+    security_impact: neutral
+    cost_impact: modest external storage cost
+    agent_rules:
+      - default to stateless service design
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - scaling constraints from stateful design
+    deprecation_signals:
+      - platform provides stateful primitives with guarantees
+    sources:
+      - Cloud-native architecture guidance
+  - id: backend.async-jobs
+    title: Asynchronous jobs for long tasks
+    category: backend
+    summary: Offload long running work to background jobs.
+    definition: Use queues and workers for tasks that exceed request time budgets.
+    why_it_matters: Improves responsiveness and reliability.
+    priority_level: P1
+    confidence_score: 0.79
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - tasks longer than typical request timeouts
+      - heavy IO or batch processing
+    avoid_when:
+      - simple short operations
+    implementation_rules:
+      - enqueue work with idempotent job handlers
+      - provide status tracking for clients
+    tradeoffs:
+      - eventual consistency for results
+    anti_patterns:
+      - performing long tasks inside request handlers
+    override_allowed: true
+    override_conditions:
+      - task duration is short and deterministic
+    override_risks:
+      - request timeouts and poor UX
+    required_justification:
+      - measured task duration within limits
+    safer_alternatives:
+      - split work into smaller steps
+    performance_impact: positive for responsiveness
+    security_impact: neutral
+    cost_impact: moderate queue and worker cost
+    agent_rules:
+      - push long tasks to queues by default
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - repeated request timeouts
+    deprecation_signals:
+      - platform supports long running requests safely
+    sources:
+      - Background job processing practices
+  - id: backend.structured-logging
+    title: Structured logging and tracing
+    category: backend
+    summary: Emit structured logs with correlation IDs.
+    definition: Logs should be machine-parseable and tied to request and user context.
+    why_it_matters: Enables fast debugging and incident response.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - production services and worker processes
+    avoid_when:
+      - local scripts with no production use
+    implementation_rules:
+      - include request IDs and trace IDs
+      - avoid logging sensitive data
+      - standardize log fields across services
+    tradeoffs:
+      - added instrumentation effort
+    anti_patterns:
+      - plain text logs without context
+    override_allowed: true
+    override_conditions:
+      - non-production tooling with no shared logs
+    override_risks:
+      - loss of debugging capability
+    required_justification:
+      - why structured logging is unnecessary
+    safer_alternatives:
+      - minimal structured logs for errors only
+    performance_impact: slight overhead
+    security_impact: positive when sensitive data is filtered
+    cost_impact: telemetry storage cost
+    agent_rules:
+      - require structured logs for production services
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - incidents with poor traceability
+    deprecation_signals:
+      - centralized logging changes format requirements
+    sources:
+      - Observability practices
+  - id: backend.config-and-secrets
+    title: Configuration and secrets management
+    category: backend
+    summary: Separate configuration from code and secure secrets.
+    definition: Use environment configuration and secret managers instead of hard-coded values.
+    why_it_matters: Prevents credential leaks and simplifies deployments.
+    priority_level: P0
+    confidence_score: 0.9
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any system with credentials or environment-specific settings
+    avoid_when:
+      - local throwaway scripts with no secrets
+    implementation_rules:
+      - store secrets in a dedicated manager
+      - avoid committing secrets to source control
+      - validate presence of required config at startup
+    tradeoffs:
+      - operational overhead for secret rotation
+    anti_patterns:
+      - credentials in source code or logs
+    override_allowed: true
+    override_conditions:
+      - local development with dummy credentials
+    override_risks:
+      - secret leaks and breaches
+    required_justification:
+      - proof no real secrets are involved
+    safer_alternatives:
+      - use mock secrets in local environments
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: moderate operational cost for secret management
+    agent_rules:
+      - never store secrets in code or client apps
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - secret leakage incident
+    deprecation_signals:
+      - migration to new secrets platform
+    sources:
+      - Security best practices

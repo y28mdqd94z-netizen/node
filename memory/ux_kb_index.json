@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-03-29T15:20:27+1100",
+  "generated_at": "2026-03-29T18:53:01+1100",
   "root": "/Users/nickport/node/.agent-os/lib/ux-ui-knowledgebase",
-  "content_hash": "db7ae623138e46e001d2c028c253c975ac1747da4268a4007440cbdf1912b57a",
-  "files_indexed": 54,
-  "entries_indexed": 109,
+  "content_hash": "5afbd502066c7470c1fce08d855d6518bd6561aad6ccf6a80f7b173856d3c860",
+  "files_indexed": 57,
+  "entries_indexed": 143,
   "files": [
+    {
+      "path": "00_meta/entry-metadata-model.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
     {
       "path": "01_foundations/accessibility-principles.yaml",
       "type": "yaml",
@@ -202,6 +207,16 @@
     },
     {
       "path": "05_design-system/typography-system.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
+      "path": "05_design-system/ui-archetypes.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
+      "path": "05_design-system/ui-signature.yaml",
       "type": "yaml",
       "category": "design-system"
     },
@@ -530,6 +545,34 @@
       "source": "yaml"
     },
     {
+      "id": "list_row_structure",
+      "title": "list_row_structure",
+      "file": "04_components/component-composition-rules.yaml",
+      "category": "components",
+      "source": "yaml"
+    },
+    {
+      "id": "list_row_actions",
+      "title": "list_row_actions",
+      "file": "04_components/component-composition-rules.yaml",
+      "category": "components",
+      "source": "yaml"
+    },
+    {
+      "id": "inspector_usage",
+      "title": "inspector_usage",
+      "file": "04_components/component-composition-rules.yaml",
+      "category": "components",
+      "source": "yaml"
+    },
+    {
+      "id": "sheet_usage",
+      "title": "sheet_usage",
+      "file": "04_components/component-composition-rules.yaml",
+      "category": "components",
+      "source": "yaml"
+    },
+    {
       "id": "dashboard",
       "title": "dashboard",
       "file": "05_design-system/page-templates.yaml",
@@ -562,6 +605,160 @@
       "title": "auth",
       "file": "05_design-system/page-templates.yaml",
       "category": "design-system",
+      "source": "yaml"
+    },
+    {
+      "id": "document",
+      "title": "document",
+      "file": "05_design-system/page-templates.yaml",
+      "category": "design-system",
+      "source": "yaml"
+    },
+    {
+      "id": "list_first_overview",
+      "title": "list_first_overview",
+      "file": "05_design-system/ui-archetypes.yaml",
+      "category": "design-system",
+      "source": "yaml"
+    },
+    {
+      "id": "record_inspector",
+      "title": "record_inspector",
+      "file": "05_design-system/ui-archetypes.yaml",
+      "category": "design-system",
+      "source": "yaml"
+    },
+    {
+      "id": "guided_creation_sheet",
+      "title": "guided_creation_sheet",
+      "file": "05_design-system/ui-archetypes.yaml",
+      "category": "design-system",
+      "source": "yaml"
+    },
+    {
+      "id": "hidden_primary_action",
+      "title": "hidden_primary_action",
+      "file": "06_agent-application/anti-patterns.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "overloaded_navigation",
+      "title": "overloaded_navigation",
+      "file": "06_agent-application/anti-patterns.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "color_only_status",
+      "title": "color_only_status",
+      "file": "06_agent-application/anti-patterns.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "no_empty_state_guidance",
+      "title": "no_empty_state_guidance",
+      "file": "06_agent-application/anti-patterns.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "unclear_errors",
+      "title": "unclear_errors",
+      "file": "06_agent-application/anti-patterns.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "missing_focus_states",
+      "title": "missing_focus_states",
+      "file": "06_agent-application/anti-patterns.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "choice_radio",
+      "title": "choice_radio",
+      "file": "06_agent-application/component-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "choice_select",
+      "title": "choice_select",
+      "file": "06_agent-application/component-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "choice_multi",
+      "title": "choice_multi",
+      "file": "06_agent-application/component-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "input_short_text",
+      "title": "input_short_text",
+      "file": "06_agent-application/component-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "input_long_text",
+      "title": "input_long_text",
+      "file": "06_agent-application/component-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "input_numeric",
+      "title": "input_numeric",
+      "file": "06_agent-application/component-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "action_primary",
+      "title": "action_primary",
+      "file": "06_agent-application/component-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "action_secondary",
+      "title": "action_secondary",
+      "file": "06_agent-application/component-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "action_destructive",
+      "title": "action_destructive",
+      "file": "06_agent-application/component-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "feedback_toast",
+      "title": "feedback_toast",
+      "file": "06_agent-application/component-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "feedback_inline_error",
+      "title": "feedback_inline_error",
+      "file": "06_agent-application/component-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "feedback_banner",
+      "title": "feedback_banner",
+      "file": "06_agent-application/component-selection-logic.yaml",
+      "category": "agent-application",
       "source": "yaml"
     },
     {
@@ -659,6 +856,62 @@
       "id": "feedback",
       "title": "feedback",
       "file": "06_agent-application/interface-generation-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "nav_top",
+      "title": "nav_top",
+      "file": "06_agent-application/pattern-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "nav_sidebar",
+      "title": "nav_sidebar",
+      "file": "06_agent-application/pattern-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "nav_bottom",
+      "title": "nav_bottom",
+      "file": "06_agent-application/pattern-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "nav_hamburger",
+      "title": "nav_hamburger",
+      "file": "06_agent-application/pattern-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "form_single_column",
+      "title": "form_single_column",
+      "file": "06_agent-application/pattern-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "form_multi_step",
+      "title": "form_multi_step",
+      "file": "06_agent-application/pattern-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "data_basic_table",
+      "title": "data_basic_table",
+      "file": "06_agent-application/pattern-selection-logic.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "data_grid",
+      "title": "data_grid",
+      "file": "06_agent-application/pattern-selection-logic.yaml",
       "category": "agent-application",
       "source": "yaml"
     },
@@ -985,50 +1238,50 @@
       "source": "yaml"
     },
     {
-      "id": "hicks_law",
+      "id": "ux_law_hicks",
       "title": "Hick’s Law",
       "file": "taxonomy.yaml",
       "category": "unknown",
       "source": "yaml"
     },
     {
-      "id": "consistency",
+      "id": "principle_consistency",
       "title": "Consistency and Standards",
       "file": "taxonomy.yaml",
       "category": "unknown",
       "source": "yaml"
     },
     {
-      "id": "recognition_over_recall",
+      "id": "principle_recognition",
       "title": "Recognition over Recall",
       "file": "taxonomy.yaml",
       "category": "unknown",
       "source": "yaml"
     },
     {
-      "id": "top_nav_bar",
+      "id": "pattern_top_nav_bar",
       "title": "Top Navigation Bar",
       "file": "taxonomy.yaml",
       "category": "unknown",
       "source": "yaml"
     },
     {
-      "id": "wizard_onboarding",
-      "title": "Multi-Step Wizard",
+      "id": "pattern_multi_step_form",
+      "title": "Multi-Step Form",
       "file": "taxonomy.yaml",
       "category": "unknown",
       "source": "yaml"
     },
     {
-      "id": "button_primary",
+      "id": "component_button_primary",
       "title": "Primary Button",
       "file": "taxonomy.yaml",
       "category": "unknown",
       "source": "yaml"
     },
     {
-      "id": "input_text",
-      "title": "Text Input",
+      "id": "component_input",
+      "title": "Input",
       "file": "taxonomy.yaml",
       "category": "unknown",
       "source": "yaml"

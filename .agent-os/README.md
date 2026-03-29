@@ -33,11 +33,12 @@ Commands may be prefixed with `/` (e.g. `/.agent-os/agent /scan-repo`).
 Feature commands create a structured output template in `memory/outputs/` that follows the required format:
 
 1. SUMMARY  
-2. DESIGN DECISION  
-3. ARCHITECTURE  
-4. IMPLEMENTATION  
-5. SECURITY REVIEW  
-6. NEXT ACTIONS  
+2. MARKET ANALYSIS  
+3. DESIGN DECISION  
+4. ARCHITECTURE  
+5. IMPLEMENTATION  
+6. SECURITY REVIEW  
+7. NEXT ACTIONS  
 
 ## Risk Gating
 

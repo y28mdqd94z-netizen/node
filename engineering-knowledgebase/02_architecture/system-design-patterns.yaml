@@ -1,0 +1,238 @@
+version: 1
+entries:
+  - id: design.caching-strategy
+    title: Multi tier caching strategy
+    category: architecture
+    summary: Use layered caches to reduce latency and load.
+    definition: Apply in-memory, distributed, and edge caches based on data volatility and access patterns.
+    why_it_matters: Caching improves performance and reduces infrastructure cost.
+    priority_level: P1
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - read heavy workloads
+      - repeated access to expensive computations
+    avoid_when:
+      - highly sensitive or rapidly changing data without safe invalidation
+    implementation_rules:
+      - define cache keys and TTLs explicitly
+      - include cache invalidation strategy
+      - monitor hit rates and stale reads
+    tradeoffs:
+      - stale data risk
+      - added complexity for invalidation
+    anti_patterns:
+      - caching without invalidation plan
+    override_allowed: true
+    override_conditions:
+      - data consistency requirements prohibit caching
+    override_risks:
+      - higher latency and cost
+    required_justification:
+      - why caching is unsafe or ineffective
+    safer_alternatives:
+      - short TTL with explicit revalidation
+    performance_impact: positive
+    security_impact: neutral
+    cost_impact: lower compute cost, higher cache cost
+    agent_rules:
+      - always specify cache ownership and invalidation
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - major changes in traffic patterns
+    deprecation_signals:
+      - persistent stale data incidents
+    sources:
+      - Web performance practices
+  - id: design.rate-limiting-backpressure
+    title: Rate limiting and backpressure
+    category: architecture
+    summary: Protect services from abuse and overload.
+    definition: Apply request limits and backpressure to prevent cascading failures and abuse.
+    why_it_matters: Prevents resource exhaustion and improves reliability.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - public or multi-tenant APIs
+      - services with finite compute capacity
+    avoid_when:
+      - internal batch jobs with controlled load
+    implementation_rules:
+      - define quotas per user or client
+      - return clear retry guidance
+      - monitor throttling and false positives
+    tradeoffs:
+      - risk of throttling legitimate traffic
+    anti_patterns:
+      - unlimited endpoints without protection
+    override_allowed: true
+    override_conditions:
+      - strictly internal systems with guaranteed load control
+    override_risks:
+      - overload and denial of service exposure
+    required_justification:
+      - why upstream control is sufficient
+    safer_alternatives:
+      - soft limits with alerting
+    performance_impact: positive for stability
+    security_impact: positive
+    cost_impact: lower incident cost, small overhead
+    agent_rules:
+      - ensure rate limits exist for public endpoints
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - abuse or traffic spikes cause outages
+    deprecation_signals:
+      - platform provides centralized throttling
+    sources:
+      - API reliability practices
+  - id: design.idempotency-keys
+    title: Idempotency keys for writes
+    category: architecture
+    summary: Ensure write operations are safe to retry.
+    definition: Clients send idempotency keys so repeated requests do not create duplicates.
+    why_it_matters: Prevents double charges and duplicate state.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - payment or order creation
+      - any write with retries or at-least-once delivery
+    avoid_when:
+      - purely idempotent writes already guaranteed by design
+    implementation_rules:
+      - store keys with request fingerprint and expiry
+      - return the original response for repeated keys
+    tradeoffs:
+      - added storage and complexity
+    anti_patterns:
+      - retrying writes without deduplication
+    override_allowed: true
+    override_conditions:
+      - write is already naturally idempotent
+    override_risks:
+      - duplicate records and inconsistent state
+    required_justification:
+      - explanation of idempotent behavior
+    safer_alternatives:
+      - deterministic resource IDs
+    performance_impact: slight negative for lookup
+    security_impact: neutral
+    cost_impact: small storage cost
+    agent_rules:
+      - require idempotency for externally triggered writes
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - duplicate write incidents
+    deprecation_signals:
+      - switch to fully idempotent resource IDs
+    sources:
+      - Payment and API reliability practices
+  - id: design.circuit-breakers
+    title: Circuit breakers and bulkheads
+    category: architecture
+    summary: Prevent cascading failures by isolating unstable dependencies.
+    definition: Detect failing dependencies and short-circuit or isolate traffic to protect core services.
+    why_it_matters: Protects system availability during partial failures.
+    priority_level: P1
+    confidence_score: 0.76
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - calling third party services
+      - critical internal dependencies
+    avoid_when:
+      - low impact services without user-facing effects
+    implementation_rules:
+      - define error thresholds and time windows
+      - fail fast with fallback behavior
+      - monitor open circuit events
+    tradeoffs:
+      - potential temporary loss of features
+    anti_patterns:
+      - endless retries without circuit breaking
+    override_allowed: true
+    override_conditions:
+      - dependency is fully resilient and controlled
+    override_risks:
+      - cascading failures and outages
+    required_justification:
+      - evidence dependency is reliable under load
+    safer_alternatives:
+      - aggressive timeouts and limited retries
+    performance_impact: positive for stability, slight overhead
+    security_impact: neutral
+    cost_impact: neutral
+    agent_rules:
+      - use circuit breakers for critical external calls
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - outages caused by dependency instability
+    deprecation_signals:
+      - platform provides managed resilience features
+    sources:
+      - Resilience engineering patterns
+  - id: design.sagas-compensations
+    title: Sagas and compensating actions
+    category: architecture
+    summary: Coordinate multi-step workflows without distributed transactions.
+    definition: Use a saga to execute steps and apply compensations on failure.
+    why_it_matters: Enables reliable workflows across services without tight coupling.
+    priority_level: P2
+    confidence_score: 0.7
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - multi-service workflows with rollback requirements
+      - long running business processes
+    avoid_when:
+      - single database transactions are sufficient
+    implementation_rules:
+      - design explicit compensating actions
+      - maintain durable state for saga progress
+      - ensure idempotent step execution
+    tradeoffs:
+      - complex state management
+      - eventual consistency
+    anti_patterns:
+      - hidden compensations without audit trail
+    override_allowed: true
+    override_conditions:
+      - workflow can be redesigned to avoid cross-service transactions
+    override_risks:
+      - inconsistent state across services
+    required_justification:
+      - why saga complexity is not acceptable
+    safer_alternatives:
+      - single service ownership for workflow
+    performance_impact: neutral to negative
+    security_impact: neutral
+    cost_impact: higher implementation cost
+    agent_rules:
+      - use when distributed transactions are not feasible
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - repeated inconsistencies in multi-step workflows
+    deprecation_signals:
+      - workflow consolidated into single service
+    sources:
+      - Distributed workflow design patterns

@@ -1,0 +1,256 @@
+version: 1
+entries:
+  - id: foundation.correctness-over-convenience
+    title: Correctness over convenience
+    category: foundations
+    summary: Prioritize correctness and data integrity over speed of delivery.
+    definition: System behavior must remain correct for all specified inputs and states; convenience shortcuts are not acceptable when they risk correctness.
+    why_it_matters: Incorrectness causes data loss, security failures, and irreversible customer harm.
+    priority_level: P0
+    confidence_score: 0.9
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - handling persistent data, money, identity, or security boundaries
+      - implementing migrations or state transitions
+    avoid_when:
+      - throwaway prototypes with no user impact and no data persistence
+    implementation_rules:
+      - define invariants and validate at boundaries
+      - use transactions or compensating actions for multi-step writes
+      - add tests for critical invariants and edge cases
+    tradeoffs:
+      - slower initial delivery
+      - increased engineering effort
+    anti_patterns:
+      - fix in production mindset
+      - silent data corrections without audit trail
+    override_allowed: true
+    override_conditions:
+      - formal risk acceptance by owner
+      - change is reversible with rollback plan
+    override_risks:
+      - data corruption or loss
+      - security regressions
+    required_justification:
+      - why correctness checks are infeasible now
+      - how blast radius is contained and reversible
+    safer_alternatives:
+      - feature flag to limit exposure
+      - isolate change to non-critical datasets
+    performance_impact: negative when extra validation is added, usually acceptable
+    security_impact: positive
+    cost_impact: higher short term, lower long term
+    agent_rules:
+      - treat as non-negotiable for production data paths
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - incident or postmortem involving data integrity
+    deprecation_signals:
+      - regulatory change redefines correctness requirements
+    sources:
+      - General software engineering practice
+  - id: foundation.simplicity-and-cohesion
+    title: Simplicity and cohesion
+    category: foundations
+    summary: Prefer the simplest cohesive design that satisfies requirements.
+    definition: Reduce moving parts and keep related responsibilities together while minimizing coupling to unrelated parts.
+    why_it_matters: Complexity increases defects, slows delivery, and raises operational and cognitive cost.
+    priority_level: P1
+    confidence_score: 0.86
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - designing new modules or services
+      - refactoring for maintainability
+    avoid_when:
+      - safety or compliance requires redundancy beyond simple design
+    implementation_rules:
+      - keep module boundaries small and focused
+      - remove unused abstractions and indirection
+      - prefer composition and clear ownership
+    tradeoffs:
+      - may reduce flexibility for future unknowns
+      - can require refactoring as requirements evolve
+    anti_patterns:
+      - speculative abstractions
+      - excessive layering for trivial logic
+    override_allowed: true
+    override_conditions:
+      - domain complexity requires advanced patterns
+      - clear evidence simplicity would create operational risk
+    override_risks:
+      - higher maintenance cost
+      - increased onboarding time
+    required_justification:
+      - why added complexity is necessary now
+      - how complexity will be managed over time
+    safer_alternatives:
+      - phased design with incremental abstraction
+      - isolate complexity behind stable interfaces
+    performance_impact: usually positive due to fewer layers
+    security_impact: neutral
+    cost_impact: lower long term, neutral short term
+    agent_rules:
+      - default to simple designs unless requirements demand otherwise
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - significant maintenance cost from complexity
+    deprecation_signals:
+      - repeated refactors to remove unnecessary layers
+    sources:
+      - General software engineering practice
+  - id: foundation.explicit-contracts
+    title: Explicit contracts and interfaces
+    category: foundations
+    summary: Make boundaries explicit and validated.
+    definition: APIs, schemas, and module interfaces must be explicit, versioned, and validated to prevent hidden coupling.
+    why_it_matters: Implicit contracts cause integration failures and regressions.
+    priority_level: P1
+    confidence_score: 0.84
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - defining service boundaries or public APIs
+      - integrating third party systems
+    avoid_when:
+      - single file prototypes without external consumers
+    implementation_rules:
+      - define schemas for inputs and outputs
+      - version breaking changes
+      - add contract tests for critical integrations
+    tradeoffs:
+      - extra upfront documentation and validation work
+    anti_patterns:
+      - ad hoc payloads without schema
+      - breaking changes without versioning
+    override_allowed: true
+    override_conditions:
+      - interface is internal and short lived
+    override_risks:
+      - hidden coupling and regressions
+    required_justification:
+      - timeline and scope for temporary interface
+    safer_alternatives:
+      - lightweight schema validation with minimal docs
+    performance_impact: neutral to slight negative due to validation
+    security_impact: positive
+    cost_impact: neutral short term, lower long term
+    agent_rules:
+      - require explicit contracts for any shared boundary
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - recurring integration failures
+    deprecation_signals:
+      - repeated breaking changes without versioning
+    sources:
+      - HTTP and API best practices
+  - id: foundation.testability-first
+    title: Testability first
+    category: foundations
+    summary: Design systems so behavior can be verified with automated tests.
+    definition: Components and services should be deterministic, observable, and injectable to enable fast and reliable testing.
+    why_it_matters: Testability reduces regressions and increases delivery confidence.
+    priority_level: P1
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - building business critical logic
+      - integrating third party services
+    avoid_when:
+      - one-off prototypes with no expected reuse
+    implementation_rules:
+      - separate pure logic from side effects
+      - inject dependencies and clocks for determinism
+      - provide clear seams for mocks and fakes
+    tradeoffs:
+      - additional design effort
+      - occasional indirection
+    anti_patterns:
+      - tightly coupled global state
+      - non-deterministic tests
+    override_allowed: true
+    override_conditions:
+      - short lived experiment with no production impact
+    override_risks:
+      - hard to detect regressions
+    required_justification:
+      - why tests are not feasible now
+    safer_alternatives:
+      - add minimal smoke tests
+      - use feature flags and staged rollout
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: higher short term, lower long term
+    agent_rules:
+      - add tests for critical paths and invariants
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - regression caused by missing tests
+    deprecation_signals:
+      - test suite consistently failing to catch incidents
+    sources:
+      - General software engineering practice
+  - id: foundation.observability-as-feature
+    title: Observability as a feature
+    category: foundations
+    summary: Treat logs, metrics, and traces as first class product features.
+    definition: Systems must emit actionable telemetry for health, performance, and debugging without exposing sensitive data.
+    why_it_matters: Poor observability increases downtime and slows incident response.
+    priority_level: P1
+    confidence_score: 0.83
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - operating production services
+      - handling multi-step workflows or async jobs
+    avoid_when:
+      - local-only prototypes without production use
+    implementation_rules:
+      - add structured logs with correlation IDs
+      - emit key metrics and error rates
+      - trace critical request paths
+    tradeoffs:
+      - added instrumentation work
+      - telemetry storage cost
+    anti_patterns:
+      - unstructured logs without context
+      - logging sensitive data
+    override_allowed: true
+    override_conditions:
+      - service is non-production or fully internal
+    override_risks:
+      - slow incident response
+      - inability to diagnose failures
+    required_justification:
+      - why telemetry is unnecessary for this component
+    safer_alternatives:
+      - minimal health and error metrics
+    performance_impact: slight overhead, usually acceptable
+    security_impact: positive when sensitive data is filtered
+    cost_impact: moderate ongoing telemetry cost
+    agent_rules:
+      - ensure at least basic logs and metrics for production paths
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - incident delayed by lack of telemetry
+    deprecation_signals:
+      - logging policies change to require additional fields
+    sources:
+      - SRE and observability practices

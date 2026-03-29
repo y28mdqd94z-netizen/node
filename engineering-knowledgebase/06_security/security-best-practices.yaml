@@ -1,0 +1,227 @@
+version: 1
+entries:
+  - id: security.encryption-transit-rest
+    title: Encryption in transit and at rest
+    category: security
+    summary: Encrypt sensitive data during transport and storage.
+    definition: Use TLS for data in transit and encrypt data at rest where feasible.
+    why_it_matters: Reduces risk from interception and data breaches.
+    priority_level: P0
+    confidence_score: 0.9
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - handling sensitive or regulated data
+    avoid_when:
+      - truly public, non-sensitive content only
+    implementation_rules:
+      - enforce TLS for all external traffic
+      - use managed encryption at rest where available
+    tradeoffs:
+      - small performance overhead
+    anti_patterns:
+      - transmitting credentials over plain HTTP
+    override_allowed: true
+    override_conditions:
+      - data is fully public with no privacy implications
+    override_risks:
+      - data exposure in transit
+    required_justification:
+      - documented data classification showing no sensitivity
+    safer_alternatives:
+      - encrypt only sensitive fields
+    performance_impact: slight negative
+    security_impact: positive
+    cost_impact: minimal
+    agent_rules:
+      - require TLS and at-rest encryption for sensitive data
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - encryption policy updates
+    deprecation_signals:
+      - encryption standards updated
+    sources:
+      - Security compliance guidance
+  - id: security.secrets-management
+    title: Secrets management
+    category: security
+    summary: Store and rotate secrets securely.
+    definition: Use a dedicated secrets manager and rotate credentials regularly.
+    why_it_matters: Prevents credential leakage and reduces breach impact.
+    priority_level: P0
+    confidence_score: 0.9
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any service with credentials or API keys
+    avoid_when:
+      - local development with fake credentials
+    implementation_rules:
+      - store secrets outside source control
+      - rotate secrets on schedule or after exposure
+    tradeoffs:
+      - operational overhead
+    anti_patterns:
+      - secrets committed to git
+    override_allowed: true
+    override_conditions:
+      - local development only with mock secrets
+    override_risks:
+      - credential exposure
+    required_justification:
+      - proof that no real secrets are stored
+    safer_alternatives:
+      - local env files excluded from version control
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: moderate operational cost
+    agent_rules:
+      - never store secrets in code or client bundles
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - secret leak or rotation policy change
+    deprecation_signals:
+      - secrets platform migration
+    sources:
+      - Secrets management best practices
+  - id: security.headers-csp
+    title: Security headers and CSP
+    category: security
+    summary: Use HTTP security headers to reduce common attacks.
+    definition: Apply headers like CSP, HSTS, and X-Content-Type-Options.
+    why_it_matters: Mitigates XSS, clickjacking, and downgrade attacks.
+    priority_level: P1
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any web application with browser clients
+    avoid_when:
+      - non-browser APIs only
+    implementation_rules:
+      - define CSP with strict defaults
+      - enable HSTS where appropriate
+    tradeoffs:
+      - CSP can break third party scripts without tuning
+    anti_patterns:
+      - permissive CSP allowing unsafe-inline
+    override_allowed: true
+    override_conditions:
+      - legacy scripts require temporary relaxation
+    override_risks:
+      - increased XSS exposure
+    required_justification:
+      - why strict CSP is not feasible yet
+    safer_alternatives:
+      - use nonce based CSP for legacy scripts
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: low
+    agent_rules:
+      - apply standard security headers by default
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - new browser security guidance
+    deprecation_signals:
+      - CSP directives updated or deprecated
+    sources:
+      - OWASP web security guidance
+  - id: security.dependency-vuln-management
+    title: Dependency vulnerability management
+    category: security
+    summary: Monitor and remediate vulnerable dependencies.
+    definition: Track dependency advisories and patch quickly based on severity.
+    why_it_matters: Dependencies are a common attack vector.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - any software with third party dependencies
+    avoid_when:
+      - none
+    implementation_rules:
+      - enable automated vulnerability scanning
+      - define patch SLAs based on severity
+    tradeoffs:
+      - update churn and occasional breaking changes
+    anti_patterns:
+      - ignoring critical vulnerabilities
+    override_allowed: true
+    override_conditions:
+      - no available patch and mitigation in place
+    override_risks:
+      - exposure to known exploits
+    required_justification:
+      - mitigation plan and timeline
+    safer_alternatives:
+      - isolate vulnerable component behind strict controls
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: moderate maintenance cost
+    agent_rules:
+      - prioritize fixes for critical vulnerabilities
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - new vulnerability advisories
+    deprecation_signals:
+      - dependency end of life
+    sources:
+      - Security vulnerability management practices
+  - id: security.audit-logging
+    title: Audit logging for sensitive actions
+    category: security
+    summary: Record sensitive operations with immutable logs.
+    definition: Log admin actions, permission changes, and data exports.
+    why_it_matters: Enables forensic analysis and compliance.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - admin consoles and regulated data access
+    avoid_when:
+      - low risk internal tools
+    implementation_rules:
+      - log who, what, when, and where
+      - protect logs from tampering
+    tradeoffs:
+      - additional storage and privacy considerations
+    anti_patterns:
+      - logging sensitive data without access controls
+    override_allowed: true
+    override_conditions:
+      - low risk system with no sensitive actions
+    override_risks:
+      - lack of traceability for misuse
+    required_justification:
+      - why auditability is not required
+    safer_alternatives:
+      - minimal audit logs for critical actions only
+    performance_impact: slight overhead
+    security_impact: positive
+    cost_impact: moderate storage cost
+    agent_rules:
+      - require audit logs for privileged actions
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - compliance or audit failures
+    deprecation_signals:
+      - audit logging platform changes
+    sources:
+      - Compliance logging practices
