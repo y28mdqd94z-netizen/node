@@ -1,26 +1,30 @@
 spacing_system:
-  principle: "Use a consistent spacing scale (e.g., multiples of 4px or 8px)【6†L243-L252】."
-  recommendation: "Base spacing unit = 4px. Common gaps: 8px (small), 16px (medium), 24px (large), 32px (XL)."
+  principle: "Use a consistent spacing scale (multiples of 4px)."
+  recommendation: "Base spacing unit = 4px. Preferred gaps: 8px, 12px, 16px, 24px, 32px, 48px, 64px."
   do:
-    - "Use uniform vertical rhythm for text (line height 1.5× font-size)."
-    - "Group related elements with consistent gutters."
+    - "Use tighter spacing within sections (8-16px) and looser spacing between sections (24-32px)."
+    - "Use hairline separators for list rows instead of cards."
+    - "Align edges to create a calm vertical rhythm."
   dont:
-    - "Random or inconsistent margins. Avoid one-off spacing that breaks the rhythm."
+    - "Card walls with inconsistent padding."
+    - "One-off spacing values that break the rhythm."
   examples:
-    - "List items separated by 8px; sections by 24px."
-    - "Buttons in a toolbar spaced by 8px."
-  agent_rules: "Always snap layout to nearest grid increment. Check for off-by-one spacing as QA."
+    - "List rows: 12-16px vertical padding; sections: 24-32px."
+    - "Toolbar buttons: 8px gaps; grouped controls: 16px."
+  agent_rules: "Snap layout to the nearest 4px increment; prefer sectioned lists over card grids."
   references: []
 
 colour_system:
-  principle: "Define a limited palette (primary, secondary, neutrals) with semantic usage【18†L46-L53】."
-  recommendation: "One primary brand color, one accent, plus greys (white to black). Use high contrast (WCAG AA) between text and background."
+  principle: "Neutral-first palette with one accent used for action."
+  recommendation: "Use ink-like text colors, soft neutral surfaces, and a single accent for primary actions or active states."
   do:
-    - "Use color meaningfully: success (green), warning (yellow), danger (red)."
-    - "Test text for contrast: WCAG ratio ≥4.5:1 for normal text."
+    - "Use color to signal action and status, not decoration."
+    - "Use subtle surface tints for grouping, not heavy fills."
   dont:
-    - "Overuse bright colors. Avoid critical information conveyed by color alone (per accessibility)."
+    - "Multiple saturated accents on one screen."
+    - "Convey critical meaning by color alone."
   examples:
-    - "Buttons: Primary = brand blue, Secondary = gray; Error messages = red background."
-  agent_rules: "Enforce contrast rules on every color token. If adding color, define semantic name (e.g. 'color-success')."
+    - "Primary button uses the accent; secondary actions use neutral text."
+    - "Section backgrounds are 1-2 steps off white with hairline dividers."
+  agent_rules: "If more than one accent appears, reduce to one and use typography for hierarchy."
   references: []

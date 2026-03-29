@@ -1,0 +1,92 @@
+version: 1
+entries:
+  - id: maint.deprecation.mark-entry
+    title: Mark deprecated entries
+    category: maintenance
+    summary: Deprecate guidance that is outdated or unsafe.
+    definition: Mark entries as deprecated when evidence shows they are no longer valid.
+    why_it_matters: Prevents agents from using obsolete guidance.
+    priority_level: P1
+    confidence_score: 0.76
+    evidence_level: medium
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - evidence or platform changes invalidate guidance
+    avoid_when:
+      - guidance is still valid but needs minor edits
+    implementation_rules:
+      - add deprecation_signals and replacement entries
+      - update manifest and changelog
+    tradeoffs:
+      - requires ongoing curation
+    anti_patterns:
+      - deleting entries without replacement
+    override_allowed: true
+    override_conditions:
+      - entry remains relevant for legacy systems
+    override_risks:
+      - continued use of outdated guidance
+    required_justification:
+      - explicit legacy system dependency
+    safer_alternatives:
+      - add a legacy exception note
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: moderate maintenance cost
+    agent_rules:
+      - flag deprecated entries during retrieval
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - outdated guidance incidents
+    deprecation_signals:
+      - replacement entry published
+    sources:
+      - Documentation lifecycle practices
+  - id: maint.deprecation.migrate-archive
+    title: Migration and archival
+    category: maintenance
+    summary: Provide migration path and archive old guidance.
+    definition: Supply a replacement entry and archive deprecated guidance after a grace period.
+    why_it_matters: Ensures continuity and avoids confusion.
+    priority_level: P1
+    confidence_score: 0.74
+    evidence_level: medium
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - replacing an existing guideline
+    avoid_when:
+      - guidance still in active use without replacement
+    implementation_rules:
+      - document migration steps
+      - archive after agreed period
+    tradeoffs:
+      - ongoing maintenance effort
+    anti_patterns:
+      - removing guidance without migration path
+    override_allowed: true
+    override_conditions:
+      - legacy systems require indefinite support
+    override_risks:
+      - confusion between old and new guidance
+    required_justification:
+      - rationale for extended legacy support
+    safer_alternatives:
+      - tag as legacy and restrict usage
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: moderate maintenance cost
+    agent_rules:
+      - always provide migration guidance for replacements
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - major policy changes
+    deprecation_signals:
+      - migration complete and legacy usage ends
+    sources:
+      - Knowledgebase maintenance practices

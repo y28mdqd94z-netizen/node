@@ -1,0 +1,19 @@
+version: 1
+override_policy:
+  allowed_levels:
+    P0: only with formal risk acceptance
+    P1: allowed with documented tradeoff
+    P2: allowed with brief justification
+    P3: freely overrideable
+  required_fields:
+    - decision_owner
+    - rationale
+    - risks
+    - safer_alternatives_considered
+    - rollback_plan
+  decision_flow:
+    - identify conflict or constraint
+    - evaluate safer alternatives
+    - document justification and risks
+    - implement mitigation and monitoring
+    - review post-deployment impact

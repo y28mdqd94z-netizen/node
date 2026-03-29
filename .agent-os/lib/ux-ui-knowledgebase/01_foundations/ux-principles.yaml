@@ -16,6 +16,19 @@ principle_consistency:
   agent_rules: "Prefer existing patterns; document any deviations with rationale."
   tags: ["consistency", "standards", "learnability"]
   sources: ["Nielsen Norman Group: Consistency and Standards"]
+  priority: P0
+  evidence_level: A
+  confidence: 0.9
+  enforcement: hard
+  stability: stable
+  override_allowed: false
+  override_conditions: "Not applicable."
+  override_risks: "Legal and ethical failure; blocked users."
+  required_justification: "Not applicable."
+  safer_alternatives: "Rework design to meet contrast and input accessibility."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
 
 principle_visibility:
   title: "Visibility of System Status"
@@ -33,6 +46,19 @@ principle_visibility:
   agent_rules: "Every user action should trigger immediate visible feedback."
   tags: ["feedback", "system_status"]
   sources: ["Nielsen Norman Group: Visibility of System Status"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
 
 principle_user_control:
   title: "User Control and Freedom"
@@ -50,6 +76,19 @@ principle_user_control:
   agent_rules: "If an action is destructive, require confirmation and offer undo."
   tags: ["control", "recovery", "safety"]
   sources: ["Nielsen Norman Group: User Control and Freedom"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
 
 principle_recognition:
   title: "Recognition Over Recall"
@@ -67,6 +106,19 @@ principle_recognition:
   agent_rules: "Prefer visible options over hidden gestures."
   tags: ["memory", "discoverability"]
   sources: ["Nielsen Norman Group: Recognition over Recall"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
 
 principle_error_prevention:
   title: "Error Prevention"
@@ -84,6 +136,19 @@ principle_error_prevention:
   agent_rules: "Add guardrails for destructive or costly actions."
   tags: ["errors", "validation"]
   sources: ["Nielsen Norman Group: Error Prevention"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
 
 principle_flexibility:
   title: "Flexibility and Efficiency"
@@ -101,6 +166,19 @@ principle_flexibility:
   agent_rules: "Offer a simple path plus optional accelerators."
   tags: ["efficiency", "power_users"]
   sources: ["Nielsen Norman Group: Flexibility and Efficiency"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
 
 principle_minimalism:
   title: "Aesthetic and Minimalist Design"
@@ -118,6 +196,19 @@ principle_minimalism:
   agent_rules: "If an element does not serve a goal, remove it."
   tags: ["clarity", "focus"]
   sources: ["Nielsen Norman Group: Aesthetic and Minimalist Design"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
 
 principle_accessibility:
   title: "Accessibility and Inclusion"
@@ -135,3 +226,16 @@ principle_accessibility:
   agent_rules: "Treat accessibility as a baseline, not an enhancement."
   tags: ["accessibility", "inclusive_design"]
   sources: ["WCAG 2.2", "WAI-ARIA Authoring Practices"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."

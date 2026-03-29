@@ -1,1 +1,105 @@
 # Risks Log
+
+## 2026-03-29 17:32:57 +1100
+- Command: implement-feature
+- Title: Engineering knowledgebase for modern web app development
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-29 17:42:06 +1100
+- Command: design-feature
+- Title: Process question: industry research before design
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-29 17:57:29 +1100
+- Command: design-feature
+- Title: Market analysis + industry research before UX KB comparison
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-29 18:07:22 +1100
+- Command: design-feature
+- Title: Expand shadcn component reference
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-29 18:08:17 +1100
+- Command: implement-feature
+- Title: Add market analysis phase and KB comparison requirement
+- Risk: Market analysis adds lead time and can introduce bias or stale conclusions from sources.
+- Severity: low
+- Risk level: low
+- Mitigation: Time-box research, prioritize authoritative sources, and cite/compare across multiple domains; confirm for high-risk domains.
+
+## 2026-03-29 18:12:55 +1100
+- Command: ux-audit
+- Title: UX/UI Knowledgebase Audit
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-29 18:20:40 +1100
+- Command: implement-feature
+- Title: KB ranking + override model
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-29 18:31:48 +1100
+- Command: implement-feature
+- Title: Complete KB metadata + taxonomy alignment
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-29 18:39:51 +1100
+- Command: refine-ui
+- Title: Design system + UX/UI guidance refinement
+- Risk: Overfitting guidance to a specific aesthetic could limit flexibility for future product needs.
+- Severity: low
+- Risk level: low
+- Mitigation: Keep rules overrideable, emphasize decision checks, and preserve existing system structure to allow controlled adaptation.
+
+## 2026-03-29 18:51:27 +1100
+- Command: refine-ui
+- Title: Action recommendations: component rules + archetypes + token values
+- Risk: Token palette choices may not match future brand direction or contrast needs.
+- Severity: low
+- Risk level: low
+- Mitigation: Treat tokens as a baseline, verify contrast per accessibility rules, and allow overrides with documented rationale.
+
+## 2026-03-29 19:58:21 +1100
+- Command: implement-feature
+- Title: Update engineering knowledgebase location references
+- Risk: Tools or docs could still reference the old root path and fail to resolve entries.
+- Severity: low
+- Risk level: low
+- Mitigation: Keep search updated and update any newly discovered references during future audits.
+
+## 2026-03-29 20:04:38 +1100
+- Command: implement-feature
+- Title: Update token path references after move
+- Risk: Some documentation may still mention the old tokens path.
+- Severity: low
+- Risk level: low
+- Mitigation: Re-scan for remaining references and update as needed.
+
+## 2026-03-29 20:06:32 +1100
+- Command: implement-feature
+- Title: Update README with capabilities and install
+- Risk: README guidance may become stale if folder structure changes again.
+- Severity: low
+- Risk level: low
+- Mitigation: Update README whenever `.agent-os/` layout changes.

@@ -1,1 +1,79 @@
 # Decisions Log
+
+## 2026-03-29 17:32:57 +1100
+- Command: implement-feature
+- Title: Engineering knowledgebase for modern web app development
+- Decision:
+- Rationale:
+
+## 2026-03-29 17:42:06 +1100
+- Command: design-feature
+- Title: Process question: industry research before design
+- Decision:
+- Rationale:
+
+## 2026-03-29 17:57:29 +1100
+- Command: design-feature
+- Title: Market analysis + industry research before UX KB comparison
+- Decision:
+- Rationale:
+
+## 2026-03-29 18:07:22 +1100
+- Command: design-feature
+- Title: Expand shadcn component reference
+- Decision:
+- Rationale:
+
+## 2026-03-29 18:07:53 +1100
+- Command: implement-feature
+- Title: Add market analysis phase and KB comparison requirement
+- Decision: Insert a mandatory Market Analysis phase and output section; require domain/user/flow inference when unspecified; update task/output templates and skills to include market-analysis.
+- Rationale: Enforces industry benchmarking before UX decisions and ensures KB-informed implementation, matching requested workflow.
+
+## 2026-03-29 18:12:55 +1100
+- Command: ux-audit
+- Title: UX/UI Knowledgebase Audit
+- Decision:
+- Rationale:
+
+## 2026-03-29 18:20:40 +1100
+- Command: implement-feature
+- Title: KB ranking + override model
+- Decision:
+- Rationale:
+
+## 2026-03-29 18:31:48 +1100
+- Command: implement-feature
+- Title: Complete KB metadata + taxonomy alignment
+- Decision:
+- Rationale:
+
+## 2026-03-29 18:39:51 +1100
+- Command: refine-ui
+- Title: Design system + UX/UI guidance refinement
+- Decision: Add a compact UI signature and refine core design-system guidance (principles, hierarchy, spacing, color, typography, motion, templates, responsive rules) to encode a calm, systems-first style.
+- Rationale: Existing guidance was generic and under-specified; the refinements align the system to the stated influences and reduce drift toward card-heavy SaaS defaults while preserving the existing structure.
+
+## 2026-03-29 18:51:27 +1100
+- Command: refine-ui
+- Title: Action recommendations: component rules + archetypes + token values
+- Decision: Add component usage rules for list rows, inspectors, and sheets; add UI archetypes; codify a neutral-first token palette with semantic mappings.
+- Rationale: These additions translate the style intent into actionable composition guidance and concrete tokens, reducing future drift while keeping the existing system lightweight.
+
+## 2026-03-29 19:58:21 +1100
+- Command: implement-feature
+- Title: Update engineering knowledgebase location references
+- Decision: Update engineering knowledgebase manifest root to the new .agent-os/lib location.
+- Rationale: Keeps retrieval metadata accurate after the folder move and avoids stale path resolution.
+
+## 2026-03-29 20:04:38 +1100
+- Command: implement-feature
+- Title: Update token path references after move
+- Decision: Update all token references to .agent-os/tokens after the folder move.
+- Rationale: Keeps documentation and KB paths consistent with the new location to avoid broken lookups.
+
+## 2026-03-29 20:06:32 +1100
+- Command: implement-feature
+- Title: Update README with capabilities and install
+- Decision: Expand README to include capability overview, install steps, and knowledgebase locations.
+- Rationale: Provides clear onboarding and sets expectations for what the repo delivers.

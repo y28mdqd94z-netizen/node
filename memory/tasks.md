@@ -1,1 +1,343 @@
 # Tasks
+
+## 2026-03-29 17:32:57 +1100
+- Command: implement-feature
+- Title: Engineering knowledgebase for modern web app development
+- Risk level: low
+- Skills invoked: implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Think:
+- UX Design:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-03-29 17:42:06 +1100
+- Command: design-feature
+- Title: Process question: industry research before design
+- Risk level: low
+- Skills invoked: choose-ui-pattern, simplify-flow, reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, select-patterns, select-components
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Think:
+- UX Design:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-03-29 17:57:29 +1100
+- Command: design-feature
+- Title: Market analysis + industry research before UX KB comparison
+- Risk level: low
+- Skills invoked: choose-ui-pattern, simplify-flow, reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, select-patterns, select-components
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Think:
+- UX Design:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-03-29 18:07:22 +1100
+- Command: design-feature
+- Title: Expand shadcn component reference
+- Risk level: low
+- Skills invoked: market-analysis, choose-ui-pattern, simplify-flow, reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, select-patterns, select-components
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-03-29 18:12:55 +1100
+- Command: ux-audit
+- Title: UX/UI Knowledgebase Audit
+- Risk level: low
+- Skills invoked: accessibility-check, reduce-cognitive-load, ux-evaluation-checks
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-03-29 18:20:40 +1100
+- Command: implement-feature
+- Title: KB ranking + override model
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-03-29 18:31:48 +1100
+- Command: implement-feature
+- Title: Complete KB metadata + taxonomy alignment
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-03-29 18:39:51 +1100
+- Command: refine-ui
+- Title: Design system + UX/UI guidance refinement
+- Risk level: low
+- Skills invoked: reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, ux-evaluation-checks
+- Orchestrator: required
+- Routing decisions: Orchestrator routed to UX audit + design-system refinement using existing KB as baseline.
+- Phase gate status: Discovery complete; Market Analysis complete (user-provided influences); UX Design complete; Implementation complete; Validation complete; Security Review not applicable; Documentation complete.
+- Status: completed
+- Discovery: Repo contains Agent OS + UX/UI knowledgebase; design-system guidance is generic and memory/design_system.json is a stub.
+- Market Analysis: Influence set anchored to Apple iOS/Notes, Linear, Notion, Braun; no external research performed.
+- UX KB Comparison: Reviewed UI review checklist, interface-generation rules, and critique-mode rules for hierarchy and feedback.
+- Think: Refine existing guidance and add a compact UI signature rather than introduce a new system.
+- UX Design: Encode calm, minimal, high-signal hierarchy with progressive disclosure and clear next action.
+- Architecture: Docs-only changes; no runtime impact.
+- Implementation: Updated design-system guidance files, added ui-signature, updated memory/design_system.json, ran kb-update.
+- Validation (type safety, input validation, error handling, edge cases): Not applicable for documentation-only changes.
+- Security Review: Not applicable for documentation-only changes.
+- UX Refinement: Reduced card-heavy bias, emphasized lists, sheets, and hierarchy rules.
+- Documentation: Updated decisions.log and risks.log.
+- Failure points: None identified (documentation-only changes).
+- Fallback UX: Not applicable.
+- Retry logic: Not applicable.
+- Safe error messages: Not applicable.
+- Observability (logging, error tracking, performance): Not applicable.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Added UI signature to reduce style drift.
+- Updates to skills/patterns/components: Refined design-system principles, hierarchy, spacing, color, typography, motion, templates, responsive rules.
+- Refactor targets: None.
+
+## 2026-03-29 18:51:27 +1100
+- Command: refine-ui
+- Title: Action recommendations: component rules + archetypes + token values
+- Risk level: low
+- Skills invoked: reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, ux-evaluation-checks
+- Orchestrator: required
+- Routing decisions: Orchestrator routed to UX refinement to action follow-up recommendations in the existing KB.
+- Phase gate status: Discovery complete; Market Analysis complete (user-provided influences); UX Design complete; Implementation complete; Validation complete; Security Review not applicable; Documentation complete.
+- Status: completed
+- Discovery: Existing KB lacked component usage rules for list/inspector/sheet patterns and had no concrete token values; archetypes were not explicitly encoded.
+- Market Analysis: Influence set unchanged (Apple iOS/Notes, Linear, Notion, Braun).
+- UX KB Comparison: Used UI review checklist and interface-generation hierarchy/feedback rules to keep changes consistent with existing evaluation criteria.
+- Think: Add minimal, composable guidance rather than new systems; codify tokens to reduce visual drift.
+- UX Design: Reinforced list-first layouts, inspector usage, sheet-based flows, and quiet action hierarchy.
+- Architecture: Docs-only changes; no runtime impact.
+- Implementation: Added component composition rules; added UI archetypes; created neutral-first token files; updated design system baseline; ran kb-update.
+- Validation (type safety, input validation, error handling, edge cases): Not applicable for documentation-only changes.
+- Security Review: Not applicable for documentation-only changes.
+- UX Refinement: Reduced action clutter and card-heavy bias; strengthened inspector/sheet guidance.
+- Documentation: Updated decisions.log, risks.log, and output template.
+- Failure points: None identified (documentation-only changes).
+- Fallback UX: Not applicable.
+- Retry logic: Not applicable.
+- Safe error messages: Not applicable.
+- Observability (logging, error tracking, performance): Not applicable.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Added archetypes and tokens to reduce future drift.
+- Updates to skills/patterns/components: Component composition rules extended; design system archetypes added.
+- Refactor targets: None.
+
+## 2026-03-29 19:58:21 +1100
+- Command: implement-feature
+- Title: Update engineering knowledgebase location references
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions: Orchestrator routed to implementation to align manifest paths with new folder location.
+- Phase gate status: Discovery complete; Market Analysis complete (local change); Implementation complete; Validation complete; Security Review not applicable; Documentation complete.
+- Status: completed
+- Discovery: Engineering knowledgebase moved under .agent-os/lib; manifest root still pointed to old path.
+- Market Analysis: Not applicable (local filesystem update only).
+- UX KB Comparison: Not applicable.
+- Think: Update manifest root to reflect the new location.
+- UX Design: Not applicable.
+- Architecture: Docs-only change.
+- Implementation: Updated .agent-os/lib/engineering-knowledgebase/manifest.json root path.
+- Validation (type safety, input validation, error handling, edge cases): Not applicable.
+- Security Review: Not applicable.
+- UX Refinement: Not applicable.
+- Documentation: Updated decisions.log and risks.log; updated output template.
+- Failure points: None identified.
+- Fallback UX: Not applicable.
+- Retry logic: Not applicable.
+- Safe error messages: Not applicable.
+- Observability (logging, error tracking, performance): Not applicable.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Consolidated knowledgebase location to reduce path confusion.
+- Updates to skills/patterns/components: None.
+- Refactor targets: None.
+
+## 2026-03-29 20:04:38 +1100
+- Command: implement-feature
+- Title: Update token path references after move
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions: Orchestrator routed to implementation to update references after token folder move.
+- Phase gate status: Discovery complete; Market Analysis not applicable; Implementation complete; Validation complete; Security Review not applicable; Documentation complete.
+- Status: completed
+- Discovery: Token references still pointed to `tokens/` after move into `.agent-os/tokens/`.
+- Market Analysis: Not applicable (local path update only).
+- UX KB Comparison: Not applicable.
+- Think: Update all references to the new path in KB and memory artifacts.
+- UX Design: Not applicable.
+- Architecture: Docs-only change.
+- Implementation: Updated token paths in memory/design_system.json, tokens-strategy, and output notes.
+- Validation (type safety, input validation, error handling, edge cases): Not applicable.
+- Security Review: Not applicable.
+- UX Refinement: Not applicable.
+- Documentation: Updated decisions.log, risks.log, and output template.
+- Failure points: None identified.
+- Fallback UX: Not applicable.
+- Retry logic: Not applicable.
+- Safe error messages: Not applicable.
+- Observability (logging, error tracking, performance): Not applicable.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Reduced path confusion by consolidating references.
+- Updates to skills/patterns/components: Tokens strategy path references updated.
+- Refactor targets: None.
+
+## 2026-03-29 20:06:32 +1100
+- Command: implement-feature
+- Title: Update README with capabilities and install
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions: Orchestrator routed to implementation for README updates.
+- Phase gate status: Discovery complete; Market Analysis not applicable; Implementation complete; Validation complete; Security Review not applicable; Documentation complete.
+- Status: completed
+- Discovery: README lacked capability overview and install guidance.
+- Market Analysis: Not applicable (documentation update only).
+- UX KB Comparison: Not applicable.
+- Think: Add a concise capability list and install steps for direct use and embedding in another repo.
+- UX Design: Not applicable.
+- Architecture: Docs-only change.
+- Implementation: Updated README with capabilities, install guidance, and knowledgebase locations.
+- Validation (type safety, input validation, error handling, edge cases): Not applicable.
+- Security Review: Not applicable.
+- UX Refinement: Not applicable.
+- Documentation: Updated decisions.log, risks.log, and output template.
+- Failure points: None identified.
+- Fallback UX: Not applicable.
+- Retry logic: Not applicable.
+- Safe error messages: Not applicable.
+- Observability (logging, error tracking, performance): Not applicable.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Clarified onboarding and repo scope in README.
+- Updates to skills/patterns/components: None.
+- Refactor targets: None.

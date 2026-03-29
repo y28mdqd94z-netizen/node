@@ -23,7 +23,19 @@ pattern_checklist_onboarding:
   implementation_notes: "Limit to 3-5 high-impact steps."
   evaluation_criteria:
     - "Users reach activation within first session."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [onboarding, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users reach activation within first session."
 pattern_guided_tour:
   pattern_name: "Guided Tour"
   problem_solved: "Introduces key UI areas for first-time users."
@@ -49,7 +61,19 @@ pattern_guided_tour:
   implementation_notes: "Personalize steps based on role."
   evaluation_criteria:
     - "Users can recall key areas after the tour."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [onboarding, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can recall key areas after the tour."
 pattern_sample_data:
   pattern_name: "Sample Data Seeding"
   problem_solved: "Shows value before users enter their own data."
@@ -74,4 +98,17 @@ pattern_sample_data:
     - "Sample data that looks like real user data."
   implementation_notes: "Separate sample data from production records."
   evaluation_criteria:
+    - "Users understand product value before data entry."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [onboarding, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Users understand product value before data entry."

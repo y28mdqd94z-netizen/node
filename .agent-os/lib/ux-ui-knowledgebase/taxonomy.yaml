@@ -1,37 +1,37 @@
 laws:
-  - id: hicks_law
+  - id: ux_law_hicks
     title: "Hick’s Law"
-    related_principles: ["cognitive-load", "pareto_principle", "miller_law"]
+    related_principles: ["principle_minimalism", "principle_recognition"]
 
 principles:
-  - id: consistency
+  - id: principle_consistency
     title: "Consistency and Standards"
-    related_laws: ["jakobs_law", "occams_razor"]
-    related_patterns: ["standard_navigation", "uniform_form_layout"]
-  - id: recognition_over_recall
+    related_laws: ["ux_law_jakobs"]
+    related_patterns: ["pattern_top_nav_bar", "pattern_sidebar_nav"]
+  - id: principle_recognition
     title: "Recognition over Recall"
-    related_laws: ["millers_law", "serial_position_effect"]
+    related_laws: ["ux_law_millers", "ux_law_serial_position"]
 
 patterns:
-  - id: top_nav_bar
+  - id: pattern_top_nav_bar
     title: "Top Navigation Bar"
     solves: "Global site navigation"
-    related_components: ["navigation_menu", "dropdown_menu"]
-  - id: wizard_onboarding
-    title: "Multi-Step Wizard"
-    solves: "Complex onboarding or form workflows"
+    related_components: ["component_navigation_menu", "component_dropdown_menu"]
+  - id: pattern_multi_step_form
+    title: "Multi-Step Form"
+    solves: "Complex form workflows or long data entry"
 
 components:
-  - id: button_primary
+  - id: component_button_primary
     title: "Primary Button"
     family: "Button"
     jobs_to_be_done: ["submit", "confirm action"]
-  - id: input_text
-    title: "Text Input"
+  - id: component_input
+    title: "Input"
     family: "Input"
     jobs_to_be_done: ["collect text data from user"]
 
 templates:
   - id: dashboard_main
     title: "Dashboard Layout"
-    includes_patterns: ["top_nav_bar", "sidebar_nav", "search_filter"]
+    includes_patterns: ["pattern_top_nav_bar", "pattern_sidebar_nav", "pattern_global_search"]

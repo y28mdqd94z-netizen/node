@@ -1,5 +1,15 @@
 flow_design:
   title: "First-Time User Flow"
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "User cohort is primarily expert or flow is optional."
+  override_risks: "Novices become overwhelmed or abandon."
+  required_justification: "Explain user mix and provide guidance for novices."
+  safer_alternatives: "Offer an optional walkthrough or guided mode."
   rules:
     - "Chunk onboarding into 3–5 minimal steps (Hick, Miller) with progress indicator (Goal Gradient)."
     - "Use plain language and tooltips (Recognition over Recall, Consistency)."
@@ -8,6 +18,16 @@ flow_design:
 
 pattern_selection:
   title: "Choosing Navigation Pattern"
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Content density or hierarchy depth conflicts with default pattern."
+  override_risks: "Navigation becomes harder to scan or discover."
+  required_justification: "Explain content density and add IA cues."
+  safer_alternatives: "Hybrid navigation with grouped sections."
   rules:
     - "If <6 sections and desktop, use top-nav bar; if >6 or deep structure, use sidebar【6†L216-L225】【26†L85-L94】."
     - "On mobile, use bottom tabs for 3–5 key sections, else hamburger menu for more."
@@ -16,6 +36,16 @@ pattern_selection:
 
 component_selection:
   title: "Button vs Link"
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Link is required for semantic routing or accessibility context."
+  override_risks: "Users may misinterpret action vs navigation."
+  required_justification: "Explain semantic or accessibility requirement."
+  safer_alternatives: "Button styled as link with proper semantics."
   rules:
     - "Use <button> (or actionable element) for operations (save, submit); use <a> (link style) for navigation or non-critical actions."
     - "Primary action should be a button; secondary/simple actions can be styled as text links."
@@ -23,6 +53,16 @@ component_selection:
 
 anti_patterns:
   title: "Common UI Anti-Patterns"
+  priority: P2
+  evidence_level: C
+  confidence: 0.6
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Anti-pattern is intentionally used with mitigation."
+  override_risks: "Usability regression or accessibility failure."
+  required_justification: "Document why the anti-pattern is necessary and how risk is mitigated."
+  safer_alternatives: "Replace with standard patterns from the knowledgebase."
   list:
     - "Non-Standard Controls: Using custom widgets for common tasks (e.g. color picker not behaving as expected)【32†L64-L73】."
     - "Form Overload: Packing too many fields in one page without grouping."

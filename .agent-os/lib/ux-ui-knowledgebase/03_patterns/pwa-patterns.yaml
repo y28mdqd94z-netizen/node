@@ -23,7 +23,19 @@ pattern_offline_first:
   implementation_notes: "Provide conflict resolution strategies."
   evaluation_criteria:
     - "Users can complete critical tasks offline."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: evolving
+  context_tags: [pwa, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can complete critical tasks offline."
 pattern_install_prompt:
   pattern_name: "Install Prompt"
   problem_solved: "Encourages adding the PWA to the device."
@@ -47,7 +59,19 @@ pattern_install_prompt:
   implementation_notes: "Respect browser guidelines for install prompts."
   evaluation_criteria:
     - "Install rate improves without harming engagement."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: evolving
+  context_tags: [pwa, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Install rate improves without harming engagement."
 pattern_sync_status:
   pattern_name: "Sync Status"
   problem_solved: "Communicates data sync state to users."
@@ -70,4 +94,17 @@ pattern_sync_status:
     - "Hiding sync failures."
   implementation_notes: "Show conflict status if needed."
   evaluation_criteria:
+    - "Users trust data freshness."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: evolving
+  context_tags: [pwa, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Users trust data freshness."

@@ -23,6 +23,6 @@ token_strategy:
     - "Deprecated tokens must remain for one release cycle."
 
   file_structure:
-    - "tokens/base.json"
-    - "tokens/semantic.json"
-    - "tokens/components.json"
+    - ".agent-os/tokens/base.json"
+    - ".agent-os/tokens/semantic.json"
+    - ".agent-os/tokens/components.json"

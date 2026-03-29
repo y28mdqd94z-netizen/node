@@ -1,43 +1,55 @@
 templates:
   - id: "dashboard"
-    name: "Dashboard"
-    description: "Overview of key metrics and actions."
+    name: "Overview"
+    description: "High-level status with a clear next action."
     layout:
-      - "Header with filters"
-      - "KPI cards row"
-      - "Primary chart"
-      - "Secondary table"
-    components: ["Card", "Chart", "Table", "Filter"]
+      - "Header with title, status line, and primary action"
+      - "Inline metrics row (text, not cards)"
+      - "Primary list or table"
+      - "Secondary insights in a collapsible section"
+    components: ["Header", "InlineStat", "Table", "List", "Filter", "SectionHeader"]
 
   - id: "list_detail"
     name: "List-Detail"
-    description: "Browse and manage records efficiently."
+    description: "Browse records with a calm, inspectable detail view."
     layout:
-      - "List on left"
-      - "Detail view on right"
-    components: ["Table", "Drawer", "Form"]
+      - "Edge-to-edge list on the left"
+      - "Detail pane or inspector on the right"
+      - "Inline row actions with secondary actions tucked"
+    components: ["List", "Table", "Inspector", "Form", "Drawer"]
 
   - id: "form"
     name: "Form Page"
-    description: "Collect user input with clear guidance."
+    description: "Collect input with staged sections and minimal distraction."
     layout:
-      - "Page title"
-      - "Form sections"
-      - "Primary CTA"
-    components: ["Form", "Input", "Button"]
+      - "Page title with context line"
+      - "Sectioned form blocks"
+      - "Primary CTA anchored at the end or in a sticky bar"
+    components: ["Form", "Input", "Button", "SectionHeader"]
 
   - id: "settings"
     name: "Settings"
-    description: "Manage preferences and account controls."
+    description: "Manage preferences with sectioned lists and minimal chrome."
     layout:
-      - "Sidebar navigation"
-      - "Sectioned settings"
-    components: ["Tabs", "Form", "Switch"]
+      - "Sidebar or top-level tabs"
+      - "Sectioned settings list"
+      - "Inline descriptions and clear toggles"
+    components: ["Tabs", "List", "Switch", "Form"]
 
   - id: "auth"
     name: "Authentication"
-    description: "Sign in, sign up, and account recovery."
+    description: "Sign in, sign up, and recovery with minimal surfaces."
     layout:
-      - "Centered form card"
-      - "Support links"
+      - "Centered form with brief context"
+      - "Single primary action"
+      - "Quiet support links"
     components: ["Card", "Input", "Button", "Link"]
+
+  - id: "document"
+    name: "Document"
+    description: "Long-form content with structured sections and inline actions."
+    layout:
+      - "Title with status line"
+      - "Content blocks separated by spacing and hairlines"
+      - "Inline actions near relevant sections"
+    components: ["SectionHeader", "List", "Button", "Link"]

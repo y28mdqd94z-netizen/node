@@ -1,30 +1,102 @@
 anti_patterns:
-  - name: "Hidden Primary Action"
+  - id: hidden_primary_action
+    name: "Hidden Primary Action"
     description: "Primary action is buried or visually equal to secondary actions."
     impact: "Users hesitate or choose the wrong action."
+    severity: high
+    detection_signals:
+      - "Primary action receives low click-through relative to task start."
+      - "Users ask where to complete the task."
+    contexts: ["forms", "multi-step flows", "critical tasks"]
     fix: "Give one clear primary CTA and reduce competing emphasis."
+    priority: P1
+    enforcement: soft
+    override_allowed: true
+    override_conditions: "Multiple primaries are required for expert workflows."
+    override_risks: "Increased error rate and hesitation."
+    required_justification: "Explain why multiple primaries are necessary and how hierarchy is preserved."
 
-  - name: "Overloaded Navigation"
+  - id: overloaded_navigation
+    name: "Overloaded Navigation"
     description: "Too many top-level items or inconsistent labels."
     impact: "Users cannot find key destinations."
+    severity: high
+    detection_signals:
+      - "High search usage for primary destinations."
+      - "Low first-click success rate."
+    contexts: ["navigation", "information_architecture"]
     fix: "Group items and reduce top-level choices."
+    priority: P1
+    enforcement: soft
+    override_allowed: true
+    override_conditions: "Compliance requires explicit access to many destinations."
+    override_risks: "Navigation becomes unscannable."
+    required_justification: "Provide compliance rationale and add grouping or search."
 
-  - name: "Color-Only Status"
+  - id: color_only_status
+    name: "Color-Only Status"
     description: "Status conveyed only by color."
     impact: "Fails accessibility and causes misinterpretation."
+    severity: high
+    detection_signals:
+      - "Users fail to interpret status without color."
+      - "WCAG non-compliance in audits."
+    contexts: ["status", "alerts", "badges"]
     fix: "Add text labels or icons alongside color."
+    priority: P0
+    enforcement: hard
+    override_allowed: false
+    override_conditions: "Not applicable."
+    override_risks: "Accessibility failure and legal risk."
+    required_justification: "Not applicable."
 
-  - name: "No Empty State Guidance"
+  - id: no_empty_state_guidance
+    name: "No Empty State Guidance"
     description: "Empty screens provide no direction."
     impact: "Users are stuck and abandon."
+    severity: medium
+    detection_signals:
+      - "High exit rates from empty views."
+      - "Support tickets asking how to start."
+    contexts: ["dashboards", "lists", "onboarding"]
     fix: "Explain why empty and provide next step."
+    priority: P1
+    enforcement: soft
+    override_allowed: true
+    override_conditions: "Empty state is transient and immediately resolved."
+    override_risks: "Users do not know how to proceed."
+    required_justification: "Explain why no guidance is needed."
 
-  - name: "Unclear Errors"
+  - id: unclear_errors
+    name: "Unclear Errors"
     description: "Generic error messages with no recovery guidance."
     impact: "Users cannot fix issues."
+    severity: high
+    detection_signals:
+      - "Repeated error submissions."
+      - "Support tickets without clear user action."
+    contexts: ["forms", "payments", "critical flows"]
     fix: "Describe cause and provide resolution steps."
+    priority: P0
+    enforcement: hard
+    override_allowed: false
+    override_conditions: "Not applicable."
+    override_risks: "Users are blocked and abandon."
+    required_justification: "Not applicable."
 
-  - name: "Missing Focus States"
+  - id: missing_focus_states
+    name: "Missing Focus States"
     description: "Interactive elements lack visible focus."
     impact: "Keyboard users cannot navigate."
+    severity: high
+    detection_signals:
+      - "Keyboard audit fails."
+      - "No visible focus ring on tab."
+    contexts: ["accessibility", "keyboard_navigation"]
     fix: "Add visible focus ring with sufficient contrast."
+    priority: P0
+    enforcement: hard
+    override_allowed: false
+    override_conditions: "Not applicable."
+    override_risks: "Keyboard users are blocked."
+    required_justification: "Not applicable."

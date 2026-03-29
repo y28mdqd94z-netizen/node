@@ -23,7 +23,19 @@ pattern_global_search:
   implementation_notes: "Prioritize results by relevance and recency."
   evaluation_criteria:
     - "Users can find top tasks within 2 queries."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [search, filter, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can find top tasks within 2 queries."
 pattern_faceted_filters:
   pattern_name: "Faceted Filters"
   problem_solved: "Allows narrowing results by multiple attributes."
@@ -49,7 +61,19 @@ pattern_faceted_filters:
   implementation_notes: "Provide clear reset and save options."
   evaluation_criteria:
     - "Users can narrow to relevant results quickly."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [search, filter, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can narrow to relevant results quickly."
 pattern_saved_filters:
   pattern_name: "Saved Filters and Views"
   problem_solved: "Allows users to return to common searches."
@@ -73,4 +97,17 @@ pattern_saved_filters:
     - "Saving views without clear feedback."
   implementation_notes: "Allow rename, delete, and share actions."
   evaluation_criteria:
+    - "Users adopt saved views for frequent tasks."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [search, filter, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Users adopt saved views for frequent tasks."

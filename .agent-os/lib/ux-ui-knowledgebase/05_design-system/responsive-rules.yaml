@@ -7,12 +7,14 @@ responsive:
     xl: 1440
 
   rules:
-    - "Prioritize core content on small screens."
+    - "Prioritize core content and the primary action on small screens."
     - "Collapse secondary navigation into menus on mobile."
     - "Increase touch target size on small screens."
     - "Avoid multi-column forms on mobile."
-    - "Use sticky CTAs for long mobile flows."
+    - "Use a sticky primary action for long mobile flows when needed."
+    - "Prefer a single-column reading flow on mobile."
 
   layout_guidelines:
     - "Use a 12-column grid on desktop, 4-6 on mobile."
     - "Maintain consistent gutters across breakpoints."
+    - "Avoid card grids on mobile; use lists with separators."

@@ -1,8 +1,8 @@
 motion:
   durations:
-    fast: 120
-    base: 200
-    slow: 320
+    fast: 100
+    base: 180
+    slow: 260
 
   easing:
     standard: "cubic-bezier(0.2, 0.0, 0.0, 1.0)"
@@ -11,10 +11,10 @@ motion:
 
   usage:
     - "Use fast transitions for hover and focus."
-    - "Use base duration for page-level animations."
+    - "Use base duration for page-level fades or subtle slides (6-12px)."
     - "Use slow duration sparingly for complex transitions."
 
   guidelines:
     - "Respect reduced motion preferences."
-    - "Avoid large motion that distracts from content."
+    - "Avoid bounce, overshoot, or large motion that distracts from content."
     - "Do not animate critical layout shifts."

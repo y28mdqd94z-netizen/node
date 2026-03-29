@@ -23,7 +23,19 @@ pattern_activity_feed:
   implementation_notes: "Batch similar events to reduce noise."
   evaluation_criteria:
     - "Users can identify important changes quickly."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [collaboration, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can identify important changes quickly."
 pattern_comments_thread:
   pattern_name: "Comments and Threads"
   problem_solved: "Allows discussion in context."
@@ -49,7 +61,19 @@ pattern_comments_thread:
   implementation_notes: "Provide edit history for transparency."
   evaluation_criteria:
     - "Users can follow and resolve threads."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [collaboration, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can follow and resolve threads."
 pattern_presence_avatar:
   pattern_name: "Presence Indicators"
   problem_solved: "Shows who is active in a shared space."
@@ -73,4 +97,17 @@ pattern_presence_avatar:
     - "Overloading UI with large presence indicators."
   implementation_notes: "Respect privacy and allow opt-out."
   evaluation_criteria:
+    - "Users can see who is working in real time."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [collaboration, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Users can see who is working in real time."

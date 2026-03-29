@@ -106,16 +106,16 @@ skills_for_command() {
   local cmd="$1"
   case "$cmd" in
     design-feature)
-      printf '%s' "choose-ui-pattern, simplify-flow, reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, select-patterns, select-components"
+      printf '%s' "market-analysis, choose-ui-pattern, simplify-flow, reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, select-patterns, select-components"
       ;;
     architect-feature)
       printf '%s' "define-architecture, state-management-check, performance-check, api-security-check, auth-boundary-check"
       ;;
     build-ui)
-      printf '%s' "implement-component, state-management-check, performance-check, frontend-security-check, accessibility-check, select-components"
+      printf '%s' "market-analysis, implement-component, state-management-check, performance-check, frontend-security-check, accessibility-check, select-components"
       ;;
     implement-feature)
-      printf '%s' "implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check"
+      printf '%s' "market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check"
       ;;
     refine-ui)
       printf '%s' "reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, ux-evaluation-checks"
@@ -149,14 +149,22 @@ write_output_template() {
 - Risk level: ${RISK_LEVEL}
 - Orchestrator: required (routing notes below)
 
-## 2. DESIGN DECISION
-- Discovery: intent, user goals, constraints, risks
+## 2. MARKET ANALYSIS
+- Domain/category inference + assumptions
+- Target users (if unspecified)
+- Key flows/features
+- Industry examples: patterns, features, components, styling
+- Sources (citations)
+- UX knowledgebase comparison (file + id/title)
+- Insights, gaps, opportunities
+
+## 3. DESIGN DECISION
 - Think: key reasoning and tradeoffs
 - UX design: flows, 1-2 actions per task, apply Hick/Fitts/Miller/Jakob/Tesler
 - States, transitions, feedback, empty/error/loading
 - Knowledgebase refs: laws/principles/patterns/components (file + id/title)
 
-## 3. ARCHITECTURE
+## 4. ARCHITECTURE
 - Boundaries
 - Data flow
 - API contracts
@@ -164,16 +172,16 @@ write_output_template() {
 - Failure points + fallback UX + retry logic + safe error messages
 - Observability (privacy-safe logging, error tracking, performance)
 
-## 4. IMPLEMENTATION
+## 5. IMPLEMENTATION
 - Real code (React + Tailwind default for UI)
 - Clear component structure, predictable state patterns, minimal abstraction
 - Validation: type safety, input validation, error handling, edge cases
 
-## 5. SECURITY REVIEW
+## 6. SECURITY REVIEW
 - Data exposure, auth weaknesses, API vulnerabilities, frontend risks, dependency risks
 - PII handling, token storage, API exposure, logging leaks, XSS, dependencies
 
-## 6. NEXT ACTIONS
+## 7. NEXT ACTIONS
 1.
 EOF
   printf '%s' "$path"
@@ -198,6 +206,8 @@ append_task() {
 - Phase gate status:
 - Status: pending
 - Discovery:
+- Market Analysis:
+- UX KB Comparison:
 - Think:
 - UX Design:
 - Architecture:

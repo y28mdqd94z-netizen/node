@@ -24,7 +24,19 @@ pattern_kpi_summary:
   implementation_notes: "Limit to 5-7 KPIs; offer drill-down for details."
   evaluation_criteria:
     - "Users can identify status within 10 seconds."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [dashboard, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can identify status within 10 seconds."
 pattern_drilldown_dashboard:
   pattern_name: "Drill-Down Dashboard"
   problem_solved: "Enables exploration from summary to detail."
@@ -50,7 +62,19 @@ pattern_drilldown_dashboard:
   implementation_notes: "Use consistent filter state across levels."
   evaluation_criteria:
     - "Users can trace a metric to its sources in <= 3 steps."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [dashboard, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can trace a metric to its sources in <= 3 steps."
 pattern_customizable_widgets:
   pattern_name: "Customizable Widgets"
   problem_solved: "Allows users to tailor dashboards to their goals."
@@ -75,4 +99,17 @@ pattern_customizable_widgets:
     - "Requiring customization before any data is shown."
   implementation_notes: "Start with a sensible default layout."
   evaluation_criteria:
+    - "Users can personalize without losing core functionality."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [dashboard, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Users can personalize without losing core functionality."

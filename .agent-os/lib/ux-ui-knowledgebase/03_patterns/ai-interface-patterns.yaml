@@ -23,7 +23,19 @@ pattern_prompt_box:
   implementation_notes: "Provide example prompts as optional chips."
   evaluation_criteria:
     - "Users can start a prompt without confusion."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: evolving
+  context_tags: [ai, interface, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can start a prompt without confusion."
 pattern_ai_suggestions:
   pattern_name: "AI Suggestions with Accept/Reject"
   problem_solved: "Presents AI output as suggestions, not final changes."
@@ -49,7 +61,19 @@ pattern_ai_suggestions:
   implementation_notes: "Provide confidence or rationale where possible."
   evaluation_criteria:
     - "Users trust and adopt suggestions."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: evolving
+  context_tags: [ai, interface, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users trust and adopt suggestions."
 pattern_review_apply:
   pattern_name: "Review and Apply Changes"
   problem_solved: "Lets users review AI changes before applying."
@@ -74,4 +98,17 @@ pattern_review_apply:
     - "Hiding the original content after changes."
   implementation_notes: "Include a rollback option."
   evaluation_criteria:
+    - "Users can approve changes confidently."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: evolving
+  context_tags: [ai, interface, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Users can approve changes confidently."

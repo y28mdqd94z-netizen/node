@@ -22,7 +22,19 @@ pattern_single_column_form:
   implementation_notes: "Use clear error and hint text."
   evaluation_criteria:
     - "High form completion rate with low error frequency."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [form, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "High form completion rate with low error frequency."
 pattern_multi_step_form:
   pattern_name: "Multi-Step Form"
   problem_solved: "Breaks complex forms into manageable steps."
@@ -48,7 +60,19 @@ pattern_multi_step_form:
   implementation_notes: "Save progress automatically where possible."
   evaluation_criteria:
     - "Users complete the form without confusion."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [form, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users complete the form without confusion."
 pattern_inline_validation:
   pattern_name: "Inline Validation"
   problem_solved: "Prevents errors before submission."
@@ -72,4 +96,17 @@ pattern_inline_validation:
     - "Blocking typing with immediate red errors."
   implementation_notes: "Reserve space for messages to prevent layout shift."
   evaluation_criteria:
+    - "Reduced submission errors."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [form, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Reduced submission errors."

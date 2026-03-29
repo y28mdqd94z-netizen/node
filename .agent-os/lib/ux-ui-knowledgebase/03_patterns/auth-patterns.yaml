@@ -23,7 +23,19 @@ pattern_sign_in:
   implementation_notes: "Support SSO where available."
   evaluation_criteria:
     - "Users can sign in without confusion."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [auth, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can sign in without confusion."
 pattern_password_reset:
   pattern_name: "Password Reset"
   problem_solved: "Helps users regain access securely."
@@ -48,7 +60,19 @@ pattern_password_reset:
   implementation_notes: "Use time-limited reset tokens."
   evaluation_criteria:
     - "Users can recover access reliably."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [auth, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can recover access reliably."
 pattern_mfa:
   pattern_name: "Multi-Factor Authentication"
   problem_solved: "Adds security to account access."
@@ -73,4 +97,17 @@ pattern_mfa:
     - "No recovery path if device is lost."
   implementation_notes: "Keep friction minimal and explain benefits."
   evaluation_criteria:
+    - "Users can complete MFA without support."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [auth, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Users can complete MFA without support."

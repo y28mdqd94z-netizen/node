@@ -1,28 +1,141 @@
 interface_generation:
   - id: choose_layout
-    rule: "Select a layout that matches the content density and task type."
+    rule: "Select a layout that matches content density and task type."
     notes: "Use list-detail for records, dashboards for summaries, forms for input."
+    priority: P2
+    evidence_level: C
+    confidence: 0.6
+    enforcement: soft
+    stability: evolving
+    context_tags: [layout, information_architecture]
+    use_when: "Choosing a new screen-level layout without existing system constraints."
+    avoid_when: "A design system or platform standard already defines layout."
+    tradeoffs: "Fitted layouts improve comprehension but may reduce system consistency."
+    override_allowed: true
+    override_conditions: "Legacy layout must be preserved for user familiarity or technical constraints."
+    override_risks: "Users may struggle to find key content if layout does not match task."
+    required_justification: "State the constraint and the mitigation (labels, IA cues, progressive disclosure)."
+    safer_alternatives: "Keep existing layout and adjust hierarchy or grouping instead."
+    decision_checks:
+      - "Primary content is found within 5 seconds in a quick scan test."
 
   - id: component_consistency
     rule: "Reuse existing components and tokens before creating new ones."
     notes: "Consistency improves learnability and speeds delivery."
+    priority: P1
+    evidence_level: C
+    confidence: 0.75
+    enforcement: soft
+    stability: stable
+    context_tags: [design_system, consistency]
+    use_when: "A component already exists for the job-to-be-done."
+    avoid_when: "Existing component cannot meet accessibility or functional requirements."
+    tradeoffs: "Reuse accelerates delivery but may constrain bespoke interactions."
+    override_allowed: true
+    override_conditions: "New interaction is required and cannot be composed from existing parts."
+    override_risks: "Fragmentation and inconsistent behavior across surfaces."
+    required_justification: "Explain why composition fails and how the new component will be governed."
+    safer_alternatives: "Compose an existing component with additional slots or variants."
+    decision_checks:
+      - "New component is mapped to a documented use case and added to the system."
 
   - id: hierarchy
-    rule: "Establish clear hierarchy with one primary action per view."
+    rule: "Establish clear hierarchy with one primary action per view by default."
     notes: "Avoid multiple competing CTAs."
+    priority: P1
+    evidence_level: C
+    confidence: 0.7
+    enforcement: soft
+    stability: stable
+    context_tags: [hierarchy, actions]
+    use_when: "Single-goal screens or novice flows."
+    avoid_when: "Power-user dashboards or parallel-task workflows."
+    tradeoffs: "Single primary improves clarity but can slow expert workflows."
+    override_allowed: true
+    override_conditions: "Multiple primaries are required to complete core tasks without extra navigation."
+    override_risks: "Users may hesitate or pick the wrong action."
+    required_justification: "State why multiple primaries improve outcomes and how hierarchy remains clear."
+    safer_alternatives: "Progressive disclosure or split views to preserve clarity."
+    decision_checks:
+      - "New users identify the next step within 3 seconds."
 
   - id: states
     rule: "Define all interaction states (hover, focus, disabled, loading, error)."
     notes: "Missing states cause confusion and accessibility issues."
+    priority: P0
+    evidence_level: B
+    confidence: 0.85
+    enforcement: hard
+    stability: stable
+    context_tags: [interaction, accessibility]
+    use_when: "Any interactive element or async action."
+    avoid_when: "Never; only omit a state if the platform does not support it."
+    tradeoffs: "More states add design and build effort but reduce errors and confusion."
+    override_allowed: true
+    override_conditions: "Platform lacks a state (e.g., hover on touch-only)."
+    override_risks: "Users lose feedback cues and make errors."
+    required_justification: "Describe the platform constraint and the alternative feedback provided."
+    safer_alternatives: "Use focus, pressed, or inline messaging as substitutes."
+    decision_checks:
+      - "All states are documented and visible in component specs."
 
   - id: accessibility
     rule: "Meet contrast and keyboard requirements by default."
     notes: "Treat accessibility as baseline, not an enhancement."
+    priority: P0
+    evidence_level: A
+    confidence: 0.9
+    enforcement: hard
+    stability: stable
+    context_tags: [accessibility, compliance]
+    use_when: "All user-facing interfaces."
+    avoid_when: "Never."
+    tradeoffs: "None acceptable for core access needs."
+    override_allowed: false
+    override_conditions: "Not applicable."
+    override_risks: "Legal and ethical failure; blocked users."
+    required_justification: "Not applicable."
+    safer_alternatives: "Rework visual design to meet contrast; add keyboard affordances."
+    decision_checks:
+      - "Keyboard-only navigation completes core tasks."
+      - "Contrast meets WCAG minimums."
 
   - id: responsiveness
-    rule: "Design for mobile-first constraints and scale up."
+    rule: "Design for mobile constraints and scale up when relevant."
     notes: "Ensure content and actions remain usable on small screens."
+    priority: P2
+    evidence_level: C
+    confidence: 0.65
+    enforcement: soft
+    stability: evolving
+    context_tags: [responsive, platform]
+    use_when: "Products used across devices or unknown device mix."
+    avoid_when: "Desktop-only enterprise tools with confirmed usage constraints."
+    tradeoffs: "Mobile-first can simplify layouts but may under-serve dense desktop workflows."
+    override_allowed: true
+    override_conditions: "Usage data confirms desktop-only context with dense workflows."
+    override_risks: "Mobile users may be blocked or forced to zoom/scroll."
+    required_justification: "Provide usage evidence and ensure at least functional small-screen access."
+    safer_alternatives: "Provide a minimal responsive mode for critical tasks."
+    decision_checks:
+      - "Core tasks are usable at 360px width or explicitly documented as unsupported."
 
   - id: feedback
     rule: "Provide immediate feedback on all user actions."
     notes: "Use toasts, inline messages, or banners as appropriate."
+    priority: P1
+    evidence_level: B
+    confidence: 0.8
+    enforcement: soft
+    stability: stable
+    context_tags: [feedback, system_status]
+    use_when: "Any action with latency or state change."
+    avoid_when: "Instant, reversible micro-actions where feedback would add noise."
+    tradeoffs: "Too much feedback can clutter UI; too little increases uncertainty."
+    override_allowed: true
+    override_conditions: "Action is immediate and clearly visible without additional feedback."
+    override_risks: "Users repeat actions or assume failure."
+    required_justification: "Explain why feedback is unnecessary and how state change is visible."
+    safer_alternatives: "Subtle inline state changes or status indicators."
+    decision_checks:
+      - "Users do not repeat actions due to uncertainty in testing."

@@ -1,0 +1,92 @@
+version: 1
+entries:
+  - id: agent.override.process
+    title: Override process
+    category: agent_layer
+    summary: Structured process for overriding guidance.
+    definition: Overrides require documented rationale, risks, and safer alternatives.
+    why_it_matters: Maintains accountability and reduces accidental risk.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: medium
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - deviating from P1 to P3 guidance
+    avoid_when:
+      - none
+    implementation_rules:
+      - document override in decision log
+      - include rollback plan and monitoring
+    tradeoffs:
+      - additional documentation effort
+    anti_patterns:
+      - silent deviations without record
+    override_allowed: true
+    override_conditions:
+      - constraints make default guidance infeasible
+    override_risks:
+      - hidden risk without accountability
+    required_justification:
+      - clear rationale and impact assessment
+    safer_alternatives:
+      - phased rollout with monitoring
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: low
+    agent_rules:
+      - require explicit override documentation
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - policy updates on overrides
+    deprecation_signals:
+      - new governance process replaces this
+    sources:
+      - Engineering governance practices
+  - id: agent.override.p0-exception
+    title: P0 exception policy
+    category: agent_layer
+    summary: P0 overrides require formal risk acceptance.
+    definition: P0 guidance can only be overridden with documented executive approval and mitigations.
+    why_it_matters: P0 rules protect security and data integrity.
+    priority_level: P0
+    confidence_score: 0.84
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - extreme constraints block P0 compliance
+    avoid_when:
+      - normal delivery pressure
+    implementation_rules:
+      - require written approval
+      - define mitigation and rollback plan
+    tradeoffs:
+      - risk acceptance by leadership
+    anti_patterns:
+      - bypassing P0 without formal approval
+    override_allowed: true
+    override_conditions:
+      - formal risk acceptance signed by owner
+    override_risks:
+      - security or data integrity compromise
+    required_justification:
+      - detailed impact analysis and mitigation
+    safer_alternatives:
+      - delay release until P0 is satisfied
+    performance_impact: neutral
+    security_impact: negative if overridden
+    cost_impact: potentially high if incident occurs
+    agent_rules:
+      - block release without formal P0 exception
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - incidents linked to P0 overrides
+    deprecation_signals:
+      - governance policy changes
+    sources:
+      - Risk management practices

@@ -22,7 +22,19 @@ pattern_bottom_nav:
   implementation_notes: "Use safe-area padding for devices with home indicator."
   evaluation_criteria:
     - "Users can reach key sections with one tap."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [mobile, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can reach key sections with one tap."
 pattern_swipe_actions:
   pattern_name: "Swipe Actions"
   problem_solved: "Enables quick actions on list items."
@@ -47,7 +59,19 @@ pattern_swipe_actions:
   implementation_notes: "Provide haptic feedback where appropriate."
   evaluation_criteria:
     - "Users discover and use swipe actions correctly."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [mobile, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users discover and use swipe actions correctly."
 pattern_fab:
   pattern_name: "Floating Action Button"
   problem_solved: "Surfaces a primary action in a scrolling view."
@@ -70,4 +94,17 @@ pattern_fab:
     - "Using FAB for navigation instead of action."
   implementation_notes: "Use safe-area offsets and clear iconography."
   evaluation_criteria:
+    - "Users find the primary action quickly."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [mobile, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Users find the primary action quickly."

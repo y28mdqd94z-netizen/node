@@ -1,7 +1,7 @@
 typography:
   font_families:
-    primary: "Inter, system-ui, sans-serif"
-    monospace: "JetBrains Mono, ui-monospace, monospace"
+    primary: "SF Pro Text, SF Pro Display, -apple-system, system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif"
+    monospace: "SF Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace"
 
   base_size: 16
   scale:
@@ -30,26 +30,22 @@ typography:
       line_height: 32
       weight: 600
     - name: "3xl"
-      size: 30
-      line_height: 38
-      weight: 700
-    - name: "4xl"
-      size: 36
-      line_height: 44
-      weight: 700
+      size: 28
+      line_height: 36
+      weight: 600
 
   text_styles:
     - name: "H1"
-      size: 36
-      line_height: 44
-      weight: 700
+      size: 28
+      line_height: 36
+      weight: 600
     - name: "H2"
-      size: 30
-      line_height: 38
-      weight: 700
-    - name: "H3"
       size: 24
       line_height: 32
+      weight: 600
+    - name: "H3"
+      size: 20
+      line_height: 28
       weight: 600
     - name: "Body"
       size: 16
@@ -66,5 +62,6 @@ typography:
 
   guidelines:
     - "Limit to 2 font families."
-    - "Use consistent line heights for vertical rhythm."
+    - "Use weight and spacing to create hierarchy before introducing new sizes."
+    - "Use sentence case for headings and labels."
     - "Avoid all-caps for long text."

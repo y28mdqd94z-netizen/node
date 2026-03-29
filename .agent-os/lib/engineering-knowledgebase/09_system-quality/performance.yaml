@@ -1,0 +1,227 @@
+version: 1
+entries:
+  - id: perf.budgets
+    title: Performance budgets
+    category: system_quality
+    summary: Define explicit performance targets.
+    definition: Set measurable limits for latency, throughput, and resource usage.
+    why_it_matters: Prevents performance regressions and cost overruns.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - production services and user-facing features
+    avoid_when:
+      - internal prototypes with no performance targets
+    implementation_rules:
+      - define budgets per critical endpoint
+      - monitor and alert on regressions
+    tradeoffs:
+      - additional monitoring and tuning effort
+    anti_patterns:
+      - performance goals without measurement
+    override_allowed: true
+    override_conditions:
+      - temporary spikes during migration
+    override_risks:
+      - degraded user experience
+    required_justification:
+      - timeline and mitigation plan
+    safer_alternatives:
+      - phased performance improvements
+    performance_impact: positive
+    security_impact: neutral
+    cost_impact: lower long term
+    agent_rules:
+      - require budgets for critical paths
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - performance regressions reported by users
+    deprecation_signals:
+      - new SLAs replace budgets
+    sources:
+      - SRE performance practices
+  - id: perf.caching-layering
+    title: Layered caching
+    category: system_quality
+    summary: Use caches at the right layer for performance gains.
+    definition: Combine edge, application, and database caching where appropriate.
+    why_it_matters: Reduces load and improves response times.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - read heavy endpoints
+    avoid_when:
+      - highly dynamic or sensitive data without safe invalidation
+    implementation_rules:
+      - choose cache layer based on data volatility
+      - monitor cache hit rates
+    tradeoffs:
+      - stale data risks
+    anti_patterns:
+      - caching without invalidation strategy
+    override_allowed: true
+    override_conditions:
+      - strict consistency requirements
+    override_risks:
+      - higher latency and infrastructure cost
+    required_justification:
+      - why caching cannot be applied safely
+    safer_alternatives:
+      - short TTL with revalidation
+    performance_impact: positive
+    security_impact: neutral
+    cost_impact: lower compute cost, higher cache cost
+    agent_rules:
+      - require explicit invalidation plans
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - cache staleness incidents
+    deprecation_signals:
+      - caching layer replaced or removed
+    sources:
+      - Web performance practices
+  - id: perf.query-optimization
+    title: Query optimization
+    category: system_quality
+    summary: Optimize queries to avoid hotspots and N+1 patterns.
+    definition: Use query analysis to reduce redundant and expensive database access.
+    why_it_matters: Query inefficiency is a common bottleneck.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - endpoints with high database usage
+    avoid_when:
+      - low traffic endpoints with small datasets
+    implementation_rules:
+      - analyze query plans
+      - batch or prefetch related data
+    tradeoffs:
+      - additional engineering effort
+    anti_patterns:
+      - N+1 queries in hot paths
+    override_allowed: true
+    override_conditions:
+      - traffic is low and optimization is unnecessary
+    override_risks:
+      - slow response times under load
+    required_justification:
+      - traffic and latency data supporting non-optimization
+    safer_alternatives:
+      - incremental optimization on hot paths only
+    performance_impact: positive
+    security_impact: neutral
+    cost_impact: lower database cost
+    agent_rules:
+      - always check for N+1 patterns on list views
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - slow query alerts
+    deprecation_signals:
+      - migration to different data store
+    sources:
+      - Database optimization practices
+  - id: perf.batching-and-async
+    title: Batching and async processing
+    category: system_quality
+    summary: Batch requests and use async processing to reduce load.
+    definition: Combine multiple operations into fewer calls and process asynchronously when appropriate.
+    why_it_matters: Reduces round trips and improves throughput.
+    priority_level: P1
+    confidence_score: 0.77
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - chatty services or large data operations
+    avoid_when:
+      - latency sensitive interactions requiring immediate response
+    implementation_rules:
+      - batch database operations where safe
+      - use async jobs for heavy processing
+    tradeoffs:
+      - increased complexity and eventual consistency
+    anti_patterns:
+      - excessive synchronous calls in loops
+    override_allowed: true
+    override_conditions:
+      - strict real-time requirements
+    override_risks:
+      - increased load and latency
+    required_justification:
+      - real-time requirement and justification
+    safer_alternatives:
+      - partial batching with limits
+    performance_impact: positive
+    security_impact: neutral
+    cost_impact: lower compute cost
+    agent_rules:
+      - recommend batching for repeated operations
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - throughput bottlenecks
+    deprecation_signals:
+      - architecture changes to streaming model
+    sources:
+      - Performance optimization practices
+  - id: perf.load-testing
+    title: Load and stress testing
+    category: system_quality
+    summary: Validate system behavior under expected and peak load.
+    definition: Use load tests to measure latency, throughput, and failure modes.
+    why_it_matters: Prevents performance surprises in production.
+    priority_level: P2
+    confidence_score: 0.72
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - before major launches or traffic spikes
+    avoid_when:
+      - tiny internal tools with no performance risk
+    implementation_rules:
+      - define realistic traffic profiles
+      - test degradation and recovery
+    tradeoffs:
+      - time and infrastructure cost
+    anti_patterns:
+      - relying only on unit tests for performance
+    override_allowed: true
+    override_conditions:
+      - low risk feature or low traffic
+    override_risks:
+      - unknown performance limits
+    required_justification:
+      - traffic expectations and risk assessment
+    safer_alternatives:
+      - targeted benchmarking of critical endpoints
+    performance_impact: positive via visibility
+    security_impact: neutral
+    cost_impact: moderate testing cost
+    agent_rules:
+      - recommend load tests for high risk launches
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - major scale changes
+    deprecation_signals:
+      - load testing replaced by continuous performance monitoring
+    sources:
+      - Performance testing practices

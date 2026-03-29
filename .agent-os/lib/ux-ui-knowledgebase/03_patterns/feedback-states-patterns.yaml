@@ -23,7 +23,19 @@ pattern_toast:
   implementation_notes: "Allow manual dismiss."
   evaluation_criteria:
     - "Users notice confirmation without interruption."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [feedback, states, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users notice confirmation without interruption."
 pattern_inline_alert:
   pattern_name: "Inline Alerts"
   problem_solved: "Shows feedback in context of the content."
@@ -48,7 +60,19 @@ pattern_inline_alert:
   implementation_notes: "Pair with field-level indicators."
   evaluation_criteria:
     - "Users can resolve issues quickly."
-
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [feedback, states, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can resolve issues quickly."
 pattern_system_banner:
   pattern_name: "System Status Banner"
   problem_solved: "Communicates system-wide issues or announcements."
@@ -73,4 +97,17 @@ pattern_system_banner:
     - "Permanent banners with outdated messages."
   implementation_notes: "Include timestamps for status messages."
   evaluation_criteria:
+    - "Users understand impact and next steps."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [feedback, states, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
     - "Users understand impact and next steps."

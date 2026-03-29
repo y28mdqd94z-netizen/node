@@ -1,32 +1,172 @@
 component_selection_logic:
   choices:
-    - if: "user selects one option from <= 5"
+    - id: choice_radio
+      if: "user selects one option from <= 5"
       use: "Radio Group"
-    - if: "user selects one option from > 5"
+      priority: P1
+      evidence_level: B
+      confidence: 0.8
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Options need compact horizontal layout or toggles."
+      override_risks: "Hidden options reduce clarity."
+      required_justification: "Explain layout constraint and provide labels."
+      safer_alternatives: "Segmented control with visible labels."
+
+    - id: choice_select
+      if: "user selects one option from > 5"
       use: "Select or Combobox"
-    - if: "user selects multiple options"
+      priority: P1
+      evidence_level: B
+      confidence: 0.8
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Options must remain visible for comparison."
+      override_risks: "Long lists increase cognitive load or scrolling."
+      required_justification: "Explain why visibility is required and add grouping."
+      safer_alternatives: "Grouped radio lists or search-enabled menu."
+
+    - id: choice_multi
+      if: "user selects multiple options"
       use: "Checkbox Group"
+      priority: P1
+      evidence_level: B
+      confidence: 0.8
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Options are numerous and require search."
+      override_risks: "Multi-select complexity overwhelms users."
+      required_justification: "Describe search or filtering support."
+      safer_alternatives: "Token input with search and clear selection state."
 
   input:
-    - if: "short text"
+    - id: input_short_text
+      if: "short text"
       use: "Text Input"
-    - if: "long text"
+      priority: P2
+      evidence_level: C
+      confidence: 0.7
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Inline editing is necessary for fast editing workflows."
+      override_risks: "Inline editing can reduce discoverability."
+      required_justification: "State the power-user need and add affordances."
+      safer_alternatives: "Editable field with explicit edit icon."
+
+    - id: input_long_text
+      if: "long text"
       use: "Textarea"
-    - if: "numeric input"
+      priority: P2
+      evidence_level: C
+      confidence: 0.7
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Structured or formatted content requires rich text."
+      override_risks: "Formatting controls can distract and increase complexity."
+      required_justification: "Explain formatting requirements and provide defaults."
+      safer_alternatives: "Plain text with markdown preview."
+
+    - id: input_numeric
+      if: "numeric input"
       use: "Number Input with steppers"
+      priority: P2
+      evidence_level: C
+      confidence: 0.65
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Large numeric ranges or precision requirements."
+      override_risks: "Steppers can be slow or imprecise for large ranges."
+      required_justification: "Describe range/precision need and add validation."
+      safer_alternatives: "Text input with validation and optional slider."
 
   actions:
-    - if: "primary action"
+    - id: action_primary
+      if: "primary action"
       use: "Button (primary)"
-    - if: "secondary action"
+      priority: P1
+      evidence_level: C
+      confidence: 0.75
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Primary action is destructive or high risk."
+      override_risks: "Primary styling may encourage unsafe actions."
+      required_justification: "Explain risk and adjust hierarchy or add confirmation."
+      safer_alternatives: "Neutral primary with explicit confirmation step."
+
+    - id: action_secondary
+      if: "secondary action"
       use: "Button (secondary) or link"
-    - if: "destructive action"
+      priority: P2
+      evidence_level: C
+      confidence: 0.7
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Secondary action requires attention due to task flow."
+      override_risks: "Overemphasis dilutes the primary action."
+      required_justification: "Explain sequencing or dependency."
+      safer_alternatives: "Inline action near relevant content."
+
+    - id: action_destructive
+      if: "destructive action"
       use: "Danger button with confirmation dialog"
+      priority: P0
+      evidence_level: B
+      confidence: 0.85
+      enforcement: hard
+      stability: stable
+      override_allowed: true
+      override_conditions: "Undo is immediate and clearly visible."
+      override_risks: "Accidental data loss."
+      required_justification: "Describe undo and user visibility."
+      safer_alternatives: "Soft confirmation with undo."
 
   feedback:
-    - if: "non-blocking confirmation"
+    - id: feedback_toast
+      if: "non-blocking confirmation"
       use: "Toast"
-    - if: "form error"
+      priority: P2
+      evidence_level: C
+      confidence: 0.7
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "User must immediately read or act on the message."
+      override_risks: "Toast is missed or disappears too quickly."
+      required_justification: "Explain urgency and choose inline or banner."
+      safer_alternatives: "Inline message or banner for critical notices."
+
+    - id: feedback_inline_error
+      if: "form error"
       use: "Inline error"
-    - if: "system-wide issue"
+      priority: P1
+      evidence_level: B
+      confidence: 0.8
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Errors are global or system-wide."
+      override_risks: "Inline-only errors can be overlooked."
+      required_justification: "Explain why global messaging is needed."
+      safer_alternatives: "Inline error plus summary banner."
+
+    - id: feedback_banner
+      if: "system-wide issue"
       use: "Banner"
+      priority: P1
+      evidence_level: B
+      confidence: 0.8
+      enforcement: soft
+      stability: stable
+      override_allowed: true
+      override_conditions: "Issue is limited to a specific component."
+      override_risks: "Banner noise reduces signal."
+      required_justification: "Explain scope and use inline instead."
+      safer_alternatives: "Inline alert or status chip."

@@ -2,7 +2,7 @@ pattern_top_nav_bar:
   pattern_name: "Top Navigation Bar"
   problem_solved: "Provides global navigation accessible at the top edge of the screen."
   context: "Suitable for applications with several broad sections. Common in SaaS dashboards."
-  structure: 
+  structure:
     - "Logo or Home button on left"
     - "Horizontal list of section links (dashboard, reports, settings)"
     - "Optional user menu/avatar on far right"
@@ -18,7 +18,7 @@ pattern_top_nav_bar:
   behaviour_rules: "Keep top nav items concise (label lengths similar). On scroll, consider hiding or shrinking if space is tight."
   related_components: ["Navigation Menu", "Dropdown Menu", "Breadcrumb"]
   related_principles: ["Consistency", "Jakob’s Law", "Serial Position Effect"]
-  anti_patterns: 
+  anti_patterns:
     - "Overcrowded top bar (too many items in one line)."
     - "Non-standard icons without text, causing confusion."
   implementation_notes: "Follow platform conventions (e.g. Mac’s menu bar vs Windows taskbar). On web, use semantic `<nav>`."
@@ -26,6 +26,18 @@ pattern_top_nav_bar:
     - "All main sections reachable in ≤2 clicks."
     - "Labels match user terminology (testing for understandability)."
   references: ["Pencil&Paper: Navigation Best Practices【32†L64-L72】"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deep hierarchy, long labels, or >7 sections require vertical space."
+  override_risks: "Crowded top nav reduces scanability and increases errors."
+  required_justification: "Explain hierarchy depth and provide an alternative navigation model."
+  safer_alternatives: "Sidebar navigation or grouped top nav with overflow."
+  decision_checks:
+    - "Primary destinations reachable within two clicks."
 
 pattern_sidebar_nav:
   pattern_name: "Sidebar (Vertical) Navigation"
@@ -55,3 +67,15 @@ pattern_sidebar_nav:
     - "Active section visually distinct."
     - "Key actions reachable within 3 clicks."
   references: []
+  priority: P1
+  evidence_level: C
+  confidence: 0.75
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Primary device is mobile or content width is constrained."
+  override_risks: "Sidebar reduces content space and can distract."
+  required_justification: "Provide device constraints and content-density rationale."
+  safer_alternatives: "Top nav with grouped sections or a hybrid layout."
+  decision_checks:
+    - "Active section is visible without scrolling on desktop."

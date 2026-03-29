@@ -1,0 +1,233 @@
+version: 1
+entries:
+  - id: frontend.accessibility-baseline
+    title: Accessibility baseline
+    category: frontend
+    summary: Meet accessibility standards for all user-facing UI.
+    definition: UI must support keyboard navigation, semantic structure, contrast, and assistive technologies.
+    why_it_matters: Accessibility is a legal requirement and improves usability for all users.
+    priority_level: P0
+    confidence_score: 0.86
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any public or internal user interface
+    avoid_when:
+      - non-interactive prototypes
+    implementation_rules:
+      - use semantic HTML and proper labels
+      - ensure focus states and keyboard navigation
+      - validate contrast ratios
+    tradeoffs:
+      - additional design and QA effort
+    anti_patterns:
+      - clickable divs without roles
+      - missing labels on form inputs
+    override_allowed: true
+    override_conditions:
+      - temporary prototype with no production release
+    override_risks:
+      - legal exposure and user exclusion
+    required_justification:
+      - why accessibility cannot be met now
+    safer_alternatives:
+      - limit exposure and plan remediation
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: modest QA cost
+    agent_rules:
+      - enforce accessibility for all production UI
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - accessibility audit failure
+    deprecation_signals:
+      - updated accessibility standards
+    sources:
+      - WCAG guidelines
+  - id: frontend.performance-budgets
+    title: Frontend performance budgets
+    category: frontend
+    summary: Set and enforce performance budgets for UI delivery.
+    definition: Define limits for bundle size, load time, and runtime cost.
+    why_it_matters: Performance impacts conversion and user retention.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - building customer-facing web apps
+      - shipping new UI features
+    avoid_when:
+      - internal tools with no performance constraints
+    implementation_rules:
+      - define budgets for JS, CSS, and image weight
+      - monitor real user metrics
+      - fail CI on budget regressions
+    tradeoffs:
+      - limits on feature size and dependencies
+    anti_patterns:
+      - adding large dependencies without measurement
+    override_allowed: true
+    override_conditions:
+      - feature is business critical with measured impact
+    override_risks:
+      - slower load times and higher bounce rates
+    required_justification:
+      - quantified user impact vs business benefit
+    safer_alternatives:
+      - lazy load and split bundles
+    performance_impact: positive
+    security_impact: neutral
+    cost_impact: lower bandwidth cost
+    agent_rules:
+      - require measurement before increasing budgets
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - sustained performance regressions
+    deprecation_signals:
+      - new performance targets established
+    sources:
+      - Web performance practices
+  - id: frontend.resilient-ui-states
+    title: Resilient UI states
+    category: frontend
+    summary: Provide explicit loading, empty, and error states.
+    definition: Every data-driven view must define states for loading, empty data, error, and success.
+    why_it_matters: Prevents confusion and reduces support burden.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any view that fetches or mutates data
+    avoid_when:
+      - static informational pages
+    implementation_rules:
+      - define clear feedback for each state
+      - keep actions available when safe
+      - use retry affordances for recoverable errors
+    tradeoffs:
+      - additional UI work
+    anti_patterns:
+      - blank screens during loading
+    override_allowed: true
+    override_conditions:
+      - view is static and does not depend on data
+    override_risks:
+      - user confusion and abandonment
+    required_justification:
+      - why state handling is unnecessary
+    safer_alternatives:
+      - skeletons and minimal placeholders
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: modest additional UI effort
+    agent_rules:
+      - always define explicit data states
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - user feedback about unclear states
+    deprecation_signals:
+      - UI framework provides standard state components
+    sources:
+      - UX usability guidelines
+  - id: frontend.state-boundaries
+    title: State boundaries and ownership
+    category: frontend
+    summary: Define clear ownership for local, global, and server state.
+    definition: Choose the smallest scope for state and keep server data authoritative.
+    why_it_matters: Prevents state bugs and reduces complexity.
+    priority_level: P1
+    confidence_score: 0.79
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - designing new UI features
+    avoid_when:
+      - trivial pages with no shared state
+    implementation_rules:
+      - keep UI state local by default
+      - use a shared store only for cross-cutting state
+      - treat server responses as source of truth
+    tradeoffs:
+      - added coordination when state is shared
+    anti_patterns:
+      - global state for local UI concerns
+    override_allowed: true
+    override_conditions:
+      - strong need for cross-feature coordination
+    override_risks:
+      - unnecessary global complexity
+    required_justification:
+      - why local state is insufficient
+    safer_alternatives:
+      - lift state only to the nearest common parent
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: neutral
+    agent_rules:
+      - minimize global state usage
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - recurring bugs from state desync
+    deprecation_signals:
+      - framework introduces new state primitives
+    sources:
+      - Frontend state management practices
+  - id: frontend.design-tokens
+    title: Design tokens for consistency
+    category: frontend
+    summary: Use tokens for colors, spacing, and typography.
+    definition: Centralize visual values as tokens to enforce consistency and enable theming.
+    why_it_matters: Reduces visual drift and speeds design changes.
+    priority_level: P2
+    confidence_score: 0.72
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - scaling UI across multiple teams or surfaces
+    avoid_when:
+      - single page prototypes
+    implementation_rules:
+      - define tokens for color, spacing, and typography
+      - forbid hard-coded values in components
+    tradeoffs:
+      - initial setup time
+    anti_patterns:
+      - mixing hard-coded values and tokens
+    override_allowed: true
+    override_conditions:
+      - small project with limited UI scope
+    override_risks:
+      - inconsistent look and harder rebrands
+    required_justification:
+      - why token system is not needed now
+    safer_alternatives:
+      - minimal shared constants for colors and spacing
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: modest setup cost
+    agent_rules:
+      - recommend tokens when UI scale grows
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - significant UI expansion
+    deprecation_signals:
+      - migration to a new design system
+    sources:
+      - Design system practices
