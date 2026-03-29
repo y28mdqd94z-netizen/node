@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generated_at": "2026-03-29",
-  "root": "engineering-knowledgebase",
+  "root": ".agent-os/lib/engineering-knowledgebase",
   "schema": "v1",
   "files": [
     {

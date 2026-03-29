@@ -254,3 +254,32 @@
 - Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Added archetypes and tokens to reduce future drift.
 - Updates to skills/patterns/components: Component composition rules extended; design system archetypes added.
 - Refactor targets: None.
+
+## 2026-03-29 19:58:21 +1100
+- Command: implement-feature
+- Title: Update engineering knowledgebase location references
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions: Orchestrator routed to implementation to align manifest paths with new folder location.
+- Phase gate status: Discovery complete; Market Analysis complete (local change); Implementation complete; Validation complete; Security Review not applicable; Documentation complete.
+- Status: completed
+- Discovery: Engineering knowledgebase moved under .agent-os/lib; manifest root still pointed to old path.
+- Market Analysis: Not applicable (local filesystem update only).
+- UX KB Comparison: Not applicable.
+- Think: Update manifest root to reflect the new location.
+- UX Design: Not applicable.
+- Architecture: Docs-only change.
+- Implementation: Updated .agent-os/lib/engineering-knowledgebase/manifest.json root path.
+- Validation (type safety, input validation, error handling, edge cases): Not applicable.
+- Security Review: Not applicable.
+- UX Refinement: Not applicable.
+- Documentation: Updated decisions.log and risks.log; updated output template.
+- Failure points: None identified.
+- Fallback UX: Not applicable.
+- Retry logic: Not applicable.
+- Safe error messages: Not applicable.
+- Observability (logging, error tracking, performance): Not applicable.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Consolidated knowledgebase location to reduce path confusion.
+- Updates to skills/patterns/components: None.
+- Refactor targets: None.
