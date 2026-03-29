@@ -283,3 +283,61 @@
 - Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Consolidated knowledgebase location to reduce path confusion.
 - Updates to skills/patterns/components: None.
 - Refactor targets: None.
+
+## 2026-03-29 20:04:38 +1100
+- Command: implement-feature
+- Title: Update token path references after move
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions: Orchestrator routed to implementation to update references after token folder move.
+- Phase gate status: Discovery complete; Market Analysis not applicable; Implementation complete; Validation complete; Security Review not applicable; Documentation complete.
+- Status: completed
+- Discovery: Token references still pointed to `tokens/` after move into `.agent-os/tokens/`.
+- Market Analysis: Not applicable (local path update only).
+- UX KB Comparison: Not applicable.
+- Think: Update all references to the new path in KB and memory artifacts.
+- UX Design: Not applicable.
+- Architecture: Docs-only change.
+- Implementation: Updated token paths in memory/design_system.json, tokens-strategy, and output notes.
+- Validation (type safety, input validation, error handling, edge cases): Not applicable.
+- Security Review: Not applicable.
+- UX Refinement: Not applicable.
+- Documentation: Updated decisions.log, risks.log, and output template.
+- Failure points: None identified.
+- Fallback UX: Not applicable.
+- Retry logic: Not applicable.
+- Safe error messages: Not applicable.
+- Observability (logging, error tracking, performance): Not applicable.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Reduced path confusion by consolidating references.
+- Updates to skills/patterns/components: Tokens strategy path references updated.
+- Refactor targets: None.
+
+## 2026-03-29 20:06:32 +1100
+- Command: implement-feature
+- Title: Update README with capabilities and install
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions: Orchestrator routed to implementation for README updates.
+- Phase gate status: Discovery complete; Market Analysis not applicable; Implementation complete; Validation complete; Security Review not applicable; Documentation complete.
+- Status: completed
+- Discovery: README lacked capability overview and install guidance.
+- Market Analysis: Not applicable (documentation update only).
+- UX KB Comparison: Not applicable.
+- Think: Add a concise capability list and install steps for direct use and embedding in another repo.
+- UX Design: Not applicable.
+- Architecture: Docs-only change.
+- Implementation: Updated README with capabilities, install guidance, and knowledgebase locations.
+- Validation (type safety, input validation, error handling, edge cases): Not applicable.
+- Security Review: Not applicable.
+- UX Refinement: Not applicable.
+- Documentation: Updated decisions.log, risks.log, and output template.
+- Failure points: None identified.
+- Fallback UX: Not applicable.
+- Retry logic: Not applicable.
+- Safe error messages: Not applicable.
+- Observability (logging, error tracking, performance): Not applicable.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Clarified onboarding and repo scope in README.
+- Updates to skills/patterns/components: None.
+- Refactor targets: None.

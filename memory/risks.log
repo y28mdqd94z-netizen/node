@@ -87,3 +87,19 @@
 - Severity: low
 - Risk level: low
 - Mitigation: Keep search updated and update any newly discovered references during future audits.
+
+## 2026-03-29 20:04:38 +1100
+- Command: implement-feature
+- Title: Update token path references after move
+- Risk: Some documentation may still mention the old tokens path.
+- Severity: low
+- Risk level: low
+- Mitigation: Re-scan for remaining references and update as needed.
+
+## 2026-03-29 20:06:32 +1100
+- Command: implement-feature
+- Title: Update README with capabilities and install
+- Risk: README guidance may become stale if folder structure changes again.
+- Severity: low
+- Risk level: low
+- Mitigation: Update README whenever `.agent-os/` layout changes.

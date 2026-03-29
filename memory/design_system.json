@@ -15,8 +15,8 @@
     "scale": [4, 8, 12, 16, 24, 32, 48, 64]
   },
   "tokens": {
-    "base": "tokens/base.json",
-    "semantic": "tokens/semantic.json"
+    "base": ".agent-os/tokens/base.json",
+    "semantic": ".agent-os/tokens/semantic.json"
   },
   "components": [
     "SectionHeader",
@@ -27,5 +27,5 @@
     "Drawer",
     "Inspector"
   ],
-  "notes": "Refined to a calm, systems-first UI signature: minimal chrome, strong hierarchy, progressive disclosure, and clear next action. Token values live in tokens/."
+  "notes": "Refined to a calm, systems-first UI signature: minimal chrome, strong hierarchy, progressive disclosure, and clear next action. Token values live in .agent-os/tokens/."
 }

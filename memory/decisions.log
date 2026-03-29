@@ -65,3 +65,15 @@
 - Title: Update engineering knowledgebase location references
 - Decision: Update engineering knowledgebase manifest root to the new .agent-os/lib location.
 - Rationale: Keeps retrieval metadata accurate after the folder move and avoids stale path resolution.
+
+## 2026-03-29 20:04:38 +1100
+- Command: implement-feature
+- Title: Update token path references after move
+- Decision: Update all token references to .agent-os/tokens after the folder move.
+- Rationale: Keeps documentation and KB paths consistent with the new location to avoid broken lookups.
+
+## 2026-03-29 20:06:32 +1100
+- Command: implement-feature
+- Title: Update README with capabilities and install
+- Decision: Expand README to include capability overview, install steps, and knowledgebase locations.
+- Rationale: Provides clear onboarding and sets expectations for what the repo delivers.
