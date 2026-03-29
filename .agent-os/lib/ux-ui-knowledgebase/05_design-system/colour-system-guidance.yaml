@@ -1,0 +1,34 @@
+color_system:
+  palette:
+    primary: "Brand color for primary actions and highlights."
+    secondary: "Supportive accents used sparingly."
+    neutral: "Grays from 0-900 for backgrounds and text."
+    semantic:
+      success: "Green for positive status."
+      warning: "Amber for caution."
+      danger: "Red for errors or destructive actions."
+
+  semantic_tokens:
+    - name: "color.text.primary"
+      usage: "Default text on light background."
+    - name: "color.text.secondary"
+      usage: "Secondary text and metadata."
+    - name: "color.bg.surface"
+      usage: "Cards and elevated surfaces."
+    - name: "color.bg.muted"
+      usage: "Subtle backgrounds and sections."
+    - name: "color.border.default"
+      usage: "Default border color."
+
+  state_tokens:
+    - name: "color.action.primary"
+      usage: "Primary buttons and highlights."
+    - name: "color.action.primary_hover"
+      usage: "Hover state for primary actions."
+    - name: "color.action.primary_disabled"
+      usage: "Disabled state for primary actions."
+
+  guidelines:
+    - "Ensure text contrast meets WCAG AA."
+    - "Avoid relying on color alone for status."
+    - "Use a single accent color per screen."

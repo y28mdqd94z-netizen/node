@@ -1,0 +1,26 @@
+spacing_system:
+  principle: "Use a consistent spacing scale (e.g., multiples of 4px or 8px)【6†L243-L252】."
+  recommendation: "Base spacing unit = 4px. Common gaps: 8px (small), 16px (medium), 24px (large), 32px (XL)."
+  do:
+    - "Use uniform vertical rhythm for text (line height 1.5× font-size)."
+    - "Group related elements with consistent gutters."
+  dont:
+    - "Random or inconsistent margins. Avoid one-off spacing that breaks the rhythm."
+  examples:
+    - "List items separated by 8px; sections by 24px."
+    - "Buttons in a toolbar spaced by 8px."
+  agent_rules: "Always snap layout to nearest grid increment. Check for off-by-one spacing as QA."
+  references: []
+
+colour_system:
+  principle: "Define a limited palette (primary, secondary, neutrals) with semantic usage【18†L46-L53】."
+  recommendation: "One primary brand color, one accent, plus greys (white to black). Use high contrast (WCAG AA) between text and background."
+  do:
+    - "Use color meaningfully: success (green), warning (yellow), danger (red)."
+    - "Test text for contrast: WCAG ratio ≥4.5:1 for normal text."
+  dont:
+    - "Overuse bright colors. Avoid critical information conveyed by color alone (per accessibility)."
+  examples:
+    - "Buttons: Primary = brand blue, Secondary = gray; Error messages = red background."
+  agent_rules: "Enforce contrast rules on every color token. If adding color, define semantic name (e.g. 'color-success')."
+  references: []

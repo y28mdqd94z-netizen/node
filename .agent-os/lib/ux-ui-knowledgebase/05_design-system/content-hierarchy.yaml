@@ -1,0 +1,15 @@
+content_hierarchy:
+  rules:
+    - "Use a single H1 per page."
+    - "Place the primary action near the primary heading."
+    - "Chunk content into short sections with clear labels."
+    - "Use bullets for scannable lists."
+    - "Emphasize key terms with weight or color, not both."
+
+  ordering:
+    - "Most important information first."
+    - "Secondary actions placed after primary content."
+
+  density:
+    - "Limit paragraph width to 60-80 characters."
+    - "Prefer short sentences and active voice."

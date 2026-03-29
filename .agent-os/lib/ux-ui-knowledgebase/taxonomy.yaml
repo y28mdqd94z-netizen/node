@@ -1,0 +1,37 @@
+laws:
+  - id: hicks_law
+    title: "Hick’s Law"
+    related_principles: ["cognitive-load", "pareto_principle", "miller_law"]
+
+principles:
+  - id: consistency
+    title: "Consistency and Standards"
+    related_laws: ["jakobs_law", "occams_razor"]
+    related_patterns: ["standard_navigation", "uniform_form_layout"]
+  - id: recognition_over_recall
+    title: "Recognition over Recall"
+    related_laws: ["millers_law", "serial_position_effect"]
+
+patterns:
+  - id: top_nav_bar
+    title: "Top Navigation Bar"
+    solves: "Global site navigation"
+    related_components: ["navigation_menu", "dropdown_menu"]
+  - id: wizard_onboarding
+    title: "Multi-Step Wizard"
+    solves: "Complex onboarding or form workflows"
+
+components:
+  - id: button_primary
+    title: "Primary Button"
+    family: "Button"
+    jobs_to_be_done: ["submit", "confirm action"]
+  - id: input_text
+    title: "Text Input"
+    family: "Input"
+    jobs_to_be_done: ["collect text data from user"]
+
+templates:
+  - id: dashboard_main
+    title: "Dashboard Layout"
+    includes_patterns: ["top_nav_bar", "sidebar_nav", "search_filter"]

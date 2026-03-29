@@ -1,0 +1,32 @@
+component_selection_logic:
+  choices:
+    - if: "user selects one option from <= 5"
+      use: "Radio Group"
+    - if: "user selects one option from > 5"
+      use: "Select or Combobox"
+    - if: "user selects multiple options"
+      use: "Checkbox Group"
+
+  input:
+    - if: "short text"
+      use: "Text Input"
+    - if: "long text"
+      use: "Textarea"
+    - if: "numeric input"
+      use: "Number Input with steppers"
+
+  actions:
+    - if: "primary action"
+      use: "Button (primary)"
+    - if: "secondary action"
+      use: "Button (secondary) or link"
+    - if: "destructive action"
+      use: "Danger button with confirmation dialog"
+
+  feedback:
+    - if: "non-blocking confirmation"
+      use: "Toast"
+    - if: "form error"
+      use: "Inline error"
+    - if: "system-wide issue"
+      use: "Banner"

@@ -1,0 +1,56 @@
+global_states:
+  - state: "default"
+    description: "Normal inactive state."
+  - state: "hover"
+    description: "Visual affordance for pointer interaction."
+  - state: "focus"
+    description: "Visible focus ring for keyboard navigation."
+  - state: "active"
+    description: "Pressed or engaged state."
+  - state: "disabled"
+    description: "Not available; should appear inactive and non-focusable."
+  - state: "loading"
+    description: "Operation in progress; show spinner or progress."
+  - state: "error"
+    description: "Validation or system error with guidance."
+  - state: "success"
+    description: "Confirms action completion."
+
+component_state_guidelines:
+  button:
+    default: "High contrast label with clear affordance."
+    hover: "Slight elevation or color shift."
+    focus: "Visible outline with sufficient contrast."
+    disabled: "Lower contrast and no pointer events."
+    loading: "Replace label with spinner, preserve width."
+
+  input:
+    default: "Clear border and label."
+    focus: "Highlight border and label; keep consistent with theme."
+    error: "Show inline error message and error border."
+    disabled: "Reduce contrast and prevent input."
+
+  select:
+    default: "Show placeholder or selected value."
+    focus: "Outline and open state indicator."
+    error: "Inline error message and icon."
+
+  table_row:
+    hover: "Subtle background highlight."
+    selected: "Stronger highlight with checkbox state."
+
+feedback_patterns:
+  success:
+    use_when: "Operation completed as expected."
+    recommended_components: ["Toast", "Inline alert"]
+    copy_tone: "Short, positive, and specific."
+
+  warning:
+    use_when: "User should proceed with caution."
+    recommended_components: ["Inline alert", "Banner"]
+    copy_tone: "Clear risk and next steps."
+
+  error:
+    use_when: "Operation failed or input invalid."
+    recommended_components: ["Inline error", "Dialog"]
+    copy_tone: "Explain problem and how to resolve."

@@ -1,0 +1,70 @@
+typography:
+  font_families:
+    primary: "Inter, system-ui, sans-serif"
+    monospace: "JetBrains Mono, ui-monospace, monospace"
+
+  base_size: 16
+  scale:
+    - name: "xs"
+      size: 12
+      line_height: 16
+      weight: 400
+    - name: "sm"
+      size: 14
+      line_height: 20
+      weight: 400
+    - name: "base"
+      size: 16
+      line_height: 24
+      weight: 400
+    - name: "lg"
+      size: 18
+      line_height: 26
+      weight: 500
+    - name: "xl"
+      size: 20
+      line_height: 28
+      weight: 600
+    - name: "2xl"
+      size: 24
+      line_height: 32
+      weight: 600
+    - name: "3xl"
+      size: 30
+      line_height: 38
+      weight: 700
+    - name: "4xl"
+      size: 36
+      line_height: 44
+      weight: 700
+
+  text_styles:
+    - name: "H1"
+      size: 36
+      line_height: 44
+      weight: 700
+    - name: "H2"
+      size: 30
+      line_height: 38
+      weight: 700
+    - name: "H3"
+      size: 24
+      line_height: 32
+      weight: 600
+    - name: "Body"
+      size: 16
+      line_height: 24
+      weight: 400
+    - name: "Small"
+      size: 14
+      line_height: 20
+      weight: 400
+    - name: "Caption"
+      size: 12
+      line_height: 16
+      weight: 400
+
+  guidelines:
+    - "Limit to 2 font families."
+    - "Use consistent line heights for vertical rhythm."
+    - "Avoid all-caps for long text."

@@ -1,0 +1,76 @@
+pattern_activity_feed:
+  pattern_name: "Activity Feed"
+  problem_solved: "Shows recent actions for awareness and accountability."
+  context: "Team products with shared work."
+  structure:
+    - "Chronological list"
+    - "Filters for activity type"
+    - "Actor, action, timestamp"
+  core_elements: ["List", "Avatar", "Timestamp"]
+  variants:
+    - "Compact feed"
+    - "Grouped by day"
+  best_for: "Monitoring changes and coordination."
+  avoid_for: "Single-user products."
+  desktop_considerations: "Allow filtering and search."
+  mobile_considerations: "Use compact entries and relative time."
+  accessibility_notes: "Ensure timestamps are readable and accessible."
+  behaviour_rules: "Highlight unread or new activity."
+  related_components: ["List", "Filter", "Avatar"]
+  related_principles: ["Visibility of System Status"]
+  anti_patterns:
+    - "Activity feed with no filtering or relevance."
+  implementation_notes: "Batch similar events to reduce noise."
+  evaluation_criteria:
+    - "Users can identify important changes quickly."
+
+pattern_comments_thread:
+  pattern_name: "Comments and Threads"
+  problem_solved: "Allows discussion in context."
+  context: "Docs, tasks, and collaboration spaces."
+  structure:
+    - "Comment input"
+    - "Threaded replies"
+    - "Mentions"
+  core_elements: ["Input", "Thread", "Mentions"]
+  variants:
+    - "Inline comments"
+    - "Sidebar comments"
+  best_for: "Review and feedback workflows."
+  avoid_for: "Simple notifications."
+  desktop_considerations: "Support keyboard shortcuts for reply."
+  mobile_considerations: "Use simplified threading to reduce clutter."
+  accessibility_notes: "Ensure mentions and replies are announced."
+  behaviour_rules: "Show unresolved vs resolved states."
+  related_components: ["Input", "Badge", "Menu"]
+  related_principles: ["Recognition Over Recall"]
+  anti_patterns:
+    - "Comments without context or location."
+  implementation_notes: "Provide edit history for transparency."
+  evaluation_criteria:
+    - "Users can follow and resolve threads."
+
+pattern_presence_avatar:
+  pattern_name: "Presence Indicators"
+  problem_solved: "Shows who is active in a shared space."
+  context: "Real-time collaboration tools."
+  structure:
+    - "Avatar stack"
+    - "Live cursors or indicators"
+  core_elements: ["Avatar", "Tooltip"]
+  variants:
+    - "Colored cursors"
+    - "Active user list"
+  best_for: "Synchronous collaboration."
+  avoid_for: "Asynchronous-only tools."
+  desktop_considerations: "Keep presence visible but unobtrusive."
+  mobile_considerations: "Use compact avatars to save space."
+  accessibility_notes: "Provide text list of active users."
+  behaviour_rules: "Hide inactive users after a short timeout."
+  related_components: ["Avatar", "Tooltip"]
+  related_principles: ["Social Proof"]
+  anti_patterns:
+    - "Overloading UI with large presence indicators."
+  implementation_notes: "Respect privacy and allow opt-out."
+  evaluation_criteria:
+    - "Users can see who is working in real time."

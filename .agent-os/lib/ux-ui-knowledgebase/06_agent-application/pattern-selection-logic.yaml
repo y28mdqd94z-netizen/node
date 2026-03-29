@@ -1,0 +1,22 @@
+pattern_selection_logic:
+  navigation:
+    - if: "sections <= 5 and primary device is desktop"
+      use: "Top Navigation Bar"
+    - if: "sections > 5 or deep hierarchy"
+      use: "Sidebar Navigation"
+    - if: "mobile and sections between 3 and 5"
+      use: "Bottom Navigation"
+    - if: "mobile and sections > 5"
+      use: "Hamburger with grouped sections"
+
+  forms:
+    - if: "fields <= 5"
+      use: "Single-Column Form"
+    - if: "fields > 5"
+      use: "Multi-Step Form"
+
+  data_display:
+    - if: "rows <= 25 and simple columns"
+      use: "Basic Table"
+    - if: "rows > 25 or needs editing"
+      use: "Data Grid"

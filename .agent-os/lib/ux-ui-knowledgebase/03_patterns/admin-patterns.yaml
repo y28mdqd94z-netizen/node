@@ -1,0 +1,74 @@
+pattern_list_detail:
+  pattern_name: "List-Detail Layout"
+  problem_solved: "Supports browsing and editing records efficiently."
+  context: "Admin panels and CRM tools."
+  structure:
+    - "List on left"
+    - "Detail panel on right"
+  core_elements: ["List", "Detail panel"]
+  variants:
+    - "Split view"
+    - "Drawer detail"
+  best_for: "High-volume record management."
+  avoid_for: "Mobile-only experiences."
+  desktop_considerations: "Keep list scroll position when switching details."
+  mobile_considerations: "Use separate list and detail screens."
+  accessibility_notes: "Ensure focus moves to detail view."
+  behaviour_rules: "Persist filters and selection."
+  related_components: ["Table", "Drawer"]
+  related_principles: ["Flexibility and Efficiency"]
+  anti_patterns:
+    - "Navigating away and losing list state."
+  implementation_notes: "Enable keyboard navigation in the list."
+  evaluation_criteria:
+    - "Users can edit multiple records quickly."
+
+pattern_role_management:
+  pattern_name: "Role and Permission Management"
+  problem_solved: "Lets admins assign and audit access."
+  context: "Enterprise or multi-tenant apps."
+  structure:
+    - "Role list"
+    - "Permission matrix"
+    - "Assignment UI"
+  core_elements: ["Table", "Checkbox", "Select"]
+  variants:
+    - "Predefined roles"
+    - "Custom role builder"
+  best_for: "Organizations with different access levels."
+  avoid_for: "Single-user tools."
+  desktop_considerations: "Use wide tables for permissions."
+  mobile_considerations: "Limit to viewing or simple edits."
+  accessibility_notes: "Ensure matrix is navigable by keyboard."
+  behaviour_rules: "Show effective permissions summary."
+  related_components: ["Table", "Modal"]
+  related_principles: ["Error Prevention"]
+  anti_patterns:
+    - "Ambiguous permission labels."
+  implementation_notes: "Provide audit log for permission changes."
+  evaluation_criteria:
+    - "Admins can assign roles without mistakes."
+
+pattern_audit_log:
+  pattern_name: "Audit Log"
+  problem_solved: "Tracks critical actions for compliance."
+  context: "Admin and security areas."
+  structure:
+    - "Chronological list"
+    - "Filters for user/action"
+  core_elements: ["Table", "Filter", "Timestamp"]
+  variants:
+    - "Exportable logs"
+  best_for: "Regulated or security-sensitive apps."
+  avoid_for: "Non-critical systems with minimal changes."
+  desktop_considerations: "Provide export and filter tools."
+  mobile_considerations: "Show summary with filter drawer."
+  accessibility_notes: "Ensure timestamps and labels are readable."
+  behaviour_rules: "Prevent log tampering and show source."
+  related_components: ["Table", "Filter"]
+  related_principles: ["Transparency"]
+  anti_patterns:
+    - "Logs without actor identity."
+  implementation_notes: "Include IP and device info when relevant."
+  evaluation_criteria:
+    - "Admins can trace changes reliably."

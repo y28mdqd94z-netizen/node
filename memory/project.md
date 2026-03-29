@@ -1,0 +1,27 @@
+# Project
+
+## Summary
+
+## Goals
+
+## Users
+
+## Constraints
+
+## Risks
+
+## Assumptions
+
+## Success Criteria
+
+## Current State
+
+## Agent System
+- Core agents: .agent-os/agents.json
+- Specialist micro-skills: .agent-os/skills.json
+- UX/UI knowledgebase: .agent-os/lib/ux-ui-knowledgebase
+
+## Detected Stack (generated 2026-03-29 14:52:59 +1100)
+- Runtimes: none
+- Frameworks: none
+- Languages: markdown

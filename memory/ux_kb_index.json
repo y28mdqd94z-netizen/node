@@ -1,0 +1,1044 @@
+{
+  "generated_at": "2026-03-29T15:20:27+1100",
+  "root": "/Users/nickport/node/.agent-os/lib/ux-ui-knowledgebase",
+  "content_hash": "db7ae623138e46e001d2c028c253c975ac1747da4268a4007440cbdf1912b57a",
+  "files_indexed": 54,
+  "entries_indexed": 109,
+  "files": [
+    {
+      "path": "01_foundations/accessibility-principles.yaml",
+      "type": "yaml",
+      "category": "foundations"
+    },
+    {
+      "path": "01_foundations/cognitive-psychology.yaml",
+      "type": "yaml",
+      "category": "foundations"
+    },
+    {
+      "path": "01_foundations/mental-models.yaml",
+      "type": "yaml",
+      "category": "foundations"
+    },
+    {
+      "path": "01_foundations/ux-laws.yaml",
+      "type": "yaml",
+      "category": "foundations"
+    },
+    {
+      "path": "01_foundations/ux-principles.yaml",
+      "type": "yaml",
+      "category": "foundations"
+    },
+    {
+      "path": "02_design-evaluation/accessibility-review.yaml",
+      "type": "yaml",
+      "category": "design-evaluation"
+    },
+    {
+      "path": "02_design-evaluation/design-qa-checks.yaml",
+      "type": "yaml",
+      "category": "design-evaluation"
+    },
+    {
+      "path": "02_design-evaluation/heuristic-evaluation-framework.yaml",
+      "type": "yaml",
+      "category": "design-evaluation"
+    },
+    {
+      "path": "02_design-evaluation/ui-review-checklist.yaml",
+      "type": "yaml",
+      "category": "design-evaluation"
+    },
+    {
+      "path": "02_design-evaluation/ux-audit-rubric.yaml",
+      "type": "yaml",
+      "category": "design-evaluation"
+    },
+    {
+      "path": "03_patterns/admin-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/ai-interface-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/auth-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/billing-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/collaboration-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/dashboard-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/empty-loading-error-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/feedback-states-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/form-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/mobile-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/navigation-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/onboarding-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/pwa-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/search-filter-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/settings-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "03_patterns/table-and-data-grid-patterns.yaml",
+      "type": "yaml",
+      "category": "patterns"
+    },
+    {
+      "path": "04_components/component-composition-rules.yaml",
+      "type": "yaml",
+      "category": "components"
+    },
+    {
+      "path": "04_components/component-selection-matrix.yaml",
+      "type": "yaml",
+      "category": "components"
+    },
+    {
+      "path": "04_components/shadcn-component-reference.yaml",
+      "type": "yaml",
+      "category": "components"
+    },
+    {
+      "path": "04_components/states-and-feedback.yaml",
+      "type": "yaml",
+      "category": "components"
+    },
+    {
+      "path": "05_design-system/accessibility-system-rules.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
+      "path": "05_design-system/colour-system-guidance.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
+      "path": "05_design-system/content-hierarchy.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
+      "path": "05_design-system/design-system-principles.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
+      "path": "05_design-system/motion-guidance.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
+      "path": "05_design-system/page-templates.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
+      "path": "05_design-system/responsive-rules.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
+      "path": "05_design-system/spacing-layout-system.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
+      "path": "05_design-system/tokens-strategy.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
+      "path": "05_design-system/typography-system.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
+      "path": "06_agent-application/anti-patterns.yaml",
+      "type": "yaml",
+      "category": "agent-application"
+    },
+    {
+      "path": "06_agent-application/component-selection-logic.yaml",
+      "type": "yaml",
+      "category": "agent-application"
+    },
+    {
+      "path": "06_agent-application/critique-mode-rules.yaml",
+      "type": "yaml",
+      "category": "agent-application"
+    },
+    {
+      "path": "06_agent-application/decision-frameworks.yaml",
+      "type": "yaml",
+      "category": "agent-application"
+    },
+    {
+      "path": "06_agent-application/flow-design-rules.yaml",
+      "type": "yaml",
+      "category": "agent-application"
+    },
+    {
+      "path": "06_agent-application/interface-generation-rules.yaml",
+      "type": "yaml",
+      "category": "agent-application"
+    },
+    {
+      "path": "06_agent-application/pattern-selection-logic.yaml",
+      "type": "yaml",
+      "category": "agent-application"
+    },
+    {
+      "path": "06_agent-application/redesign-mode-rules.yaml",
+      "type": "yaml",
+      "category": "agent-application"
+    },
+    {
+      "path": "07_references/glossary.yaml",
+      "type": "yaml",
+      "category": "references"
+    },
+    {
+      "path": "07_references/industry-conventions.md",
+      "type": "md",
+      "category": "references"
+    },
+    {
+      "path": "07_references/pattern-reference-index.yaml",
+      "type": "yaml",
+      "category": "references"
+    },
+    {
+      "path": "07_references/source-map.md",
+      "type": "md",
+      "category": "references"
+    },
+    {
+      "path": "README.md",
+      "type": "md",
+      "category": "unknown"
+    },
+    {
+      "path": "taxonomy.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    }
+  ],
+  "entries": [
+    {
+      "id": "keyboard_navigation",
+      "title": "keyboard_navigation",
+      "file": "02_design-evaluation/accessibility-review.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "screen_reader",
+      "title": "screen_reader",
+      "file": "02_design-evaluation/accessibility-review.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "contrast",
+      "title": "contrast",
+      "file": "02_design-evaluation/accessibility-review.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "target_size",
+      "title": "target_size",
+      "file": "02_design-evaluation/accessibility-review.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "motion",
+      "title": "motion",
+      "file": "02_design-evaluation/accessibility-review.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "token_usage",
+      "title": "token_usage",
+      "file": "02_design-evaluation/design-qa-checks.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "typography",
+      "title": "typography",
+      "file": "02_design-evaluation/design-qa-checks.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "alignment",
+      "title": "alignment",
+      "file": "02_design-evaluation/design-qa-checks.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "states",
+      "title": "states",
+      "file": "02_design-evaluation/design-qa-checks.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "responsive",
+      "title": "responsive",
+      "file": "02_design-evaluation/design-qa-checks.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "data_extremes",
+      "title": "data_extremes",
+      "file": "02_design-evaluation/design-qa-checks.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "localization",
+      "title": "localization",
+      "file": "02_design-evaluation/design-qa-checks.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "accessibility",
+      "title": "accessibility",
+      "file": "02_design-evaluation/design-qa-checks.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "layout_grid",
+      "title": "layout_grid",
+      "file": "02_design-evaluation/ui-review-checklist.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "typography_scale",
+      "title": "typography_scale",
+      "file": "02_design-evaluation/ui-review-checklist.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "color_contrast",
+      "title": "color_contrast",
+      "file": "02_design-evaluation/ui-review-checklist.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "component_consistency",
+      "title": "component_consistency",
+      "file": "02_design-evaluation/ui-review-checklist.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "states_complete",
+      "title": "states_complete",
+      "file": "02_design-evaluation/ui-review-checklist.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "content_quality",
+      "title": "content_quality",
+      "file": "02_design-evaluation/ui-review-checklist.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "responsive_behavior",
+      "title": "responsive_behavior",
+      "file": "02_design-evaluation/ui-review-checklist.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "error_handling",
+      "title": "error_handling",
+      "file": "02_design-evaluation/ui-review-checklist.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "empty_states",
+      "title": "empty_states",
+      "file": "02_design-evaluation/ui-review-checklist.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "navigation_ia",
+      "title": "Navigation and Information Architecture",
+      "file": "02_design-evaluation/ux-audit-rubric.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "hierarchy_content",
+      "title": "Content and Visual Hierarchy",
+      "file": "02_design-evaluation/ux-audit-rubric.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "forms_input",
+      "title": "Forms and Data Entry",
+      "file": "02_design-evaluation/ux-audit-rubric.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "feedback_status",
+      "title": "Feedback and System Status",
+      "file": "02_design-evaluation/ux-audit-rubric.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "accessibility",
+      "title": "Accessibility and Inclusivity",
+      "file": "02_design-evaluation/ux-audit-rubric.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "performance",
+      "title": "Performance and Reliability",
+      "file": "02_design-evaluation/ux-audit-rubric.yaml",
+      "category": "design-evaluation",
+      "source": "yaml"
+    },
+    {
+      "id": "form_grouping",
+      "title": "form_grouping",
+      "file": "04_components/component-composition-rules.yaml",
+      "category": "components",
+      "source": "yaml"
+    },
+    {
+      "id": "primary_action",
+      "title": "primary_action",
+      "file": "04_components/component-composition-rules.yaml",
+      "category": "components",
+      "source": "yaml"
+    },
+    {
+      "id": "destructive_actions",
+      "title": "destructive_actions",
+      "file": "04_components/component-composition-rules.yaml",
+      "category": "components",
+      "source": "yaml"
+    },
+    {
+      "id": "table_actions",
+      "title": "table_actions",
+      "file": "04_components/component-composition-rules.yaml",
+      "category": "components",
+      "source": "yaml"
+    },
+    {
+      "id": "modal_content",
+      "title": "modal_content",
+      "file": "04_components/component-composition-rules.yaml",
+      "category": "components",
+      "source": "yaml"
+    },
+    {
+      "id": "card_density",
+      "title": "card_density",
+      "file": "04_components/component-composition-rules.yaml",
+      "category": "components",
+      "source": "yaml"
+    },
+    {
+      "id": "feedback_placement",
+      "title": "feedback_placement",
+      "file": "04_components/component-composition-rules.yaml",
+      "category": "components",
+      "source": "yaml"
+    },
+    {
+      "id": "navigation_consistency",
+      "title": "navigation_consistency",
+      "file": "04_components/component-composition-rules.yaml",
+      "category": "components",
+      "source": "yaml"
+    },
+    {
+      "id": "dashboard",
+      "title": "dashboard",
+      "file": "05_design-system/page-templates.yaml",
+      "category": "design-system",
+      "source": "yaml"
+    },
+    {
+      "id": "list_detail",
+      "title": "list_detail",
+      "file": "05_design-system/page-templates.yaml",
+      "category": "design-system",
+      "source": "yaml"
+    },
+    {
+      "id": "form",
+      "title": "form",
+      "file": "05_design-system/page-templates.yaml",
+      "category": "design-system",
+      "source": "yaml"
+    },
+    {
+      "id": "settings",
+      "title": "settings",
+      "file": "05_design-system/page-templates.yaml",
+      "category": "design-system",
+      "source": "yaml"
+    },
+    {
+      "id": "auth",
+      "title": "auth",
+      "file": "05_design-system/page-templates.yaml",
+      "category": "design-system",
+      "source": "yaml"
+    },
+    {
+      "id": "define_goal",
+      "title": "define_goal",
+      "file": "06_agent-application/flow-design-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "minimize_steps",
+      "title": "minimize_steps",
+      "file": "06_agent-application/flow-design-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "progressive_disclosure",
+      "title": "progressive_disclosure",
+      "file": "06_agent-application/flow-design-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "show_progress",
+      "title": "show_progress",
+      "file": "06_agent-application/flow-design-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "error_recovery",
+      "title": "error_recovery",
+      "file": "06_agent-application/flow-design-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "confirmation",
+      "title": "confirmation",
+      "file": "06_agent-application/flow-design-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "save_state",
+      "title": "save_state",
+      "file": "06_agent-application/flow-design-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "choose_layout",
+      "title": "choose_layout",
+      "file": "06_agent-application/interface-generation-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "component_consistency",
+      "title": "component_consistency",
+      "file": "06_agent-application/interface-generation-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "hierarchy",
+      "title": "hierarchy",
+      "file": "06_agent-application/interface-generation-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "states",
+      "title": "states",
+      "file": "06_agent-application/interface-generation-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "accessibility",
+      "title": "accessibility",
+      "file": "06_agent-application/interface-generation-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "responsiveness",
+      "title": "responsiveness",
+      "file": "06_agent-application/interface-generation-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "feedback",
+      "title": "feedback",
+      "file": "06_agent-application/interface-generation-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_kpi_summary",
+      "title": "KPI Summary Dashboard",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_drilldown_dashboard",
+      "title": "Drill-Down Dashboard",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_customizable_widgets",
+      "title": "Customizable Widgets",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_checklist_onboarding",
+      "title": "Onboarding Checklist",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_guided_tour",
+      "title": "Guided Tour",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_sample_data",
+      "title": "Sample Data Seeding",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_single_column_form",
+      "title": "Single-Column Form",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_multi_step_form",
+      "title": "Multi-Step Form",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_inline_validation",
+      "title": "Inline Validation",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_basic_table",
+      "title": "Basic Data Table",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_data_grid",
+      "title": "Data Grid",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_bulk_actions",
+      "title": "Bulk Actions",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_global_search",
+      "title": "Global Search",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_faceted_filters",
+      "title": "Faceted Filters",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_saved_filters",
+      "title": "Saved Filters and Views",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_settings_sections",
+      "title": "Settings by Sections",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_preferences_toggle",
+      "title": "Preference Toggles",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_danger_zone",
+      "title": "Danger Zone",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_activity_feed",
+      "title": "Activity Feed",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_comments_thread",
+      "title": "Comments and Threads",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_presence_avatar",
+      "title": "Presence Indicators",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_toast",
+      "title": "Toast Notifications",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_inline_alert",
+      "title": "Inline Alerts",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_system_banner",
+      "title": "System Status Banner",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_prompt_box",
+      "title": "Prompt Input Area",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_ai_suggestions",
+      "title": "AI Suggestions with Accept/Reject",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_review_apply",
+      "title": "Review and Apply Changes",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_bottom_nav",
+      "title": "Bottom Navigation",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_swipe_actions",
+      "title": "Swipe Actions",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_fab",
+      "title": "Floating Action Button",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_offline_first",
+      "title": "Offline First",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_install_prompt",
+      "title": "Install Prompt",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_sync_status",
+      "title": "Sync Status",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_list_detail",
+      "title": "List-Detail Layout",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_role_management",
+      "title": "Role and Permission Management",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_audit_log",
+      "title": "Audit Log",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_sign_in",
+      "title": "Sign In Form",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_password_reset",
+      "title": "Password Reset",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_mfa",
+      "title": "Multi-Factor Authentication",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_pricing_table",
+      "title": "Pricing Table",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_subscription_manage",
+      "title": "Subscription Management",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_invoice_history",
+      "title": "Invoice History",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_empty_state",
+      "title": "Empty State",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_loading_skeleton",
+      "title": "Skeleton Loading",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_error_state",
+      "title": "Error State",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern_no_results",
+      "title": "No Results",
+      "file": "07_references/pattern-reference-index.yaml",
+      "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "hicks_law",
+      "title": "Hick’s Law",
+      "file": "taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "consistency",
+      "title": "Consistency and Standards",
+      "file": "taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "recognition_over_recall",
+      "title": "Recognition over Recall",
+      "file": "taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "top_nav_bar",
+      "title": "Top Navigation Bar",
+      "file": "taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "wizard_onboarding",
+      "title": "Multi-Step Wizard",
+      "file": "taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "button_primary",
+      "title": "Primary Button",
+      "file": "taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "input_text",
+      "title": "Text Input",
+      "file": "taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "dashboard_main",
+      "title": "Dashboard Layout",
+      "file": "taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+pattern_sign_in:
+  pattern_name: "Sign In Form"
+  problem_solved: "Authenticates users with minimal friction."
+  context: "All account-based products."
+  structure:
+    - "Email/username field"
+    - "Password field"
+    - "Primary CTA"
+  core_elements: ["Input", "Button", "Link"]
+  variants:
+    - "Passwordless login"
+    - "SSO button"
+  best_for: "Standard authentication flows."
+  avoid_for: "Public content that does not require login."
+  desktop_considerations: "Show password visibility toggle."
+  mobile_considerations: "Use autofill-friendly labels."
+  accessibility_notes: "Ensure fields have labels and hints."
+  behaviour_rules: "Provide clear error messaging."
+  related_components: ["Form", "Input", "Button"]
+  related_principles: ["Error Prevention"]
+  anti_patterns:
+    - "Forcing account creation before value is shown."
+  implementation_notes: "Support SSO where available."
+  evaluation_criteria:
+    - "Users can sign in without confusion."
+
+pattern_password_reset:
+  pattern_name: "Password Reset"
+  problem_solved: "Helps users regain access securely."
+  context: "Account access recovery."
+  structure:
+    - "Email input"
+    - "Reset confirmation"
+  core_elements: ["Input", "Button", "Status message"]
+  variants:
+    - "Magic link reset"
+    - "Security question"
+  best_for: "Password-based systems."
+  avoid_for: "Passwordless systems."
+  desktop_considerations: "Keep copy clear about next steps."
+  mobile_considerations: "Use simple and short forms."
+  accessibility_notes: "Ensure status messages are announced."
+  behaviour_rules: "Avoid revealing whether an account exists."
+  related_components: ["Form", "Alert"]
+  related_principles: ["Security", "User Control and Freedom"]
+  anti_patterns:
+    - "Vague confirmation with no next steps."
+  implementation_notes: "Use time-limited reset tokens."
+  evaluation_criteria:
+    - "Users can recover access reliably."
+
+pattern_mfa:
+  pattern_name: "Multi-Factor Authentication"
+  problem_solved: "Adds security to account access."
+  context: "Sensitive data or high-risk actions."
+  structure:
+    - "MFA selection"
+    - "Code entry"
+    - "Fallback options"
+  core_elements: ["Input", "Select", "Button"]
+  variants:
+    - "TOTP app"
+    - "SMS or email"
+  best_for: "Enterprise and security-focused apps."
+  avoid_for: "Low-risk consumer apps unless required."
+  desktop_considerations: "Allow copy-paste for codes."
+  mobile_considerations: "Use OTP auto-fill."
+  accessibility_notes: "Ensure timers are visible and announced."
+  behaviour_rules: "Provide backup codes and recovery."
+  related_components: ["Input", "Button"]
+  related_principles: ["Error Prevention"]
+  anti_patterns:
+    - "No recovery path if device is lost."
+  implementation_notes: "Keep friction minimal and explain benefits."
+  evaluation_criteria:
+    - "Users can complete MFA without support."

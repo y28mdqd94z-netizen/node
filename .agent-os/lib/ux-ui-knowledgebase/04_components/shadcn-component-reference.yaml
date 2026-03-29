@@ -1,0 +1,69 @@
+component_button_primary:
+  component_name: "Button"
+  component_family: "Button"
+  purpose: "Initiates primary actions or submits forms."
+  jobs_to_be_done:
+    - "Submit a form"
+    - "Confirm an action"
+    - "Navigate to a primary view"
+  anatomy:
+    - "Container (rectangular clickable area)"
+    - "Label (text, icon, or both)"
+  states: ["default", "hover", "active/pressed", "disabled", "loading"]
+  variants: ["primary (filled)", "secondary (outline)", "text/ghost"]
+  use_when: "An action needs to stand out (primary) or be less prominent (secondary). Use consistent placement for common actions."
+  avoid_when: "Overusing multiple primary buttons on one page (use secondary/tertiary for less important actions)."
+  dos: 
+    - "Use clear, concise label (verb form: 'Submit', 'Save')."
+    - "Make primary button visually distinct (color, size)."
+  donts:
+    - "Don’t only use color to indicate importance (add icons or text emphasis for color-blind users)."
+    - "Avoid multiple similar-prominence buttons side-by-side."
+  accessibility_requirements: "Button must have discernible text (icon-only buttons require an accessible label). Hit area ≥44×44 px recommended."
+  content_guidelines: "Label with imperative verb. Keep it short (1–3 words)."
+  interaction_guidelines: "Provide hover and focus states. For loading or long tasks, disable and show spinner to indicate progress."
+  responsive_guidelines: "Full-width on mobile for key actions, but not in a cramped layout; maintain padding."
+  common_compositions:
+    - "Form bottom: [ Cancel | Submit ]"
+    - "Inline confirmation: 'Are you sure?' [Confirm | Cancel]"
+  paired_patterns: ["Dialog", "Form"]
+  design_system_notes: "Primary buttons use brand color token; secondary use neutral border token."
+  shadcn_notes: "Variants available: `Button` with `variant=\"default\"` or `variant=\"outline\"`. Leverage `disabled` prop for state."
+  agent_selection_rules: 
+    - "If action is unique or final (e.g. 'Create Project'), use primary. If multiple actions, only one primary."
+    - "For destructive actions, use a distinct color (often red outline) and confirm dialog."
+  references: []
+
+component_input:
+  component_name: "Input Field"
+  component_family: "Text Input"
+  purpose: "Capture user text input (text, email, number, password)."
+  jobs_to_be_done:
+    - "Enter data into forms"
+    - "Search or filter content"
+  anatomy:
+    - "Text field area (with placeholder or label)"
+    - "Optional icon (search, clear, password toggle)"
+  states: ["empty", "filled", "focus", "error", "disabled"]
+  variants: ["with icon", "multiline (textarea)"]
+  use_when: "User needs to provide typed input. Use clear labels/placeholder to indicate type of input expected."
+  avoid_when: "Overusing as display-only. If static content, use text or list."
+  dos:
+    - "Label clearly (e.g. 'Email Address')."
+    - "Validate input on the fly and show inline hints."
+  donts:
+    - "Don’t rely only on placeholder as label (placeholder disappears on input)."
+    - "Avoid text fields for binary choices (use toggles/radios instead)."
+  accessibility_requirements: "Each input needs an explicit label (visible or aria). Error messages must be announced."
+  content_guidelines: "Placeholder as example (not instructions)."
+  interaction_guidelines: "Autofocus on first field; provide clear feedback on errors/success; allow copy/paste."
+  responsive_guidelines: "Width adjusts to container. On mobile, use full width. Virtual keyboard consider (eg. numeric type for numbers)."
+  common_compositions:
+    - "Login form: [ Email field, Password field, Submit button ]"
+    - "Search bar: [ Text input + search icon button ]"
+  paired_patterns: ["Form", "Modal"]
+  design_system_notes: "Use consistent padding and font sizes. Error state uses red token, success uses green/none."
+  shadcn_notes: "Shadcn `Input` supports `disabled` and `error` props. Use `helperText` slot for hints."
+  agent_selection_rules:
+    - "Always pair input with a Label component. Ensure visible validation is used."
+  references: []

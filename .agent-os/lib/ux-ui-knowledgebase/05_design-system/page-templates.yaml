@@ -1,0 +1,43 @@
+templates:
+  - id: "dashboard"
+    name: "Dashboard"
+    description: "Overview of key metrics and actions."
+    layout:
+      - "Header with filters"
+      - "KPI cards row"
+      - "Primary chart"
+      - "Secondary table"
+    components: ["Card", "Chart", "Table", "Filter"]
+
+  - id: "list_detail"
+    name: "List-Detail"
+    description: "Browse and manage records efficiently."
+    layout:
+      - "List on left"
+      - "Detail view on right"
+    components: ["Table", "Drawer", "Form"]
+
+  - id: "form"
+    name: "Form Page"
+    description: "Collect user input with clear guidance."
+    layout:
+      - "Page title"
+      - "Form sections"
+      - "Primary CTA"
+    components: ["Form", "Input", "Button"]
+
+  - id: "settings"
+    name: "Settings"
+    description: "Manage preferences and account controls."
+    layout:
+      - "Sidebar navigation"
+      - "Sectioned settings"
+    components: ["Tabs", "Form", "Switch"]
+
+  - id: "auth"
+    name: "Authentication"
+    description: "Sign in, sign up, and account recovery."
+    layout:
+      - "Centered form card"
+      - "Support links"
+    components: ["Card", "Input", "Button", "Link"]

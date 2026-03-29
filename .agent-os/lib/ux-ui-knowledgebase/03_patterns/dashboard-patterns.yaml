@@ -1,0 +1,78 @@
+pattern_kpi_summary:
+  pattern_name: "KPI Summary Dashboard"
+  problem_solved: "Provides at-a-glance status of core metrics."
+  context: "Executive or team overview screens."
+  structure:
+    - "Header with time range and filters"
+    - "Row of KPI cards"
+    - "Primary trend chart"
+    - "Secondary breakdown table"
+  core_elements: ["KPI cards", "Trend chart", "Filter controls"]
+  variants:
+    - "Comparison vs previous period"
+    - "Segmented KPIs by category"
+  best_for: "Monitoring health metrics and anomalies."
+  avoid_for: "Deep investigative analysis without drill-down."
+  desktop_considerations: "Use a multi-column grid with clear spacing."
+  mobile_considerations: "Stack KPIs and collapse charts to summaries."
+  accessibility_notes: "Provide text labels and values; avoid color-only indicators."
+  behaviour_rules: "Default to the most relevant time range; persist user choice."
+  related_components: ["Card", "Chart", "Select"]
+  related_principles: ["Visual Hierarchy", "Recognition Over Recall"]
+  anti_patterns:
+    - "Showing too many KPIs without grouping."
+  implementation_notes: "Limit to 5-7 KPIs; offer drill-down for details."
+  evaluation_criteria:
+    - "Users can identify status within 10 seconds."
+
+pattern_drilldown_dashboard:
+  pattern_name: "Drill-Down Dashboard"
+  problem_solved: "Enables exploration from summary to detail."
+  context: "Analytics and performance review."
+  structure:
+    - "Summary chart"
+    - "Clickable segments"
+    - "Detail panel or table"
+  core_elements: ["Chart", "Detail panel", "Breadcrumbs"]
+  variants:
+    - "Side panel drill-down"
+    - "Inline expanded rows"
+  best_for: "Finding drivers behind metric changes."
+  avoid_for: "Simple monitoring dashboards."
+  desktop_considerations: "Keep context visible while drilling down."
+  mobile_considerations: "Use stacked views with back navigation."
+  accessibility_notes: "Ensure charts have data tables as alternatives."
+  behaviour_rules: "Provide clear back path and filters."
+  related_components: ["Chart", "Table", "Drawer"]
+  related_principles: ["Progressive Disclosure", "User Control and Freedom"]
+  anti_patterns:
+    - "Forcing navigation to a new page without context."
+  implementation_notes: "Use consistent filter state across levels."
+  evaluation_criteria:
+    - "Users can trace a metric to its sources in <= 3 steps."
+
+pattern_customizable_widgets:
+  pattern_name: "Customizable Widgets"
+  problem_solved: "Allows users to tailor dashboards to their goals."
+  context: "Power-user dashboards with diverse roles."
+  structure:
+    - "Edit mode toggle"
+    - "Widget library"
+    - "Drag-and-drop grid"
+  core_elements: ["Widget cards", "Edit mode", "Grid layout"]
+  variants:
+    - "Preset layouts"
+    - "Role-based defaults"
+  best_for: "Multi-role products with varied KPIs."
+  avoid_for: "Simple products with one user type."
+  desktop_considerations: "Use a stable grid to prevent layout jumps."
+  mobile_considerations: "Limit customization to reorder and hide."
+  accessibility_notes: "Provide keyboard alternatives to drag-and-drop."
+  behaviour_rules: "Autosave changes and provide reset option."
+  related_components: ["Card", "Modal", "Drag handle"]
+  related_principles: ["Flexibility and Efficiency"]
+  anti_patterns:
+    - "Requiring customization before any data is shown."
+  implementation_notes: "Start with a sensible default layout."
+  evaluation_criteria:
+    - "Users can personalize without losing core functionality."

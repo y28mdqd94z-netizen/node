@@ -1,0 +1,54 @@
+checks:
+  - id: layout_grid
+    check: "Layout aligns to a consistent grid and spacing scale."
+    why: "Consistency improves scanning and reduces visual noise."
+    how_to_verify: "Measure key gaps and ensure they use defined spacing tokens."
+    severity_if_failed: "medium"
+
+  - id: typography_scale
+    check: "Typography follows a defined scale with clear hierarchy."
+    why: "Hierarchy helps users prioritize information."
+    how_to_verify: "Inspect heading sizes and body text consistency."
+    severity_if_failed: "medium"
+
+  - id: color_contrast
+    check: "Text and UI elements meet contrast requirements."
+    why: "Low contrast blocks readability and accessibility."
+    how_to_verify: "Test contrast ratios for text and icons."
+    severity_if_failed: "high"
+
+  - id: component_consistency
+    check: "Components use consistent styles and behaviors."
+    why: "Inconsistency causes errors and confusion."
+    how_to_verify: "Compare buttons, inputs, and cards across screens."
+    severity_if_failed: "medium"
+
+  - id: states_complete
+    check: "All components have complete states (hover, focus, disabled, error)."
+    why: "Missing states reduce clarity and accessibility."
+    how_to_verify: "Interact with UI and confirm every state exists."
+    severity_if_failed: "high"
+
+  - id: content_quality
+    check: "Copy is concise, consistent, and task-focused."
+    why: "Poor microcopy increases cognitive load."
+    how_to_verify: "Scan labels, buttons, and error messages for clarity."
+    severity_if_failed: "medium"
+
+  - id: responsive_behavior
+    check: "Layout adapts correctly across breakpoints."
+    why: "Users expect usability on multiple devices."
+    how_to_verify: "Review mobile, tablet, and desktop layouts."
+    severity_if_failed: "high"
+
+  - id: error_handling
+    check: "Errors are visible and actionable."
+    why: "Unclear errors cause abandonment."
+    how_to_verify: "Trigger error states and confirm messaging."
+    severity_if_failed: "high"
+
+  - id: empty_states
+    check: "Empty states provide next steps."
+    why: "Guidance prevents confusion in first-time use."
+    how_to_verify: "View empty lists and confirm call-to-action."
+    severity_if_failed: "medium"

@@ -1,0 +1,460 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+VERSION="0.2.0"
+
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+ROOT=$(cd "$SCRIPT_DIR/.." && pwd)
+MEMORY_DIR="$ROOT/memory"
+TEMPLATES_DIR="$SCRIPT_DIR/templates"
+OUTPUTS_DIR="$MEMORY_DIR/outputs"
+
+# shellcheck source=lib/scan.sh
+source "$SCRIPT_DIR/lib/scan.sh"
+# shellcheck source=lib/kb.sh
+source "$SCRIPT_DIR/lib/kb.sh"
+
+usage() {
+  cat <<'USAGE_EOF'
+Usage:
+  ./.agent-os/agent <command> [args] [--flags]
+
+Commands:
+  bootstrap-project   Create memory files and scan repo
+  setup-project       Alias for bootstrap-project
+  scan-repo           Update memory/repo_map.json only
+  sync-docs           Ensure memory files exist (no overwrite)
+  design-feature      Log a design task stub
+  architect-feature   Log an architecture task + decision stub
+  build-ui            Log a UI build task stub
+  implement-feature   Log an implementation task + decision + risk stub
+  refine-ui           Log a UI refinement task stub
+  ux-audit            Log a UX audit task + risk stub
+  security-review     Log a security review task + risk stub
+  kb-update           Re-index UX/UI knowledgebase + update manifest
+  compress-context    Log a context compression task stub
+  help                Show this help
+  version             Show version
+
+Flags:
+  --cap <n>           File cap for repo map (default: 5000)
+  --risk-level <lvl>  Risk level: low|medium|high (default: low)
+  --confirm-high-risk Required if --risk-level high
+  --title <text>      Explicit title for the task/output
+
+Notes:
+  Commands may be prefixed with '/' (e.g. /scan-repo).
+USAGE_EOF
+}
+
+ensure_dir() {
+  mkdir -p "$1"
+}
+
+ensure_file_from_template() {
+  local name="$1"
+  local src="$TEMPLATES_DIR/$name"
+  local dest="$MEMORY_DIR/$name"
+  if [[ ! -f "$dest" ]]; then
+    cp "$src" "$dest"
+  fi
+}
+
+ensure_memory_files() {
+  ensure_dir "$MEMORY_DIR"
+  ensure_file_from_template "project.md"
+  ensure_file_from_template "architecture.md"
+  ensure_file_from_template "design_system.json"
+  ensure_file_from_template "api_contracts.yaml"
+  ensure_file_from_template "security_audit.md"
+  ensure_file_from_template "decisions.log"
+  ensure_file_from_template "risks.log"
+  ensure_file_from_template "tasks.md"
+  ensure_file_from_template "repo_map.json"
+  ensure_file_from_template "ux_kb_index.json"
+}
+
+ensure_log_files() {
+  ensure_dir "$MEMORY_DIR"
+  ensure_file_from_template "tasks.md"
+  ensure_file_from_template "decisions.log"
+  ensure_file_from_template "risks.log"
+}
+
+timestamp() {
+  date +"%Y-%m-%d %H:%M:%S %z"
+}
+
+timestamp_id() {
+  date +"%Y%m%d-%H%M%S"
+}
+
+TITLE_ARGS=()
+CAP=5000
+RISK_LEVEL="low"
+CONFIRM_HIGH=false
+
+join_title() {
+  if [[ ${#TITLE_ARGS[@]} -eq 0 ]]; then
+    printf '%s' "Untitled"
+  else
+    printf '%s' "${TITLE_ARGS[*]}"
+  fi
+}
+
+skills_for_command() {
+  local cmd="$1"
+  case "$cmd" in
+    design-feature)
+      printf '%s' "choose-ui-pattern, simplify-flow, reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, select-patterns, select-components"
+      ;;
+    architect-feature)
+      printf '%s' "define-architecture, state-management-check, performance-check, api-security-check, auth-boundary-check"
+      ;;
+    build-ui)
+      printf '%s' "implement-component, state-management-check, performance-check, frontend-security-check, accessibility-check, select-components"
+      ;;
+    implement-feature)
+      printf '%s' "implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check"
+      ;;
+    refine-ui)
+      printf '%s' "reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, ux-evaluation-checks"
+      ;;
+    ux-audit)
+      printf '%s' "accessibility-check, reduce-cognitive-load, ux-evaluation-checks"
+      ;;
+    security-review)
+      printf '%s' "security-review, data-sensitivity-check, auth-boundary-check, api-security-check, frontend-security-check, dependency-risk-check"
+      ;;
+    compress-context)
+      printf '%s' "none"
+      ;;
+    *)
+      printf '%s' "none"
+      ;;
+  esac
+}
+
+write_output_template() {
+  local cmd="$1"
+  local title
+  title=$(join_title)
+  ensure_dir "$OUTPUTS_DIR"
+  local path="$OUTPUTS_DIR/$(timestamp_id)-${cmd}.md"
+  cat <<EOF > "$path"
+## 1. SUMMARY
+- Title: ${title}
+- Command: ${cmd}
+- Timestamp: $(timestamp)
+- Risk level: ${RISK_LEVEL}
+
+## 2. DESIGN DECISION
+- Discovery: intent, user goals, constraints, risks
+- Think: key reasoning and tradeoffs
+- UX design: flows, 1-2 actions per task, apply Hick/Fitts/Miller/Jakob/Tesler
+- States, transitions, feedback, empty/error/loading
+- Knowledgebase refs: laws/principles/patterns/components (file + id/title)
+
+## 3. ARCHITECTURE
+- Boundaries
+- Data flow
+- API contracts
+- State ownership
+- Failure points + fallback UX + retry logic + safe error messages
+- Observability (privacy-safe logging, error tracking, performance)
+
+## 4. IMPLEMENTATION
+- Real code (React + Tailwind default for UI)
+- Clear component structure, predictable state patterns, minimal abstraction
+- Validation: type safety, input validation, error handling, edge cases
+
+## 5. SECURITY REVIEW
+- Data exposure, auth weaknesses, API vulnerabilities, frontend risks, dependency risks
+- PII handling, token storage, API exposure, logging leaks, XSS, dependencies
+
+## 6. NEXT ACTIONS
+1.
+EOF
+  printf '%s' "$path"
+}
+
+append_task() {
+  local cmd="$1"
+  local title
+  title=$(join_title)
+  local skills
+  skills=$(skills_for_command "$cmd")
+  ensure_log_files
+  cat <<TASK_EOF >> "$MEMORY_DIR/tasks.md"
+
+## $(timestamp)
+- Command: ${cmd}
+- Title: ${title}
+- Risk level: ${RISK_LEVEL}
+- Skills invoked: ${skills}
+- Status: pending
+- Discovery:
+- Think:
+- UX Design:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+TASK_EOF
+}
+
+append_decision() {
+  local cmd="$1"
+  local title
+  title=$(join_title)
+  ensure_log_files
+  cat <<DECISION_EOF >> "$MEMORY_DIR/decisions.log"
+
+## $(timestamp)
+- Command: ${cmd}
+- Title: ${title}
+- Decision:
+- Rationale:
+DECISION_EOF
+}
+
+append_risk() {
+  local cmd="$1"
+  local title
+  title=$(join_title)
+  ensure_log_files
+  cat <<RISK_EOF >> "$MEMORY_DIR/risks.log"
+
+## $(timestamp)
+- Command: ${cmd}
+- Title: ${title}
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+RISK_EOF
+}
+
+parse_common_flags() {
+  local cap_default="$1"
+  shift || true
+  CAP="$cap_default"
+  RISK_LEVEL="low"
+  CONFIRM_HIGH=false
+  TITLE_ARGS=()
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --cap)
+        CAP="$2"
+        shift 2
+        ;;
+      --risk-level)
+        RISK_LEVEL=$(printf '%s' "$2" | tr '[:upper:]' '[:lower:]')
+        shift 2
+        ;;
+      --confirm-high-risk)
+        CONFIRM_HIGH=true
+        shift
+        ;;
+      --title)
+        TITLE_ARGS+=("$2")
+        shift 2
+        ;;
+      --)
+        shift
+        while [[ $# -gt 0 ]]; do
+          TITLE_ARGS+=("$1")
+          shift
+        done
+        ;;
+      -h|--help)
+        usage
+        exit 0
+        ;;
+      *)
+        TITLE_ARGS+=("$1")
+        shift
+        ;;
+    esac
+  done
+}
+
+enforce_risk_level() {
+  case "$RISK_LEVEL" in
+    low|medium|high)
+      ;;
+    *)
+      printf 'Invalid risk level: %s (use low|medium|high)\n' "$RISK_LEVEL"
+      exit 1
+      ;;
+  esac
+
+  if [[ "$RISK_LEVEL" == "high" && "$CONFIRM_HIGH" != true ]]; then
+    printf 'High risk requires --confirm-high-risk\n'
+    exit 2
+  fi
+}
+
+ensure_baseline_project() {
+  local file="$MEMORY_DIR/project.md"
+  local marker="## Detected Stack"
+  local runtimes frameworks languages
+  runtimes=$(grep -E '"runtimes": \[' "$MEMORY_DIR/repo_map.json" | head -n1 | sed -E 's/.*"runtimes": \[(.*)\].*/\1/' | tr -d '"' | tr -d ' ')
+  frameworks=$(grep -E '"frameworks": \[' "$MEMORY_DIR/repo_map.json" | head -n1 | sed -E 's/.*"frameworks": \[(.*)\].*/\1/' | tr -d '"' | tr -d ' ')
+  languages=$(grep -E '"languages": \[' "$MEMORY_DIR/repo_map.json" | head -n1 | sed -E 's/.*"languages": \[(.*)\].*/\1/' | tr -d '"' | tr -d ' ')
+
+  [[ -z "$runtimes" ]] && runtimes="none"
+  [[ -z "$frameworks" ]] && frameworks="none"
+  [[ -z "$languages" ]] && languages="none"
+
+  if ! grep -q "$marker" "$file"; then
+    cat <<EOF >> "$file"
+
+${marker} (generated $(timestamp))
+- Runtimes: ${runtimes}
+- Frameworks: ${frameworks}
+- Languages: ${languages}
+EOF
+  fi
+}
+
+ensure_baseline_architecture() {
+  local file="$MEMORY_DIR/architecture.md"
+  local marker="## Baseline (generated"
+  local entry_points
+  entry_points=$(grep -E '"entry_points": \[' "$MEMORY_DIR/repo_map.json" | head -n1 | sed -E 's/.*"entry_points": \[(.*)\].*/\1/' | tr -d '"' | tr -d ' ')
+  [[ -z "$entry_points" ]] && entry_points="none"
+
+  if ! grep -q "$marker" "$file"; then
+    cat <<EOF >> "$file"
+
+## Baseline (generated $(timestamp))
+- Entry points: ${entry_points}
+- Source of truth: memory/repo_map.json
+EOF
+  fi
+}
+
+ensure_baseline_design_system() {
+  local file="$MEMORY_DIR/design_system.json"
+  local note="Generated baseline on $(timestamp). See architecture.md for stack details."
+  if grep -q '"notes": ""' "$file"; then
+    sed "s/\"notes\": \"\"/\"notes\": \"${note}\"/" "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+  fi
+}
+
+cmd=${1:-help}
+shift || true
+if [[ "$cmd" == /* ]]; then
+  cmd="${cmd#/}"
+fi
+
+case "$cmd" in
+  bootstrap-project|setup-project|set-up-project)
+    parse_common_flags 5000 "$@"
+    ensure_memory_files
+    scan_repo "$ROOT" "$MEMORY_DIR/repo_map.json" "$CAP"
+    ensure_baseline_project
+    ensure_baseline_architecture
+    ensure_baseline_design_system
+    ;;
+  scan-repo)
+    parse_common_flags 5000 "$@"
+    ensure_dir "$MEMORY_DIR"
+    scan_repo "$ROOT" "$MEMORY_DIR/repo_map.json" "$CAP"
+    ;;
+  sync-docs)
+    parse_common_flags 5000 "$@"
+    ensure_memory_files
+    ;;
+  design-feature)
+    parse_common_flags 5000 "$@"
+    enforce_risk_level
+    append_task "design-feature"
+    append_decision "design-feature"
+    append_risk "design-feature"
+    write_output_template "design-feature" >/dev/null
+    ;;
+  architect-feature)
+    parse_common_flags 5000 "$@"
+    enforce_risk_level
+    append_task "architect-feature"
+    append_decision "architect-feature"
+    append_risk "architect-feature"
+    write_output_template "architect-feature" >/dev/null
+    ;;
+  build-ui)
+    parse_common_flags 5000 "$@"
+    enforce_risk_level
+    append_task "build-ui"
+    append_decision "build-ui"
+    append_risk "build-ui"
+    write_output_template "build-ui" >/dev/null
+    ;;
+  implement-feature)
+    parse_common_flags 5000 "$@"
+    enforce_risk_level
+    append_task "implement-feature"
+    append_decision "implement-feature"
+    append_risk "implement-feature"
+    write_output_template "implement-feature" >/dev/null
+    ;;
+  refine-ui)
+    parse_common_flags 5000 "$@"
+    enforce_risk_level
+    append_task "refine-ui"
+    append_decision "refine-ui"
+    append_risk "refine-ui"
+    write_output_template "refine-ui" >/dev/null
+    ;;
+  ux-audit)
+    parse_common_flags 5000 "$@"
+    enforce_risk_level
+    append_task "ux-audit"
+    append_decision "ux-audit"
+    append_risk "ux-audit"
+    write_output_template "ux-audit" >/dev/null
+    ;;
+  security-review)
+    parse_common_flags 5000 "$@"
+    enforce_risk_level
+    append_task "security-review"
+    append_decision "security-review"
+    append_risk "security-review"
+    write_output_template "security-review" >/dev/null
+    ;;
+  kb-update)
+    parse_common_flags 5000 "$@"
+    ensure_dir "$MEMORY_DIR"
+    kb_update "$ROOT" "$SCRIPT_DIR/lib/ux-ui-knowledgebase" "$MEMORY_DIR/ux_kb_index.json" "$SCRIPT_DIR/lib/ux-ui-knowledgebase/manifest.json"
+    ;;
+  compress-context)
+    parse_common_flags 5000 "$@"
+    enforce_risk_level
+    append_task "compress-context"
+    append_decision "compress-context"
+    append_risk "compress-context"
+    write_output_template "compress-context" >/dev/null
+    ;;
+  help|-h|--help)
+    usage
+    ;;
+  version|--version)
+    printf '%s\n' "$VERSION"
+    ;;
+  *)
+    printf 'Unknown command: %s\n\n' "$cmd"
+    usage
+    exit 1
+    ;;
+esac

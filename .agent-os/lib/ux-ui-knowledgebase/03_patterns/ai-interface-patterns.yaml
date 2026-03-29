@@ -1,0 +1,77 @@
+pattern_prompt_box:
+  pattern_name: "Prompt Input Area"
+  problem_solved: "Provides a clear place to ask AI for help."
+  context: "AI-assisted creation and analysis."
+  structure:
+    - "Large input with placeholder guidance"
+    - "Optional examples or templates"
+    - "Submit action"
+  core_elements: ["Textarea", "Examples", "Submit button"]
+  variants:
+    - "Inline prompt"
+    - "Full-screen composer"
+  best_for: "Free-form tasks or complex instructions."
+  avoid_for: "Simple one-click actions."
+  desktop_considerations: "Allow multi-line input and keyboard shortcuts."
+  mobile_considerations: "Use full width and clear submit CTA."
+  accessibility_notes: "Label the input and provide hints for screen readers."
+  behaviour_rules: "Show token or length guidance when relevant."
+  related_components: ["Textarea", "Button", "Helper text"]
+  related_principles: ["Recognition Over Recall"]
+  anti_patterns:
+    - "Empty prompt with no guidance or examples."
+  implementation_notes: "Provide example prompts as optional chips."
+  evaluation_criteria:
+    - "Users can start a prompt without confusion."
+
+pattern_ai_suggestions:
+  pattern_name: "AI Suggestions with Accept/Reject"
+  problem_solved: "Presents AI output as suggestions, not final changes."
+  context: "Writing assistants, recommendations, edits."
+  structure:
+    - "Suggestion preview"
+    - "Accept/Reject controls"
+    - "Explain why suggestion"
+  core_elements: ["Suggestion card", "Buttons", "Explanation"]
+  variants:
+    - "Inline diff"
+    - "Side panel suggestions"
+  best_for: "Edits and recommendations that require user trust."
+  avoid_for: "Fully automated actions without review."
+  desktop_considerations: "Show side-by-side before/after."
+  mobile_considerations: "Use a collapsible panel."
+  accessibility_notes: "Ensure changes are readable and announced."
+  behaviour_rules: "Allow partial acceptance or editing."
+  related_components: ["Card", "Button", "Diff viewer"]
+  related_principles: ["User Control and Freedom"]
+  anti_patterns:
+    - "Auto-applying suggestions without user approval."
+  implementation_notes: "Provide confidence or rationale where possible."
+  evaluation_criteria:
+    - "Users trust and adopt suggestions."
+
+pattern_review_apply:
+  pattern_name: "Review and Apply Changes"
+  problem_solved: "Lets users review AI changes before applying."
+  context: "Bulk edits or risky operations."
+  structure:
+    - "Summary of changes"
+    - "Detailed diff"
+    - "Apply or cancel"
+  core_elements: ["Diff", "Summary", "Buttons"]
+  variants:
+    - "Step-by-step approval"
+    - "Batch apply with filters"
+  best_for: "High-impact changes."
+  avoid_for: "Small low-risk suggestions."
+  desktop_considerations: "Provide searchable diff view."
+  mobile_considerations: "Use summarized view with expand."
+  accessibility_notes: "Ensure diffs are readable and navigable."
+  behaviour_rules: "Keep original content accessible for comparison."
+  related_components: ["Dialog", "Diff viewer"]
+  related_principles: ["Error Prevention"]
+  anti_patterns:
+    - "Hiding the original content after changes."
+  implementation_notes: "Include a rollback option."
+  evaluation_criteria:
+    - "Users can approve changes confidently."

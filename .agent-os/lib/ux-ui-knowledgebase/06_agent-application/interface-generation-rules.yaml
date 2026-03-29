@@ -1,0 +1,28 @@
+interface_generation:
+  - id: choose_layout
+    rule: "Select a layout that matches the content density and task type."
+    notes: "Use list-detail for records, dashboards for summaries, forms for input."
+
+  - id: component_consistency
+    rule: "Reuse existing components and tokens before creating new ones."
+    notes: "Consistency improves learnability and speeds delivery."
+
+  - id: hierarchy
+    rule: "Establish clear hierarchy with one primary action per view."
+    notes: "Avoid multiple competing CTAs."
+
+  - id: states
+    rule: "Define all interaction states (hover, focus, disabled, loading, error)."
+    notes: "Missing states cause confusion and accessibility issues."
+
+  - id: accessibility
+    rule: "Meet contrast and keyboard requirements by default."
+    notes: "Treat accessibility as baseline, not an enhancement."
+
+  - id: responsiveness
+    rule: "Design for mobile-first constraints and scale up."
+    notes: "Ensure content and actions remain usable on small screens."
+
+  - id: feedback
+    rule: "Provide immediate feedback on all user actions."
+    notes: "Use toasts, inline messages, or banners as appropriate."

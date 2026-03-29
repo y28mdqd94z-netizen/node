@@ -1,0 +1,73 @@
+pattern_offline_first:
+  pattern_name: "Offline First"
+  problem_solved: "Allows core tasks without a network connection."
+  context: "Mobile or unreliable network environments."
+  structure:
+    - "Cached data"
+    - "Offline banner"
+    - "Retry controls"
+  core_elements: ["Cache", "Banner", "Retry button"]
+  variants:
+    - "Read-only offline mode"
+    - "Full offline editing with sync"
+  best_for: "Field work and travel scenarios."
+  avoid_for: "Real-time systems requiring constant sync."
+  desktop_considerations: "Show clear offline indicator."
+  mobile_considerations: "Prioritize data needed for offline access."
+  accessibility_notes: "Announce offline state changes."
+  behaviour_rules: "Queue actions and sync when online."
+  related_components: ["Banner", "Toast"]
+  related_principles: ["Visibility of System Status"]
+  anti_patterns:
+    - "Silent failures when offline."
+  implementation_notes: "Provide conflict resolution strategies."
+  evaluation_criteria:
+    - "Users can complete critical tasks offline."
+
+pattern_install_prompt:
+  pattern_name: "Install Prompt"
+  problem_solved: "Encourages adding the PWA to the device."
+  context: "Repeat users who benefit from install."
+  structure:
+    - "Prompt with value explanation"
+    - "Install button"
+  core_elements: ["Banner", "Button"]
+  variants:
+    - "Timed prompt after repeated use"
+  best_for: "Frequent-use applications."
+  avoid_for: "First-time or low-engagement users."
+  desktop_considerations: "Use native install hooks where available."
+  mobile_considerations: "Avoid interrupting key tasks."
+  accessibility_notes: "Make prompt dismissible."
+  behaviour_rules: "Show only after user sees value."
+  related_components: ["Banner", "Button"]
+  related_principles: ["Timing and Relevance"]
+  anti_patterns:
+    - "Prompting immediately on first visit."
+  implementation_notes: "Respect browser guidelines for install prompts."
+  evaluation_criteria:
+    - "Install rate improves without harming engagement."
+
+pattern_sync_status:
+  pattern_name: "Sync Status"
+  problem_solved: "Communicates data sync state to users."
+  context: "Offline-capable or multi-device apps."
+  structure:
+    - "Sync indicator"
+    - "Last synced timestamp"
+  core_elements: ["Status indicator", "Timestamp"]
+  variants:
+    - "Detailed sync panel"
+  best_for: "Apps with background sync."
+  avoid_for: "Simple static content."
+  desktop_considerations: "Place indicator near content it affects."
+  mobile_considerations: "Use compact indicator."
+  accessibility_notes: "Announce sync errors."
+  behaviour_rules: "Allow manual sync retry."
+  related_components: ["Icon", "Tooltip"]
+  related_principles: ["Visibility of System Status"]
+  anti_patterns:
+    - "Hiding sync failures."
+  implementation_notes: "Show conflict status if needed."
+  evaluation_criteria:
+    - "Users trust data freshness."

@@ -1,0 +1,96 @@
+rubric:
+  scale:
+    - score: 1
+      label: "Broken"
+      description: "Blocks core tasks or causes frequent errors."
+    - score: 2
+      label: "Weak"
+      description: "Significant friction; users struggle to complete tasks."
+    - score: 3
+      label: "Adequate"
+      description: "Tasks are possible but require effort or workarounds."
+    - score: 4
+      label: "Strong"
+      description: "Mostly smooth with minor issues."
+    - score: 5
+      label: "Excellent"
+      description: "Clear, fast, and reliable with minimal friction."
+
+  categories:
+    - id: navigation_ia
+      title: "Navigation and Information Architecture"
+      description: "Users can find key areas and understand structure."
+      criteria:
+        - "Primary navigation labels match user language."
+        - "Key destinations reachable in 1-2 clicks."
+        - "Location is clear (breadcrumbs or active states)."
+      evidence_to_collect:
+        - "Top tasks path mapping."
+        - "First-click success rate."
+      scoring_tips:
+        - "Score 2 or below if users need search for basic tasks."
+
+    - id: hierarchy_content
+      title: "Content and Visual Hierarchy"
+      description: "Information is prioritized and scannable."
+      criteria:
+        - "Primary action is visually dominant."
+        - "Headings and spacing create clear sections."
+        - "Dense content is chunked or summarized."
+      evidence_to_collect:
+        - "Heatmaps or click maps."
+        - "Time to identify primary action."
+      scoring_tips:
+        - "Score 2 if users frequently miss key actions."
+
+    - id: forms_input
+      title: "Forms and Data Entry"
+      description: "Inputs are clear, validated, and forgiving."
+      criteria:
+        - "Inline validation prevents common errors."
+        - "Required fields are obvious."
+        - "Errors explain how to fix the issue."
+      evidence_to_collect:
+        - "Form completion rate."
+        - "Top error types."
+      scoring_tips:
+        - "Score 1 if submission errors are common."
+
+    - id: feedback_status
+      title: "Feedback and System Status"
+      description: "Users always know what the system is doing."
+      criteria:
+        - "All actions show immediate feedback."
+        - "Loading states are visible for waits."
+        - "Success and failure are clearly communicated."
+      evidence_to_collect:
+        - "Time to feedback."
+        - "Error recovery rate."
+      scoring_tips:
+        - "Score 2 if users double-click or refresh often."
+
+    - id: accessibility
+      title: "Accessibility and Inclusivity"
+      description: "Interface is usable across abilities and contexts."
+      criteria:
+        - "Keyboard-only use is possible."
+        - "Contrast meets minimum guidelines."
+        - "Focus order is logical."
+      evidence_to_collect:
+        - "WCAG checklist results."
+        - "Screen reader pass/fail notes."
+      scoring_tips:
+        - "Score 1 if core tasks fail with keyboard."
+
+    - id: performance
+      title: "Performance and Reliability"
+      description: "The system feels fast and dependable."
+      criteria:
+        - "Above-the-fold content loads quickly."
+        - "Perceived performance is handled with skeletons."
+        - "Errors are recoverable and explained."
+      evidence_to_collect:
+        - "Page load metrics."
+        - "API error rates."
+      scoring_tips:
+        - "Score 2 if users regularly wait with no feedback."

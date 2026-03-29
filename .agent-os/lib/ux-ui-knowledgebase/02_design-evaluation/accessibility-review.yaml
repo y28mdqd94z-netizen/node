@@ -1,0 +1,39 @@
+review:
+  - id: keyboard_navigation
+    focus: "Keyboard navigation"
+    steps:
+      - "Tab through all interactive elements."
+      - "Verify focus is visible and ordered logically."
+    pass_criteria: "All core tasks are possible without a mouse."
+    notes: "Include skip links for long pages."
+
+  - id: screen_reader
+    focus: "Screen reader support"
+    steps:
+      - "Check that form fields have labels."
+      - "Ensure dynamic content is announced."
+    pass_criteria: "Critical information is conveyed by text, not just visuals."
+    notes: "Prefer native HTML elements with correct semantics."
+
+  - id: contrast
+    focus: "Color and contrast"
+    steps:
+      - "Measure text and icon contrast."
+      - "Test focus ring visibility."
+    pass_criteria: "Meets or exceeds WCAG contrast ratios."
+    notes: "Avoid color-only status indicators."
+
+  - id: target_size
+    focus: "Touch target size"
+    steps:
+      - "Measure buttons and interactive icons."
+    pass_criteria: "Targets are at least 44x44px or equivalent."
+    notes: "Increase padding when space allows."
+
+  - id: motion
+    focus: "Motion and animation"
+    steps:
+      - "Enable reduced motion preferences."
+      - "Verify animations are non-essential or disabled."
+    pass_criteria: "No critical information depends on motion."
+    notes: "Avoid flashing or rapid animations."

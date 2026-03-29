@@ -1,0 +1,63 @@
+principle_clarity:
+  title: "Clarity"
+  summary: "Make the interface easy to understand at a glance."
+  rationale: "Clear hierarchy and language reduce cognitive load."
+  rules:
+    - "Prioritize a single primary action per view."
+    - "Use familiar labels and avoid jargon."
+
+principle_consistency:
+  title: "Consistency"
+  summary: "Use the same patterns for the same problems."
+  rationale: "Consistency improves learnability and trust."
+  rules:
+    - "Reuse components and tokens."
+    - "Follow platform conventions."
+
+principle_accessibility:
+  title: "Accessibility"
+  summary: "Ensure the system works for diverse abilities and devices."
+  rationale: "Accessible design expands reach and reduces risk."
+  rules:
+    - "Meet contrast and keyboard requirements."
+    - "Provide text alternatives for non-text content."
+
+principle_scalability:
+  title: "Scalability"
+  summary: "Design for growth in features, data, and teams."
+  rationale: "Scalable systems reduce rework."
+  rules:
+    - "Use tokens and reusable components."
+    - "Prefer patterns that handle dense data."
+
+principle_feedback:
+  title: "Feedback"
+  summary: "Every action should have a visible response."
+  rationale: "Feedback builds confidence and prevents repeated actions."
+  rules:
+    - "Provide immediate response to user actions."
+    - "Show progress for longer tasks."
+
+principle_efficiency:
+  title: "Efficiency"
+  summary: "Support both quick tasks and power workflows."
+  rationale: "Experts need speed while novices need guidance."
+  rules:
+    - "Provide shortcuts and bulk actions."
+    - "Keep primary flows short."
+
+principle_content_first:
+  title: "Content First"
+  summary: "Let content drive layout and hierarchy."
+  rationale: "Users come for information and tasks, not decoration."
+  rules:
+    - "Avoid visual noise and unnecessary ornamentation."
+    - "Ensure key content is visible without scrolling when possible."
+
+principle_governance:
+  title: "Governance"
+  summary: "Changes should be intentional and documented."
+  rationale: "Governance prevents fragmentation."
+  rules:
+    - "Track changes to tokens and components."
+    - "Deprecate before removing."

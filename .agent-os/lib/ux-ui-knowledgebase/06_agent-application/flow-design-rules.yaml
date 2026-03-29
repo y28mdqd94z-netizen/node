@@ -1,0 +1,28 @@
+flow_rules:
+  - id: define_goal
+    rule: "Start by defining the single primary user goal for the flow."
+    rationale: "Clear goals reduce scope creep and extra steps."
+
+  - id: minimize_steps
+    rule: "Keep core flows to the minimum number of steps."
+    rationale: "Fewer steps reduce drop-off."
+
+  - id: progressive_disclosure
+    rule: "Delay advanced options until the user needs them."
+    rationale: "Reduces cognitive load for first-time users."
+
+  - id: show_progress
+    rule: "Show progress for flows longer than two steps."
+    rationale: "Progress indicators increase completion."
+
+  - id: error_recovery
+    rule: "Provide clear recovery paths for errors."
+    rationale: "Users should never be blocked without guidance."
+
+  - id: confirmation
+    rule: "Confirm destructive or irreversible actions."
+    rationale: "Prevents accidental loss and builds trust."
+
+  - id: save_state
+    rule: "Persist state between steps whenever possible."
+    rationale: "Users can resume without rework."

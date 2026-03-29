@@ -1,0 +1,74 @@
+pattern_pricing_table:
+  pattern_name: "Pricing Table"
+  problem_solved: "Helps users compare plans."
+  context: "Marketing and upgrade flows."
+  structure:
+    - "Plan columns"
+    - "Feature rows"
+    - "Primary CTA"
+  core_elements: ["Card", "Table", "Button"]
+  variants:
+    - "Monthly/annual toggle"
+    - "Highlighted recommended plan"
+  best_for: "Subscription products."
+  avoid_for: "Usage-based products without tiers."
+  desktop_considerations: "Keep feature rows aligned."
+  mobile_considerations: "Stack plans with comparison highlights."
+  accessibility_notes: "Ensure table or list semantics."
+  behaviour_rules: "Highlight differences, not repetitions."
+  related_components: ["Card", "Toggle", "Button"]
+  related_principles: ["Anchoring Bias", "Clarity"]
+  anti_patterns:
+    - "Obscuring total cost or renewal terms."
+  implementation_notes: "Show inclusive pricing and taxes where possible."
+  evaluation_criteria:
+    - "Users can choose a plan confidently."
+
+pattern_subscription_manage:
+  pattern_name: "Subscription Management"
+  problem_solved: "Lets users view and change their plan."
+  context: "Account billing settings."
+  structure:
+    - "Current plan summary"
+    - "Upgrade/downgrade actions"
+    - "Billing cycle details"
+  core_elements: ["Summary card", "Button", "Link"]
+  variants:
+    - "Change plan wizard"
+  best_for: "Self-serve subscription products."
+  avoid_for: "Manual sales-led billing."
+  desktop_considerations: "Show pricing impact before confirmation."
+  mobile_considerations: "Use clear step-by-step flow."
+  accessibility_notes: "Explain billing changes in plain language."
+  behaviour_rules: "Provide proration explanation if relevant."
+  related_components: ["Card", "Dialog"]
+  related_principles: ["User Control and Freedom"]
+  anti_patterns:
+    - "Hiding cancellation behind support only."
+  implementation_notes: "Offer cancellation survey but allow skip."
+  evaluation_criteria:
+    - "Users can modify plans without support."
+
+pattern_invoice_history:
+  pattern_name: "Invoice History"
+  problem_solved: "Provides access to past invoices and receipts."
+  context: "Billing and accounting workflows."
+  structure:
+    - "Invoice list"
+    - "Download actions"
+  core_elements: ["Table", "Button", "Link"]
+  variants:
+    - "Filter by date or status"
+  best_for: "Business accounts and audits."
+  avoid_for: "Products without billing records."
+  desktop_considerations: "Provide export and search."
+  mobile_considerations: "Use compact list with download action."
+  accessibility_notes: "Ensure downloads are clearly labeled."
+  behaviour_rules: "Show status and payment method."
+  related_components: ["Table", "Filter"]
+  related_principles: ["Transparency"]
+  anti_patterns:
+    - "No access to historical invoices."
+  implementation_notes: "Support PDF and email receipt."
+  evaluation_criteria:
+    - "Users can find and download invoices quickly."

@@ -1,0 +1,76 @@
+pattern_basic_table:
+  pattern_name: "Basic Data Table"
+  problem_solved: "Presents structured data in rows and columns."
+  context: "Lists with simple sorting and scanning."
+  structure:
+    - "Header row"
+    - "Data rows"
+    - "Optional pagination"
+  core_elements: ["Table", "Header", "Row"]
+  variants:
+    - "Striped rows"
+    - "Sticky header"
+  best_for: "Simple data viewing."
+  avoid_for: "Complex editing or bulk actions."
+  desktop_considerations: "Allow horizontal scrolling for wide tables."
+  mobile_considerations: "Use responsive cards or stacked rows."
+  accessibility_notes: "Use proper table semantics."
+  behaviour_rules: "Keep column count under 6 when possible."
+  related_components: ["Table", "Pagination"]
+  related_principles: ["Cognitive Load Theory"]
+  anti_patterns:
+    - "Overloading tables with dense columns."
+  implementation_notes: "Provide sorting for common columns."
+  evaluation_criteria:
+    - "Users can scan and compare rows quickly."
+
+pattern_data_grid:
+  pattern_name: "Data Grid"
+  problem_solved: "Supports complex data interaction and editing."
+  context: "Admin tools and power-user workflows."
+  structure:
+    - "Header with sorting/filter"
+    - "Selectable rows"
+    - "Inline edit or detail panel"
+  core_elements: ["Grid", "Filters", "Bulk actions"]
+  variants:
+    - "Pinned columns"
+    - "Column chooser"
+  best_for: "High-volume data management."
+  avoid_for: "Casual users or simple lists."
+  desktop_considerations: "Provide keyboard shortcuts for speed."
+  mobile_considerations: "Limit to viewing or simple actions."
+  accessibility_notes: "Ensure focus order and ARIA grid roles."
+  behaviour_rules: "Persist user column and filter settings."
+  related_components: ["Table", "Checkbox", "Menu"]
+  related_principles: ["Flexibility and Efficiency"]
+  anti_patterns:
+    - "Hiding critical data behind horizontal scroll."
+  implementation_notes: "Support export and batch operations."
+  evaluation_criteria:
+    - "Users can edit or manage data with minimal clicks."
+
+pattern_bulk_actions:
+  pattern_name: "Bulk Actions"
+  problem_solved: "Allows users to apply actions to many items."
+  context: "Lists where multi-select is common."
+  structure:
+    - "Row selection controls"
+    - "Bulk action bar"
+  core_elements: ["Checkbox", "Action bar", "Confirmation dialog"]
+  variants:
+    - "Sticky bulk action bar"
+    - "Inline bulk menu"
+  best_for: "Admin or management tasks."
+  avoid_for: "Lists with low-volume or sensitive operations."
+  desktop_considerations: "Use shift-click for range selection."
+  mobile_considerations: "Offer multi-select mode."
+  accessibility_notes: "Announce selection counts."
+  behaviour_rules: "Confirm destructive actions and provide undo."
+  related_components: ["Checkbox", "Button", "Dialog"]
+  related_principles: ["User Control and Freedom", "Error Prevention"]
+  anti_patterns:
+    - "Destructive bulk actions with no confirmation."
+  implementation_notes: "Show count and affected items before apply."
+  evaluation_criteria:
+    - "Users can apply bulk actions safely."

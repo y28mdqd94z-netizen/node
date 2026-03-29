@@ -1,0 +1,25 @@
+heuristic_visibility:
+  title: "Visibility of System Status"
+  description: "Interface keeps users informed about what's happening, through appropriate feedback within reasonable time【30†L42-L50】."
+  success_signals:
+    - "Loading indicators appear when waiting (e.g., spinners, skeletons)."
+    - "Actions (clicks) cause immediate visual change."
+  failure_signals:
+    - "No feedback on button click or form submission."
+    - "Long delays without progress indicator, leading to user confusion."
+  examples:
+    - "After submitting a form, show a confirmation message or spinner immediately."
+  agent_rules: "Check that every user action (click, input) triggers some feedback within 400ms. If not, recommend adding a loader or message."
+
+heuristic_error_prevention:
+  title: "Error Prevention"
+  description: "Design should prevent problems from occurring (e.g., disable invalid inputs, confirm destructive actions)【6†L243-L252】."
+  success_signals:
+    - "Form inputs validate and give guidance before submission."
+    - "Critical actions prompt with ‘Are you sure?’ dialogs."
+  failure_signals:
+    - "Users frequently face errors due to invalid data entry."
+    - "No confirmation for actions like account deletion."
+  examples:
+    - "Disable the submit button until all required fields are valid."
+  agent_rules: "Scan forms for required-field checks; ensure confirmation for irreversible actions."

@@ -1,0 +1,30 @@
+flow_design:
+  title: "First-Time User Flow"
+  rules:
+    - "Chunk onboarding into 3–5 minimal steps (Hick, Miller) with progress indicator (Goal Gradient)."
+    - "Use plain language and tooltips (Recognition over Recall, Consistency)."
+    - "Include optional walkthrough or skip option (User control)."
+  agent_notes: "Check if new user. If yes, enforce multi-step wizard with defaults pre-filled."
+
+pattern_selection:
+  title: "Choosing Navigation Pattern"
+  rules:
+    - "If <6 sections and desktop, use top-nav bar; if >6 or deep structure, use sidebar【6†L216-L225】【26†L85-L94】."
+    - "On mobile, use bottom tabs for 3–5 key sections, else hamburger menu for more."
+    - "Labels must match user language (Jakob’s Law). Avoid obscure icons."
+  agent_notes: "Analyze number of sections and screen size. Map sections to pattern table. Validate with mobile/desktop context."
+
+component_selection:
+  title: "Button vs Link"
+  rules:
+    - "Use <button> (or actionable element) for operations (save, submit); use <a> (link style) for navigation or non-critical actions."
+    - "Primary action should be a button; secondary/simple actions can be styled as text links."
+  agent_notes: "Refer to pattern context: if action triggers data change, choose Button component; if just routing, Link."
+
+anti_patterns:
+  title: "Common UI Anti-Patterns"
+  list:
+    - "Non-Standard Controls: Using custom widgets for common tasks (e.g. color picker not behaving as expected)【32†L64-L73】."
+    - "Form Overload: Packing too many fields in one page without grouping."
+    - "No Feedback: Missing loading state on form submit."
+  agent_notes: "Scan design for these issues; flag and suggest standard patterns."

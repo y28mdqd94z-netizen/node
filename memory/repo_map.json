@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-03-29T14:52:58+1100",
+  "root": "/Users/nickport/node",
+  "excluded": [".git/","node_modules/","dist/","build/",".next/","vendor/","target/",".venv/","venv/","coverage/",".cache/",".agent-os/","memory/",".env",".env.*","*.key","*.pem","*.pfx","*.crt","*.cer"],
+  "top_level_dirs": [],
+  "manifests": [],
+  "frameworks": [],
+  "entry_points": [],
+  "stack": {
+    "runtimes": [],
+    "languages": ["markdown"],
+    "frameworks": []
+  },
+  "file_counts_by_ext": {"(none)":1,"md":1},
+  "total_files": 2,
+  "files": ["README.md","LICENSE"],
+  "truncated": false
+}

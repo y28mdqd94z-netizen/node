@@ -1,0 +1,76 @@
+pattern_toast:
+  pattern_name: "Toast Notifications"
+  problem_solved: "Communicates short, non-blocking feedback."
+  context: "Success messages, background actions."
+  structure:
+    - "Brief message"
+    - "Optional action"
+    - "Auto-dismiss"
+  core_elements: ["Toast", "Icon", "Action"]
+  variants:
+    - "Undo toast"
+    - "Stacked toasts"
+  best_for: "Low-risk confirmations."
+  avoid_for: "Critical errors or required actions."
+  desktop_considerations: "Place in consistent corner."
+  mobile_considerations: "Avoid covering navigation controls."
+  accessibility_notes: "Announce via live regions."
+  behaviour_rules: "Auto-dismiss after 3-5 seconds."
+  related_components: ["Toast", "Button"]
+  related_principles: ["Visibility of System Status"]
+  anti_patterns:
+    - "Toasts with essential information only."
+  implementation_notes: "Allow manual dismiss."
+  evaluation_criteria:
+    - "Users notice confirmation without interruption."
+
+pattern_inline_alert:
+  pattern_name: "Inline Alerts"
+  problem_solved: "Shows feedback in context of the content."
+  context: "Form errors, warnings, or success states."
+  structure:
+    - "Alert message"
+    - "Icon and text"
+  core_elements: ["Alert", "Icon", "Text"]
+  variants:
+    - "Success banner"
+    - "Warning callout"
+  best_for: "Context-specific feedback."
+  avoid_for: "Global system issues."
+  desktop_considerations: "Align alert with related content."
+  mobile_considerations: "Use full-width alerts."
+  accessibility_notes: "Ensure text is descriptive and readable."
+  behaviour_rules: "Place close to the issue."
+  related_components: ["Alert"]
+  related_principles: ["Error Prevention"]
+  anti_patterns:
+    - "Error at top of page without field highlights."
+  implementation_notes: "Pair with field-level indicators."
+  evaluation_criteria:
+    - "Users can resolve issues quickly."
+
+pattern_system_banner:
+  pattern_name: "System Status Banner"
+  problem_solved: "Communicates system-wide issues or announcements."
+  context: "Maintenance notices, outages, policy changes."
+  structure:
+    - "Banner at top"
+    - "Brief message"
+    - "Link to details"
+  core_elements: ["Banner", "Link"]
+  variants:
+    - "Dismissible banner"
+    - "Persistent status bar"
+  best_for: "Global messages affecting many users."
+  avoid_for: "Local errors or minor notifications."
+  desktop_considerations: "Avoid pushing content too far down."
+  mobile_considerations: "Use compact messaging."
+  accessibility_notes: "Ensure banner is announced on load."
+  behaviour_rules: "Provide clear severity indicator."
+  related_components: ["Banner", "Link"]
+  related_principles: ["Visibility of System Status"]
+  anti_patterns:
+    - "Permanent banners with outdated messages."
+  implementation_notes: "Include timestamps for status messages."
+  evaluation_criteria:
+    - "Users understand impact and next steps."

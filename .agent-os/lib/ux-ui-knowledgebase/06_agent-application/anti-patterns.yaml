@@ -1,0 +1,30 @@
+anti_patterns:
+  - name: "Hidden Primary Action"
+    description: "Primary action is buried or visually equal to secondary actions."
+    impact: "Users hesitate or choose the wrong action."
+    fix: "Give one clear primary CTA and reduce competing emphasis."
+
+  - name: "Overloaded Navigation"
+    description: "Too many top-level items or inconsistent labels."
+    impact: "Users cannot find key destinations."
+    fix: "Group items and reduce top-level choices."
+
+  - name: "Color-Only Status"
+    description: "Status conveyed only by color."
+    impact: "Fails accessibility and causes misinterpretation."
+    fix: "Add text labels or icons alongside color."
+
+  - name: "No Empty State Guidance"
+    description: "Empty screens provide no direction."
+    impact: "Users are stuck and abandon."
+    fix: "Explain why empty and provide next step."
+
+  - name: "Unclear Errors"
+    description: "Generic error messages with no recovery guidance."
+    impact: "Users cannot fix issues."
+    fix: "Describe cause and provide resolution steps."
+
+  - name: "Missing Focus States"
+    description: "Interactive elements lack visible focus."
+    impact: "Keyboard users cannot navigate."
+    fix: "Add visible focus ring with sufficient contrast."

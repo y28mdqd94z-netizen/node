@@ -1,0 +1,308 @@
+ux_law_hicks:
+  title: "Hick’s Law"
+  category: "UX Laws"
+  summary: "Decision time grows with the number and complexity of choices【2†L36-L42】."
+  definition: "Hick’s Law (Hick-Hyman Law) states that decision time increases as options multiply. In software, more menu items or complex choices lead to slower user responses due to higher cognitive load【2†L36-L42】."
+  why_it_matters: "Limiting choices speeds decisions【2†L36-L42】, reducing cognitive burden. Excess options can overwhelm users and cause drop-off."
+  applies_to: "Menus, settings panels, dashboards, and any interface with multiple clickable options."
+  use_when: "Presenting tasks or features: group and limit top-level options, use progressive disclosure for secondary choices."
+  avoid_when: "Features are inherently complex (cannot be simplified) or when users must see all options (e.g. search filters by necessity)."
+  signals_of_good_use: "Quick user decisions, minimal clicks or taps, high completion rates, low help requests."
+  signals_of_bad_use: "User hesitates, abandons flow, requests simpler UI, frequent use of search/default or support."
+  tradeoffs: "Fewer options may require extra clicks (deep navigation). Conversely, showing all options reveals features but slows users."
+  related_principles: ["Miller’s Law", "Pareto Principle", "Cognitive Load Theory"]
+  common_mistakes: "Overloading navigation menus; displaying rarely-used features upfront; skipping categorization."
+  examples:
+    - "Google: minimal homepage with just search (two buttons) exemplifies Hick’s Law by offering only core choices【2†L53-L61】."
+    - "Slack onboarding: hides most features initially, revealing them via chatbot to avoid overwhelming new users【2†L74-L82】."
+  implementation_notes: "Use progressive disclosure or wizards for complex setups. Prioritize most-used actions. A/B test menu sizes."
+  accessibility_notes: "Ensure keyboard and screen-reader navigation still reveal all options (e.g. by expand/collapse). Use clear headings for hidden sections."
+  agent_rules: "If option count > 5, group or hide some. Order by frequency. Provide search or quick-access as needed."
+  confidence: 0.9
+  tags: ["decision-making", "cognitive_load", "menu_design"]
+  sources: ["Laws of UX: Hick’s Law【2†L36-L42】", "Interaction Design Foundation: Hick’s Law【26†L65-L73】"]
+
+ux_law_fitts:
+  title: "Fitts’s Law"
+  category: "UX Laws"
+  summary: "Time to acquire a target is a function of distance and size【4†L125-L134】【6†L178-L186】."
+  definition: "Fitts’s Law states that target acquisition time grows with distance and decreases with target size【4†L125-L134】. In UI, larger and closer buttons are faster to click."
+  why_it_matters: "Optimizing size and placement reduces effort. Key actions (e.g. primary buttons) should be large; aligning with edges makes them effectively larger【6†L216-L225】."
+  applies_to: "Buttons, links, icons, menu items on desktop and touchscreen (but note differences)."
+  use_when: "Designing clickable targets: use large interactive areas for important actions; put menus/edges strategically."
+  avoid_when: "Targets are already large or edge-bound by default (e.g. screen corners in desktop UIs)."
+  signals_of_good_use: "Fast clicks with few misses; important actions placed at screen edges or large."
+  signals_of_bad_use: "Frequent mis-clicks on small items; slow pointing/click times; complaints about difficulty."
+  tradeoffs: "Larger targets may crowd UI; may need to omit or group less important items. On small screens, too many large targets can limit space."
+  related_principles: ["Doherty Threshold", "Precision vs. Speed trade-off", "Accessibility: target size guidelines"]
+  common_mistakes: "Small touch areas, especially icons without padding; confusing non-clickable whitespace; ignoring the desktop vs. touch context."
+  examples:
+    - "Desktop OS menus placed on screen edges (infinite target) accelerate clicks【6†L216-L225】."
+    - "Buttons with icon+label have larger click areas than icon alone【6†L178-L186】."
+  implementation_notes: "Make whole element (including label) clickable. Use padding. On desktop, leverage edges (e.g. Mac menu bar); on mobile, avoid edge-only targets as palm resting differs."
+  accessibility_notes: "Follow minimum touch-size guidelines (e.g. 44px on mobile). Ensure space between items to avoid overlap."
+  agent_rules: "Maximize clickable area for important buttons. Check spacing between clickable elements. Place critical actions at UI boundaries if on desktop."
+  confidence: 0.9
+  tags: ["input_performance", "touch_targets", "menu_design"]
+  sources: ["Nielsen Norman Group: Fitts’s Law【4†L125-L134】【6†L178-L186】"]
+
+ux_law_jakobs:
+  title: "Jakob’s Law"
+  category: "UX Laws"
+  summary: "Users spend most time on other sites; they prefer familiar interfaces【8†L36-L41】."
+  definition: "Jakob’s Law: People expect your site/app to work like others they know【8†L36-L41】. Use familiar patterns to leverage existing mental models."
+  why_it_matters: "Consistency with common UI patterns reduces learning time【8†L44-L50】 and frustration. Abrupt changes break user expectations."
+  applies_to: "Navigation placement, icon meanings, overall layout and flow."
+  use_when: "Designing core functionality: reuse standard conventions (e.g. menu on top or left, gear icon for settings)."
+  avoid_when: "Introducing truly novel features where standard patterns won’t serve (then provide training or tours)."
+  signals_of_good_use: "Users immediately understand interface; transfer skills from other tools; high initial success."
+  signals_of_bad_use: "Confusion when elements are placed or labeled unexpectedly; feedback like “where is X?”"
+  tradeoffs: "Mimicking others may stifle innovation; balance novelty with cues (e.g. keep key workflows familiar)."
+  related_principles: ["Mental Models", "Consistency and Standards", "Convention"]
+  common_mistakes: "Deviating from platform norms (e.g. web-style sidebar on mobile); using unconventional icons without labels."
+  examples:
+    - "Switching users: YouTube’s redesign allowed users to preview and revert to old design to ease transition【8†L65-L70】."
+    - "Common Form Controls: Digital toggles/radios mimic physical controls for instant familiarity【8†L58-L66】."
+  implementation_notes: "Follow OS/platform standards (iOS vs Android). Use recognizable icons (e.g. hamburger for menu). For changes, use gradual updates or optional opt-in."
+  accessibility_notes: "Provide descriptive labels/tooltips for icons to reinforce meaning; ensure no critical functionality is hidden behind nonstandard controls."
+  agent_rules: "Default to common patterns from mature platforms; if a new design deviates, ensure guidance or alternative familiar modes."
+  confidence: 0.85
+  tags: ["convention", "user_expectation", "pattern_library"]
+  sources: ["Laws of UX: Jakob’s Law【8†L36-L41】【8†L44-L50】"]
+
+ux_law_millers:
+  title: "Miller’s Law"
+  category: "UX Laws"
+  summary: "People can hold ~7±2 items in working memory【10†L36-L40】."
+  definition: "Miller’s Law states that average people can keep about 7 (±2) items in short-term memory【10†L36-L40】."
+  why_it_matters: "Avoid overwhelming users. Chunk related information, reduce list lengths, and minimize memory load in interfaces【10†L42-L50】."
+  applies_to: "List items, form fields, navigation menus, and any sequential data presentation."
+  use_when: "Designing menus or information lists: break into subcategories or progressive steps to avoid too many items at once."
+  avoid_when: "When exact item count is critical to user (e.g. showing all categories for transparency)."
+  signals_of_good_use: "User easily scans and recalls options; low error rates due to memory lapses."
+  signals_of_bad_use: "Users skip content, rely on search instead of navigating, frequently use 'back' due to confusion."
+  tradeoffs: "More but shorter lists vs longer deep paths. Provide search or filters as alternative."
+  related_principles: ["Chunking", "Recognition over Recall", "Cognitive Load Theory"]
+  common_mistakes: "Unnecessarily splitting content into many tiny pages (fragmentation); or dumping long lists on one page without grouping."
+  examples:
+    - "Menu chunking: Group related navigation links under headings (Settings, Profile, Billing)."
+    - "Wizard forms: multi-step sign-up forms keep only few fields per step, leveraging Miller’s Law for reduced load."
+  implementation_notes: "Use bullet lists, accordions, tabs to group content. Label sections clearly. Provide breadcrumbs to reduce memory of previous steps."
+  accessibility_notes: "Maintain visible context (breadcrumbs, progress indicator) to reduce reliance on memory. Ensure toggles/sections are announced in screen readers."
+  agent_rules: "Limit visible options to ~5-7 at a time; use progressive disclosure for additional items; test with novices."
+  confidence: 0.9
+  tags: ["memory_limits", "chunking", "menu_design"]
+  sources: ["Laws of UX: Miller’s Law【10†L36-L40】【10†L44-L49】"]
+
+ux_law_teslers:
+  title: "Tesler’s Law"
+  category: "UX Laws"
+  summary: "Some complexity cannot be eliminated, only moved between system and user【12†L36-L44】."
+  definition: "Tesler’s Law (Conservation of Complexity) states every system has inherent complexity that cannot be removed【12†L36-L44】."
+  why_it_matters: "Designers must decide whether complexity is handled by the system or the user. Put effort in to simplify user tasks, but recognize some complexity may remain."
+  applies_to: "Feature-rich applications, complex workflows, or any system requiring sophisticated user input."
+  use_when: "Building features that may be complex: strive to handle complexity behind scenes (automation, defaults) so users do less."
+  avoid_when: "Attempting to oversimplify critical tasks to the point of hiding functionality or user control."
+  signals_of_good_use: "Users accomplish tasks with guidance; system automates calculations or defaults; minimal manual steps."
+  signals_of_bad_use: "Users are confused by buried features; system forces them to memorize or perform complex steps manually."
+  tradeoffs: "Automating complexity saves user time but can remove control/visibility. Exposing complexity ensures flexibility but increases user burden."
+  related_principles: ["Automation vs Control", "Mental Models"]
+  common_mistakes: "Hiding all options makes system inflexible; giving full control with no defaults overloads users."
+  examples:
+    - "Spreadsheet formulas: Excel provides functions (system handles math) vs. requiring users to compute manually."
+    - "E-commerce shipping: sites store address once (system complexity) rather than ask users every time."
+  implementation_notes: "Use smart defaults, wizards, tooltips to offload complexity. Where complexity remains, provide education (help text, tutorials)."
+  accessibility_notes: "Ensure that any automation still allows user override; provide explanations for unexpected behavior (e.g. accessible tooltips)."
+  agent_rules: "Favor designs that automate user work when safe. Identify user pain points and reduce manual steps. If complexity stays, surface guidance."
+  confidence: 0.85
+  tags: ["complexity", "automation", "user-control"]
+  sources: ["Laws of UX: Tesler’s Law【12†L36-L44】"]
+
+ux_law_peak_end:
+  title: "Peak–End Rule"
+  category: "UX Laws"
+  summary: "People judge experiences by their most intense moment and the end【14†L36-L40】."
+  definition: "The Peak–End Rule states that memory of an experience is determined by its peak (best/worst) and its end【14†L34-L40】."
+  why_it_matters: "Focus on creating positive ‘peak’ moments and a strong finish. A smooth final step or delightful surprise can outweigh minor issues."
+  applies_to: "Critical flows like onboarding completion, checkout, or any multi-step process."
+  use_when: "Designing the final steps or rewards in a process (e.g. confirmation pages, success messages)."
+  avoid_when: "Using trivial peeks to mask systemic issues (subpar core flows should be fixed first)."
+  signals_of_good_use: "High satisfaction ratings despite some friction, positive user testimonials about outcome."
+  signals_of_bad_use: "Users remember last (frustrating) step and complain, even if earlier steps were smooth."
+  tradeoffs: "Extra polish at end (animation, reward) vs. basic completion. Do not ignore first steps, but allocate efforts to key moments."
+  related_principles: ["Zeigarnik Effect", "Emotional Design"]
+  common_mistakes: "Ending with bland confirmation; neglecting error states that become negative peaks."
+  examples:
+    - "Mailchimp’s signup: uses humorous, branded illustration on success to leave a positive final impression【14†L58-L64】."
+    - "Uber: reduces wait-time friction and clarifies final steps to avoid ending on a negative (cancellation) peak【14†L65-L73】."
+  implementation_notes: "Incorporate micro-animations or messages at completion. Offer small rewards or feedback (e.g. progress bars filling, certificates, congratulatory text)."
+  accessibility_notes: "Ensure any animations or sound at end can be skipped or are friendly. Provide text alternatives for visual cues."
+  agent_rules: "Identify the ‘end’ of each user journey and optimize it (clear messaging, simple choices). Highlight accomplishments (percent complete, milestones)."
+  confidence: 0.8
+  tags: ["memory_bias", "emotional_design", "user_satisfaction"]
+  sources: ["Laws of UX: Peak–End Rule【14†L34-L40】【14†L47-L52】"]
+
+ux_law_serial_position:
+  title: "Serial Position Effect"
+  category: "UX Laws"
+  summary: "Items at the beginning or end of a list are remembered best【16†L36-L44】."
+  definition: "The Serial Position Effect implies users recall first (primacy) and last (recency) items in a sequence more easily【16†L36-L44】."
+  why_it_matters: "Position important actions/information where they’ll be recalled: often at list edges or first/last items【16†L42-L50】."
+  applies_to: "Menus, lists of settings, grouped form fields, navigation links."
+  use_when: "Ordering items: place key actions at the start or end (e.g., primary settings first, logout last)."
+  avoid_when: "When middle items are equally critical but risk being overlooked (provide multiple access points or search)."
+  signals_of_good_use: "Users easily remember and access first/last options; analytics show most clicks on those positions."
+  signals_of_bad_use: "Frequently accessed options in middle get less use; confusion about hidden items."
+  tradeoffs: "Guardrails: putting secondary actions at ends may push others inward; may need alternative discoverability (search, tips)."
+  related_principles: ["Fitts’s Law", "Jakob’s Law"]
+  common_mistakes: "Hiding important features in long menus (users forget them)."
+  examples:
+    - "Settings menus often put ‘Account’ at top and ‘Logout’ at bottom, leveraging primacy and recency."
+    - "Alphabet lists (A…Z): A and Z stand out most to users【16†L42-L50】."
+  implementation_notes: "Use fixed first/last item positions for critical tasks. Label ends clearly (e.g., ‘Back’ on left, ‘Next’ on right)."
+  accessibility_notes: "Screen reader or focus order naturally announces first/last items; ensure context (aria labels) to reinforce position."
+  agent_rules: "Always check order of menu items; if changing order, consider user testing or heuristics about position recall."
+  confidence: 0.85
+  tags: ["memory", "navigation", "list_order"]
+  sources: ["Laws of UX: Serial Position Effect【16†L36-L44】【16†L42-L50】"]
+
+ux_law_von_restorff:
+  title: "Von Restorff Effect"
+  category: "UX Laws"
+  summary: "Distinctive items are more likely to be remembered【18†L36-L44】."
+  definition: "The Von Restorff (Isolation) Effect says an item that stands out (visually or contextually) is recalled better than uniform items【18†L34-L42】."
+  why_it_matters: "Use contrast (color, size, motion) to highlight important elements (e.g. ‘Buy’ button) so they draw attention and memory【18†L44-L52】."
+  applies_to: "Primary call-to-action buttons, critical alerts, key notifications."
+  use_when: "Emphasizing a single critical element (signup, error message)."
+  avoid_when: "Overusing contrast on all items (which reduces effect) or using it in non-critical context (distracts)."
+  signals_of_good_use: "Users click or note the highlighted item; tasks funnel through the desired action path."
+  signals_of_bad_use: "Multiple items use strong styling (buttons, banners) causing confusion; users think it’s an ad."
+  tradeoffs: "A highlighted element stands out, but if others change to same style, effectiveness drops. Balance importance."
+  related_principles: ["Hierarchy", "Contrast", "Selective Attention"]
+  common_mistakes: "Relying solely on color for highlighting (hurts color-blind users)【18†L46-L53】; too many competing highlights."
+  examples:
+    - "Sale banners often use a bright color different from site palette to stand out."
+    - "New or important feature marked with a dot/badge icon to isolate it from others."
+  implementation_notes: "Apply visual accent (color, outline, icon) sparingly. Ensure highlighted items have clear labels; test that they are noticed."
+  accessibility_notes: "Use more than just color (icons, patterns, text boldness). For motion highlights, provide pause/stop controls for sensitive users【18†L44-L52】."
+  agent_rules: "Limit highlighted targets to <2 per view. Prioritize by user goals. Verify contrast ratio and non-color indicators."
+  confidence: 0.9
+  tags: ["visual_design", "memory", "attention"]
+  sources: ["Laws of UX: Von Restorff Effect【18†L34-L42】【18†L44-L52】"]
+
+ux_law_zeigarnik:
+  title: "Zeigarnik Effect"
+  category: "UX Laws"
+  summary: "People recall unfinished tasks better than completed ones【20†L36-L43】."
+  definition: "The Zeigarnik Effect holds that incomplete tasks remain more salient in memory than finished tasks【20†L34-L38】."
+  why_it_matters: "Leverage incomplete-state to motivate completion. Showing progress or incomplete milestones encourages users to finish tasks."
+  applies_to: "Onboarding flows, multi-step forms, tutorials, goal tracking."
+  use_when: "Encouraging engagement: use progress bars, checklists of tasks where users see unfinished items."
+  avoid_when: "If unfinished states cause anxiety (e.g. incomplete profile on social media might discourage use)."
+  signals_of_good_use: "Users return to finish tasks, engage with reminders. High completion rates as users close open loops."
+  signals_of_bad_use: "Users abandon flows if gap feels too large; confusion if incomplete state not communicated."
+  tradeoffs: "Too much focus on incomplete tasks can pressure users. Balance by showing progress positively (points, levels) rather than guilt."
+  related_principles: ["Goal Gradient Effect", "Commitment Devices"]
+  common_mistakes: "Not showing any sign of progress – e.g., static form with no indicator leaves users blind to completion status."
+  examples:
+    - "Progress bars in tutorials compel users: seeing 70% done makes them push to 100%."
+    - "E-commerce checkout: showing steps (cart→address→payment) reminds users of incomplete steps."
+  implementation_notes: "Display clear progress indicators. Offer achievements/badges for completed tasks. Provide save-and-return for long tasks."
+  accessibility_notes: "Ensure progress indicators (bars, steps) have text labels or aria roles so assistive tech conveys incomplete state."
+  agent_rules: "Include visible progress for any multi-step flow. Prompt users about unfinished items (e.g. cart items, incomplete profile)."
+  confidence: 0.8
+  tags: ["motivation", "task_completion", "progress"]
+  sources: ["Laws of UX: Zeigarnik Effect【20†L36-L43】", "NNGroup: Zeigarnik Effect in UX【20†L42-L48】"]
+
+ux_law_doherty:
+  title: "Doherty Threshold"
+  category: "UX Laws"
+  summary: "UX is optimal when system response is within 400ms【30†L36-L44】."
+  definition: "The Doherty Threshold posits that productivity and engagement soar if user-system interactions complete within ~400ms【30†L36-L44】."
+  why_it_matters: "Fast feedback keeps users in flow【30†L42-L50】. Above ~400ms, users begin to perceive delays, reducing efficiency and satisfaction."
+  applies_to: "Interactive operations: button clicks, form submissions, real-time filters, any state change."
+  use_when: "Designing responses: aim for instant actions or provide animation/loading cues if delay is unavoidable."
+  avoid_when: "Tasks inherently long (e.g. complex report generation) – instead show progress and communicate status."
+  signals_of_good_use: "Users feel interface is responsive; no ‘dead’ periods; high throughput of tasks."
+  signals_of_bad_use: "Users wait, click multiple times out of impatience, or navigate away during loading."
+  tradeoffs: "Strive for speed, but don’t sacrifice information. If action takes >400ms, show skeletons or spinners to keep attention【30†L42-L50】."
+  related_principles: ["Feedback & System Status", "Progressive Disclosure", "Visual Feedback"]
+  common_mistakes: "No loading indicator on slow calls; showing spinner alone without context."
+  examples:
+    - "Instant search-as-you-type (within 400ms) keeps engagement vs. separate search button."
+    - "Skeleton screen on content loading: gives impression of speed even if data loads in background."
+  implementation_notes: "Use asynchronous loading, optimize queries. For inevitable delays, show accurate progress (e.g. percentage)."
+  accessibility_notes: "Ensure loading indicators are announced to screen readers. Don’t use rapid flashing animations during progress."
+  agent_rules: "Check critical actions for feedback time. Always provide feedback within 400ms or a progress cue."
+  confidence: 0.9
+  tags: ["performance", "feedback", "user_engagement"]
+  sources: ["Laws of UX: Doherty Threshold【30†L36-L44】【30†L42-L50】"]
+
+ux_law_pareto:
+  title: "Pareto Principle"
+  category: "UX Laws"
+  summary: "80% of effects come from 20% of causes【22†L34-L42】."
+  definition: "The Pareto Principle (80/20 Rule) suggests most outcomes stem from a few inputs. In UX, a minority of features serve the majority of users【22†L42-L50】."
+  why_it_matters: "Identify and prioritize the 20% of features or content that deliver 80% of value. Focus design and testing efforts there."
+  applies_to: "Feature prioritization, content organization, performance optimization."
+  use_when: "Allocating resources: enhance and highlight core use-cases first (e.g. landing page fundamentals over edge-case settings)."
+  avoid_when: "Neglecting important minority use-cases without analysis – always validate with data which features fall in the 20%."
+  signals_of_good_use: "High usage for prioritized features; positive user feedback on core flows; minimal use of secondary features."
+  signals_of_bad_use: "Overinvestment in rarely-used parts; core features bugging out or being overlooked."
+  tradeoffs: "Focusing on majority can leave niche needs unmet. Plan for scalable solution to cover less-common 80% eventually."
+  related_principles: ["Kano Model", "Impact-Effort Analysis"]
+  common_mistakes: "Assuming 80/20 without analytics. Designing for ‘everyone’ equally."
+  examples:
+    - "Dashboard design: emphasize widgets/reports that 80% of users open daily."
+    - "Software onboarding: teach primary path first, not every feature at once."
+  implementation_notes: "Use analytics to identify top-used features. Trim or hide peripheral features. Iterate core workflows."
+  agent_rules: "Rank features by usage metrics. If unsure, default to Pareto to suggest focus, then adjust with user research."
+  confidence: 0.8
+  tags: ["prioritization", "analytics", "impact"]
+  sources: ["Laws of UX: Pareto Principle【22†L36-L44】"]
+
+ux_law_occams:
+  title: "Occam’s Razor"
+  category: "UX Laws"
+  summary: "Among solutions, the simplest is usually best."
+  definition: "Occam’s Razor (principle of parsimony) advises favoring the solution with the fewest assumptions【24†L107-L114】. In design, this means stripping unnecessary complexity until only what is needed remains."
+  why_it_matters: "Simplicity enhances usability: users can focus on core tasks without distraction【24†L107-L114】. Redundant features or content hinder clarity."
+  applies_to: "UI layouts, feature sets, content choices, visual elements."
+  use_when: "Comparing design options: choose the one that meets requirements with less clutter. Audit existing interfaces for excess elements."
+  avoid_when: "Oversimplifying to the point of removing needed functionality or context. Always validate simplicity doesn't sacrifice clarity."
+  signals_of_good_use: "Clean, uncluttered interfaces; users complete tasks without confusion; fast learning curves."
+  signals_of_bad_use: "User confusion about how to access hidden features; repeated support questions for functionality presumed removed."
+  tradeoffs: "Minimal UI can mean more navigation steps; users may find hidden features only when searching."
+  related_principles: ["K.I.S.S (Keep It Simple)", "Minimalism", "Feature Creep Avoidance"]
+  common_mistakes: "Removing context or guidance in name of simplicity; equating fewer UI elements with better UX without measuring."
+  examples:
+    - "Google Search: extremely simple home page focusing only on search box【24†L109-L113】."
+    - "Form design: remove optional fields that aren’t essential for majority of users."
+  implementation_notes: "During design critique, ask: 'What can be removed?' Use user feedback to identify rarely used features. Implement iterative refinements."
+  agent_rules: "Encourage minimal viable interface first. If adding elements, justify each by user need. Use usability metrics to verify simplicity gains."
+  confidence: 0.8
+  tags: ["simplicity", "minimalism", "feature_review"]
+  sources: ["Occam's Razor (Radiant Digital)【24†L107-L114】"]
+
+ux_law_progressive_disclosure:
+  title: "Progressive Disclosure"
+  category: "UX Principles"
+  summary: "Show only the necessary, hide advanced options until needed【26†L65-L73】."
+  definition: "Progressive Disclosure defers advanced or rarely-used features to secondary views, making applications easier to learn and less error-prone【26†L65-L73】."
+  why_it_matters: "Reduces initial complexity for new or casual users【26†L125-L134】. Novice users see core tasks; power users can access additional options on demand."
+  applies_to: "Complex forms, advanced settings, help content, feature onboarding."
+  use_when: "Features are numerous or complex: hide secondary options under 'Advanced', 'More', or multi-step flows."
+  avoid_when: "Over-hiding critical information; if user must access advanced options frequently, consider promoting them instead."
+  signals_of_good_use: "Faster learning for beginners; fewer errors on first use; advanced users still complete tasks by discovering extras."
+  signals_of_bad_use: "Users unaware of hidden features; frustration at not finding expected options."
+  tradeoffs: "Extra clicks for power users to find advanced features vs. simpler initial view for others. Ensure discovery paths."
+  related_principles: ["Cognitive Load Theory", "Chunking"]
+  common_mistakes: "Hiding help or instructions too deep; burying vital options (like print settings) out of sight【26†L77-L85】."
+  examples:
+    - "Print dialog: basic options first, with an ‘Advanced’ button for rarely used settings【26†L85-L94】."
+    - "Onboarding tours: show essential tips initially, keep advanced tips or shortcuts for later learning phases."
+  implementation_notes: "Label disclosure controls clearly. Use progressive steps (wizard). Keep visible cues (e.g. 'More options')."
+  agent_rules: "Default to progressive reveal when option count is large; ensure navigation paths exist to hidden sections; favor initial simplicity."
+  confidence: 0.9
+  tags: ["simplicity", "learnability", "complexity_management"]
+  sources: ["Nielsen Norman Group: Progressive Disclosure【26†L65-L73】【26†L85-L94】"]

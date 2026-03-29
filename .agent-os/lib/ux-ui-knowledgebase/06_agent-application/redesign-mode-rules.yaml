@@ -1,0 +1,12 @@
+redesign_mode:
+  steps:
+    - "Identify top user goals and pain points."
+    - "Map current flow and measure friction points."
+    - "Propose changes that reduce steps or clarify actions."
+    - "Validate changes against accessibility and responsiveness rules."
+    - "Keep what already works; do not redesign without reason."
+
+  principles:
+    - "Preserve familiar patterns where possible."
+    - "Prioritize high-impact, low-risk changes first."
+    - "Document tradeoffs and assumptions."

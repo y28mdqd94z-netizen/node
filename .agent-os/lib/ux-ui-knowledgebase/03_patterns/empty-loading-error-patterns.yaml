@@ -1,0 +1,99 @@
+pattern_empty_state:
+  pattern_name: "Empty State"
+  problem_solved: "Guides users when there is no content yet."
+  context: "First-time use or newly created spaces."
+  structure:
+    - "Clear message"
+    - "Illustration or icon"
+    - "Primary action"
+  core_elements: ["Message", "Illustration", "CTA"]
+  variants:
+    - "Checklist-style empty state"
+  best_for: "New accounts or empty lists."
+  avoid_for: "Temporary empty results after filters."
+  desktop_considerations: "Use moderate illustration sizes."
+  mobile_considerations: "Keep copy short and action clear."
+  accessibility_notes: "Provide alt text for illustrations."
+  behaviour_rules: "Offer a clear next step."
+  related_components: ["Empty state", "Button"]
+  related_principles: ["Guidance", "Recognition Over Recall"]
+  anti_patterns:
+    - "Empty state with no action or explanation."
+  implementation_notes: "Tailor copy based on user role."
+  evaluation_criteria:
+    - "Users take the next action."
+
+pattern_loading_skeleton:
+  pattern_name: "Skeleton Loading"
+  problem_solved: "Improves perceived performance while content loads."
+  context: "Content-heavy screens and dashboards."
+  structure:
+    - "Placeholder shapes"
+    - "Subtle animation"
+  core_elements: ["Skeleton blocks", "Shimmer"]
+  variants:
+    - "Static placeholder"
+  best_for: "Predictable content layouts."
+  avoid_for: "Short loads under 200ms."
+  desktop_considerations: "Match final content layout."
+  mobile_considerations: "Reduce shimmer intensity."
+  accessibility_notes: "Announce loading state to screen readers."
+  behaviour_rules: "Replace with real content without layout shift."
+  related_components: ["Skeleton", "Spinner"]
+  related_principles: ["Doherty Threshold"]
+  anti_patterns:
+    - "Skeletons that do not match actual layout."
+  implementation_notes: "Limit animation to reduce motion."
+  evaluation_criteria:
+    - "Users perceive the UI as responsive."
+
+pattern_error_state:
+  pattern_name: "Error State"
+  problem_solved: "Explains failures and helps recovery."
+  context: "Failed requests or invalid actions."
+  structure:
+    - "Clear error message"
+    - "Cause or context"
+    - "Recovery action"
+  core_elements: ["Alert", "Button", "Link"]
+  variants:
+    - "Inline error"
+    - "Full-page error"
+  best_for: "Any operation that can fail."
+  avoid_for: "Silent errors without feedback."
+  desktop_considerations: "Provide retry or contact options."
+  mobile_considerations: "Keep message concise."
+  accessibility_notes: "Use ARIA live regions for dynamic errors."
+  behaviour_rules: "Never blame the user; explain next steps."
+  related_components: ["Alert", "Button"]
+  related_principles: ["User Control and Freedom", "Error Prevention"]
+  anti_patterns:
+    - "Generic error message with no recovery."
+  implementation_notes: "Log errors and include an error ID when needed."
+  evaluation_criteria:
+    - "Users can recover without support."
+
+pattern_no_results:
+  pattern_name: "No Results"
+  problem_solved: "Clarifies search results when nothing matches."
+  context: "Search and filter views."
+  structure:
+    - "No results message"
+    - "Suggestion to modify filters"
+    - "Reset action"
+  core_elements: ["Message", "Button", "Suggestions"]
+  variants:
+    - "Alternative recommendations"
+  best_for: "Filtered views and search pages."
+  avoid_for: "New users with no content yet (use empty state)."
+  desktop_considerations: "Suggest filters to remove."
+  mobile_considerations: "Use concise copy."
+  accessibility_notes: "Ensure message is announced."
+  behaviour_rules: "Provide reset or broaden search action."
+  related_components: ["Button", "Chip"]
+  related_principles: ["Recognition Over Recall"]
+  anti_patterns:
+    - "No results with no suggestion."
+  implementation_notes: "Show most common filters to remove."
+  evaluation_criteria:
+    - "Users can recover to a valid result set."

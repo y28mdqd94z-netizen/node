@@ -1,0 +1,13 @@
+{
+  "name": "ux-ui-knowledgebase",
+  "version": "0.1.0",
+  "generated_from": "/Users/nickport/Downloads/design system.md",
+  "generated_at": "2026-03-29",
+  "taxonomy": "taxonomy.yaml",
+  "schema_version": 1,
+  "updated_at": "2026-03-29",
+  "files_indexed": 54,
+  "entries_indexed": 109,
+  "content_hash": "db7ae623138e46e001d2c028c253c975ac1747da4268a4007440cbdf1912b57a",
+  "index_path": "memory/ux_kb_index.json"
+}
