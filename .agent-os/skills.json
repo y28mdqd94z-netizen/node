@@ -27,6 +27,11 @@
       "description": "Specify interaction states, transitions, and feedback."
     },
     {
+      "id": "content-writing",
+      "domain": "design",
+      "description": "Write UI microcopy (labels, helper text, states, confirmations) using the content-writing knowledgebase rules aligned with the Calm Systems UI tone."
+    },
+    {
       "id": "accessibility-check",
       "domain": "design",
       "description": "Assess accessibility concerns and constraints."
@@ -39,7 +44,7 @@
     {
       "id": "select-patterns",
       "domain": "design",
-      "description": "Select patterns using the knowledgebase pattern selection logic."
+      "description": "Select patterns using the knowledgebase pattern selection logic, with PRD object mapping and market alignment before screen design."
     },
     {
       "id": "select-components",

@@ -155,12 +155,14 @@ write_output_template() {
 - Key flows/features
 - Industry examples: patterns, features, components, styling
 - Sources (citations)
+- Market alignment notes (dominant patterns -> selected 03_patterns)
 - UX knowledgebase comparison (file + id/title)
 - Insights, gaps, opportunities
 
 ## 3. DESIGN DECISION
 - Think: key reasoning and tradeoffs
 - UX design: flows, 1-2 actions per task, apply Hick/Fitts/Miller/Jakob/Tesler
+- Object → Pattern → Screen mapping (table)
 - States, transitions, feedback, empty/error/loading
 - Knowledgebase refs: laws/principles/patterns/components (file + id/title)
 
@@ -207,9 +209,11 @@ append_task() {
 - Status: pending
 - Discovery:
 - Market Analysis:
+- Market alignment notes:
 - UX KB Comparison:
 - Think:
 - UX Design:
+- Object → Pattern → Screen mapping:
 - Architecture:
 - Implementation:
 - Validation (type safety, input validation, error handling, edge cases):

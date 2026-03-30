@@ -87,28 +87,28 @@
 - Risk level: low
 - Skills invoked: market-analysis, choose-ui-pattern, simplify-flow, reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, select-patterns, select-components
 - Orchestrator: required
-- Routing decisions:
-- Phase gate status:
-- Status: pending
-- Discovery:
-- Market Analysis:
-- UX KB Comparison:
-- Think:
-- UX Design:
-- Architecture:
-- Implementation:
-- Validation (type safety, input validation, error handling, edge cases):
-- Security Review:
-- UX Refinement:
-- Documentation:
-- Failure points:
-- Fallback UX:
-- Retry logic:
-- Safe error messages:
-- Observability (logging, error tracking, performance):
-- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
-- Updates to skills/patterns/components:
-- Refactor targets:
+- Routing decisions: Orchestrator → UX Systems Lead, Documentation Agent, QA/UX Audit Agent
+- Phase gate status: Discovery complete; Market Analysis complete; UX Design complete; Architecture n/a; Implementation complete; Validation n/a; Security Review complete; UX Refinement n/a; Documentation complete
+- Status: complete
+- Discovery: Confirmed need for a UI microcopy skill aligned to Calm Systems UI.
+- Market Analysis: Reviewed Microsoft Style Guide, GOV.UK writing principles, Apple HIG menus, Atlassian content guidance, and Mailchimp style guidance.
+- UX KB Comparison: ui-signature, content-hierarchy, design-system-principles, states-and-feedback, ui-review-checklist.
+- Think: Use verb-first, specific, and concise copy to reduce ambiguity and cognitive load.
+- UX Design: Labels/CTAs and state messaging as primary microcopy tasks; align with existing feedback tone.
+- Architecture: n/a (documentation-only update).
+- Implementation: Added content-writing KB file, updated skills.json, ran kb-update.
+- Validation (type safety, input validation, error handling, edge cases): n/a (no runtime code).
+- Security Review: Low risk; no data handling changes.
+- UX Refinement: n/a.
+- Documentation: Updated output template, decisions log, and risks log.
+- Failure points: KB index missing the new entry if kb-update is skipped.
+- Fallback UX: n/a.
+- Retry logic: n/a.
+- Safe error messages: n/a.
+- Observability (logging, error tracking, performance): n/a.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Added a dedicated microcopy skill to reduce repeated ad-hoc rules.
+- Updates to skills/patterns/components: Added content-writing micro-skill and content-writing KB file.
+- Refactor targets: n/a.
 
 ## 2026-03-29 18:12:55 +1100
 - Command: ux-audit
@@ -341,3 +341,92 @@
 - Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Clarified onboarding and repo scope in README.
 - Updates to skills/patterns/components: None.
 - Refactor targets: None.
+
+## 2026-03-30 11:48:13 +1100
+- Command: implement-feature
+- Title: Update AGENTS instructions for competitor inference
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-03-30 12:04:49 +1100
+- Command: design-feature
+- Title: Add UI microcopy writing skill
+- Risk level: low
+- Skills invoked: market-analysis, choose-ui-pattern, simplify-flow, reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, select-patterns, select-components
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-03-30 12:18:50 +1100
+- Command: design-feature
+- Title: Pattern-driven screen planning
+- Risk level: low
+- Skills invoked: market-analysis, choose-ui-pattern, simplify-flow, reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, select-patterns, select-components
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- Market alignment notes:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Object → Pattern → Screen mapping:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:

@@ -34,6 +34,25 @@ pattern_selection:
     - "Labels must match user language (Jakob’s Law). Avoid obscure icons."
   agent_notes: "Analyze number of sections and screen size. Map sections to pattern table. Validate with mobile/desktop context."
 
+market_pattern_alignment:
+  title: "Market-Pattern Alignment"
+  priority: P1
+  evidence_level: B
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Product intentionally differentiates or has no comparable market patterns."
+  override_risks: "Reduced familiarity and adoption."
+  required_justification: "Document the deviation and mitigation approach."
+  safer_alternatives: "Hybrid patterns that retain familiar navigation or list behaviors."
+  rules:
+    - "List dominant market patterns and map each to a 03_patterns entry."
+    - "Select matching 03_patterns for core tasks and note evidence source."
+    - "Document any deviations from market norms with rationale."
+    - "Include an Object → Pattern → Screen mapping table with market alignment notes."
+  agent_notes: "Use market analysis findings as evidence and favor portal baseline patterns for management tools unless the PRD conflicts."
+
 component_selection:
   title: "Button vs Link"
   priority: P1

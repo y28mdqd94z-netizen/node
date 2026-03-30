@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-29T20:05:36+1100",
+  "generated_at": "2026-03-30T12:18:45+1100",
   "root": "/Users/nickport/node/.agent-os/lib/ux-ui-knowledgebase",
-  "content_hash": "c71b552f3a6d25205a51cc87472d3e3a7457c22c3bfb2d8760da99b238b2bf7c",
-  "files_indexed": 57,
-  "entries_indexed": 143,
+  "content_hash": "823f50868b3c2d165e46dc216d606b4fd33ffc39e8602e47cf4529da8e78b121",
+  "files_indexed": 59,
+  "entries_indexed": 148,
   "files": [
     {
       "path": "00_meta/entry-metadata-model.yaml",
@@ -176,6 +176,11 @@
       "category": "design-system"
     },
     {
+      "path": "05_design-system/content-writing.yaml",
+      "type": "yaml",
+      "category": "design-system"
+    },
+    {
       "path": "05_design-system/design-system-principles.yaml",
       "type": "yaml",
       "category": "design-system"
@@ -247,6 +252,11 @@
     },
     {
       "path": "06_agent-application/interface-generation-rules.yaml",
+      "type": "yaml",
+      "category": "agent-application"
+    },
+    {
+      "path": "06_agent-application/pattern-driven-screen-planning.yaml",
       "type": "yaml",
       "category": "agent-application"
     },
@@ -818,6 +828,13 @@
       "source": "yaml"
     },
     {
+      "id": "pattern_first_screen_planning",
+      "title": "pattern_first_screen_planning",
+      "file": "06_agent-application/interface-generation-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
       "id": "component_consistency",
       "title": "component_consistency",
       "file": "06_agent-application/interface-generation-rules.yaml",
@@ -856,6 +873,34 @@
       "id": "feedback",
       "title": "feedback",
       "file": "06_agent-application/interface-generation-rules.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "prd_object_extraction",
+      "title": "Extract PRD Objects and Jobs",
+      "file": "06_agent-application/pattern-driven-screen-planning.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "market_pattern_alignment",
+      "title": "Align Patterns With Market Evidence",
+      "file": "06_agent-application/pattern-driven-screen-planning.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "object_pattern_screen_mapping",
+      "title": "Map Objects to Patterns and Screens",
+      "file": "06_agent-application/pattern-driven-screen-planning.yaml",
+      "category": "agent-application",
+      "source": "yaml"
+    },
+    {
+      "id": "portal_pattern_baseline",
+      "title": "Portal Baseline Pattern Set",
+      "file": "06_agent-application/pattern-driven-screen-planning.yaml",
       "category": "agent-application",
       "source": "yaml"
     },

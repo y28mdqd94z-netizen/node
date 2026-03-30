@@ -77,3 +77,21 @@
 - Title: Update README with capabilities and install
 - Decision: Expand README to include capability overview, install steps, and knowledgebase locations.
 - Rationale: Provides clear onboarding and sets expectations for what the repo delivers.
+
+## 2026-03-30 11:48:13 +1100
+- Command: implement-feature
+- Title: Update AGENTS instructions for competitor inference
+- Decision:
+- Rationale:
+
+## 2026-03-30 12:04:50 +1100
+- Command: design-feature
+- Title: Add UI microcopy writing skill
+- Decision: Add a content-writing micro-skill and a dedicated UI microcopy knowledgebase file aligned with the Calm Systems UI tone, and refresh KB indexing.
+- Rationale: The existing knowledgebase covered tone and hierarchy but lacked a unified microcopy ruleset, leading to inconsistent UI writing.
+
+## 2026-03-30 12:18:50 +1100
+- Command: design-feature
+- Title: Pattern-driven screen planning
+- Decision:
+- Rationale:

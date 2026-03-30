@@ -103,3 +103,27 @@
 - Severity: low
 - Risk level: low
 - Mitigation: Update README whenever `.agent-os/` layout changes.
+
+## 2026-03-30 11:48:14 +1100
+- Command: implement-feature
+- Title: Update AGENTS instructions for competitor inference
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 12:04:50 +1100
+- Command: design-feature
+- Title: Add UI microcopy writing skill
+- Risk: Microcopy rules may be too generic for specific product contexts or feel overly prescriptive.
+- Severity: low
+- Risk level: low
+- Mitigation: Treat the guidance as a baseline, allow documented overrides, and iterate based on real UI usage.
+
+## 2026-03-30 12:18:50 +1100
+- Command: design-feature
+- Title: Pattern-driven screen planning
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:

@@ -1,0 +1,41 @@
+## 1. SUMMARY
+- Title: Update AGENTS instructions for competitor inference
+- Command: implement-feature
+- Timestamp: 2026-03-30 11:48:14 +1100
+- Risk level: low
+- Orchestrator: required (routing notes below)
+
+## 2. MARKET ANALYSIS
+- Domain/category inference + assumptions
+- Target users (if unspecified)
+- Key flows/features
+- Industry examples: patterns, features, components, styling
+- Sources (citations)
+- UX knowledgebase comparison (file + id/title)
+- Insights, gaps, opportunities
+
+## 3. DESIGN DECISION
+- Think: key reasoning and tradeoffs
+- UX design: flows, 1-2 actions per task, apply Hick/Fitts/Miller/Jakob/Tesler
+- States, transitions, feedback, empty/error/loading
+- Knowledgebase refs: laws/principles/patterns/components (file + id/title)
+
+## 4. ARCHITECTURE
+- Boundaries
+- Data flow
+- API contracts
+- State ownership
+- Failure points + fallback UX + retry logic + safe error messages
+- Observability (privacy-safe logging, error tracking, performance)
+
+## 5. IMPLEMENTATION
+- Real code (React + Tailwind default for UI)
+- Clear component structure, predictable state patterns, minimal abstraction
+- Validation: type safety, input validation, error handling, edge cases
+
+## 6. SECURITY REVIEW
+- Data exposure, auth weaknesses, API vulnerabilities, frontend risks, dependency risks
+- PII handling, token storage, API exposure, logging leaks, XSS, dependencies
+
+## 7. NEXT ACTIONS
+1.
