@@ -113,3 +113,21 @@
 - Title: Make frontend/backend test requirement non-overridable
 - Decision:
 - Rationale:
+
+## 2026-03-30 13:28:05 +1100
+- Command: architect-feature
+- Title: Agent OS update PRP
+- Decision:
+- Rationale:
+
+## 2026-03-30 13:31:36 +1100
+- Command: implement-feature
+- Title: Agent OS update PRP file
+- Decision:
+- Rationale:
+
+## 2026-03-30 13:32:58 +1100
+- Command: design-feature
+- Title: Agent reasoning vs steps question
+- Decision:
+- Rationale:

@@ -523,3 +523,96 @@
 - Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
 - Updates to skills/patterns/components:
 - Refactor targets:
+
+## 2026-03-30 13:28:05 +1100
+- Command: architect-feature
+- Title: Agent OS update PRP
+- Risk level: low
+- Skills invoked: define-architecture, state-management-check, performance-check, api-security-check, auth-boundary-check
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- Market alignment notes:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Object → Pattern → Screen mapping:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-03-30 13:31:36 +1100
+- Command: implement-feature
+- Title: Agent OS update PRP file
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- Market alignment notes:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Object → Pattern → Screen mapping:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-03-30 13:32:58 +1100
+- Command: design-feature
+- Title: Agent reasoning vs steps question
+- Risk level: low
+- Skills invoked: market-analysis, choose-ui-pattern, simplify-flow, reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, select-patterns, select-components
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- Market alignment notes:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Object → Pattern → Screen mapping:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:

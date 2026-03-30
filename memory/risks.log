@@ -151,3 +151,27 @@
 - Severity:
 - Risk level:
 - Mitigation:
+
+## 2026-03-30 13:28:06 +1100
+- Command: architect-feature
+- Title: Agent OS update PRP
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 13:31:36 +1100
+- Command: implement-feature
+- Title: Agent OS update PRP file
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 13:32:58 +1100
+- Command: design-feature
+- Title: Agent reasoning vs steps question
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
