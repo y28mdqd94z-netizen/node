@@ -95,3 +95,21 @@
 - Title: Pattern-driven screen planning
 - Decision:
 - Rationale:
+
+## 2026-03-30 13:07:23 +1100
+- Command: implement-feature
+- Title: Answer engineering workflow test creation question
+- Decision:
+- Rationale:
+
+## 2026-03-30 13:13:57 +1100
+- Command: implement-feature
+- Title: Require comprehensive tests for frontend/back-end changes
+- Decision:
+- Rationale:
+
+## 2026-03-30 13:15:43 +1100
+- Command: implement-feature
+- Title: Make frontend/backend test requirement non-overridable
+- Decision:
+- Rationale:

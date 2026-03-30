@@ -180,3 +180,51 @@ entries:
       - move to formal verification for critical components
     sources:
       - Testing best practices
+  - id: agent.codegen.tests-for-frontend-backend
+    title: Comprehensive tests for frontend and backend changes
+    category: agent_layer
+    summary: Always generate tests for new or modified frontend and backend behavior.
+    definition: Any frontend or backend feature or logic change must include automated tests covering primary flows, edge cases, and error states.
+    why_it_matters: Prevents regressions and makes future changes safer across the UI and API surface.
+    priority_level: P0
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - new or modified frontend components with state or behavior
+      - new or modified backend endpoints, services, or domain logic
+      - cross-cutting changes that affect UI and API contracts
+    avoid_when:
+      - documentation-only changes
+      - purely visual tweaks with no behavioral impact
+    implementation_rules:
+      - include unit tests for core logic
+      - include component or integration tests for user flows and state transitions
+      - include API integration or contract tests for backend endpoints
+      - cover validation errors and failure paths
+      - keep tests deterministic and aligned to repo test tooling
+    tradeoffs:
+      - additional development time
+    anti_patterns:
+      - shipping frontend or backend behavior without tests
+      - only happy-path tests for new features
+    override_allowed: false
+    safer_alternatives:
+      - minimal smoke tests as a stopgap
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: higher short term, lower long term
+    agent_rules:
+      - require tests for any frontend or backend behavior change
+      - if tests cannot be added, stop and request scope change
+    last_verified: 2026-03-30
+    verification_method: internal_review
+    update_triggers:
+      - incidents due to missing frontend or backend tests
+      - repeated regressions in UI or API behavior
+    deprecation_signals:
+      - replacement by formal verification or contract testing mandates
+    sources:
+      - Testing best practices

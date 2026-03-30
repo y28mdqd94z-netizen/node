@@ -127,3 +127,27 @@
 - Severity:
 - Risk level:
 - Mitigation:
+
+## 2026-03-30 13:07:23 +1100
+- Command: implement-feature
+- Title: Answer engineering workflow test creation question
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 13:13:57 +1100
+- Command: implement-feature
+- Title: Require comprehensive tests for frontend/back-end changes
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 13:15:43 +1100
+- Command: implement-feature
+- Title: Make frontend/backend test requirement non-overridable
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
