@@ -1,0 +1,53 @@
+version: 1
+entries:
+  - id: agent.decision.implementation-heuristics
+    title: Implementation heuristics
+    category: agent_layer
+    summary: Prefer small, local edits and reuse existing patterns before introducing new structure.
+    definition: Use lightweight heuristics to keep implementation decisions practical and aligned with the repo.
+    why_it_matters: Reduces regression risk and avoids speculative architecture.
+    priority_level: P1
+    confidence_score: 0.79
+    evidence_level: medium
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - planning or implementing changes
+    avoid_when:
+      - none
+    implementation_rules:
+      - small feature: targeted edits over refactor
+      - repeated pattern: consider extraction after at least two real uses
+      - existing pattern: reuse before inventing a new one
+      - unclear intent: follow adjacent files and local conventions
+      - verification fails: fix first before expanding scope
+      - tooling missing: add minimal viable setup
+      - UI changes: ensure loading, empty, and error states exist
+    tradeoffs:
+      - may delay longer-term optimization
+    anti_patterns:
+      - parallel architecture creation without need
+      - expanding scope to "clean up" unrelated code
+    override_allowed: true
+    override_conditions:
+      - a larger refactor is explicitly requested
+    override_risks:
+      - increased change surface and regressions
+    required_justification:
+      - evidence that larger change is needed to meet requirements
+    safer_alternatives:
+      - incremental refactor after verification passes
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: lower short term
+    agent_rules:
+      - default to the smallest change that satisfies requirements and verification
+    last_verified: 2026-04-04
+    verification_method: internal_review
+    update_triggers:
+      - repeated regressions from broad edits
+    deprecation_signals:
+      - adoption of formal refactor policy
+    sources:
+      - Engineering delivery heuristics

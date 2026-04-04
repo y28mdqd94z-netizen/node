@@ -802,3 +802,65 @@
 - Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
 - Updates to skills/patterns/components:
 - Refactor targets:
+
+## 2026-04-04 14:32:18 +1100
+- Command: implement-feature
+- Title: Rebalance engineering execution guidance and verification
+- Risk level: medium
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- Market alignment notes:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Object → Pattern → Screen mapping:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-04-04 14:46:49 +1100
+- Command: implement-feature
+- Title: Add start-new-project command
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- Market alignment notes:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Object → Pattern → Screen mapping:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:

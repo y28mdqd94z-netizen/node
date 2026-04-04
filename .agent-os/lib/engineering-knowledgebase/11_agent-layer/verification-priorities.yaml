@@ -1,0 +1,139 @@
+version: 1
+entries:
+  - id: agent.verify.required-gates
+    title: Required verification gates
+    category: agent_layer
+    summary: Lint, typecheck, and build must pass before completion.
+    definition: Verification gates are non-negotiable for any code change; failures must be fixed before completion.
+    why_it_matters: Prevents broken builds and ensures baseline correctness.
+    priority_level: P0
+    confidence_score: 0.9
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any code change or generation
+    avoid_when:
+      - none
+    implementation_rules:
+      - run or simulate lint, typecheck, and build
+      - fix failures before declaring completion
+      - document if a step is truly not applicable
+    tradeoffs:
+      - additional time spent on verification
+    anti_patterns:
+      - shipping changes without verification
+    override_allowed: true
+    override_conditions:
+      - formal P0 exception with documented mitigation
+    override_risks:
+      - broken releases and regressions
+    required_justification:
+      - formal exception and rollback plan
+    safer_alternatives:
+      - reduce scope until verification passes
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: higher short term, lower long term
+    agent_rules:
+      - block completion until required verification passes
+    last_verified: 2026-04-04
+    verification_method: internal_review
+    update_triggers:
+      - recurring build failures from unverified changes
+    deprecation_signals:
+      - replacement by formal CI gate automation
+    sources:
+      - Engineering release practices
+  - id: agent.verify.script-baseline
+    title: Verification scripts must exist
+    category: agent_layer
+    summary: Ensure lint, typecheck, and build scripts exist or add them.
+    definition: Projects must expose standardized verification scripts; if missing, add minimal viable tooling aligned with repo conventions.
+    why_it_matters: Enables consistent verification across tasks and agents.
+    priority_level: P0
+    confidence_score: 0.86
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - verifying a repo with missing scripts
+    avoid_when:
+      - scripts already exist and are reliable
+    implementation_rules:
+      - define lint, lint:fix, typecheck, build, and check scripts
+      - use repo-native tooling or minimal additions
+      - avoid overriding existing working scripts
+    tradeoffs:
+      - initial setup effort
+    anti_patterns:
+      - leaving verification undefined
+    override_allowed: true
+    override_conditions:
+      - formal P0 exception with documented mitigation
+    override_risks:
+      - inconsistent verification and broken builds
+    required_justification:
+      - documented reason why scripts cannot be added
+    safer_alternatives:
+      - temporary wrappers that map to existing commands
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: medium
+    agent_rules:
+      - do not proceed without a verification baseline
+    last_verified: 2026-04-04
+    verification_method: internal_review
+    update_triggers:
+      - repeated manual verification failures
+    deprecation_signals:
+      - centralized repo tooling makes scripts redundant
+    sources:
+      - Verification discipline guidance
+  - id: agent.verify.aggregate-check
+    title: Aggregate verification command
+    category: agent_layer
+    summary: Provide a single command to run all required checks.
+    definition: Define a `check` command that runs lint, typecheck, and build in sequence.
+    why_it_matters: Simplifies verification and reduces mistakes.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: medium
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - defining project scripts
+    avoid_when:
+      - repo already has an equivalent aggregate command
+    implementation_rules:
+      - standardize `check` to run lint, typecheck, build
+      - keep order consistent and explicit
+    tradeoffs:
+      - longer single command duration
+    anti_patterns:
+      - partial checks that skip required gates
+    override_allowed: true
+    override_conditions:
+      - repo uses a different aggregate command by convention
+    override_risks:
+      - verification steps missed
+    required_justification:
+      - evidence of existing equivalent command
+    safer_alternatives:
+      - alias `check` to the existing aggregate command
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: low
+    agent_rules:
+      - prefer a single `check` command for verification
+    last_verified: 2026-04-04
+    verification_method: internal_review
+    update_triggers:
+      - verification step omissions
+    deprecation_signals:
+      - repo adopts centralized task runner
+    sources:
+      - Build automation practices

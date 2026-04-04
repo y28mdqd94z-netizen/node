@@ -167,3 +167,15 @@
 - Title: Schema validation, manifest lint, component expansion
 - Decision: Add JSON schema definitions and a lightweight validator for primitive specs and token files, add freshness checks for primitive manifests/index and KB index, and expand component primitives plus component tokens for menus, breadcrumbs, chips, and core form controls.
 - Rationale: Provides enforceable structure for primitives/tokens, prevents stale metadata, and fills component coverage gaps aligned to navigation and form patterns.
+
+## 2026-04-04 14:32:18 +1100
+- Command: implement-feature
+- Title: Rebalance engineering execution guidance and verification
+- Decision:
+- Rationale:
+
+## 2026-04-04 14:46:49 +1100
+- Command: implement-feature
+- Title: Add start-new-project command
+- Decision:
+- Rationale:

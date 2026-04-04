@@ -1,0 +1,17 @@
+version: 1
+verification_commands:
+  required:
+    - lint
+    - typecheck
+    - build
+  supporting:
+    - lint:fix
+  aggregate:
+    check: "npm run lint && npm run typecheck && npm run build"
+  rules:
+    - all code must pass required checks
+    - failures must be fixed before completion
+    - verification cannot be skipped
+  notes:
+    - use repo-native equivalents when not using npm
+    - document why a command is not applicable

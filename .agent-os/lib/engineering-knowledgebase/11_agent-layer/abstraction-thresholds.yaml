@@ -1,0 +1,48 @@
+version: 1
+entries:
+  - id: agent.abstraction.threshold
+    title: Abstraction thresholds
+    category: agent_layer
+    summary: Introduce abstraction only after real, repeated use.
+    definition: Default to inline or local solutions until a pattern appears in multiple places with shared constraints.
+    why_it_matters: Prevents premature complexity and preserves delivery speed.
+    priority_level: P2
+    confidence_score: 0.77
+    evidence_level: medium
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - considering new shared utilities or frameworks
+    avoid_when:
+      - a shared abstraction is explicitly requested
+    implementation_rules:
+      - wait for at least two real usages before extracting
+      - prefer local helpers over cross-cutting libraries
+      - extract only when a clear interface stabilizes
+    tradeoffs:
+      - some duplication before extraction
+    anti_patterns:
+      - abstracting hypothetical future needs
+    override_allowed: true
+    override_conditions:
+      - strong evidence of immediate reuse across boundaries
+    override_risks:
+      - added complexity without proven benefit
+    required_justification:
+      - rationale for immediate abstraction
+    safer_alternatives:
+      - minimal helper in the local module
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: lower short term
+    agent_rules:
+      - avoid abstractions until reuse is demonstrated
+    last_verified: 2026-04-04
+    verification_method: internal_review
+    update_triggers:
+      - repeated maintenance issues from over-abstraction
+    deprecation_signals:
+      - repo adopts a shared platform library
+    sources:
+      - Maintainability and refactor guidance

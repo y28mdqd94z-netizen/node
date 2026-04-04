@@ -22,6 +22,7 @@ Usage:
 Commands:
   bootstrap-project   Create memory files and scan repo
   setup-project       Alias for bootstrap-project
+  start-new-project   Kick off new project intake + repo scan
   scan-repo           Update memory/repo_map.json only
   sync-docs           Ensure memory files exist (no overwrite)
   design-feature      Log a design task stub
@@ -128,6 +129,9 @@ skills_for_command() {
       printf '%s' "security-review, data-sensitivity-check, auth-boundary-check, api-security-check, frontend-security-check, dependency-risk-check"
       ;;
     compress-context)
+      printf '%s' "none"
+      ;;
+    start-new-project)
       printf '%s' "none"
       ;;
     *)
@@ -386,6 +390,19 @@ case "$cmd" in
     ensure_baseline_project
     ensure_baseline_architecture
     ensure_baseline_design_system
+    ;;
+  start-new-project)
+    parse_common_flags 5000 "$@"
+    enforce_risk_level
+    ensure_memory_files
+    scan_repo "$ROOT" "$MEMORY_DIR/repo_map.json" "$CAP"
+    ensure_baseline_project
+    ensure_baseline_architecture
+    ensure_baseline_design_system
+    append_task "start-new-project"
+    append_decision "start-new-project"
+    append_risk "start-new-project"
+    write_output_template "start-new-project" >/dev/null
     ;;
   scan-repo)
     parse_common_flags 5000 "$@"

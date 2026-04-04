@@ -138,8 +138,8 @@ entries:
   - id: agent.codegen.tests-for-critical
     title: Tests for critical paths
     category: agent_layer
-    summary: Generate tests for high impact features.
-    definition: Critical logic must include automated tests that cover invariants and edge cases.
+    summary: Prefer tests for high impact features.
+    definition: Critical logic should include automated tests that cover invariants and edge cases.
     why_it_matters: Prevents regressions in important workflows.
     priority_level: P1
     confidence_score: 0.8
@@ -152,7 +152,7 @@ entries:
     avoid_when:
       - trivial UI changes with no logic
     implementation_rules:
-      - include unit and integration tests
+      - prefer unit and integration tests
       - cover edge cases and failure paths
     tradeoffs:
       - additional development time
@@ -171,8 +171,8 @@ entries:
     security_impact: positive
     cost_impact: higher short term, lower long term
     agent_rules:
-      - require tests for any critical path changes
-    last_verified: 2026-03-29
+      - default to tests for critical path changes
+    last_verified: 2026-04-04
     verification_method: internal_review
     update_triggers:
       - incidents due to missing tests
@@ -183,10 +183,10 @@ entries:
   - id: agent.codegen.tests-for-frontend-backend
     title: Comprehensive tests for frontend and backend changes
     category: agent_layer
-    summary: Always generate tests for new or modified frontend and backend behavior.
-    definition: Any frontend or backend feature or logic change must include automated tests covering primary flows, edge cases, and error states.
+    summary: Prefer tests for new or modified frontend and backend behavior.
+    definition: Frontend or backend behavior changes should include automated tests covering primary flows, edge cases, and error states.
     why_it_matters: Prevents regressions and makes future changes safer across the UI and API surface.
-    priority_level: P0
+    priority_level: P1
     confidence_score: 0.82
     evidence_level: high
     knowledge_layer: stable_core
@@ -200,9 +200,9 @@ entries:
       - documentation-only changes
       - purely visual tweaks with no behavioral impact
     implementation_rules:
-      - include unit tests for core logic
-      - include component or integration tests for user flows and state transitions
-      - include API integration or contract tests for backend endpoints
+      - prefer unit tests for core logic
+      - prefer component or integration tests for user flows and state transitions
+      - prefer API integration or contract tests for backend endpoints
       - cover validation errors and failure paths
       - keep tests deterministic and aligned to repo test tooling
     tradeoffs:
@@ -210,16 +210,22 @@ entries:
     anti_patterns:
       - shipping frontend or backend behavior without tests
       - only happy-path tests for new features
-    override_allowed: false
+    override_allowed: true
+    override_conditions:
+      - tests are not feasible within the approved scope
+    override_risks:
+      - regressions in UI or API behavior
+    required_justification:
+      - documented test gap and follow-up plan
     safer_alternatives:
       - minimal smoke tests as a stopgap
     performance_impact: neutral
     security_impact: positive
     cost_impact: higher short term, lower long term
     agent_rules:
-      - require tests for any frontend or backend behavior change
-      - if tests cannot be added, stop and request scope change
-    last_verified: 2026-03-30
+      - default to tests for frontend or backend behavior changes
+      - if tests are deferred, document coverage gaps
+    last_verified: 2026-04-04
     verification_method: internal_review
     update_triggers:
       - incidents due to missing frontend or backend tests

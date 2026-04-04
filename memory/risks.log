@@ -223,3 +223,19 @@
 - Severity: low
 - Risk level: low
 - Mitigation: Keep primitive specs in the simple list/map format or replace the parser with a full YAML dependency if the schema evolves.
+
+## 2026-04-04 14:32:19 +1100
+- Command: implement-feature
+- Title: Rebalance engineering execution guidance and verification
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-04-04 14:46:49 +1100
+- Command: implement-feature
+- Title: Add start-new-project command
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:

@@ -1,0 +1,95 @@
+version: 1
+entries:
+  - id: agent.build.local-repo-first
+    title: Local repo first
+    category: agent_layer
+    summary: Prefer repo-local scripts, conventions, and tooling before adding new systems.
+    definition: Use existing build, lint, test, and layout conventions unless there is a clear, documented reason to change.
+    why_it_matters: Reduces integration friction and avoids breaking established workflows.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - adding tooling or verification steps
+      - modifying build or lint setup
+    avoid_when:
+      - existing tooling is proven unsafe or broken
+    implementation_rules:
+      - inspect local scripts and configuration before adding new tools
+      - prefer existing lint/typecheck/build commands
+      - align with dominant tooling in the repo
+    tradeoffs:
+      - may require adapting to non-ideal setups
+    anti_patterns:
+      - replacing working build pipelines without a request
+    override_allowed: true
+    override_conditions:
+      - existing tooling cannot meet verification requirements
+    override_risks:
+      - regressions and workflow disruption
+    required_justification:
+      - evidence that current tooling blocks required verification
+    safer_alternatives:
+      - add minimal wrappers that preserve existing scripts
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: lower long term
+    agent_rules:
+      - do not replace working build systems without explicit request
+    last_verified: 2026-04-04
+    verification_method: internal_review
+    update_triggers:
+      - repository changes primary tooling
+    deprecation_signals:
+      - project adopts a new standardized build system
+    sources:
+      - Build and tooling best practices
+  - id: agent.build.minimal-tooling
+    title: Minimal viable tooling
+    category: agent_layer
+    summary: Add the smallest viable tooling to meet verification requirements.
+    definition: When verification scripts are missing, add minimal tooling that fits the repo and avoids over-engineering.
+    why_it_matters: Keeps build complexity low while enforcing correctness.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: medium
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - lint/typecheck/build scripts are missing
+    avoid_when:
+      - project already has equivalent tooling
+    implementation_rules:
+      - choose tooling that matches existing language/runtime
+      - keep configuration minimal and aligned with repo patterns
+      - document new scripts in the main manifest
+    tradeoffs:
+      - limited enforcement compared to full pipelines
+    anti_patterns:
+      - adding multiple overlapping tools for the same job
+    override_allowed: true
+    override_conditions:
+      - project explicitly opts out of additional tooling
+    override_risks:
+      - verification remains incomplete
+    required_justification:
+      - documented reason for deferring verification tooling
+    safer_alternatives:
+      - lightweight wrapper scripts using existing commands
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: low
+    agent_rules:
+      - keep tooling additions minimal and aligned with repo conventions
+    last_verified: 2026-04-04
+    verification_method: internal_review
+    update_triggers:
+      - recurring verification failures due to missing tooling
+    deprecation_signals:
+      - repository adopts centralized tooling
+    sources:
+      - Practical build system guidance

@@ -1,0 +1,51 @@
+version: 1
+entries:
+  - id: agent.philosophy.working-software-first
+    title: Working software first
+    category: agent_layer
+    summary: Prioritize working, verifiable code over idealized architecture.
+    definition: Prefer the smallest change that works, passes verification, and aligns with local repo conventions.
+    why_it_matters: Maximizes delivery reliability and reduces risky rewrites.
+    priority_level: P1
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - implementing or modifying features
+      - choosing between refactor and incremental change
+    avoid_when:
+      - none
+    implementation_rules:
+      - prefer targeted edits over broad rewrites
+      - optimize for passing lint, typecheck, and build
+      - align with existing file placement and naming
+      - keep changes reversible when possible
+    tradeoffs:
+      - may defer larger architectural improvements
+    anti_patterns:
+      - architecture-first rewrites without product need
+    override_allowed: true
+    override_conditions:
+      - documented performance or scalability constraints
+    override_risks:
+      - increased delivery time and regression risk
+    required_justification:
+      - evidence that a larger change is necessary
+    safer_alternatives:
+      - staged refactor behind feature flags
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: lower short term
+    agent_rules:
+      - prioritize working code and verification over ideal architecture
+      - default to repo-local consistency before cross-repo abstractions
+    last_verified: 2026-04-04
+    verification_method: internal_review
+    update_triggers:
+      - repeated regressions from large rewrites
+    deprecation_signals:
+      - repository adopts formal architecture migration plan
+    sources:
+      - Practical engineering delivery practices

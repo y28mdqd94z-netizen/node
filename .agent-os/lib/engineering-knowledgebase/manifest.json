@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-03-29",
+  "generated_at": "2026-04-04",
   "root": ".agent-os/lib/engineering-knowledgebase",
   "schema": "v1",
   "files": [
@@ -232,6 +232,57 @@
       ]
     },
     {
+      "path": "11_agent-layer/engineering-philosophy.yaml",
+      "entry_count": 1,
+      "entries": [
+        "agent.philosophy.working-software-first"
+      ]
+    },
+    {
+      "path": "11_agent-layer/build-preferences.yaml",
+      "entry_count": 2,
+      "entries": [
+        "agent.build.local-repo-first",
+        "agent.build.minimal-tooling"
+      ]
+    },
+    {
+      "path": "11_agent-layer/decision-heuristics.yaml",
+      "entry_count": 1,
+      "entries": [
+        "agent.decision.implementation-heuristics"
+      ]
+    },
+    {
+      "path": "11_agent-layer/safe-edit-rules.yaml",
+      "entry_count": 3,
+      "entries": [
+        "agent.safe-edit.inspect-nearby",
+        "agent.safe-edit.contract-safety",
+        "agent.safe-edit.minimize-blast-radius"
+      ]
+    },
+    {
+      "path": "11_agent-layer/verification-priorities.yaml",
+      "entry_count": 3,
+      "entries": [
+        "agent.verify.required-gates",
+        "agent.verify.script-baseline",
+        "agent.verify.aggregate-check"
+      ]
+    },
+    {
+      "path": "11_agent-layer/abstraction-thresholds.yaml",
+      "entry_count": 1,
+      "entries": [
+        "agent.abstraction.threshold"
+      ]
+    },
+    {
+      "path": "11_agent-layer/verification-commands.yaml",
+      "type": "model"
+    },
+    {
       "path": "11_agent-layer/override-rules.yaml",
       "entry_count": 2,
       "entries": [
@@ -356,6 +407,17 @@
     "agent.evidence-volatility-matrix": "11_agent-layer/decision-frameworks.yaml",
     "agent.safe-defaults-when-uncertain": "11_agent-layer/decision-frameworks.yaml",
     "agent.tradeoff-explicitness": "11_agent-layer/decision-frameworks.yaml",
+    "agent.philosophy.working-software-first": "11_agent-layer/engineering-philosophy.yaml",
+    "agent.build.local-repo-first": "11_agent-layer/build-preferences.yaml",
+    "agent.build.minimal-tooling": "11_agent-layer/build-preferences.yaml",
+    "agent.decision.implementation-heuristics": "11_agent-layer/decision-heuristics.yaml",
+    "agent.safe-edit.inspect-nearby": "11_agent-layer/safe-edit-rules.yaml",
+    "agent.safe-edit.contract-safety": "11_agent-layer/safe-edit-rules.yaml",
+    "agent.safe-edit.minimize-blast-radius": "11_agent-layer/safe-edit-rules.yaml",
+    "agent.verify.required-gates": "11_agent-layer/verification-priorities.yaml",
+    "agent.verify.script-baseline": "11_agent-layer/verification-priorities.yaml",
+    "agent.verify.aggregate-check": "11_agent-layer/verification-priorities.yaml",
+    "agent.abstraction.threshold": "11_agent-layer/abstraction-thresholds.yaml",
     "agent.override.process": "11_agent-layer/override-rules.yaml",
     "agent.override.p0-exception": "11_agent-layer/override-rules.yaml",
     "maint.deprecation.mark-entry": "12_maintenance/deprecation-policy.yaml",
