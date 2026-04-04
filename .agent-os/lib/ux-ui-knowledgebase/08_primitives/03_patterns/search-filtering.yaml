@@ -1,0 +1,43 @@
+name: "Search and Filtering"
+id: "pattern.search_filtering.core"
+layer: pattern
+category: search_filtering
+intent: "Help users narrow and find items efficiently."
+problem_solved: "Reduces scanning effort in large data sets."
+when_to_use:
+  - "Lists or tables with more than 20 items."
+when_not_to_use:
+  - "Small, static lists."
+anatomy:
+  - "Search input"
+  - "Filter controls"
+  - "Active filters"
+  - "Results list"
+supported_components:
+  - "input"
+  - "select"
+  - "combobox"
+  - "chip (external)"
+variants:
+  - "inline"
+  - "panel"
+  - "advanced"
+key_states:
+  - "loading"
+  - "empty"
+  - "error"
+responsive_adaptation:
+  - "Use filter sheet on mobile."
+shell_compatibility:
+  - "list-management-shell"
+  - "dashboard-shell"
+anti_patterns:
+  - "Filters without clear reset."
+  - "Search without result count."
+evaluation_criteria:
+  - "Users can filter to a result within 3 actions."
+implementation_notes:
+  - "Persist filters in URL or state when possible."
+context_notes:
+  - "Admin portals use advanced filters with saved views."
+

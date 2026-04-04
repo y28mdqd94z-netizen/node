@@ -1,0 +1,39 @@
+name: "Portal Pattern"
+id: "pattern.portal.core"
+layer: pattern
+category: portal
+intent: "Provide multi-section access for account and workspace management."
+problem_solved: "Consolidates navigation, settings, and workflows."
+when_to_use:
+  - "Customer or partner portals."
+when_not_to_use:
+  - "Single-purpose task apps."
+anatomy:
+  - "Navigation"
+  - "Workspace switcher"
+  - "Content area"
+  - "Utilities (search, notifications)"
+supported_components:
+  - "sidebar"
+  - "header"
+  - "card"
+  - "table"
+variants:
+  - "account-portal"
+  - "partner-portal"
+key_states:
+  - "loading"
+  - "empty"
+responsive_adaptation:
+  - "Sidebar collapses to drawer; header condenses."
+shell_compatibility:
+  - "portal-shell"
+anti_patterns:
+  - "Mixing admin and user tasks in one navigation layer."
+evaluation_criteria:
+  - "Users can find key sections within two steps."
+implementation_notes:
+  - "Support role-based navigation visibility."
+context_notes:
+  - "Admin portals require clear separation between account and system settings."
+

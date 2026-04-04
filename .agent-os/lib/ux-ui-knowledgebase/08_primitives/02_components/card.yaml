@@ -1,0 +1,54 @@
+name: "Card"
+id: "component.card.core"
+layer: component
+category: card
+intent: "Group related content with a soft container."
+problem_solved: "Provides visual grouping for summaries and widgets."
+when_to_use:
+  - "Dashboards and summary widgets."
+  - "Grouped content blocks."
+when_not_to_use:
+  - "Long lists (use list rows with dividers)."
+  - "High-density data tables."
+anatomy:
+  - "Container"
+  - "Header"
+  - "Body"
+  - "Footer"
+variants:
+  - "flat"
+  - "outlined"
+  - "raised"
+sizes:
+  - "sm"
+  - "md"
+  - "lg"
+states:
+  - "default"
+  - "hover"
+  - "selected"
+behavior_rules:
+  - "Card surfaces should not compete with primary content."
+accessibility_requirements:
+  - "Interactive cards must have focus and role."
+responsive_behavior:
+  - "Use full-width cards on small screens."
+composition_rules:
+  - "Avoid nesting cards inside cards."
+dependencies:
+  - "tokens.components.card"
+anti_patterns:
+  - "Card walls without clear hierarchy."
+  - "Clickable cards with multiple conflicting actions."
+token_bindings:
+  background: "card.bg.*"
+  border: "card.border.*"
+  radius: "card.radius"
+implementation_mapping:
+  - "Component: Card"
+  - "Props: variant, interactive"
+evaluation_checklist:
+  - "Card grouping improves clarity, not noise."
+context_notes:
+  - "Admin dashboards use cards for KPI summaries."
+

@@ -1,0 +1,54 @@
+selection_rules:
+  global:
+    - "Select the lowest-complexity primitive that solves the task."
+    - "Prefer established stable primitives before evolving ones."
+    - "Bias toward primitives with higher evaluation coverage."
+    - "Use component primitives before pattern primitives; use pattern primitives before shell changes."
+    - "If more than one primitive qualifies, choose the one with the fewest overrides."
+
+  context_weights:
+    b2b_saas:
+      density: default
+      navigation: sidebar
+      data_display: table
+    internal_tools:
+      density: compact
+      navigation: sidebar
+      data_display: table
+    admin_portal:
+      density: compact
+      navigation: sidebar
+      data_display: table
+    dashboards:
+      density: compact
+      navigation: sidebar
+      data_display: grid_or_table
+    builders:
+      density: compact
+      navigation: hybrid
+      data_display: split_view
+    consumer_productivity:
+      density: comfortable
+      navigation: top_or_bottom
+      data_display: list
+    mobile_first:
+      density: comfortable
+      navigation: bottom_or_drawer
+      data_display: list
+
+  override_policy:
+    allowed_if:
+      - "Evidence of higher task success in target context."
+      - "Accessibility or device constraints require deviation."
+      - "Brand constraints require alternate visual signature."
+    required_documentation:
+      - "Explain why default primitive fails."
+      - "List the safer alternatives considered."
+      - "Define measurable success criteria for the override."
+
+  selection_checks:
+    - "Primary action discoverable within first viewport."
+    - "Navigation depth <= 2 for core tasks."
+    - "No more than one primary pattern per screen."
+    - "States and errors are defined before implementation."
+

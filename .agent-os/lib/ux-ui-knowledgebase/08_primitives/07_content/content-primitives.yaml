@@ -1,0 +1,42 @@
+name: "Content Primitives"
+id: "content.labels.core"
+layer: content
+category: labels
+intent: "Ensure consistent, task-focused copy across UI."
+problem_solved: "Inconsistent language increases cognitive load."
+when_to_use:
+  - "All labels, messages, and guidance."
+when_not_to_use:
+  - "Avoid writing content without alignment to rules."
+anatomy:
+  - "Labels"
+  - "Helper text"
+  - "Error messages"
+  - "Empty states"
+variants:
+  - "labels"
+  - "microcopy"
+  - "errors"
+states:
+  - "n/a"
+behavior_rules:
+  - "Labels are verb-first for actions."
+  - "Errors include cause and fix."
+accessibility_requirements:
+  - "Text should be clear and concise for screen readers."
+responsive_behavior:
+  - "Shorten labels on small screens without losing meaning."
+composition_rules:
+  - "Use consistent terminology across navigation and actions."
+dependencies:
+  - "00_meta/content-rules.yaml"
+anti_patterns:
+  - "Vague labels like 'Submit' without context."
+  - "Error messages without next steps."
+implementation_mapping:
+  - "Content strings stored in a single source of truth."
+evaluation_checklist:
+  - "Labels and messages are task-focused."
+context_notes:
+  - "B2B SaaS prefers concise, direct language."
+

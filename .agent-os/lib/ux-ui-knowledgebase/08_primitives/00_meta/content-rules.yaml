@@ -1,0 +1,16 @@
+content_rules:
+  hierarchy:
+    - "One clear primary action label per surface."
+    - "Headings summarize tasks, not sections."
+  labels:
+    - "Use sentence case for labels and buttons."
+    - "Prefer verb-first labels for actions."
+  messaging:
+    - "Error copy states what happened and how to fix it."
+    - "Empty states include a next step or explanation."
+  tone:
+    - "Calm, direct, and task-focused."
+    - "Avoid humor in system errors or destructive actions."
+  length:
+    - "Buttons <= 3 words; helper text <= 2 lines."
+

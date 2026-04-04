@@ -1,0 +1,18 @@
+evaluation_rules:
+  design_quality:
+    - "Hierarchy is clear within first 3 seconds."
+    - "Primary action is obvious and reachable."
+    - "No more than 7 interactive elements in a single group."
+  usability:
+    - "Critical actions require no more than 2 steps."
+    - "Errors are recoverable with a clear path."
+  accessibility:
+    - "Keyboard navigation covers all interactive elements."
+    - "Contrast and target sizes meet baseline."
+  responsiveness:
+    - "Layout remains functional at xs and xl breakpoints."
+    - "Navigation collapses without hiding primary tasks."
+  implementation_alignment:
+    - "Tokens are used for spacing, color, typography, radius, and motion."
+    - "No hard-coded values where tokens exist."
+

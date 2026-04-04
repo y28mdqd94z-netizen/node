@@ -1,0 +1,59 @@
+name: "Textarea"
+id: "component.textarea.core"
+layer: component
+category: textarea
+intent: "Capture long-form, multi-line text input."
+problem_solved: "Provides a consistent control for descriptions and comments."
+when_to_use:
+  - "Multi-line responses, notes, or descriptions."
+  - "Feedback and comment fields."
+when_not_to_use:
+  - "Single-line inputs (use input)."
+  - "Structured data entry with fixed options."
+anatomy:
+  - "Container"
+  - "Label"
+  - "Text area"
+  - "Helper text"
+  - "Character count"
+variants:
+  - "default"
+  - "auto-resize"
+sizes:
+  - "sm"
+  - "md"
+  - "lg"
+states:
+  - "default"
+  - "focus"
+  - "error"
+  - "disabled"
+behavior_rules:
+  - "Auto-resize expands until a max height."
+  - "Show character count when limits exist."
+accessibility_requirements:
+  - "Label is programmatically associated with the textarea."
+  - "Error messages are announced to screen readers."
+responsive_behavior:
+  - "Full-width on small screens with comfortable padding."
+composition_rules:
+  - "Group with labels and helper text in forms."
+dependencies:
+  - "tokens.components.textarea"
+anti_patterns:
+  - "Hiding labels and relying on placeholder text."
+  - "Using textarea for single-line inputs."
+token_bindings:
+  background: "textarea.bg.*"
+  text: "textarea.text.*"
+  border: "textarea.border.*"
+  radius: "textarea.radius"
+  padding: "textarea.padding.*"
+implementation_mapping:
+  - "Component: Textarea"
+  - "Props: size, state, autoResize"
+evaluation_checklist:
+  - "Focus and error states are visually distinct."
+  - "Line height supports readability."
+context_notes:
+  - "Use auto-resize in chat or comment interfaces."

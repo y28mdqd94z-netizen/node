@@ -1,0 +1,55 @@
+name: "Select"
+id: "component.select.core"
+layer: component
+category: select
+intent: "Allow users to choose a single option from a small set."
+problem_solved: "Offers a compact control for constrained choices."
+when_to_use:
+  - "Single-select with 5-15 options."
+when_not_to_use:
+  - "Large option lists (use combobox)."
+  - "Binary choices (use switch or radio)."
+anatomy:
+  - "Trigger"
+  - "Selected value"
+  - "Dropdown menu"
+variants:
+  - "default"
+  - "with-search (light)"
+sizes:
+  - "sm"
+  - "md"
+  - "lg"
+states:
+  - "default"
+  - "open"
+  - "focus"
+  - "disabled"
+behavior_rules:
+  - "Close on selection."
+  - "Keyboard support for open, navigate, select."
+accessibility_requirements:
+  - "Announce selected value and expanded state."
+responsive_behavior:
+  - "On mobile, consider native picker or sheet."
+composition_rules:
+  - "Use within forms and filters."
+dependencies:
+  - "tokens.components.select"
+anti_patterns:
+  - "Using select for more than 15 options without search."
+  - "Nested selects without labels."
+token_bindings:
+  background: "select.bg.*"
+  text: "select.text.*"
+  border: "select.border.*"
+  radius: "select.radius"
+implementation_mapping:
+  - "Component: Select"
+  - "Props: options, value, onChange, size"
+evaluation_checklist:
+  - "Selection is visible and unambiguous."
+  - "Keyboard interaction is complete."
+context_notes:
+  - "Admin filters favor select for short lists and toggles."
+

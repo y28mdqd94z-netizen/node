@@ -1,0 +1,38 @@
+state_model:
+  precedence_order:
+    - disabled
+    - loading
+    - error
+    - warning
+    - success
+    - active
+    - selected
+    - focus
+    - hover
+    - default
+
+  interaction_states:
+    - default
+    - hover
+    - focus
+    - active
+    - selected
+    - disabled
+
+  data_states:
+    - loading
+    - empty
+    - error
+    - success
+    - offline
+
+  transition_rules:
+    - "Loading supersedes interaction states; disable input while loading."
+    - "Error state persists until resolved or dismissed."
+    - "Focus must remain visible even during hover or selected."
+    - "Empty state appears only after load completes with zero results."
+
+  feedback_requirements:
+    - "All state changes must have visual and programmatic indicators."
+    - "Error states must include recovery guidance."
+

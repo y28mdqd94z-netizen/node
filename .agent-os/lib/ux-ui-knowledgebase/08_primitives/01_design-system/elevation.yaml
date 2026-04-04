@@ -1,0 +1,38 @@
+name: "Elevation"
+id: "design_system.elevation.core"
+layer: design_system
+category: elevation
+intent: "Provide consistent depth cues for layered surfaces."
+problem_solved: "Unstructured shadows obscure hierarchy and focus."
+when_to_use:
+  - "Overlays, menus, and raised surfaces."
+when_not_to_use:
+  - "Do not use elevation to compensate for missing hierarchy."
+anatomy:
+  - "Elevation levels"
+variants:
+  - "flat"
+  - "raised"
+  - "overlay"
+  - "modal"
+states:
+  - "n/a"
+behavior_rules:
+  - "Only raise interactive surfaces when they need emphasis."
+accessibility_requirements:
+  - "Maintain contrast between elevated surfaces and background."
+responsive_behavior:
+  - "Shadows may be softened on small screens to reduce noise."
+composition_rules:
+  - "Overlay elevation supersedes base surfaces."
+dependencies:
+  - "tokens.base.elevation"
+anti_patterns:
+  - "Stacking multiple shadow layers for static surfaces."
+token_bindings:
+  elevation: "elevation.*"
+implementation_mapping:
+  - "Map to box-shadow tokens in CSS."
+evaluation_checklist:
+  - "Elevation changes are tied to interaction or hierarchy."
+

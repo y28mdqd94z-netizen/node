@@ -1,0 +1,18 @@
+accessibility_rules:
+  focus:
+    - "Visible focus ring with 3:1 contrast against surrounding colors."
+    - "Focus order matches visual order."
+  keyboard:
+    - "All interactive elements reachable via Tab."
+    - "Escape closes dialogs, sheets, and menus."
+  contrast:
+    - "Text contrast >= 4.5:1 for normal text."
+    - "Text contrast >= 3:1 for large text."
+  target_size:
+    - "Minimum target size 44x44px where possible."
+  semantics:
+    - "Use native elements before ARIA roles."
+    - "Label all inputs and controls."
+  motion:
+    - "Respect reduced motion preferences; avoid essential motion."
+

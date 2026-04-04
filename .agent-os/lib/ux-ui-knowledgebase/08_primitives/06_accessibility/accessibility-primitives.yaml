@@ -1,0 +1,45 @@
+name: "Accessibility Primitives"
+id: "accessibility.focus.core"
+layer: accessibility
+category: focus
+intent: "Ensure baseline accessibility across components and patterns."
+problem_solved: "Prevents accessibility regressions and inconsistent behavior."
+when_to_use:
+  - "All components and patterns."
+when_not_to_use:
+  - "Do not bypass accessibility requirements."
+anatomy:
+  - "Focus handling"
+  - "Keyboard navigation"
+  - "Contrast rules"
+  - "Semantic structure"
+variants:
+  - "focus"
+  - "keyboard"
+  - "contrast"
+  - "motion"
+states:
+  - "n/a"
+behavior_rules:
+  - "Every interactive element has a focus state."
+  - "Keyboard navigation follows visual order."
+accessibility_requirements:
+  - "Contrast and target size meet WCAG baseline."
+  - "All controls have programmatic labels."
+responsive_behavior:
+  - "Increase touch targets on small screens."
+composition_rules:
+  - "Accessibility requirements override visual preferences."
+dependencies:
+  - "00_meta/accessibility-rules.yaml"
+anti_patterns:
+  - "Removing focus outline without replacement."
+  - "Icon-only controls without labels."
+implementation_mapping:
+  - "Use lint rules and automated checks for accessibility."
+evaluation_checklist:
+  - "Keyboard navigation covers all actions."
+  - "Focus states are visible."
+context_notes:
+  - "Admin portals require clear focus for dense tables."
+

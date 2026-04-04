@@ -1,0 +1,62 @@
+name: "Input"
+id: "component.input.core"
+layer: component
+category: input
+intent: "Capture short to medium text input with validation."
+problem_solved: "Provides a consistent text entry control."
+when_to_use:
+  - "Single-line text entry."
+  - "Search and short-form inputs."
+when_not_to_use:
+  - "For long-form content (use textarea)."
+  - "For selecting from known options (use select or combobox)."
+anatomy:
+  - "Container"
+  - "Label"
+  - "Input field"
+  - "Helper text"
+  - "Optional leading/trailing icon"
+variants:
+  - "default"
+  - "with-icon"
+  - "inline"
+sizes:
+  - "sm"
+  - "md"
+  - "lg"
+states:
+  - "default"
+  - "focus"
+  - "error"
+  - "disabled"
+  - "loading"
+behavior_rules:
+  - "Inline validation on blur; full validation on submit."
+  - "Show character count when constraints exist."
+accessibility_requirements:
+  - "Label is programmatically associated with input."
+  - "Error messages are announced to screen readers."
+responsive_behavior:
+  - "Full-width inputs on small screens."
+composition_rules:
+  - "Group with labels and helper text in forms."
+dependencies:
+  - "tokens.components.input"
+anti_patterns:
+  - "Placeholder-only labels."
+  - "Auto-validation on every keystroke for heavy rules."
+token_bindings:
+  background: "input.bg.*"
+  text: "input.text.*"
+  border: "input.border.*"
+  radius: "input.radius"
+  height: "input.height.*"
+implementation_mapping:
+  - "Component: Input"
+  - "Props: size, state, leadingIcon, trailingIcon"
+evaluation_checklist:
+  - "Focus and error states are visually distinct."
+  - "Labels remain visible when typing."
+context_notes:
+  - "Builder tools may use inline inputs for property panels."
+

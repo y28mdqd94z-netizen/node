@@ -1,0 +1,36 @@
+name: "Responsive Breakpoints"
+id: "design_system.responsive.breakpoints"
+layer: design_system
+category: responsive
+intent: "Standardize breakpoint values for layout and component behavior."
+problem_solved: "Inconsistent breakpoints cause fragmented responsive behavior."
+when_to_use:
+  - "All responsive layout and component rules."
+when_not_to_use:
+  - "Avoid custom breakpoints unless documented."
+anatomy:
+  - "xs, sm, md, lg, xl"
+variants:
+  - "mobile-first"
+  - "desktop-first (only if required)"
+states:
+  - "n/a"
+behavior_rules:
+  - "Design mobile-first; enhance at md and above."
+accessibility_requirements:
+  - "Ensure touch targets remain usable at xs and sm."
+responsive_behavior:
+  - "Breakpoints apply to shell, pattern, and component adaptations."
+composition_rules:
+  - "Component breakpoints inherit from system defaults."
+dependencies:
+  - "tokens.base.layout.breakpoint"
+anti_patterns:
+  - "Component-specific breakpoints that conflict with shell rules."
+token_bindings:
+  breakpoints: "layout.breakpoint.*"
+implementation_mapping:
+  - "Expose breakpoints as design tokens and CSS custom properties."
+evaluation_checklist:
+  - "Components adapt at the same breakpoint thresholds."
+

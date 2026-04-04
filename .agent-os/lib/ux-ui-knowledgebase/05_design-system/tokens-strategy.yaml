@@ -26,3 +26,4 @@ token_strategy:
     - ".agent-os/tokens/base.json"
     - ".agent-os/tokens/semantic.json"
     - ".agent-os/tokens/components.json"
+    - ".agent-os/tokens/aliases.json"

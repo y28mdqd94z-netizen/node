@@ -1,0 +1,59 @@
+name: "Table"
+id: "component.table.core"
+layer: component
+category: table
+intent: "Present structured data for scanning and comparison."
+problem_solved: "Provides alignment and readability for data-heavy content."
+when_to_use:
+  - "Comparing rows and columns."
+  - "Sortable data sets."
+when_not_to_use:
+  - "Simple lists without column comparisons."
+  - "Mobile-first content (use list)."
+anatomy:
+  - "Header row"
+  - "Body rows"
+  - "Cells"
+  - "Optional footer"
+variants:
+  - "basic"
+  - "dense"
+  - "striped"
+  - "selectable"
+sizes:
+  - "compact"
+  - "default"
+states:
+  - "default"
+  - "hover"
+  - "selected"
+  - "loading"
+  - "empty"
+behavior_rules:
+  - "Sticky header for long tables."
+  - "Column alignment by data type."
+accessibility_requirements:
+  - "Use proper table semantics and scopes."
+  - "Support keyboard row navigation."
+responsive_behavior:
+  - "Allow horizontal scroll or switch to list on small screens."
+composition_rules:
+  - "Pair with filters and pagination."
+dependencies:
+  - "tokens.components.table"
+anti_patterns:
+  - "Tables with no clear column meaning."
+  - "Overloaded tables without filters."
+token_bindings:
+  header_bg: "table.header.bg"
+  row_bg: "table.row.bg"
+  border: "table.border"
+implementation_mapping:
+  - "Component: Table"
+  - "Props: columns, data, density, sortable"
+evaluation_checklist:
+  - "Columns are scannable and aligned."
+  - "Empty state is defined."
+context_notes:
+  - "Internal tools use dense tables with clear row actions."
+

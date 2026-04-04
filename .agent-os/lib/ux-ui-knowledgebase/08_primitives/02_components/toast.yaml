@@ -1,0 +1,53 @@
+name: "Toast"
+id: "component.toast.core"
+layer: component
+category: toast
+intent: "Provide transient feedback for non-blocking events."
+problem_solved: "Communicates quick status without disrupting flow."
+when_to_use:
+  - "Save confirmations and background actions."
+when_not_to_use:
+  - "Critical errors (use alert)."
+  - "Long messages (use banner)."
+anatomy:
+  - "Container"
+  - "Message"
+  - "Optional action"
+variants:
+  - "info"
+  - "success"
+  - "warning"
+  - "danger"
+sizes:
+  - "sm"
+  - "md"
+states:
+  - "enter"
+  - "visible"
+  - "exit"
+behavior_rules:
+  - "Auto-dismiss after 4-6 seconds."
+  - "Queue up to 3 toasts at a time."
+accessibility_requirements:
+  - "Announce via aria-live region."
+responsive_behavior:
+  - "Bottom placement on mobile."
+composition_rules:
+  - "Avoid stacking with dialogs and sheets."
+dependencies:
+  - "tokens.components.toast"
+anti_patterns:
+  - "Using toasts for critical failures."
+  - "Persistent toasts that block content."
+token_bindings:
+  background: "toast.bg.*"
+  text: "toast.text.*"
+  shadow: "toast.shadow"
+implementation_mapping:
+  - "Component: Toast"
+  - "Props: variant, message, action, duration"
+evaluation_checklist:
+  - "Toast does not obscure primary actions."
+context_notes:
+  - "Consumer tools use toasts for quick feedback."
+

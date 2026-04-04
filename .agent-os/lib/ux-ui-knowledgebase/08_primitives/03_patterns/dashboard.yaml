@@ -1,0 +1,44 @@
+name: "Dashboard Pattern"
+id: "pattern.dashboard.core"
+layer: pattern
+category: dashboard
+intent: "Provide a high-level overview of key metrics and actions."
+problem_solved: "Users need rapid insight and next actions."
+when_to_use:
+  - "Monitoring KPIs and system health."
+when_not_to_use:
+  - "Task-focused flows without summary data."
+anatomy:
+  - "KPI cards"
+  - "Primary chart or table"
+  - "Secondary insights"
+  - "Quick actions"
+supported_components:
+  - "card"
+  - "table"
+  - "chart (external)"
+  - "toolbar"
+variants:
+  - "executive-summary"
+  - "operational"
+  - "analytics-heavy"
+key_states:
+  - "loading"
+  - "empty"
+  - "error"
+responsive_adaptation:
+  - "Stack cards and collapse secondary panels on mobile."
+shell_compatibility:
+  - "dashboard-shell"
+  - "analytics-shell"
+anti_patterns:
+  - "Too many charts without hierarchy."
+  - "No clear next action."
+evaluation_criteria:
+  - "Top 3 metrics visible within first viewport."
+  - "Primary action is obvious."
+implementation_notes:
+  - "Support data refresh and last updated timestamps."
+context_notes:
+  - "B2B dashboards favor compact density with clear KPI groups."
+

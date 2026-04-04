@@ -1,0 +1,41 @@
+name: "Motion"
+id: "design_system.motion.core"
+layer: design_system
+category: motion
+intent: "Use motion to communicate state changes and hierarchy."
+problem_solved: "Uncontrolled motion distracts and reduces clarity."
+when_to_use:
+  - "State transitions, overlays, and feedback."
+when_not_to_use:
+  - "Avoid motion for decorative effects."
+anatomy:
+  - "Duration"
+  - "Easing"
+  - "Delay"
+variants:
+  - "subtle"
+  - "emphatic"
+states:
+  - "enter"
+  - "exit"
+behavior_rules:
+  - "Use short durations for UI micro-transitions."
+  - "Motion should reinforce hierarchy and focus."
+accessibility_requirements:
+  - "Respect reduced motion preferences."
+responsive_behavior:
+  - "Reduce animation distance on small screens."
+composition_rules:
+  - "Do not animate more than one primary element at a time."
+dependencies:
+  - "tokens.base.motion"
+anti_patterns:
+  - "Multiple competing animations on a single screen."
+token_bindings:
+  duration: "motion.duration.*"
+  easing: "motion.easing.*"
+implementation_mapping:
+  - "Map motion tokens to CSS transitions and animations."
+evaluation_checklist:
+  - "Motion supports comprehension, not decoration."
+

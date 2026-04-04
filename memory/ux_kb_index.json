@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-30T12:18:45+1100",
+  "generated_at": "2026-04-04T13:40:48+1100",
   "root": "/Users/nickport/node/.agent-os/lib/ux-ui-knowledgebase",
-  "content_hash": "823f50868b3c2d165e46dc216d606b4fd33ffc39e8602e47cf4529da8e78b121",
-  "files_indexed": 59,
-  "entries_indexed": 148,
+  "content_hash": "cf115b3493c300ce134b7366b174bfc514b9da2c43260243cb8bd8beba07c150",
+  "files_indexed": 135,
+  "entries_indexed": 155,
   "files": [
     {
       "path": "00_meta/entry-metadata-model.yaml",
@@ -231,6 +231,11 @@
       "category": "agent-application"
     },
     {
+      "path": "06_agent-application/component-selection-guide.md",
+      "type": "md",
+      "category": "agent-application"
+    },
+    {
       "path": "06_agent-application/component-selection-logic.yaml",
       "type": "yaml",
       "category": "agent-application"
@@ -246,8 +251,18 @@
       "category": "agent-application"
     },
     {
+      "path": "06_agent-application/evaluation-checklists.md",
+      "type": "md",
+      "category": "agent-application"
+    },
+    {
       "path": "06_agent-application/flow-design-rules.yaml",
       "type": "yaml",
+      "category": "agent-application"
+    },
+    {
+      "path": "06_agent-application/implementation-mapping.md",
+      "type": "md",
       "category": "agent-application"
     },
     {
@@ -261,13 +276,28 @@
       "category": "agent-application"
     },
     {
+      "path": "06_agent-application/pattern-selection-guide.md",
+      "type": "md",
+      "category": "agent-application"
+    },
+    {
       "path": "06_agent-application/pattern-selection-logic.yaml",
       "type": "yaml",
       "category": "agent-application"
     },
     {
+      "path": "06_agent-application/primitive-composition-recipes.md",
+      "type": "md",
+      "category": "agent-application"
+    },
+    {
       "path": "06_agent-application/redesign-mode-rules.yaml",
       "type": "yaml",
+      "category": "agent-application"
+    },
+    {
+      "path": "06_agent-application/shell-selection-guide.md",
+      "type": "md",
       "category": "agent-application"
     },
     {
@@ -289,6 +319,356 @@
       "path": "07_references/source-map.md",
       "type": "md",
       "category": "references"
+    },
+    {
+      "path": "08_primitives/00_meta/accessibility-rules.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/00_meta/anti-patterns.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/00_meta/composition-rules.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/00_meta/content-rules.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/00_meta/evaluation-rules.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/00_meta/implementation-mapping-rules.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/00_meta/primitive-schema.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/00_meta/responsive-rules.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/00_meta/selection-rules.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/00_meta/state-model.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/00_meta/taxonomy.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/01_design-system/color.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/01_design-system/elevation.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/01_design-system/iconography.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/01_design-system/layout-rules.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/01_design-system/motion.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/01_design-system/radius.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/01_design-system/responsive-breakpoints.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/01_design-system/spacing.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/01_design-system/token-extension-guidance.md",
+      "type": "md",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/01_design-system/tokens.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/01_design-system/typography.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/alert.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/breadcrumbs.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/button.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/card.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/checkbox.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/chip.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/combobox.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/dialog.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/empty-state.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/header.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/input.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/menu.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/pagination.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/radio.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/select.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/sheet.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/sidebar.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/switch.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/table.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/tabs.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/textarea.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/toast.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/02_components/toolbar.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/03_patterns/builder.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/03_patterns/crud.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/03_patterns/dashboard.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/03_patterns/data-heavy.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/03_patterns/form.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/03_patterns/list-detail.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/03_patterns/navigation.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/03_patterns/onboarding.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/03_patterns/overlays.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/03_patterns/portal.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/03_patterns/search-filtering.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/03_patterns/settings-admin.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/04_shells/analytics-shell.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/04_shells/builder-shell.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/04_shells/dashboard-shell.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/04_shells/focus-shell.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/04_shells/list-management-shell.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/04_shells/mobile-sheet-first-shell.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/04_shells/portal-shell.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/04_shells/settings-shell.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/05_state/state-primitives.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/06_accessibility/accessibility-primitives.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/07_content/content-primitives.yaml",
+      "type": "yaml",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/index.json",
+      "type": "json",
+      "category": "unknown"
+    },
+    {
+      "path": "08_primitives/manifest.json",
+      "type": "json",
+      "category": "unknown"
     },
     {
       "path": "README.md",
@@ -1280,6 +1660,55 @@
       "title": "No Results",
       "file": "07_references/pattern-reference-index.yaml",
       "category": "references",
+      "source": "yaml"
+    },
+    {
+      "id": "design_system",
+      "title": "Design-system primitives",
+      "file": "08_primitives/00_meta/taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "component",
+      "title": "Component primitives",
+      "file": "08_primitives/00_meta/taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "pattern",
+      "title": "Pattern primitives",
+      "file": "08_primitives/00_meta/taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "shell",
+      "title": "Shell primitives",
+      "file": "08_primitives/00_meta/taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "state",
+      "title": "State primitives",
+      "file": "08_primitives/00_meta/taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "accessibility",
+      "title": "Accessibility primitives",
+      "file": "08_primitives/00_meta/taxonomy.yaml",
+      "category": "unknown",
+      "source": "yaml"
+    },
+    {
+      "id": "content",
+      "title": "Content primitives",
+      "file": "08_primitives/00_meta/taxonomy.yaml",
+      "category": "unknown",
       "source": "yaml"
     },
     {

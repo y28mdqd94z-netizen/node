@@ -1,0 +1,58 @@
+name: "Sheet"
+id: "component.sheet.core"
+layer: component
+category: sheet
+intent: "Provide a side or bottom overlay for extended tasks."
+problem_solved: "Supports longer workflows without full page transitions."
+when_to_use:
+  - "Secondary flows that should keep context visible."
+  - "Mobile-first actions (bottom sheet)."
+when_not_to_use:
+  - "Critical confirmations (use dialog)."
+  - "Deep workflows (use full page)."
+anatomy:
+  - "Overlay"
+  - "Sheet surface"
+  - "Header"
+  - "Content area"
+  - "Footer actions"
+variants:
+  - "side"
+  - "bottom"
+  - "full-height"
+sizes:
+  - "sm"
+  - "md"
+  - "lg"
+states:
+  - "open"
+  - "loading"
+  - "error"
+behavior_rules:
+  - "Allow background context to remain visible."
+  - "Close on Escape; avoid accidental dismiss on form inputs."
+accessibility_requirements:
+  - "Trap focus while open."
+  - "Use appropriate aria roles."
+responsive_behavior:
+  - "Bottom sheet on small screens."
+composition_rules:
+  - "Sheet should contain clear primary action."
+dependencies:
+  - "tokens.components.sheet"
+anti_patterns:
+  - "Using sheet for destructive confirmations."
+  - "Overly narrow sheet for complex forms."
+token_bindings:
+  surface: "sheet.bg.*"
+  text: "sheet.text.*"
+  overlay: "sheet.overlay"
+implementation_mapping:
+  - "Component: Sheet"
+  - "Props: side, open, onOpenChange, size"
+evaluation_checklist:
+  - "Primary action remains visible while scrolling."
+  - "Sheet uses appropriate size for content."
+context_notes:
+  - "Mobile-first utilities should default to bottom sheets."
+

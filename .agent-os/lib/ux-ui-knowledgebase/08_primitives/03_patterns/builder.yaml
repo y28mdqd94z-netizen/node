@@ -1,0 +1,41 @@
+name: "Builder Pattern"
+id: "pattern.builder.core"
+layer: pattern
+category: builder
+intent: "Support create-edit workflows with live preview or canvas."
+problem_solved: "Enables structured creation with clear configuration."
+when_to_use:
+  - "Template, workflow, or content builders."
+when_not_to_use:
+  - "Simple form creation without preview."
+anatomy:
+  - "Canvas or preview"
+  - "Property panel"
+  - "Toolbar"
+  - "Layers or outline"
+supported_components:
+  - "toolbar"
+  - "sidebar"
+  - "sheet"
+  - "tabs"
+variants:
+  - "canvas-first"
+  - "form-first"
+key_states:
+  - "dirty"
+  - "saving"
+  - "error"
+responsive_adaptation:
+  - "Collapse property panel into sheet on mobile."
+shell_compatibility:
+  - "builder-shell"
+anti_patterns:
+  - "No clear save or publish state."
+  - "Overloaded property panels."
+evaluation_criteria:
+  - "Users can preview changes without leaving context."
+implementation_notes:
+  - "Autosave with clear status indicator."
+context_notes:
+  - "Internal tools use builder pattern for workflow automation."
+

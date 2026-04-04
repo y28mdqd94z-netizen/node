@@ -1,0 +1,20 @@
+implementation_mapping_rules:
+  tokens:
+    - "Expose tokens as CSS variables under :root and theme scopes."
+    - "Map semantic tokens to base tokens in a single source of truth."
+  components:
+    - "Each component maps to a single implementation module with variants."
+    - "Use component tokens for styling; avoid ad hoc values."
+  patterns:
+    - "Patterns map to feature-level composition modules."
+    - "Patterns must declare required components and states."
+  shells:
+    - "Shells map to layout containers and navigation scaffolds."
+    - "Shell selection determines navigation primitives and density defaults."
+  state:
+    - "State primitives map to shared state enums and UI state hooks."
+    - "State precedence must be enforced in component logic."
+  accessibility:
+    - "Accessibility rules map to linting and testing requirements."
+    - "Keyboard and focus states are required in base components."
+

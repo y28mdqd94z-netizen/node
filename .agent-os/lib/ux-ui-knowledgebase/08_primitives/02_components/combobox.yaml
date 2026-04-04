@@ -1,0 +1,55 @@
+name: "Combobox"
+id: "component.combobox.core"
+layer: component
+category: combobox
+intent: "Allow search and selection from large option sets."
+problem_solved: "Enables fast selection when options are many or dynamic."
+when_to_use:
+  - "Option lists > 15 items."
+  - "Remote or dynamic search sets."
+when_not_to_use:
+  - "Short, static lists (use select)."
+anatomy:
+  - "Input"
+  - "Dropdown list"
+  - "Option rows"
+variants:
+  - "single-select"
+  - "multi-select"
+sizes:
+  - "sm"
+  - "md"
+  - "lg"
+states:
+  - "default"
+  - "open"
+  - "loading"
+  - "empty"
+  - "error"
+behavior_rules:
+  - "Debounce remote search requests."
+  - "Show recent or suggested items when empty."
+accessibility_requirements:
+  - "Announce results count and highlighted option."
+responsive_behavior:
+  - "Use full-width sheet on mobile for large lists."
+composition_rules:
+  - "Use within forms, filters, and multi-step flows."
+dependencies:
+  - "tokens.components.combobox"
+anti_patterns:
+  - "Triggering search on every keystroke without debounce."
+  - "Hiding no-results state."
+token_bindings:
+  background: "combobox.bg.*"
+  text: "combobox.text.*"
+  border: "combobox.border.*"
+implementation_mapping:
+  - "Component: Combobox"
+  - "Props: options, query, onSearch, onSelect, multi"
+evaluation_checklist:
+  - "Results are keyboard navigable."
+  - "Empty and loading states are clear."
+context_notes:
+  - "Builder tools use combobox for entity linking and schema selection."
+

@@ -1,0 +1,53 @@
+name: "Sidebar"
+id: "component.sidebar.core"
+layer: component
+category: sidebar
+intent: "Provide persistent navigation for multi-section apps."
+problem_solved: "Supports deep navigation with clear hierarchy."
+when_to_use:
+  - "More than 5 primary sections."
+  - "Deep hierarchy with grouped items."
+when_not_to_use:
+  - "Mobile-only apps with limited sections."
+anatomy:
+  - "Brand area"
+  - "Primary nav"
+  - "Secondary nav"
+  - "Footer actions"
+variants:
+  - "expanded"
+  - "collapsed"
+  - "rail"
+sizes:
+  - "default"
+  - "compact"
+states:
+  - "default"
+  - "active"
+  - "collapsed"
+behavior_rules:
+  - "Highlight current section and page."
+  - "Allow collapse to rail on md+."
+accessibility_requirements:
+  - "Keyboard navigation through items."
+responsive_behavior:
+  - "Collapse into drawer below md."
+composition_rules:
+  - "Works with header and breadcrumb components."
+dependencies:
+  - "tokens.components.sidebar"
+anti_patterns:
+  - "Overloaded sidebar with too many levels."
+  - "Hiding active state."
+token_bindings:
+  background: "sidebar.bg.*"
+  text: "sidebar.text.*"
+  active: "sidebar.active.*"
+implementation_mapping:
+  - "Component: Sidebar"
+  - "Props: items, collapsed, onToggle"
+evaluation_checklist:
+  - "Navigation labels are scannable within 2 seconds."
+context_notes:
+  - "B2B SaaS and admin portals default to sidebar navigation."
+

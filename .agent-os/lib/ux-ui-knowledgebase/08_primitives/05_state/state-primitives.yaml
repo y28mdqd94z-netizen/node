@@ -1,0 +1,50 @@
+name: "State Primitives"
+id: "state.interaction.core"
+layer: state
+category: interaction
+intent: "Standardize interaction and data states across the system."
+problem_solved: "Inconsistent state handling confuses users and breaks flows."
+when_to_use:
+  - "All interactive components and patterns."
+when_not_to_use:
+  - "Do not create ad hoc states outside the model."
+anatomy:
+  - "Interaction states"
+  - "Data states"
+  - "Feedback states"
+variants:
+  - "interaction"
+  - "data"
+  - "feedback"
+states:
+  - "default"
+  - "hover"
+  - "focus"
+  - "active"
+  - "selected"
+  - "disabled"
+  - "loading"
+  - "empty"
+  - "error"
+  - "success"
+behavior_rules:
+  - "Loading disables interactions unless cancelable."
+  - "Errors must include recovery path."
+accessibility_requirements:
+  - "State changes announced to assistive tech."
+responsive_behavior:
+  - "Ensure tap states visible on touch."
+composition_rules:
+  - "State precedence follows state-model.yaml."
+dependencies:
+  - "00_meta/state-model.yaml"
+anti_patterns:
+  - "Hidden loading states."
+  - "Error states without guidance."
+implementation_mapping:
+  - "Shared state enums and hooks in code."
+evaluation_checklist:
+  - "Each component defines empty, loading, and error states."
+context_notes:
+  - "Admin tools need clear bulk-action states."
+

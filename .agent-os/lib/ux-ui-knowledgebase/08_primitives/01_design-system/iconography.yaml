@@ -1,0 +1,41 @@
+name: "Iconography"
+id: "design_system.iconography.core"
+layer: design_system
+category: iconography
+intent: "Provide consistent icon sizing, stroke, and usage rules."
+problem_solved: "Inconsistent icons reduce recognizability and alignment."
+when_to_use:
+  - "Navigation, actions, status, and dense UI controls."
+when_not_to_use:
+  - "Do not use icons without labels for critical actions."
+anatomy:
+  - "Icon sizes"
+  - "Stroke weight"
+  - "Filled vs outline"
+variants:
+  - "outline"
+  - "filled (status only)"
+states:
+  - "default"
+  - "active"
+behavior_rules:
+  - "Use outline icons for actions; filled for status."
+  - "Pair icons with text for primary actions."
+accessibility_requirements:
+  - "Provide accessible labels for icon-only controls."
+responsive_behavior:
+  - "Increase hit area on small screens; keep icon size stable."
+composition_rules:
+  - "Icons align to the type baseline in buttons and inputs."
+dependencies:
+  - "tokens.base.icon"
+anti_patterns:
+  - "Decorative icons that compete with primary content."
+token_bindings:
+  size: "icon.size.*"
+  color: "color.icon.*"
+implementation_mapping:
+  - "Use a single icon set with size tokens."
+evaluation_checklist:
+  - "Icons are consistent in stroke and size."
+

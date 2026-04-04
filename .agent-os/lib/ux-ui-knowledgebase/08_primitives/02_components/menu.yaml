@@ -1,0 +1,61 @@
+name: "Menu"
+id: "component.menu.core"
+layer: component
+category: menu
+intent: "Provide a compact list of actions or destinations from a trigger."
+problem_solved: "Standardizes dropdown action surfaces with clear item states."
+when_to_use:
+  - "Contextual actions tied to a specific item or surface."
+  - "Short action lists or quick navigation links."
+when_not_to_use:
+  - "Primary navigation between top-level areas (use tabs or sidebar)."
+  - "Long lists that require search (use combobox)."
+anatomy:
+  - "Trigger"
+  - "Menu surface"
+  - "Menu item"
+  - "Optional icon"
+  - "Divider"
+variants:
+  - "context"
+  - "dropdown"
+  - "selectable"
+sizes:
+  - "sm"
+  - "md"
+states:
+  - "closed"
+  - "open"
+  - "hover"
+  - "active"
+  - "disabled"
+behavior_rules:
+  - "Opens anchored to the trigger with an offset for visual separation."
+  - "Arrow keys move focus; Enter activates; Esc closes."
+accessibility_requirements:
+  - "Trigger uses aria-haspopup and aria-expanded."
+  - "Focus is trapped within the menu until dismissed."
+responsive_behavior:
+  - "On small screens, use a full-width sheet for long menus."
+composition_rules:
+  - "Group related actions and separate with dividers."
+dependencies:
+  - "tokens.components.menu"
+anti_patterns:
+  - "Overloading a menu with primary actions."
+  - "Using menus for long-form selection tasks."
+token_bindings:
+  background: "menu.bg.*"
+  text: "menu.text.*"
+  border: "menu.border.*"
+  radius: "menu.radius"
+  shadow: "menu.shadow"
+  item: "menu.item.*"
+implementation_mapping:
+  - "Component: Menu"
+  - "Props: items, onSelect, align, size, density"
+evaluation_checklist:
+  - "Keyboard navigation covers all items."
+  - "Item states are visually distinct."
+context_notes:
+  - "Admin consoles favor denser menus with secondary text."

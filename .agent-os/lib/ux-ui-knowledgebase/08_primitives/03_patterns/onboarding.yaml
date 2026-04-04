@@ -1,0 +1,43 @@
+name: "Onboarding Pattern"
+id: "pattern.onboarding.core"
+layer: pattern
+category: onboarding
+intent: "Guide new users to initial success quickly."
+problem_solved: "Reduces first-time drop-off and setup confusion."
+when_to_use:
+  - "First-time user setup."
+  - "Feature activation flows."
+when_not_to_use:
+  - "Returning users or repeat tasks."
+anatomy:
+  - "Welcome step"
+  - "Setup tasks"
+  - "Progress indicator"
+  - "Completion state"
+supported_components:
+  - "card"
+  - "button"
+  - "input"
+  - "list"
+variants:
+  - "checklist"
+  - "wizard"
+key_states:
+  - "incomplete"
+  - "in-progress"
+  - "complete"
+responsive_adaptation:
+  - "Single-column with sticky action on mobile."
+shell_compatibility:
+  - "portal-shell"
+  - "focus-shell"
+anti_patterns:
+  - "Long onboarding without progress feedback."
+  - "Hiding skip options for optional steps."
+evaluation_criteria:
+  - "User can complete first task in under 5 minutes."
+implementation_notes:
+  - "Persist onboarding status and allow resume."
+context_notes:
+  - "B2B SaaS often uses checklist onboarding for setup tasks."
+

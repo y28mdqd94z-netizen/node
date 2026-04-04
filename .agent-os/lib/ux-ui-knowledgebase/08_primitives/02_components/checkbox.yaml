@@ -1,0 +1,59 @@
+name: "Checkbox"
+id: "component.checkbox.core"
+layer: component
+category: checkbox
+intent: "Allow users to select multiple independent options."
+problem_solved: "Supports multi-select inputs with clear on/off states."
+when_to_use:
+  - "Multi-select lists and batch selection."
+  - "Agreement and opt-in fields."
+when_not_to_use:
+  - "Exclusive selections (use radio)."
+  - "Immediate toggles with side effects (use switch)."
+anatomy:
+  - "Box"
+  - "Checkmark"
+  - "Label"
+  - "Helper text"
+variants:
+  - "default"
+  - "indeterminate"
+sizes:
+  - "sm"
+  - "md"
+states:
+  - "unchecked"
+  - "checked"
+  - "indeterminate"
+  - "focus"
+  - "disabled"
+  - "error"
+behavior_rules:
+  - "Label click toggles the checkbox."
+  - "Indeterminate indicates partial selection only."
+accessibility_requirements:
+  - "Use native input semantics with associated label."
+  - "Announce indeterminate state to assistive tech."
+responsive_behavior:
+  - "Increase touch target size on mobile."
+composition_rules:
+  - "Group checkboxes with shared helper text or section labels."
+dependencies:
+  - "tokens.components.checkbox"
+anti_patterns:
+  - "Using checkboxes as toggles for immediate actions."
+  - "Hiding labels and relying on icon-only boxes."
+token_bindings:
+  background: "checkbox.bg.*"
+  border: "checkbox.border.*"
+  icon: "checkbox.icon.*"
+  radius: "checkbox.radius"
+  size: "checkbox.size.*"
+implementation_mapping:
+  - "Component: Checkbox"
+  - "Props: checked, indeterminate, disabled, error, label"
+evaluation_checklist:
+  - "Checked and indeterminate states are distinct."
+  - "Focus ring meets contrast requirements."
+context_notes:
+  - "Use helper text for legal consent requirements."

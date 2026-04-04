@@ -1,0 +1,58 @@
+name: "Dialog"
+id: "component.dialog.core"
+layer: component
+category: dialog
+intent: "Focus user attention on a critical decision or task."
+problem_solved: "Provides a controlled overlay for confirmations and short tasks."
+when_to_use:
+  - "Confirm destructive actions."
+  - "Short, focused tasks that block background."
+when_not_to_use:
+  - "Long or multi-step workflows (use sheet or full page)."
+  - "Non-critical info (use toast or banner)."
+anatomy:
+  - "Overlay"
+  - "Surface"
+  - "Title"
+  - "Body"
+  - "Actions"
+variants:
+  - "confirmation"
+  - "form"
+  - "alert"
+sizes:
+  - "sm"
+  - "md"
+  - "lg"
+states:
+  - "open"
+  - "loading"
+  - "error"
+behavior_rules:
+  - "Trap focus within dialog."
+  - "Close on Escape and overlay click (except destructive confirmations)."
+accessibility_requirements:
+  - "Use role=dialog and aria-labelledby."
+  - "Return focus to trigger on close."
+responsive_behavior:
+  - "Use full-width on small screens or switch to sheet."
+composition_rules:
+  - "Dialog should contain one primary action."
+dependencies:
+  - "tokens.components.dialog"
+anti_patterns:
+  - "Stacking dialogs."
+  - "Dialogs with long scrollable content."
+token_bindings:
+  surface: "dialog.bg.*"
+  text: "dialog.text.*"
+  overlay: "dialog.overlay"
+implementation_mapping:
+  - "Component: Dialog"
+  - "Props: open, onOpenChange, size, dismissible"
+evaluation_checklist:
+  - "Dialog has a clear title and primary action."
+  - "Focus management is correct."
+context_notes:
+  - "Admin tools use dialog for confirmations and small forms."
+

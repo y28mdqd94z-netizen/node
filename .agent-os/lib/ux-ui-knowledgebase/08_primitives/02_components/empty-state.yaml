@@ -1,0 +1,51 @@
+name: "Empty State"
+id: "component.empty_state.core"
+layer: component
+category: empty_state
+intent: "Explain absence of data and guide next steps."
+problem_solved: "Prevents confusion when content is missing."
+when_to_use:
+  - "Zero results after load."
+  - "First-time setup screens."
+when_not_to_use:
+  - "Loading states (use skeleton)."
+  - "Error states (use alert)."
+anatomy:
+  - "Title"
+  - "Body copy"
+  - "Illustration or icon"
+  - "Primary action"
+variants:
+  - "first-use"
+  - "filtered-empty"
+  - "no-access"
+sizes:
+  - "sm"
+  - "md"
+  - "lg"
+states:
+  - "empty"
+behavior_rules:
+  - "Provide a clear action or explanation."
+accessibility_requirements:
+  - "Text alternative for illustrations."
+responsive_behavior:
+  - "Center content on small screens."
+composition_rules:
+  - "Use with lists, tables, and dashboards."
+dependencies:
+  - "tokens.components.empty_state"
+anti_patterns:
+  - "Empty states with no guidance."
+  - "Humor that obscures task clarity."
+token_bindings:
+  text: "empty_state.text.*"
+  action: "empty_state.action.*"
+implementation_mapping:
+  - "Component: EmptyState"
+  - "Props: title, body, action, variant"
+evaluation_checklist:
+  - "User knows what to do next."
+context_notes:
+  - "B2B onboarding uses empty states to suggest first setup steps."
+

@@ -1,0 +1,144 @@
+schema_version: 0.1.0
+system: primitive-system
+naming:
+  file_convention: "kebab-case"
+  id_convention: "layer.category.name"
+  token_convention: "dot.notation"
+
+layers:
+  - id: design_system
+    title: "Design-system primitives"
+    description: "Foundational tokens and rules that define the visual system."
+  - id: component
+    title: "Component primitives"
+    description: "Reusable UI building blocks with defined behavior and states."
+  - id: pattern
+    title: "Pattern primitives"
+    description: "Reusable workflows that combine components to solve tasks."
+  - id: shell
+    title: "Shell primitives"
+    description: "High-level layout and navigation frameworks for apps."
+  - id: state
+    title: "State primitives"
+    description: "Cross-cutting interaction and data states."
+  - id: accessibility
+    title: "Accessibility primitives"
+    description: "Baseline accessibility rules and affordances."
+  - id: content
+    title: "Content primitives"
+    description: "Copy and information hierarchy rules."
+
+categories:
+  design_system:
+    - spacing
+    - color
+    - typography
+    - radius
+    - elevation
+    - iconography
+    - motion
+    - layout
+    - responsive
+    - tokens
+  component:
+    - button
+    - input
+    - select
+    - combobox
+    - dialog
+    - sheet
+    - card
+    - tabs
+    - table
+    - empty_state
+    - alert
+    - toast
+    - pagination
+    - sidebar
+    - header
+    - toolbar
+  pattern:
+    - navigation
+    - dashboard
+    - portal
+    - builder
+    - form
+    - onboarding
+    - overlays
+    - data_heavy
+    - search_filtering
+    - crud
+    - list_detail
+    - settings_admin
+  shell:
+    - portal_shell
+    - dashboard_shell
+    - list_management_shell
+    - builder_shell
+    - settings_shell
+    - focus_shell
+    - mobile_sheet_first_shell
+    - analytics_shell
+  state:
+    - interaction
+    - feedback
+    - data
+  accessibility:
+    - focus
+    - keyboard
+    - contrast
+    - target_size
+    - semantics
+    - motion
+  content:
+    - labels
+    - microcopy
+    - empty_states
+    - error_messages
+    - onboarding
+
+contexts:
+  - b2b_saas
+  - internal_tools
+  - admin_portal
+  - dashboards
+  - builders
+  - consumer_productivity
+  - mobile_first
+
+sizes:
+  density:
+    - compact
+    - default
+    - comfortable
+  size_scale:
+    - xs
+    - sm
+    - md
+    - lg
+    - xl
+
+stability_levels:
+  - stable
+  - evolving
+  - experimental
+
+priority_levels:
+  - P0
+  - P1
+  - P2
+
+state_types:
+  - default
+  - hover
+  - focus
+  - active
+  - selected
+  - disabled
+  - loading
+  - success
+  - warning
+  - error
+  - empty
+  - offline
+

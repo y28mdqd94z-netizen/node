@@ -1,0 +1,15 @@
+{
+  "brand": {
+    "primary": "{color.action.primary}",
+    "on_primary": "{color.action.primary_text}",
+    "accent": "{color.action.primary}"
+  },
+  "surface": {
+    "base": "{color.bg.canvas}",
+    "raised": "{color.bg.surface}"
+  },
+  "text": {
+    "primary": "{color.text.primary}",
+    "secondary": "{color.text.secondary}"
+  }
+}

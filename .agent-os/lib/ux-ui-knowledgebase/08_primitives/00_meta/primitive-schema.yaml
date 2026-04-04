@@ -1,0 +1,149 @@
+schema_version: 0.1.0
+schema_name: primitive-spec
+
+required_fields:
+  - name
+  - id
+  - layer
+  - category
+  - intent
+  - problem_solved
+  - when_to_use
+  - when_not_to_use
+  - anatomy
+  - anti_patterns
+
+optional_fields:
+  - variants
+  - sizes
+  - token_bindings
+  - implementation_notes
+  - evaluation_criteria
+  - supported_components
+  - key_states
+  - responsive_adaptation
+  - responsive_collapse_logic
+  - shell_compatibility
+  - compatible_patterns
+  - layout_regions
+  - navigation_model
+  - density_assumptions
+  - primary_use_cases
+  - context_notes
+  - data_constraints
+  - analytics_events
+  - guardrails
+  - evaluation_checklist
+
+field_definitions:
+  name:
+    type: string
+    description: "Human-readable name."
+  id:
+    type: string
+    description: "Stable identifier using layer.category.name."
+  layer:
+    type: enum
+    values: [design_system, component, pattern, shell, state, accessibility, content]
+  category:
+    type: string
+    description: "Category within layer taxonomy."
+  intent:
+    type: string
+    description: "Primary goal of the primitive."
+  problem_solved:
+    type: string
+    description: "The specific user or system problem addressed."
+  when_to_use:
+    type: list
+    description: "Situations where this primitive is recommended."
+  when_not_to_use:
+    type: list
+    description: "Situations where this primitive should be avoided."
+  anatomy:
+    type: list
+    description: "Key parts or regions of the primitive."
+  variants:
+    type: list
+    description: "Named variants or modes."
+  sizes:
+    type: list
+    description: "Available sizes or density options."
+  states:
+    type: list
+    description: "Interaction and data states."
+  behavior_rules:
+    type: list
+    description: "Behavioral rules and interactions."
+  accessibility_requirements:
+    type: list
+    description: "Accessibility rules (focus, keyboard, semantics)."
+  responsive_behavior:
+    type: list
+    description: "How the primitive adapts across breakpoints."
+  composition_rules:
+    type: list
+    description: "How it composes with other primitives."
+  dependencies:
+    type: list
+    description: "Required tokens, components, or patterns."
+  anti_patterns:
+    type: list
+    description: "Misuses to avoid."
+  token_bindings:
+    type: map
+    description: "Token references used by the primitive."
+  implementation_mapping:
+    type: list
+    description: "Mapping to code constructs or components."
+  evaluation_checklist:
+    type: list
+    description: "Criteria to evaluate quality and correctness."
+  evaluation_criteria:
+    type: list
+    description: "Alternative evaluation criteria (patterns and shells)."
+  implementation_notes:
+    type: list
+    description: "Implementation caveats or notes for engineering."
+  supported_components:
+    type: list
+    description: "Components commonly used by the primitive."
+  key_states:
+    type: list
+    description: "Key states to prioritize for this primitive."
+  responsive_adaptation:
+    type: list
+    description: "High-level responsive adaptation guidance."
+  responsive_collapse_logic:
+    type: list
+    description: "Rules for collapsing or reorganizing content."
+  shell_compatibility:
+    type: list
+    description: "Shells that best align with the primitive."
+  compatible_patterns:
+    type: list
+    description: "Patterns that integrate well with this primitive."
+  layout_regions:
+    type: list
+    description: "Primary layout regions used by the primitive."
+  navigation_model:
+    type: string
+    description: "Navigation model summary."
+  density_assumptions:
+    type: string
+    description: "Density assumptions for the primitive."
+  primary_use_cases:
+    type: list
+    description: "Primary use cases or scenarios."
+  context_notes:
+    type: list
+    description: "Context-specific adaptation notes."
+  data_constraints:
+    type: list
+    description: "Data or content constraints."
+  analytics_events:
+    type: list
+    description: "Suggested analytics events."
+  guardrails:
+    type: list
+    description: "Hard constraints and safe defaults."

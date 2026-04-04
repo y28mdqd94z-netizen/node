@@ -1,0 +1,50 @@
+name: "Focus Shell"
+id: "shell.focus_shell.core"
+layer: shell
+category: focus_shell
+intent: "Minimize distractions for single-task workflows."
+problem_solved: "Improves completion for focused flows."
+when_to_use:
+  - "Onboarding, checkout-like tasks, or wizards."
+when_not_to_use:
+  - "Multi-section portals."
+anatomy:
+  - "Minimal header"
+  - "Content column"
+  - "Progress indicator"
+layout_regions:
+  - "header"
+  - "content"
+  - "footer"
+navigation_model: "minimal"
+compatible_patterns:
+  - "onboarding"
+  - "form"
+density_assumptions: "comfortable"
+responsive_collapse_logic:
+  - "Sticky primary action on mobile."
+primary_use_cases:
+  - "Setup flows"
+  - "Critical tasks"
+states:
+  - "default"
+behavior_rules:
+  - "Single primary action per step."
+accessibility_requirements:
+  - "Clear step indicator and focus order."
+responsive_behavior:
+  - "Single column with large touch targets."
+composition_rules:
+  - "Avoid secondary navigation within focus shell."
+dependencies:
+  - "button"
+  - "input"
+anti_patterns:
+  - "Mixing focus flows with global navigation."
+implementation_mapping:
+  - "Layout: FocusShell with centered content"
+evaluation_checklist:
+  - "Users can complete task without distraction."
+context_notes:
+  - "Consumer productivity apps use focus shells for quick setup."
+
