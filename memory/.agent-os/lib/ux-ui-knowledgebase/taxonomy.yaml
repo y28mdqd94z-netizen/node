@@ -1,0 +1,37 @@
+laws:
+  - id: ux_law_hicks
+    title: "Hick’s Law"
+    related_principles: ["principle_minimalism", "principle_recognition"]
+
+principles:
+  - id: principle_consistency
+    title: "Consistency and Standards"
+    related_laws: ["ux_law_jakobs"]
+    related_patterns: ["pattern_top_nav_bar", "pattern_sidebar_nav"]
+  - id: principle_recognition
+    title: "Recognition over Recall"
+    related_laws: ["ux_law_millers", "ux_law_serial_position"]
+
+patterns:
+  - id: pattern_top_nav_bar
+    title: "Top Navigation Bar"
+    solves: "Global site navigation"
+    related_components: ["component_navigation_menu", "component_dropdown_menu"]
+  - id: pattern_multi_step_form
+    title: "Multi-Step Form"
+    solves: "Complex form workflows or long data entry"
+
+components:
+  - id: component_button_primary
+    title: "Primary Button"
+    family: "Button"
+    jobs_to_be_done: ["submit", "confirm action"]
+  - id: component_input
+    title: "Input"
+    family: "Input"
+    jobs_to_be_done: ["collect text data from user"]
+
+templates:
+  - id: dashboard_main
+    title: "Dashboard Layout"
+    includes_patterns: ["pattern_top_nav_bar", "pattern_sidebar_nav", "pattern_global_search"]

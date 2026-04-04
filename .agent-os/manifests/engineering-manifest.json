@@ -1,0 +1,35 @@
+{
+  "version": "0.1.0",
+  "generated_at": "2026-04-04T01:18:43.707Z",
+  "core": [
+    "source/engineering/core/engineering-core/SKILL.md"
+  ],
+  "skills": [
+    "source/engineering/skills/architecture/SKILL.md",
+    "source/engineering/skills/debugging/SKILL.md",
+    "source/engineering/skills/implementation-backend/SKILL.md",
+    "source/engineering/skills/implementation-frontend/SKILL.md",
+    "source/engineering/skills/performance-review/SKILL.md",
+    "source/engineering/skills/refactor/SKILL.md",
+    "source/engineering/skills/security-review/SKILL.md",
+    "source/engineering/skills/testing/SKILL.md"
+  ],
+  "workflows": [
+    "source/engineering/workflows/engineering-context/SKILL.md"
+  ],
+  "references": [
+    "source/engineering/references/engineering-principles.md",
+    "source/engineering/references/performance-baseline.md",
+    "source/engineering/references/security-baseline.md",
+    "source/engineering/references/testing-baseline.md"
+  ],
+  "anti_patterns": [
+    "source/engineering/anti-patterns/core.yaml"
+  ],
+  "evals": [
+    "source/engineering/evals/release-gate.yaml"
+  ],
+  "templates": [
+    "source/engineering/templates/engineering_context.yaml"
+  ]
+}

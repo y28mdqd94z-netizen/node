@@ -1,0 +1,28 @@
+token_strategy:
+  tiers:
+    - name: "Base tokens"
+      description: "Raw values such as colors, spacing, and typography sizes."
+      examples: ["color.blue.500", "space.4", "font.size.16"]
+    - name: "Semantic tokens"
+      description: "Meaningful tokens mapped to base values."
+      examples: ["color.text.primary", "color.bg.surface", "space.layout.gutter"]
+    - name: "Component tokens"
+      description: "Component-specific tokens referencing semantic tokens."
+      examples: ["button.bg.default", "input.border.focus"]
+
+  naming_conventions:
+    - "Use dot notation for hierarchy (category.subcategory.level)."
+    - "Use semantic names for purpose, not color."
+
+  theming:
+    - "Support light and dark themes by swapping base values."
+    - "Avoid hard-coded values in components."
+
+  governance:
+    - "All token changes require changelog entries."
+    - "Deprecated tokens must remain for one release cycle."
+
+  file_structure:
+    - ".agent-os/tokens/base.json"
+    - ".agent-os/tokens/semantic.json"
+    - ".agent-os/tokens/components.json"

@@ -1,0 +1,8 @@
+version: 0.1.0
+source:
+  - .agent-os/lib/ux-ui-knowledgebase/05_design-system/design-system-principles.yaml
+  - .agent-os/lib/ux-ui-knowledgebase/06_agent-application/interface-generation-rules.yaml
+checks:
+  - one_primary_action
+  - scan_order
+  - emphasis_balance

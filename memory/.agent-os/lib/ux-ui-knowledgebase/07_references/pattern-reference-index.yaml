@@ -1,0 +1,199 @@
+patterns:
+  - id: pattern_kpi_summary
+    title: "KPI Summary Dashboard"
+    file: "03_patterns/dashboard-patterns.yaml"
+    tags: ["dashboard", "metrics"]
+  - id: pattern_drilldown_dashboard
+    title: "Drill-Down Dashboard"
+    file: "03_patterns/dashboard-patterns.yaml"
+    tags: ["dashboard", "analysis"]
+  - id: pattern_customizable_widgets
+    title: "Customizable Widgets"
+    file: "03_patterns/dashboard-patterns.yaml"
+    tags: ["dashboard", "personalization"]
+
+  - id: pattern_checklist_onboarding
+    title: "Onboarding Checklist"
+    file: "03_patterns/onboarding-patterns.yaml"
+    tags: ["onboarding", "activation"]
+  - id: pattern_guided_tour
+    title: "Guided Tour"
+    file: "03_patterns/onboarding-patterns.yaml"
+    tags: ["onboarding", "education"]
+  - id: pattern_sample_data
+    title: "Sample Data Seeding"
+    file: "03_patterns/onboarding-patterns.yaml"
+    tags: ["onboarding", "empty_state"]
+
+  - id: pattern_single_column_form
+    title: "Single-Column Form"
+    file: "03_patterns/form-patterns.yaml"
+    tags: ["forms", "layout"]
+  - id: pattern_multi_step_form
+    title: "Multi-Step Form"
+    file: "03_patterns/form-patterns.yaml"
+    tags: ["forms", "wizard"]
+  - id: pattern_inline_validation
+    title: "Inline Validation"
+    file: "03_patterns/form-patterns.yaml"
+    tags: ["forms", "validation"]
+
+  - id: pattern_basic_table
+    title: "Basic Data Table"
+    file: "03_patterns/table-and-data-grid-patterns.yaml"
+    tags: ["table", "data"]
+  - id: pattern_data_grid
+    title: "Data Grid"
+    file: "03_patterns/table-and-data-grid-patterns.yaml"
+    tags: ["table", "editing"]
+  - id: pattern_bulk_actions
+    title: "Bulk Actions"
+    file: "03_patterns/table-and-data-grid-patterns.yaml"
+    tags: ["table", "bulk"]
+
+  - id: pattern_global_search
+    title: "Global Search"
+    file: "03_patterns/search-filter-patterns.yaml"
+    tags: ["search", "global"]
+  - id: pattern_faceted_filters
+    title: "Faceted Filters"
+    file: "03_patterns/search-filter-patterns.yaml"
+    tags: ["search", "filters"]
+  - id: pattern_saved_filters
+    title: "Saved Filters and Views"
+    file: "03_patterns/search-filter-patterns.yaml"
+    tags: ["search", "saved_views"]
+
+  - id: pattern_settings_sections
+    title: "Settings by Sections"
+    file: "03_patterns/settings-patterns.yaml"
+    tags: ["settings", "navigation"]
+  - id: pattern_preferences_toggle
+    title: "Preference Toggles"
+    file: "03_patterns/settings-patterns.yaml"
+    tags: ["settings", "toggles"]
+  - id: pattern_danger_zone
+    title: "Danger Zone"
+    file: "03_patterns/settings-patterns.yaml"
+    tags: ["settings", "destructive"]
+
+  - id: pattern_activity_feed
+    title: "Activity Feed"
+    file: "03_patterns/collaboration-patterns.yaml"
+    tags: ["collaboration", "activity"]
+  - id: pattern_comments_thread
+    title: "Comments and Threads"
+    file: "03_patterns/collaboration-patterns.yaml"
+    tags: ["collaboration", "comments"]
+  - id: pattern_presence_avatar
+    title: "Presence Indicators"
+    file: "03_patterns/collaboration-patterns.yaml"
+    tags: ["collaboration", "presence"]
+
+  - id: pattern_toast
+    title: "Toast Notifications"
+    file: "03_patterns/feedback-states-patterns.yaml"
+    tags: ["feedback", "toast"]
+  - id: pattern_inline_alert
+    title: "Inline Alerts"
+    file: "03_patterns/feedback-states-patterns.yaml"
+    tags: ["feedback", "alerts"]
+  - id: pattern_system_banner
+    title: "System Status Banner"
+    file: "03_patterns/feedback-states-patterns.yaml"
+    tags: ["feedback", "banner"]
+
+  - id: pattern_prompt_box
+    title: "Prompt Input Area"
+    file: "03_patterns/ai-interface-patterns.yaml"
+    tags: ["ai", "prompt"]
+  - id: pattern_ai_suggestions
+    title: "AI Suggestions with Accept/Reject"
+    file: "03_patterns/ai-interface-patterns.yaml"
+    tags: ["ai", "review"]
+  - id: pattern_review_apply
+    title: "Review and Apply Changes"
+    file: "03_patterns/ai-interface-patterns.yaml"
+    tags: ["ai", "approval"]
+
+  - id: pattern_bottom_nav
+    title: "Bottom Navigation"
+    file: "03_patterns/mobile-patterns.yaml"
+    tags: ["mobile", "navigation"]
+  - id: pattern_swipe_actions
+    title: "Swipe Actions"
+    file: "03_patterns/mobile-patterns.yaml"
+    tags: ["mobile", "gestures"]
+  - id: pattern_fab
+    title: "Floating Action Button"
+    file: "03_patterns/mobile-patterns.yaml"
+    tags: ["mobile", "actions"]
+
+  - id: pattern_offline_first
+    title: "Offline First"
+    file: "03_patterns/pwa-patterns.yaml"
+    tags: ["pwa", "offline"]
+  - id: pattern_install_prompt
+    title: "Install Prompt"
+    file: "03_patterns/pwa-patterns.yaml"
+    tags: ["pwa", "install"]
+  - id: pattern_sync_status
+    title: "Sync Status"
+    file: "03_patterns/pwa-patterns.yaml"
+    tags: ["pwa", "sync"]
+
+  - id: pattern_list_detail
+    title: "List-Detail Layout"
+    file: "03_patterns/admin-patterns.yaml"
+    tags: ["admin", "list_detail"]
+  - id: pattern_role_management
+    title: "Role and Permission Management"
+    file: "03_patterns/admin-patterns.yaml"
+    tags: ["admin", "security"]
+  - id: pattern_audit_log
+    title: "Audit Log"
+    file: "03_patterns/admin-patterns.yaml"
+    tags: ["admin", "audit"]
+
+  - id: pattern_sign_in
+    title: "Sign In Form"
+    file: "03_patterns/auth-patterns.yaml"
+    tags: ["auth", "login"]
+  - id: pattern_password_reset
+    title: "Password Reset"
+    file: "03_patterns/auth-patterns.yaml"
+    tags: ["auth", "recovery"]
+  - id: pattern_mfa
+    title: "Multi-Factor Authentication"
+    file: "03_patterns/auth-patterns.yaml"
+    tags: ["auth", "security"]
+
+  - id: pattern_pricing_table
+    title: "Pricing Table"
+    file: "03_patterns/billing-patterns.yaml"
+    tags: ["billing", "pricing"]
+  - id: pattern_subscription_manage
+    title: "Subscription Management"
+    file: "03_patterns/billing-patterns.yaml"
+    tags: ["billing", "subscription"]
+  - id: pattern_invoice_history
+    title: "Invoice History"
+    file: "03_patterns/billing-patterns.yaml"
+    tags: ["billing", "invoices"]
+
+  - id: pattern_empty_state
+    title: "Empty State"
+    file: "03_patterns/empty-loading-error-patterns.yaml"
+    tags: ["states", "empty"]
+  - id: pattern_loading_skeleton
+    title: "Skeleton Loading"
+    file: "03_patterns/empty-loading-error-patterns.yaml"
+    tags: ["states", "loading"]
+  - id: pattern_error_state
+    title: "Error State"
+    file: "03_patterns/empty-loading-error-patterns.yaml"
+    tags: ["states", "error"]
+  - id: pattern_no_results
+    title: "No Results"
+    file: "03_patterns/empty-loading-error-patterns.yaml"
+    tags: ["states", "search"]

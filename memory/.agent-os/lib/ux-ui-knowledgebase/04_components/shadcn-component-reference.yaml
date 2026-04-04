@@ -1,0 +1,2232 @@
+component_accordion:
+  component_name: "Accordion"
+  component_family: "Disclosure"
+  purpose: "Show and hide grouped content sections."
+  jobs_to_be_done:
+    - "Reveal supporting details on demand"
+    - "Reduce visual clutter in long pages"
+  anatomy:
+    - "Container"
+    - "Item"
+    - "Trigger"
+    - "Content panel"
+  states: ["collapsed", "expanded", "hover", "focus", "disabled"]
+  variants: ["single", "multiple", "bordered"]
+  use_when: "Multiple related sections can be expanded or collapsed by the user."
+  avoid_when: "Users must compare items side by side or content must always be visible."
+  dos:
+    - "Use short, descriptive headings for triggers."
+    - "Indicate expanded state with icon or motion."
+  donts:
+    - "Do not nest accordions deeply."
+    - "Do not hide required form fields."
+  accessibility_requirements: "Triggers must be buttons with aria-expanded and keyboard support."
+  content_guidelines: "Keep headings to one line where possible."
+  interaction_guidelines: "Clicking the trigger toggles the panel; animation should be subtle."
+  responsive_guidelines: "Full width on small screens with generous tap targets."
+  common_compositions:
+    - "FAQ list"
+    - "Settings groups"
+  paired_patterns: ["Form", "Page Section"]
+  design_system_notes: "Use consistent spacing between items."
+  shadcn_notes: "Available as Accordion in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for three or more related sections that can be independently expanded."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_alert:
+  component_name: "Alert"
+  component_family: "Feedback"
+  purpose: "Surface important information inline with the content."
+  jobs_to_be_done:
+    - "Notify the user of a status or change"
+    - "Explain a non-blocking issue"
+  anatomy:
+    - "Container"
+    - "Icon (optional)"
+    - "Title"
+    - "Description"
+    - "Action (optional)"
+  states: ["info", "success", "warning", "error", "dismissed"]
+  variants: ["solid", "subtle", "outline"]
+  use_when: "Messages need to remain visible until the user reads them."
+  avoid_when: "Feedback is transient or non-blocking (use toast)."
+  dos:
+    - "Keep titles short and actionable."
+    - "Place near the content it relates to."
+  donts:
+    - "Do not stack many alerts in a single view."
+    - "Do not use alerts for minor confirmations."
+  accessibility_requirements: "Use appropriate live region for critical alerts and ensure contrast."
+  content_guidelines: "Use a clear title and one sentence of detail."
+  interaction_guidelines: "Allow dismiss only if the message is not critical."
+  responsive_guidelines: "Full width on mobile with adequate padding."
+  common_compositions:
+    - "Inline form error summary"
+    - "Page-level notice"
+  paired_patterns: ["Toast", "Form"]
+  design_system_notes: "Color tokens should map to status types."
+  shadcn_notes: "Available as Alert in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use Alert for persistent messages that need attention before proceeding."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_alert_dialog:
+  component_name: "Alert Dialog"
+  component_family: "Confirmation"
+  purpose: "Confirm high-impact or destructive actions."
+  jobs_to_be_done:
+    - "Require explicit confirmation"
+    - "Prevent accidental destructive actions"
+  anatomy:
+    - "Overlay"
+    - "Dialog panel"
+    - "Title"
+    - "Description"
+    - "Actions"
+  states: ["open", "closed", "loading", "disabled"]
+  variants: ["default", "destructive"]
+  use_when: "An action is irreversible or has significant consequences."
+  avoid_when: "Simple confirmations or low-risk actions."
+  dos:
+    - "Make the destructive action visually distinct."
+    - "Explain consequences in the description."
+  donts:
+    - "Do not use for routine, low-impact tasks."
+    - "Do not hide the cancel option."
+  accessibility_requirements: "Use focus trap, aria-modal, and return focus to the trigger."
+  content_guidelines: "Lead with the action and consequence."
+  interaction_guidelines: "Require an explicit confirm button tap."
+  responsive_guidelines: "Use full-screen modal on small screens."
+  common_compositions:
+    - "Delete confirmation"
+    - "Sign-out confirmation"
+  paired_patterns: ["Button", "Toast"]
+  design_system_notes: "Destructive action uses danger color token."
+  shadcn_notes: "Available as Alert Dialog in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when the user cannot easily undo the action."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_aspect_ratio:
+  component_name: "Aspect Ratio"
+  component_family: "Layout"
+  purpose: "Preserve media proportions in responsive layouts."
+  jobs_to_be_done:
+    - "Maintain consistent image or video ratios"
+    - "Prevent layout shifts"
+  anatomy:
+    - "Container"
+    - "Media slot"
+  states: ["default"]
+  variants: ["1:1", "4:3", "16:9"]
+  use_when: "Displaying responsive images or videos that need fixed ratios."
+  avoid_when: "Content should size to its intrinsic height."
+  dos:
+    - "Match the ratio to the media source."
+    - "Ensure media has an accessible alt description."
+  donts:
+    - "Do not distort media to fit the container."
+    - "Do not use for long-form text."
+  accessibility_requirements: "Provide alt text for images and captions for videos."
+  content_guidelines: "Use captions outside the container if needed."
+  interaction_guidelines: "No interaction by default."
+  responsive_guidelines: "Container scales with width and keeps ratio."
+  common_compositions:
+    - "Card media"
+    - "Carousel slide"
+  paired_patterns: ["Card", "Carousel"]
+  design_system_notes: "Use consistent aspect ratios across grids."
+  shadcn_notes: "Available as Aspect Ratio in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when consistent media sizing is more important than natural height."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_avatar:
+  component_name: "Avatar"
+  component_family: "Identity"
+  purpose: "Represent a person or entity."
+  jobs_to_be_done:
+    - "Display a user image"
+    - "Provide a fallback identity marker"
+  anatomy:
+    - "Avatar container"
+    - "Image"
+    - "Fallback initials"
+  states: ["default", "loading", "error"]
+  variants: ["image", "initials", "icon", "sizes"]
+  use_when: "Showing user identity in lists, profiles, or menus."
+  avoid_when: "Identity is irrelevant or unknown."
+  dos:
+    - "Provide fallback initials or icon."
+    - "Use consistent sizing across lists."
+  donts:
+    - "Do not rely on avatar alone for identification."
+    - "Do not crop faces excessively."
+  accessibility_requirements: "Use alt text or aria-label when the image conveys identity."
+  content_guidelines: "Initials should be 1-2 letters."
+  interaction_guidelines: "Clickable only when it opens a profile or menu."
+  responsive_guidelines: "Scale size for dense lists on small screens."
+  common_compositions:
+    - "User menu"
+    - "Comment list"
+  paired_patterns: ["Menu", "Tooltip"]
+  design_system_notes: "Round shape uses full border radius token."
+  shadcn_notes: "Available as Avatar in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when identity improves recognition or accountability."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_badge:
+  component_name: "Badge"
+  component_family: "Status"
+  purpose: "Display a short status or category label."
+  jobs_to_be_done:
+    - "Show state or category"
+    - "Provide compact metadata"
+  anatomy:
+    - "Pill container"
+    - "Label text"
+  states: ["default", "success", "warning", "error", "info"]
+  variants: ["solid", "outline"]
+  use_when: "Indicating short statuses or tags."
+  avoid_when: "Describing long or complex information."
+  dos:
+    - "Keep text to one or two words."
+    - "Use consistent color mapping for status."
+  donts:
+    - "Do not rely on color alone for meaning."
+    - "Do not place badges in dense text paragraphs."
+  accessibility_requirements: "Ensure color contrast and readable size."
+  content_guidelines: "Use title case or short uppercase labels."
+  interaction_guidelines: "Non-interactive by default; use a chip when interactive."
+  responsive_guidelines: "Wrap badges to new lines as needed."
+  common_compositions:
+    - "Status column in tables"
+    - "Card metadata"
+  paired_patterns: ["Table", "Card"]
+  design_system_notes: "Use semantic color tokens for status."
+  shadcn_notes: "Available as Badge in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for brief status indicators that fit in a single line."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_breadcrumb:
+  component_name: "Breadcrumb"
+  component_family: "Navigation"
+  purpose: "Show the current location within a hierarchy."
+  jobs_to_be_done:
+    - "Orient the user in nested content"
+    - "Provide quick navigation to parent levels"
+  anatomy:
+    - "Breadcrumb list"
+    - "Link items"
+    - "Separator"
+  states: ["default", "hover", "current"]
+  variants: ["standard", "collapsed"]
+  use_when: "Users navigate deep hierarchies or collections."
+  avoid_when: "Navigation is shallow or single level."
+  dos:
+    - "Make the current page non-clickable."
+    - "Truncate long trails with an overflow menu."
+  donts:
+    - "Do not include more than five levels."
+    - "Do not duplicate primary navigation labels."
+  accessibility_requirements: "Use nav landmark and aria-current on active item."
+  content_guidelines: "Keep labels short and descriptive."
+  interaction_guidelines: "Only previous items are links."
+  responsive_guidelines: "Collapse middle items on small screens."
+  common_compositions:
+    - "Page header"
+    - "Detail views"
+  paired_patterns: ["Navigation Menu", "Sidebar"]
+  design_system_notes: "Separators should be subtle and consistent."
+  shadcn_notes: "Available as Breadcrumb in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when there are three or more hierarchy levels."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_button_primary:
+  component_name: "Button"
+  component_family: "Button"
+  purpose: "Initiate actions or submit forms."
+  jobs_to_be_done:
+    - "Submit a form"
+    - "Confirm an action"
+    - "Navigate to a primary view"
+  anatomy:
+    - "Container"
+    - "Label"
+    - "Icon (optional)"
+  states: ["default", "hover", "active", "disabled", "loading"]
+  variants: ["primary", "secondary", "ghost", "destructive"]
+  use_when: "An action needs to be clearly available and tappable."
+  avoid_when: "Multiple actions compete for attention in the same space."
+  dos:
+    - "Use a clear, verb-first label."
+    - "Keep one primary action per view."
+  donts:
+    - "Do not use only color to differentiate actions."
+    - "Do not place many primary buttons side by side."
+  accessibility_requirements: "Buttons must have discernible text or an accessible label."
+  content_guidelines: "Labels should be 1-3 words."
+  interaction_guidelines: "Provide visible focus and loading feedback."
+  responsive_guidelines: "Use full-width buttons for primary actions on mobile when appropriate."
+  common_compositions:
+    - "Form footer: Cancel and Submit"
+    - "Inline confirmation prompt"
+  paired_patterns: ["Dialog", "Form"]
+  design_system_notes: "Primary uses brand token; secondary uses neutral token."
+  shadcn_notes: "Available as Button in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use primary for the single most important action in a view."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_button_group:
+  component_name: "Button Group"
+  component_family: "Button"
+  purpose: "Group related actions or view switches."
+  jobs_to_be_done:
+    - "Switch between related options"
+    - "Keep grouped actions visually aligned"
+  anatomy:
+    - "Group container"
+    - "Buttons"
+  states: ["default", "hover", "active", "disabled"]
+  variants: ["segmented", "icon-only", "text"]
+  use_when: "Options are closely related and should appear as a set."
+  avoid_when: "Actions are unrelated or vary in priority."
+  dos:
+    - "Limit to two to five buttons."
+    - "Keep labels consistent in length."
+  donts:
+    - "Do not combine primary and destructive actions in one group."
+    - "Do not overload with icons and text together if space is tight."
+  accessibility_requirements: "Use aria-pressed for toggle behavior and ensure focus ring per button."
+  content_guidelines: "Use short labels or icons with tooltips."
+  interaction_guidelines: "Group edges should visually connect; maintain spacing for touch targets."
+  responsive_guidelines: "Stack vertically on small screens."
+  common_compositions:
+    - "View mode switcher"
+    - "Filter toggles"
+  paired_patterns: ["Toggle Group", "Toolbar"]
+  design_system_notes: "Use shared border radius across grouped buttons."
+  shadcn_notes: "Compose with Button or Toggle components in shadcn/ui."
+  agent_selection_rules:
+    - "Use when the user must choose among closely related views."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_calendar:
+  component_name: "Calendar"
+  component_family: "Date"
+  purpose: "Display and select dates in a grid."
+  jobs_to_be_done:
+    - "Choose a date"
+    - "Review a month at a glance"
+  anatomy:
+    - "Month header"
+    - "Day grid"
+    - "Navigation controls"
+  states: ["default", "selected", "range", "today", "disabled"]
+  variants: ["single", "range", "multiple"]
+  use_when: "Users need a visual date selector."
+  avoid_when: "Dates are far in the future or too many to scroll."
+  dos:
+    - "Highlight today and selected dates."
+    - "Provide clear month navigation."
+  donts:
+    - "Do not disable large date ranges without explanation."
+    - "Do not hide the current month indicator."
+  accessibility_requirements: "Keyboard navigation for days and months is required."
+  content_guidelines: "Display month and year clearly."
+  interaction_guidelines: "Clicking a day selects it; arrow keys move focus."
+  responsive_guidelines: "Use a single month view on small screens."
+  common_compositions:
+    - "Date picker popover"
+    - "Booking form"
+  paired_patterns: ["Date Picker", "Input"]
+  design_system_notes: "Use consistent day cell sizes."
+  shadcn_notes: "Available as Calendar in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when the user benefits from a visual date grid."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_card:
+  component_name: "Card"
+  component_family: "Container"
+  purpose: "Group related content into a coherent block."
+  jobs_to_be_done:
+    - "Summarize an item"
+    - "Create scannable sections"
+  anatomy:
+    - "Container"
+    - "Header"
+    - "Body"
+    - "Footer"
+  states: ["default", "hover", "selected"]
+  variants: ["outlined", "elevated"]
+  use_when: "Content needs a visual boundary and grouping."
+  avoid_when: "The content is already structured by layout."
+  dos:
+    - "Keep consistent padding."
+    - "Use clear hierarchy for titles and metadata."
+  donts:
+    - "Do not nest multiple cards unnecessarily."
+    - "Do not make the whole card clickable without a clear affordance."
+  accessibility_requirements: "If clickable, ensure card has a single focus target."
+  content_guidelines: "Use concise titles and optional supporting text."
+  interaction_guidelines: "Hover states only when clickable."
+  responsive_guidelines: "Stack cards in one column on small screens."
+  common_compositions:
+    - "Item grid"
+    - "Dashboard widgets"
+  paired_patterns: ["Button", "Badge"]
+  design_system_notes: "Use subtle shadow and border tokens consistently."
+  shadcn_notes: "Available as Card in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use to group content that needs a clear visual boundary."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_carousel:
+  component_name: "Carousel"
+  component_family: "Media"
+  purpose: "Browse a horizontal set of items."
+  jobs_to_be_done:
+    - "Swipe through items"
+    - "Show multiple items in limited space"
+  anatomy:
+    - "Viewport"
+    - "Slides"
+    - "Controls"
+    - "Indicators"
+  states: ["default", "hover", "disabled"]
+  variants: ["loop", "snap", "autoplay"]
+  use_when: "Users need to browse a small set of visual items."
+  avoid_when: "Important content requires immediate visibility."
+  dos:
+    - "Provide next and previous controls."
+    - "Keep slide content consistent in size."
+  donts:
+    - "Do not autoplay rapidly."
+    - "Do not hide navigation controls."
+  accessibility_requirements: "Support keyboard navigation and announce slide changes."
+  content_guidelines: "Keep slide copy short and scannable."
+  interaction_guidelines: "Allow swipe on touch devices and buttons on desktop."
+  responsive_guidelines: "Show one item per view on small screens."
+  common_compositions:
+    - "Image gallery"
+    - "Featured items"
+  paired_patterns: ["Card", "Aspect Ratio"]
+  design_system_notes: "Use consistent gap between slides."
+  shadcn_notes: "Available as Carousel in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when visual browsing is the primary goal."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_chart:
+  component_name: "Chart"
+  component_family: "Data Visualization"
+  purpose: "Visualize quantitative data for comparison or trends."
+  jobs_to_be_done:
+    - "Compare values"
+    - "Identify trends over time"
+  anatomy:
+    - "Chart area"
+    - "Axes"
+    - "Legend"
+    - "Tooltip"
+  states: ["default", "loading", "empty"]
+  variants: ["bar", "line", "pie"]
+  use_when: "Visual comparison helps users interpret data quickly."
+  avoid_when: "Exact values are more important than trends."
+  dos:
+    - "Label axes and units."
+    - "Use consistent color mapping."
+  donts:
+    - "Do not use too many series at once."
+    - "Do not remove context for time ranges."
+  accessibility_requirements: "Provide text summary and data table when needed."
+  content_guidelines: "Include a clear title and unit."
+  interaction_guidelines: "Allow hover or focus to reveal data points."
+  responsive_guidelines: "Simplify labels and reduce series on small screens."
+  common_compositions:
+    - "Analytics dashboard"
+    - "Report summary"
+  paired_patterns: ["Card", "Table"]
+  design_system_notes: "Use chart palette tokens with good contrast."
+  shadcn_notes: "Available as Chart in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use charts for patterns; use tables for precise values."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_checkbox:
+  component_name: "Checkbox"
+  component_family: "Selection"
+  purpose: "Select one or more options."
+  jobs_to_be_done:
+    - "Pick multiple items"
+    - "Toggle a preference in a list"
+  anatomy:
+    - "Box"
+    - "Check or indeterminate mark"
+    - "Label"
+  states: ["unchecked", "checked", "indeterminate", "disabled", "focus"]
+  variants: ["default", "with description"]
+  use_when: "Users can select multiple items."
+  avoid_when: "Only one option is allowed."
+  dos:
+    - "Make labels clickable."
+    - "Use indeterminate state for partial selections."
+  donts:
+    - "Do not use for on/off settings (use switch)."
+    - "Do not rely on color alone for state."
+  accessibility_requirements: "Associate label with input and announce indeterminate state."
+  content_guidelines: "Keep labels short and specific."
+  interaction_guidelines: "Clicking the label toggles the checkbox."
+  responsive_guidelines: "Stack vertically with adequate spacing."
+  common_compositions:
+    - "Filter list"
+    - "Bulk selection in tables"
+  paired_patterns: ["Form", "Data Table"]
+  design_system_notes: "Use consistent checkmark size and spacing."
+  shadcn_notes: "Available as Checkbox in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when multiple selections are permitted."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_collapsible:
+  component_name: "Collapsible"
+  component_family: "Disclosure"
+  purpose: "Show or hide a single section."
+  jobs_to_be_done:
+    - "Reveal optional details"
+    - "Reduce visual clutter"
+  anatomy:
+    - "Trigger"
+    - "Content panel"
+  states: ["open", "closed", "disabled"]
+  variants: ["inline", "panel"]
+  use_when: "Optional information can be hidden by default."
+  avoid_when: "Content is required for task completion."
+  dos:
+    - "Use a clear indicator for open and closed states."
+    - "Place trigger close to content."
+  donts:
+    - "Do not hide critical actions."
+    - "Do not nest many collapsibles in a row."
+  accessibility_requirements: "Trigger must be a button with aria-expanded."
+  content_guidelines: "Use short trigger labels."
+  interaction_guidelines: "Clicking trigger toggles content with subtle animation."
+  responsive_guidelines: "Full width and large tap targets on mobile."
+  common_compositions:
+    - "Advanced options"
+    - "Inline details"
+  paired_patterns: ["Form", "Accordion"]
+  design_system_notes: "Use consistent spacing and iconography."
+  shadcn_notes: "Available as Collapsible in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when only one section needs to be toggled."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_combobox:
+  component_name: "Combobox"
+  component_family: "Select"
+  purpose: "Select from a large list with search."
+  jobs_to_be_done:
+    - "Find an option quickly"
+    - "Select from a large dataset"
+  anatomy:
+    - "Input field"
+    - "Dropdown list"
+    - "Option items"
+  states: ["empty", "typing", "highlighted", "selected", "disabled"]
+  variants: ["single", "multi"]
+  use_when: "Options exceed five items or require search."
+  avoid_when: "Only a few options exist."
+  dos:
+    - "Show no-results feedback."
+    - "Preserve selected value when closing."
+  donts:
+    - "Do not hide selected values after search."
+    - "Do not require exact match unless necessary."
+  accessibility_requirements: "Support aria-autocomplete and keyboard navigation."
+  content_guidelines: "Use placeholder text to indicate search."
+  interaction_guidelines: "Typing filters options; enter selects highlighted item."
+  responsive_guidelines: "Full width on mobile; allow scrolling in list."
+  common_compositions:
+    - "Filter controls"
+    - "Large pick lists"
+  paired_patterns: ["Input", "Select"]
+  design_system_notes: "Use consistent option row height."
+  shadcn_notes: "Available as Combobox in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for large option sets or when search is required."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_command:
+  component_name: "Command"
+  component_family: "Command Palette"
+  purpose: "Provide fast, searchable actions via keyboard."
+  jobs_to_be_done:
+    - "Find actions quickly"
+    - "Trigger commands with minimal navigation"
+  anatomy:
+    - "Input"
+    - "Command list"
+    - "Group headers"
+    - "Items"
+  states: ["open", "closed", "empty", "loading"]
+  variants: ["global", "contextual"]
+  use_when: "Power users need quick access to many actions."
+  avoid_when: "The app has only a few actions."
+  dos:
+    - "Provide clear grouping and labels."
+    - "Support common keyboard shortcuts."
+  donts:
+    - "Do not require mouse interaction to complete."
+    - "Do not include ambiguous labels."
+  accessibility_requirements: "Trap focus while open and announce results."
+  content_guidelines: "Use verb-first action labels."
+  interaction_guidelines: "Open with shortcut, type to filter, enter to select."
+  responsive_guidelines: "Use full-screen dialog on mobile."
+  common_compositions:
+    - "App command palette"
+    - "Searchable actions"
+  paired_patterns: ["Dialog", "Kbd"]
+  design_system_notes: "Keep list row height consistent."
+  shadcn_notes: "Available as Command in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when there are many actions and keyboard access matters."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_context_menu:
+  component_name: "Context Menu"
+  component_family: "Menu"
+  purpose: "Show contextual actions on right-click or long press."
+  jobs_to_be_done:
+    - "Access secondary actions"
+    - "Reduce visual clutter in lists"
+  anatomy:
+    - "Menu container"
+    - "Menu items"
+    - "Separators"
+  states: ["open", "closed", "focused", "disabled"]
+  variants: ["with submenus", "with icons"]
+  use_when: "Desktop or advanced users need secondary actions."
+  avoid_when: "Actions are critical or primary."
+  dos:
+    - "Keep items short and organized."
+    - "Use separators to group related actions."
+  donts:
+    - "Do not hide essential actions only in the context menu."
+    - "Do not create deep submenu hierarchies."
+  accessibility_requirements: "Provide keyboard alternatives to right-click."
+  content_guidelines: "Use verb phrases like 'Rename' or 'Move'."
+  interaction_guidelines: "Open on right-click or long press with focus management."
+  responsive_guidelines: "Provide a fallback menu on touch devices."
+  common_compositions:
+    - "File list actions"
+    - "Table row actions"
+  paired_patterns: ["Dropdown Menu", "Item"]
+  design_system_notes: "Use consistent menu width and padding."
+  shadcn_notes: "Available as Context Menu in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for secondary actions that should not clutter the UI."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_data_table:
+  component_name: "Data Table"
+  component_family: "Data Display"
+  purpose: "Display structured data with sorting and selection."
+  jobs_to_be_done:
+    - "Scan and compare rows"
+    - "Select and act on multiple records"
+  anatomy:
+    - "Table header"
+    - "Rows and cells"
+    - "Toolbar"
+    - "Pagination"
+  states: ["loading", "empty", "selected", "hover"]
+  variants: ["compact", "with selection"]
+  use_when: "Datasets are large and require sorting or filtering."
+  avoid_when: "Only a few items need to be shown."
+  dos:
+    - "Provide sortable columns for key fields."
+    - "Allow row selection for bulk actions."
+  donts:
+    - "Do not cram too many columns."
+    - "Do not hide critical columns on desktop."
+  accessibility_requirements: "Use proper table semantics and announce sorting state."
+  content_guidelines: "Use concise column labels and consistent alignment."
+  interaction_guidelines: "Click headers to sort and use checkboxes for selection."
+  responsive_guidelines: "Enable horizontal scrolling or column collapsing."
+  common_compositions:
+    - "Admin list view"
+    - "Inventory management"
+  paired_patterns: ["Pagination", "Filter"]
+  design_system_notes: "Use zebra striping sparingly to improve scanability."
+  shadcn_notes: "Available as Data Table in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for dense, structured datasets with actions."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_date_picker:
+  component_name: "Date Picker"
+  component_family: "Date Input"
+  purpose: "Select a date using an input and calendar."
+  jobs_to_be_done:
+    - "Choose a specific date"
+    - "Reduce input errors"
+  anatomy:
+    - "Input trigger"
+    - "Popover calendar"
+    - "Selected date display"
+  states: ["closed", "open", "selected", "invalid", "disabled"]
+  variants: ["single", "range"]
+  use_when: "Dates must be chosen precisely with context."
+  avoid_when: "Dates are far in the past or future and manual entry is easier."
+  dos:
+    - "Allow manual input in addition to selection."
+    - "Show date format hints."
+  donts:
+    - "Do not block keyboard-only usage."
+    - "Do not hide invalid date errors."
+  accessibility_requirements: "Ensure focus management between input and calendar."
+  content_guidelines: "Use locale-specific date formats."
+  interaction_guidelines: "Open on input click; close on selection or escape."
+  responsive_guidelines: "Use full-screen date picker on mobile if needed."
+  common_compositions:
+    - "Booking forms"
+    - "Report filters"
+  paired_patterns: ["Calendar", "Input"]
+  design_system_notes: "Use consistent calendar styling with other date components."
+  shadcn_notes: "Available as Date Picker in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when the user benefits from a visual calendar for selection."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_dialog:
+  component_name: "Dialog"
+  component_family: "Modal"
+  purpose: "Focus attention on a task or message."
+  jobs_to_be_done:
+    - "Complete a short task"
+    - "View focused information"
+  anatomy:
+    - "Overlay"
+    - "Dialog panel"
+    - "Header"
+    - "Body"
+    - "Actions"
+  states: ["open", "closed", "loading"]
+  variants: ["modal", "non-modal"]
+  use_when: "A short, focused task requires user attention."
+  avoid_when: "Multi-step flows or complex tasks."
+  dos:
+    - "Provide a clear title and close control."
+    - "Keep content concise."
+  donts:
+    - "Do not stack multiple dialogs."
+    - "Do not trap users without a clear exit."
+  accessibility_requirements: "Trap focus and restore it on close."
+  content_guidelines: "Use a short title and one paragraph of context."
+  interaction_guidelines: "Close on escape and overlay click when safe."
+  responsive_guidelines: "Use full-screen modal on small screens."
+  common_compositions:
+    - "Edit form"
+    - "Quick preview"
+  paired_patterns: ["Form", "Button"]
+  design_system_notes: "Use consistent padding and max width tokens."
+  shadcn_notes: "Available as Dialog in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use dialogs for short, self-contained tasks."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_direction:
+  component_name: "Direction"
+  component_family: "Internationalization"
+  purpose: "Support left-to-right and right-to-left layouts."
+  jobs_to_be_done:
+    - "Switch layout direction"
+    - "Improve readability for RTL languages"
+  anatomy:
+    - "Direction container"
+  states: ["ltr", "rtl"]
+  variants: ["global", "scoped"]
+  use_when: "The product supports languages that require RTL."
+  avoid_when: "The UI is single-language LTR only."
+  dos:
+    - "Mirror layout and alignments for RTL."
+    - "Verify icon directionality."
+  donts:
+    - "Do not flip content that is inherently directional (numbers, code)."
+    - "Do not mix directions within a sentence."
+  accessibility_requirements: "Maintain logical reading order for assistive tech."
+  content_guidelines: "Ensure translations fit the available space."
+  interaction_guidelines: "Direction should be set at the document or layout root."
+  responsive_guidelines: "Test RTL at all breakpoints."
+  common_compositions:
+    - "Language settings"
+    - "Internationalized apps"
+  paired_patterns: ["Typography", "Layout"]
+  design_system_notes: "Define logical padding and margin tokens."
+  shadcn_notes: "Available as Direction in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when supporting RTL locales or user-controlled direction."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_drawer:
+  component_name: "Drawer"
+  component_family: "Overlay"
+  purpose: "Slide in a panel for secondary tasks or content."
+  jobs_to_be_done:
+    - "Access secondary tools"
+    - "Edit details without leaving context"
+  anatomy:
+    - "Overlay"
+    - "Drawer panel"
+    - "Header"
+    - "Body"
+    - "Actions"
+  states: ["open", "closed", "dragging"]
+  variants: ["left", "right", "bottom"]
+  use_when: "A supplemental panel is needed alongside the main view."
+  avoid_when: "The task is long or complex."
+  dos:
+    - "Provide a clear close control."
+    - "Keep content concise."
+  donts:
+    - "Do not hide critical navigation in a drawer by default."
+    - "Do not open multiple drawers at once."
+  accessibility_requirements: "Trap focus while open and return focus to trigger."
+  content_guidelines: "Use a short title and scannable content."
+  interaction_guidelines: "Allow swipe to close on touch devices."
+  responsive_guidelines: "Use bottom drawer on mobile for reachability."
+  common_compositions:
+    - "Filters panel"
+    - "Item details"
+  paired_patterns: ["Form", "Button"]
+  design_system_notes: "Use consistent overlay and panel elevation tokens."
+  shadcn_notes: "Available as Drawer in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when users need a secondary surface without leaving the page."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_dropdown_menu:
+  component_name: "Dropdown Menu"
+  component_family: "Menu"
+  purpose: "Display a list of actions from a trigger."
+  jobs_to_be_done:
+    - "Access multiple actions"
+    - "Keep UI uncluttered"
+  anatomy:
+    - "Trigger"
+    - "Menu"
+    - "Menu items"
+  states: ["open", "closed", "focused", "disabled"]
+  variants: ["with icons", "with submenus", "with check items"]
+  use_when: "Several related actions share a trigger."
+  avoid_when: "Only one action is available."
+  dos:
+    - "Order items by frequency or importance."
+    - "Use separators to group related items."
+  donts:
+    - "Do not use for critical actions only."
+    - "Do not nest more than one submenu level."
+  accessibility_requirements: "Keyboard navigation and focus management are required."
+  content_guidelines: "Use verb-first labels."
+  interaction_guidelines: "Open on click; close on selection or escape."
+  responsive_guidelines: "Ensure menu fits within viewport on small screens."
+  common_compositions:
+    - "Row actions"
+    - "User menu"
+  paired_patterns: ["Button", "Context Menu"]
+  design_system_notes: "Menu width should align with trigger where possible."
+  shadcn_notes: "Available as Dropdown Menu in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when multiple actions share a single trigger."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_empty:
+  component_name: "Empty"
+  component_family: "Empty State"
+  purpose: "Explain why content is missing and guide next steps."
+  jobs_to_be_done:
+    - "Communicate an empty result"
+    - "Provide a clear next action"
+  anatomy:
+    - "Illustration or icon"
+    - "Title"
+    - "Description"
+    - "Action"
+  states: ["empty", "loading"]
+  variants: ["first-time", "no-results"]
+  use_when: "Lists, tables, or pages have no content to show."
+  avoid_when: "An error caused the empty state (use an error alert)."
+  dos:
+    - "Offer a primary action to resolve the empty state."
+    - "Explain why the content is empty."
+  donts:
+    - "Do not blame the user."
+    - "Do not use overly decorative illustrations."
+  accessibility_requirements: "Ensure text is readable and images have alt text."
+  content_guidelines: "Keep copy short and reassuring."
+  interaction_guidelines: "Primary action should be obvious and clickable."
+  responsive_guidelines: "Center content and keep spacing comfortable."
+  common_compositions:
+    - "Empty data table"
+    - "No search results"
+  paired_patterns: ["Button", "Alert"]
+  design_system_notes: "Use consistent empty-state iconography."
+  shadcn_notes: "Available as Empty in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when the primary content area has no data to display."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_field:
+  component_name: "Field"
+  component_family: "Form Field"
+  purpose: "Group label, input, and help text for a control."
+  jobs_to_be_done:
+    - "Provide context for a form control"
+    - "Show validation messages"
+  anatomy:
+    - "Label"
+    - "Control slot"
+    - "Help or error text"
+  states: ["default", "focus", "error", "disabled"]
+  variants: ["stacked", "inline"]
+  use_when: "Forms require consistent spacing and messaging."
+  avoid_when: "Controls are purely decorative or read-only."
+  dos:
+    - "Align labels and controls consistently."
+    - "Show validation messages near the control."
+  donts:
+    - "Do not separate error text from the control."
+    - "Do not omit labels for required fields."
+  accessibility_requirements: "Ensure label and description are programmatically associated."
+  content_guidelines: "Use clear labels and concise help text."
+  interaction_guidelines: "Maintain focus ring on the control itself."
+  responsive_guidelines: "Stack labels above controls on small screens."
+  common_compositions:
+    - "Form rows"
+    - "Settings forms"
+  paired_patterns: ["Input", "Label"]
+  design_system_notes: "Use consistent gap between label, input, and help."
+  shadcn_notes: "Available as Field in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for any control that needs label and help text."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_hover_card:
+  component_name: "Hover Card"
+  component_family: "Preview"
+  purpose: "Show additional details on hover or focus."
+  jobs_to_be_done:
+    - "Provide quick previews"
+    - "Reduce navigation jumps"
+  anatomy:
+    - "Trigger"
+    - "Card content"
+  states: ["open", "closed"]
+  variants: ["delayed", "interactive"]
+  use_when: "Users want quick context without leaving the page."
+  avoid_when: "Users are on touch-only devices without a click fallback."
+  dos:
+    - "Keep content brief and scannable."
+    - "Allow focus to open the card."
+  donts:
+    - "Do not hide essential information only on hover."
+    - "Do not include long forms inside the card."
+  accessibility_requirements: "Support focus and keyboard interactions."
+  content_guidelines: "Use short summaries and optional actions."
+  interaction_guidelines: "Open on hover or focus, close on blur or escape."
+  responsive_guidelines: "Use click-to-open on small screens."
+  common_compositions:
+    - "User profile preview"
+    - "Glossary term preview"
+  paired_patterns: ["Tooltip", "Card"]
+  design_system_notes: "Use subtle elevation and padding."
+  shadcn_notes: "Available as Hover Card in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when a brief preview can prevent navigation."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_input:
+  component_name: "Input Field"
+  component_family: "Text Input"
+  purpose: "Capture user text input."
+  jobs_to_be_done:
+    - "Enter short text"
+    - "Search or filter content"
+  anatomy:
+    - "Text field"
+    - "Placeholder or value"
+    - "Optional icon"
+  states: ["empty", "filled", "focus", "error", "disabled"]
+  variants: ["with icon", "password", "number"]
+  use_when: "Users need to type short, single-line input."
+  avoid_when: "Users need to choose from a fixed list or enter long text."
+  dos:
+    - "Always provide a visible label."
+    - "Use inline validation for errors."
+  donts:
+    - "Do not rely on placeholder as the only label."
+    - "Do not use a text input for binary choices."
+  accessibility_requirements: "Inputs must have labels and error messages announced."
+  content_guidelines: "Use placeholders as examples, not instructions."
+  interaction_guidelines: "Provide clear focus and error states."
+  responsive_guidelines: "Full width on mobile with adequate padding."
+  common_compositions:
+    - "Login form"
+    - "Search bar"
+  paired_patterns: ["Form", "Label"]
+  design_system_notes: "Use consistent height and padding across inputs."
+  shadcn_notes: "Available as Input in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for short, free-form text input."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_input_group:
+  component_name: "Input Group"
+  component_family: "Text Input"
+  purpose: "Combine an input with leading or trailing elements."
+  jobs_to_be_done:
+    - "Add prefixes or suffixes"
+    - "Attach action buttons to inputs"
+  anatomy:
+    - "Group container"
+    - "Input"
+    - "Addon (icon, text, button)"
+  states: ["default", "focus", "error", "disabled"]
+  variants: ["prefix", "suffix", "button"]
+  use_when: "Inputs need units, icons, or inline actions."
+  avoid_when: "Addons are decorative and not helpful."
+  dos:
+    - "Keep addon text short."
+    - "Ensure the input remains the primary focus."
+  donts:
+    - "Do not create ambiguous click targets."
+    - "Do not place multiple addons on both sides without need."
+  accessibility_requirements: "Ensure addons are labeled and input retains label association."
+  content_guidelines: "Use unit labels like 'USD' or '%'."
+  interaction_guidelines: "Focus ring should wrap the entire group."
+  responsive_guidelines: "Full width on small screens."
+  common_compositions:
+    - "Search field with icon"
+    - "Amount input with currency"
+  paired_patterns: ["Input", "Button"]
+  design_system_notes: "Align addon and input heights."
+  shadcn_notes: "Available as Input Group in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when an input needs inline context or actions."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_input_otp:
+  component_name: "Input OTP"
+  component_family: "Verification"
+  purpose: "Capture one-time passcode input."
+  jobs_to_be_done:
+    - "Enter verification codes"
+    - "Reduce input errors for OTP"
+  anatomy:
+    - "Grouped input slots"
+    - "Caret focus"
+  states: ["empty", "partial", "complete", "error", "disabled"]
+  variants: ["numeric", "alphanumeric"]
+  use_when: "Users enter short verification codes."
+  avoid_when: "Standard text input is sufficient."
+  dos:
+    - "Allow paste for the full code."
+    - "Auto-advance focus between slots."
+  donts:
+    - "Do not mask digits unless required."
+    - "Do not split codes across multiple lines."
+  accessibility_requirements: "Provide a single label for the group and announce errors."
+  content_guidelines: "Show code length and resend options nearby."
+  interaction_guidelines: "Support backspace navigation and paste."
+  responsive_guidelines: "Use large slots for easy touch input."
+  common_compositions:
+    - "Two-factor auth"
+    - "Email verification"
+  paired_patterns: ["Form", "Button"]
+  design_system_notes: "Keep slot spacing consistent and readable."
+  shadcn_notes: "Available as Input OTP in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when the user must enter a fixed-length code."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_item:
+  component_name: "Item"
+  component_family: "List"
+  purpose: "Standardize list row layout and interactions."
+  jobs_to_be_done:
+    - "Present list content consistently"
+    - "Expose row-level actions"
+  anatomy:
+    - "Row container"
+    - "Primary text"
+    - "Secondary text"
+    - "Action area"
+  states: ["default", "hover", "selected", "disabled"]
+  variants: ["with icon", "with avatar"]
+  use_when: "Lists require consistent row layouts and interactions."
+  avoid_when: "Content is free-form or highly custom per row."
+  dos:
+    - "Make the row affordance clear."
+    - "Align actions consistently across rows."
+  donts:
+    - "Do not hide critical actions only on hover."
+    - "Do not mix row types without clear separators."
+  accessibility_requirements: "Use list semantics and keyboard navigation where appropriate."
+  content_guidelines: "Keep primary text short; use secondary for detail."
+  interaction_guidelines: "Row click selects or opens; actions remain separate targets."
+  responsive_guidelines: "Stack metadata under the title on small screens."
+  common_compositions:
+    - "Menu lists"
+    - "Search results"
+  paired_patterns: ["Context Menu", "List"]
+  design_system_notes: "Use consistent row height and padding."
+  shadcn_notes: "Available as Item in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when repeated list rows need a consistent layout."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_kbd:
+  component_name: "Kbd"
+  component_family: "Keyboard Hint"
+  purpose: "Show keyboard shortcuts in the UI."
+  jobs_to_be_done:
+    - "Teach keyboard shortcuts"
+    - "Provide quick reference"
+  anatomy:
+    - "Key label"
+  states: ["default"]
+  variants: ["single key", "combo"]
+  use_when: "Keyboard shortcuts are relevant to the task."
+  avoid_when: "Mobile-only experiences."
+  dos:
+    - "Use standard key labels (Cmd, Ctrl)."
+    - "Keep shortcuts short."
+  donts:
+    - "Do not overload users with many shortcuts at once."
+    - "Do not show platform-specific keys incorrectly."
+  accessibility_requirements: "Ensure screen readers can read the text label."
+  content_guidelines: "Use uppercase letters for keys."
+  interaction_guidelines: "Non-interactive element; used as a hint."
+  responsive_guidelines: "Hide or minimize on small screens if space is tight."
+  common_compositions:
+    - "Command palette"
+    - "Tooltip for shortcuts"
+  paired_patterns: ["Command", "Tooltip"]
+  design_system_notes: "Use a small bordered style with monospaced font token."
+  shadcn_notes: "Available as Kbd in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when you provide a keyboard-first workflow."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_label:
+  component_name: "Label"
+  component_family: "Form"
+  purpose: "Identify a form control."
+  jobs_to_be_done:
+    - "Describe an input"
+    - "Improve form clarity"
+  anatomy:
+    - "Label text"
+  states: ["default", "required", "disabled"]
+  variants: ["inline", "stacked"]
+  use_when: "Any form control needs a label."
+  avoid_when: "The text is not associated with a control."
+  dos:
+    - "Associate with the control using for/id."
+    - "Place close to the control."
+  donts:
+    - "Do not use placeholder text as the only label."
+    - "Do not use ambiguous labels."
+  accessibility_requirements: "Labels must be programmatically associated with inputs."
+  content_guidelines: "Use short, descriptive labels."
+  interaction_guidelines: "Clicking the label should focus the control."
+  responsive_guidelines: "Stack labels above controls on small screens."
+  common_compositions:
+    - "Form fields"
+    - "Settings"
+  paired_patterns: ["Input", "Field"]
+  design_system_notes: "Use consistent typography for labels."
+  shadcn_notes: "Available as Label in shadcn/ui docs."
+  agent_selection_rules:
+    - "Always include labels for inputs unless a clear exception exists."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_menubar:
+  component_name: "Menubar"
+  component_family: "Menu"
+  purpose: "Provide a top-level menu bar with drop-downs."
+  jobs_to_be_done:
+    - "Access app-level actions"
+    - "Group actions by category"
+  anatomy:
+    - "Menubar container"
+    - "Menu items"
+    - "Dropdown panels"
+  states: ["default", "open", "disabled"]
+  variants: ["with submenus", "compact"]
+  use_when: "Desktop-style apps with many categories of actions."
+  avoid_when: "Mobile-first layouts or small navigation sets."
+  dos:
+    - "Group actions logically."
+    - "Keep top-level items short."
+  donts:
+    - "Do not create deep nested menus."
+    - "Do not place critical actions deep in menus."
+  accessibility_requirements: "Support keyboard navigation and focus management."
+  content_guidelines: "Use single-word or short labels for top-level items."
+  interaction_guidelines: "Open on click or hover with clear focus states."
+  responsive_guidelines: "Collapse to a single menu on small screens."
+  common_compositions:
+    - "Editor app header"
+    - "Desktop-style navigation"
+  paired_patterns: ["Dropdown Menu", "Navigation Menu"]
+  design_system_notes: "Use consistent spacing and hover states across menus."
+  shadcn_notes: "Available as Menubar in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when you need a desktop-style action menu bar."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_native_select:
+  component_name: "Native Select"
+  component_family: "Form Select"
+  purpose: "Use the platform's native select control."
+  jobs_to_be_done:
+    - "Choose one option"
+    - "Leverage OS-native pickers"
+  anatomy:
+    - "Select control"
+    - "Options"
+  states: ["default", "focus", "disabled", "error"]
+  variants: ["single", "multiple"]
+  use_when: "Option list is short and mobile support is critical."
+  avoid_when: "Custom styling or search is required."
+  dos:
+    - "Keep option labels short."
+    - "Use a placeholder option when needed."
+  donts:
+    - "Do not use for long lists."
+    - "Do not hide the label."
+  accessibility_requirements: "Native select provides built-in accessibility."
+  content_guidelines: "Use clear, concise option labels."
+  interaction_guidelines: "Relies on native OS interactions."
+  responsive_guidelines: "Works well on mobile by default."
+  common_compositions:
+    - "Simple forms"
+    - "Settings"
+  paired_patterns: ["Label", "Field"]
+  design_system_notes: "Use native styling for consistency with platform."
+  shadcn_notes: "Available as Native Select in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when you want native behavior and a short option list."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_navigation_menu:
+  component_name: "Navigation Menu"
+  component_family: "Navigation"
+  purpose: "Provide top-level navigation with optional panels."
+  jobs_to_be_done:
+    - "Navigate across sections"
+    - "Expose sub-navigation"
+  anatomy:
+    - "Navigation bar"
+    - "Triggers"
+    - "Content panels"
+  states: ["open", "closed", "active"]
+  variants: ["simple", "mega"]
+  use_when: "Site navigation has multiple sections and subpages."
+  avoid_when: "Navigation is minimal or single-level."
+  dos:
+    - "Keep labels short and meaningful."
+    - "Group related links together."
+  donts:
+    - "Do not overwhelm with too many categories."
+    - "Do not hide essential links behind hover-only panels."
+  accessibility_requirements: "Support keyboard navigation and aria-expanded states."
+  content_guidelines: "Use verbs or nouns consistently for labels."
+  interaction_guidelines: "Open panels on click or hover with clear focus states."
+  responsive_guidelines: "Collapse to a hamburger menu on small screens."
+  common_compositions:
+    - "Site header"
+    - "Product navigation"
+  paired_patterns: ["Dropdown Menu", "Breadcrumb"]
+  design_system_notes: "Use consistent spacing and alignment in nav items."
+  shadcn_notes: "Available as Navigation Menu in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for multi-level navigation with subpages."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_pagination:
+  component_name: "Pagination"
+  component_family: "Navigation"
+  purpose: "Navigate through pages of content."
+  jobs_to_be_done:
+    - "Move between pages"
+    - "Understand current position in a dataset"
+  anatomy:
+    - "Page numbers"
+    - "Previous and next controls"
+  states: ["default", "active", "disabled"]
+  variants: ["simple", "with page size"]
+  use_when: "Content is segmented into pages."
+  avoid_when: "Infinite scroll is more appropriate for discovery."
+  dos:
+    - "Highlight the current page."
+    - "Disable controls when at start or end."
+  donts:
+    - "Do not hide navigation controls on desktop."
+    - "Do not show too many page numbers at once."
+  accessibility_requirements: "Use aria-current and label the navigation region."
+  content_guidelines: "Use clear labels like 'Previous' and 'Next'."
+  interaction_guidelines: "Clicking a page number navigates and updates focus."
+  responsive_guidelines: "Show fewer page numbers on small screens."
+  common_compositions:
+    - "Data table"
+    - "Search results"
+  paired_patterns: ["Data Table", "Filter"]
+  design_system_notes: "Use consistent spacing and button sizes."
+  shadcn_notes: "Available as Pagination in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when users need predictable page boundaries."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_popover:
+  component_name: "Popover"
+  component_family: "Overlay"
+  purpose: "Show contextual content anchored to a trigger."
+  jobs_to_be_done:
+    - "Display extra details"
+    - "Offer quick inline controls"
+  anatomy:
+    - "Trigger"
+    - "Popover panel"
+    - "Arrow"
+  states: ["open", "closed"]
+  variants: ["with close", "menu style"]
+  use_when: "Short contextual content is needed without leaving the page."
+  avoid_when: "Content is long or requires complex interaction."
+  dos:
+    - "Keep content concise."
+    - "Position near the trigger."
+  donts:
+    - "Do not block primary actions."
+    - "Do not use for long forms."
+  accessibility_requirements: "Manage focus and ensure escape closes the popover."
+  content_guidelines: "Use short headings and minimal text."
+  interaction_guidelines: "Open on click; close on blur or escape."
+  responsive_guidelines: "Expand to full width on small screens if needed."
+  common_compositions:
+    - "Filter controls"
+    - "Inline help"
+  paired_patterns: ["Button", "Form"]
+  design_system_notes: "Use consistent padding and elevation."
+  shadcn_notes: "Available as Popover in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for short, contextual overlays attached to a trigger."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_progress:
+  component_name: "Progress"
+  component_family: "Feedback"
+  purpose: "Indicate task progress when duration is known."
+  jobs_to_be_done:
+    - "Communicate progress"
+    - "Reduce uncertainty during waits"
+  anatomy:
+    - "Track"
+    - "Indicator"
+  states: ["determinate", "indeterminate"]
+  variants: ["linear", "circular"]
+  use_when: "The task duration is measurable."
+  avoid_when: "The wait is very short or unknown."
+  dos:
+    - "Show percent when available."
+    - "Use indeterminate style when progress is unknown."
+  donts:
+    - "Do not show fake progress for long tasks."
+    - "Do not block the UI unnecessarily."
+  accessibility_requirements: "Use aria-valuenow and aria-valuemax."
+  content_guidelines: "Optional label should describe the task."
+  interaction_guidelines: "No interaction; progress updates programmatically."
+  responsive_guidelines: "Full width on small screens."
+  common_compositions:
+    - "File upload"
+    - "Checkout flow"
+  paired_patterns: ["Spinner", "Toast"]
+  design_system_notes: "Use consistent track thickness and radius."
+  shadcn_notes: "Available as Progress in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use determinate progress whenever possible."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_radio_group:
+  component_name: "Radio Group"
+  component_family: "Selection"
+  purpose: "Select one option from a small set."
+  jobs_to_be_done:
+    - "Choose one option"
+    - "Compare options side by side"
+  anatomy:
+    - "Radio buttons"
+    - "Labels"
+  states: ["unselected", "selected", "disabled", "focus"]
+  variants: ["stacked", "inline"]
+  use_when: "There are five or fewer options."
+  avoid_when: "Options are many or need search."
+  dos:
+    - "Keep options visible."
+    - "Use a clear group label."
+  donts:
+    - "Do not allow multiple selections."
+    - "Do not use for yes/no (use switch or checkbox)."
+  accessibility_requirements: "Use fieldset and legend for group labeling."
+  content_guidelines: "Use short, parallel labels."
+  interaction_guidelines: "Clicking a label selects the option."
+  responsive_guidelines: "Stack vertically on small screens."
+  common_compositions:
+    - "Settings choices"
+    - "Shipping options"
+  paired_patterns: ["Form", "Field"]
+  design_system_notes: "Use consistent spacing between items."
+  shadcn_notes: "Available as Radio Group in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when only one option is allowed and the list is short."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_resizable:
+  component_name: "Resizable"
+  component_family: "Layout"
+  purpose: "Allow users to resize adjacent panels."
+  jobs_to_be_done:
+    - "Adjust layout to focus on content"
+    - "Customize workspace"
+  anatomy:
+    - "Panels"
+    - "Resize handle"
+  states: ["default", "dragging"]
+  variants: ["horizontal", "vertical"]
+  use_when: "Users need adjustable workspace regions."
+  avoid_when: "Layouts are simple and fixed."
+  dos:
+    - "Set sensible min and max sizes."
+    - "Make handles easy to grab."
+  donts:
+    - "Do not hide handle affordances."
+    - "Do not allow panels to collapse to zero without control."
+  accessibility_requirements: "Provide keyboard resizing controls when possible."
+  content_guidelines: "Avoid placing critical actions in the resize handle area."
+  interaction_guidelines: "Drag handle to resize; show cursor change on hover."
+  responsive_guidelines: "Disable or simplify resizing on small screens."
+  common_compositions:
+    - "IDE layouts"
+    - "Split view editors"
+  paired_patterns: ["Sidebar", "Tabs"]
+  design_system_notes: "Use consistent handle size and contrast."
+  shadcn_notes: "Available as Resizable in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when users benefit from customizing panel sizes."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_scroll_area:
+  component_name: "Scroll Area"
+  component_family: "Layout"
+  purpose: "Provide a scrollable container with custom scrollbars."
+  jobs_to_be_done:
+    - "Contain long lists"
+    - "Maintain layout constraints"
+  anatomy:
+    - "Viewport"
+    - "Scrollbars"
+  states: ["default", "scrolling"]
+  variants: ["always visible", "auto"]
+  use_when: "Content exceeds available space within a container."
+  avoid_when: "Page-level scrolling is sufficient."
+  dos:
+    - "Indicate that content is scrollable."
+    - "Keep scrollbars accessible and visible on hover."
+  donts:
+    - "Do not nest multiple scroll areas unnecessarily."
+    - "Do not hide scrollbars completely."
+  accessibility_requirements: "Ensure keyboard scrolling and focus visibility."
+  content_guidelines: "Keep container height predictable."
+  interaction_guidelines: "Support mouse wheel and touch scrolling."
+  responsive_guidelines: "Avoid fixed heights on small screens."
+  common_compositions:
+    - "Long menus"
+    - "Chat history"
+  paired_patterns: ["Menu", "List"]
+  design_system_notes: "Use consistent scrollbar width and color tokens."
+  shadcn_notes: "Available as Scroll Area in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when a specific panel needs its own scroll."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_select:
+  component_name: "Select"
+  component_family: "Form Select"
+  purpose: "Choose one option from a list."
+  jobs_to_be_done:
+    - "Select a single option"
+    - "See available choices"
+  anatomy:
+    - "Trigger"
+    - "Dropdown list"
+    - "Options"
+  states: ["closed", "open", "selected", "disabled"]
+  variants: ["single", "with groups"]
+  use_when: "Options are more than a few but do not require search."
+  avoid_when: "List is large or requires filtering (use combobox)."
+  dos:
+    - "Show the selected value clearly."
+    - "Group related options when needed."
+  donts:
+    - "Do not overload with long labels."
+    - "Do not hide the label."
+  accessibility_requirements: "Support keyboard navigation and aria roles."
+  content_guidelines: "Use short option labels with consistent casing."
+  interaction_guidelines: "Open on click; select with click or enter."
+  responsive_guidelines: "Full width on mobile with comfortable touch targets."
+  common_compositions:
+    - "Form fields"
+    - "Filter bar"
+  paired_patterns: ["Label", "Field"]
+  design_system_notes: "Use consistent option height and padding."
+  shadcn_notes: "Available as Select in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for single-select lists that do not need search."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_separator:
+  component_name: "Separator"
+  component_family: "Divider"
+  purpose: "Visually separate content sections."
+  jobs_to_be_done:
+    - "Group related content"
+    - "Improve scannability"
+  anatomy:
+    - "Line or rule"
+  states: ["default"]
+  variants: ["horizontal", "vertical"]
+  use_when: "A subtle visual separation is needed."
+  avoid_when: "Spacing alone is sufficient."
+  dos:
+    - "Use consistent spacing around separators."
+    - "Keep separators subtle."
+  donts:
+    - "Do not overuse separators."
+    - "Do not rely on separators alone to convey meaning."
+  accessibility_requirements: "Use role=separator if it conveys structure."
+  content_guidelines: "No text; use spacing to avoid clutter."
+  interaction_guidelines: "Non-interactive element."
+  responsive_guidelines: "Adjust spacing for small screens."
+  common_compositions:
+    - "Menu sections"
+    - "Card content blocks"
+  paired_patterns: ["Menu", "Card"]
+  design_system_notes: "Use consistent thickness and color tokens."
+  shadcn_notes: "Available as Separator in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use sparingly to divide groups of related content."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_sheet:
+  component_name: "Sheet"
+  component_family: "Overlay"
+  purpose: "Slide-in panel for temporary tasks or navigation."
+  jobs_to_be_done:
+    - "Show supplemental content"
+    - "Provide temporary navigation"
+  anatomy:
+    - "Overlay"
+    - "Sheet panel"
+    - "Header"
+    - "Body"
+  states: ["open", "closed"]
+  variants: ["left", "right", "top", "bottom"]
+  use_when: "A temporary panel is needed without leaving the page."
+  avoid_when: "Complex workflows or deep navigation."
+  dos:
+    - "Provide a clear close affordance."
+    - "Keep content scannable."
+  donts:
+    - "Do not hide critical actions inside a sheet only."
+    - "Do not open multiple sheets at once."
+  accessibility_requirements: "Trap focus and restore focus on close."
+  content_guidelines: "Use short titles and clear actions."
+  interaction_guidelines: "Close on escape and overlay click when appropriate."
+  responsive_guidelines: "Use bottom sheets on mobile for reachability."
+  common_compositions:
+    - "Filters panel"
+    - "Navigation drawer"
+  paired_patterns: ["Button", "Navigation"]
+  design_system_notes: "Use consistent overlay opacity and panel width."
+  shadcn_notes: "Available as Sheet in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when a temporary panel should slide in without navigation."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_sidebar:
+  component_name: "Sidebar"
+  component_family: "Navigation"
+  purpose: "Provide persistent navigation or tools."
+  jobs_to_be_done:
+    - "Navigate across app sections"
+    - "Access tools quickly"
+  anatomy:
+    - "Sidebar container"
+    - "Navigation items"
+    - "Section headers"
+  states: ["expanded", "collapsed", "active"]
+  variants: ["icon-only", "compact"]
+  use_when: "Apps have multiple sections and frequent navigation."
+  avoid_when: "Simple or single-page layouts."
+  dos:
+    - "Highlight the active item."
+    - "Provide a collapse toggle."
+  donts:
+    - "Do not hide navigation without an obvious way to reveal it."
+    - "Do not mix unrelated items without section headers."
+  accessibility_requirements: "Ensure keyboard navigation and focus visibility."
+  content_guidelines: "Use short, recognizable labels."
+  interaction_guidelines: "Collapse to icons with tooltips when needed."
+  responsive_guidelines: "Convert to a drawer on small screens."
+  common_compositions:
+    - "Dashboard layout"
+    - "Admin panel"
+  paired_patterns: ["Navigation Menu", "Tabs"]
+  design_system_notes: "Use consistent icon size and spacing."
+  shadcn_notes: "Available as Sidebar in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for apps with three or more primary sections."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_skeleton:
+  component_name: "Skeleton"
+  component_family: "Loading"
+  purpose: "Show a placeholder while content loads."
+  jobs_to_be_done:
+    - "Reduce perceived wait time"
+    - "Maintain layout stability"
+  anatomy:
+    - "Placeholder blocks"
+  states: ["loading"]
+  variants: ["text", "avatar", "card"]
+  use_when: "Data loading exceeds a brief delay."
+  avoid_when: "Loads are instantaneous."
+  dos:
+    - "Match the final layout closely."
+    - "Use subtle animation if any."
+  donts:
+    - "Do not use complex shimmering that distracts."
+    - "Do not leave skeletons visible after load."
+  accessibility_requirements: "Mark container as aria-busy when loading."
+  content_guidelines: "No real content; placeholder only."
+  interaction_guidelines: "Non-interactive element."
+  responsive_guidelines: "Match placeholder to responsive layout."
+  common_compositions:
+    - "Card list loading"
+    - "Table loading state"
+  paired_patterns: ["Spinner", "Progress"]
+  design_system_notes: "Use consistent skeleton color tokens."
+  shadcn_notes: "Available as Skeleton in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when preserving layout stability is important."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_slider:
+  component_name: "Slider"
+  component_family: "Input"
+  purpose: "Select a numeric value in a range."
+  jobs_to_be_done:
+    - "Adjust a value quickly"
+    - "Pick from a bounded range"
+  anatomy:
+    - "Track"
+    - "Thumb"
+    - "Value indicator"
+  states: ["default", "dragging", "disabled"]
+  variants: ["single", "range"]
+  use_when: "Precision is less important than speed."
+  avoid_when: "Exact numeric entry is required."
+  dos:
+    - "Show min and max values."
+    - "Provide a numeric input fallback for precision."
+  donts:
+    - "Do not use for large ranges without stepping."
+    - "Do not hide current value."
+  accessibility_requirements: "Support keyboard interaction and aria-valuenow."
+  content_guidelines: "Use labels to explain the range."
+  interaction_guidelines: "Drag or use arrow keys to adjust."
+  responsive_guidelines: "Ensure thumb is large enough for touch."
+  common_compositions:
+    - "Filter panel"
+    - "Settings adjustments"
+  paired_patterns: ["Input", "Form"]
+  design_system_notes: "Use consistent track thickness and thumb size."
+  shadcn_notes: "Available as Slider in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when quick adjustment is more important than precise input."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_sonner:
+  component_name: "Sonner"
+  component_family: "Toast"
+  purpose: "Show lightweight, transient notifications."
+  jobs_to_be_done:
+    - "Confirm an action"
+    - "Surface brief system feedback"
+  anatomy:
+    - "Toast container"
+    - "Title"
+    - "Description"
+    - "Action"
+  states: ["visible", "dismissed"]
+  variants: ["success", "error", "info"]
+  use_when: "Messages are brief and non-blocking."
+  avoid_when: "Errors require immediate attention or action."
+  dos:
+    - "Auto-dismiss with a clear timeout."
+    - "Provide undo when possible."
+  donts:
+    - "Do not stack too many toasts at once."
+    - "Do not use for critical failures."
+  accessibility_requirements: "Use aria-live for announcement."
+  content_guidelines: "Keep copy short and action-oriented."
+  interaction_guidelines: "Allow dismiss and optional action."
+  responsive_guidelines: "Avoid covering key controls on small screens."
+  common_compositions:
+    - "Save confirmation"
+    - "Background sync notice"
+  paired_patterns: ["Toast", "Alert"]
+  design_system_notes: "Position toasts consistently across the app."
+  shadcn_notes: "Available as Sonner in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for brief, non-blocking confirmations."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_spinner:
+  component_name: "Spinner"
+  component_family: "Loading"
+  purpose: "Indicate indeterminate loading."
+  jobs_to_be_done:
+    - "Communicate background activity"
+    - "Reduce uncertainty during waits"
+  anatomy:
+    - "Spinner icon"
+  states: ["spinning"]
+  variants: ["small", "medium", "large"]
+  use_when: "The duration is unknown or brief."
+  avoid_when: "Long tasks need progress indication."
+  dos:
+    - "Pair with text when context is unclear."
+    - "Use inside buttons for loading actions."
+  donts:
+    - "Do not block the whole UI for minor loading."
+    - "Do not animate too fast."
+  accessibility_requirements: "Use aria-busy and provide text alternatives."
+  content_guidelines: "Optional label should explain what is loading."
+  interaction_guidelines: "Non-interactive element."
+  responsive_guidelines: "Scale size for touch targets in buttons."
+  common_compositions:
+    - "Loading button"
+    - "Inline loader"
+  paired_patterns: ["Progress", "Skeleton"]
+  design_system_notes: "Use consistent stroke width and animation speed."
+  shadcn_notes: "Available as Spinner in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for short, indeterminate waits."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_switch:
+  component_name: "Switch"
+  component_family: "Toggle"
+  purpose: "Toggle a setting on or off."
+  jobs_to_be_done:
+    - "Enable or disable a feature"
+    - "Communicate on/off state"
+  anatomy:
+    - "Track"
+    - "Thumb"
+    - "Label"
+  states: ["off", "on", "disabled", "focus"]
+  variants: ["with description"]
+  use_when: "A setting takes immediate effect."
+  avoid_when: "The action is irreversible or requires confirmation."
+  dos:
+    - "Use labels that describe the state."
+    - "Allow the label to toggle the switch."
+  donts:
+    - "Do not use switches for multi-option choices."
+    - "Do not hide the current state."
+  accessibility_requirements: "Use role=switch and aria-checked."
+  content_guidelines: "Labels should read as states, not actions."
+  interaction_guidelines: "Click or tap toggles instantly."
+  responsive_guidelines: "Use a minimum 44x44 hit area."
+  common_compositions:
+    - "Settings panels"
+    - "Preference forms"
+  paired_patterns: ["Form", "Field"]
+  design_system_notes: "Use consistent track and thumb sizes."
+  shadcn_notes: "Available as Switch in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when a boolean setting changes immediately."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_table:
+  component_name: "Table"
+  component_family: "Data Display"
+  purpose: "Display structured data in rows and columns."
+  jobs_to_be_done:
+    - "Compare values"
+    - "Scan lists quickly"
+  anatomy:
+    - "Table header"
+    - "Rows"
+    - "Cells"
+  states: ["default", "hover", "empty"]
+  variants: ["striped", "compact"]
+  use_when: "Data is structured and needs comparison."
+  avoid_when: "Only a few items are shown or layout is flexible."
+  dos:
+    - "Align numeric data to the right."
+    - "Use clear column labels."
+  donts:
+    - "Do not overload with too many columns."
+    - "Do not hide important columns without alternatives."
+  accessibility_requirements: "Use table semantics and proper headers."
+  content_guidelines: "Keep cell content concise."
+  interaction_guidelines: "Use hover states only if rows are interactive."
+  responsive_guidelines: "Allow horizontal scroll or reflow on small screens."
+  common_compositions:
+    - "Simple reports"
+    - "Summary lists"
+  paired_patterns: ["Pagination", "Badge"]
+  design_system_notes: "Use consistent row height and padding."
+  shadcn_notes: "Available as Table in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use tables for structured data that benefits from alignment."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_tabs:
+  component_name: "Tabs"
+  component_family: "Navigation"
+  purpose: "Switch between related views in the same context."
+  jobs_to_be_done:
+    - "Navigate between sections"
+    - "Reduce page navigation"
+  anatomy:
+    - "Tab list"
+    - "Tab"
+    - "Tab panel"
+  states: ["active", "inactive", "disabled"]
+  variants: ["underline", "pill"]
+  use_when: "Users need to switch between 2-6 related sections."
+  avoid_when: "Steps must be completed in sequence."
+  dos:
+    - "Keep labels short and parallel."
+    - "Make active tab visually distinct."
+  donts:
+    - "Do not use for deep navigation."
+    - "Do not overload with many tabs."
+  accessibility_requirements: "Use roving tabindex and aria-controls."
+  content_guidelines: "Use nouns or short phrases for tab labels."
+  interaction_guidelines: "Switch panels on click or keyboard navigation."
+  responsive_guidelines: "Allow horizontal scrolling or overflow menu."
+  common_compositions:
+    - "Settings sections"
+    - "Profile views"
+  paired_patterns: ["Card", "Navigation"]
+  design_system_notes: "Align tab list with content edge."
+  shadcn_notes: "Available as Tabs in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when content is related and fits in one page."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_textarea:
+  component_name: "Textarea"
+  component_family: "Text Input"
+  purpose: "Capture multi-line text input."
+  jobs_to_be_done:
+    - "Enter long-form text"
+    - "Provide detailed feedback"
+  anatomy:
+    - "Text area"
+  states: ["empty", "filled", "focus", "error", "disabled"]
+  variants: ["auto-resize", "fixed"]
+  use_when: "Users need to enter multiple lines."
+  avoid_when: "Input is a single line."
+  dos:
+    - "Set a reasonable initial height."
+    - "Provide character count when limits exist."
+  donts:
+    - "Do not remove labels."
+    - "Do not make the textarea too small to read."
+  accessibility_requirements: "Associate with label and announce errors."
+  content_guidelines: "Use placeholder examples only."
+  interaction_guidelines: "Allow resize if it helps the user."
+  responsive_guidelines: "Full width with readable line height."
+  common_compositions:
+    - "Feedback form"
+    - "Comment box"
+  paired_patterns: ["Field", "Label"]
+  design_system_notes: "Use consistent border and padding tokens."
+  shadcn_notes: "Available as Textarea in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for text longer than a single sentence."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_toast:
+  component_name: "Toast"
+  component_family: "Feedback"
+  purpose: "Show transient, non-blocking messages."
+  jobs_to_be_done:
+    - "Confirm actions"
+    - "Provide brief status updates"
+  anatomy:
+    - "Toast container"
+    - "Message"
+    - "Action (optional)"
+  states: ["visible", "dismissed"]
+  variants: ["success", "error", "info"]
+  use_when: "Feedback does not require immediate action."
+  avoid_when: "Errors are critical or require confirmation."
+  dos:
+    - "Use short messages and optional undo."
+    - "Auto-dismiss after a short delay."
+  donts:
+    - "Do not show too many toasts simultaneously."
+    - "Do not use for blocking errors."
+  accessibility_requirements: "Use aria-live to announce messages."
+  content_guidelines: "Keep to one sentence."
+  interaction_guidelines: "Allow dismissal and optional action."
+  responsive_guidelines: "Position to avoid covering inputs."
+  common_compositions:
+    - "Save confirmation"
+    - "Background sync notice"
+  paired_patterns: ["Alert", "Sonner"]
+  design_system_notes: "Use consistent placement and spacing."
+  shadcn_notes: "Available as Toast in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use for brief, non-blocking confirmations."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_toggle:
+  component_name: "Toggle"
+  component_family: "Selection"
+  purpose: "Switch a control between pressed and unpressed states."
+  jobs_to_be_done:
+    - "Toggle formatting or modes"
+    - "Select a single option"
+  anatomy:
+    - "Button"
+    - "Pressed state"
+  states: ["off", "on", "disabled", "focus"]
+  variants: ["icon", "text"]
+  use_when: "Users need to toggle a view or formatting option."
+  avoid_when: "A setting should have a persistent on/off state (use switch)."
+  dos:
+    - "Indicate the pressed state clearly."
+    - "Provide tooltips for icon-only toggles."
+  donts:
+    - "Do not use without a clear label or tooltip."
+    - "Do not mix unrelated toggles in a group."
+  accessibility_requirements: "Use aria-pressed and keyboard support."
+  content_guidelines: "Use short labels or recognizable icons."
+  interaction_guidelines: "Click toggles state; focus ring visible."
+  responsive_guidelines: "Maintain minimum touch target sizes."
+  common_compositions:
+    - "Editor toolbar"
+    - "View switches"
+  paired_patterns: ["Toggle Group", "Tooltip"]
+  design_system_notes: "Use consistent active and inactive colors."
+  shadcn_notes: "Available as Toggle in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when a pressed state needs to remain visible."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_toggle_group:
+  component_name: "Toggle Group"
+  component_family: "Selection"
+  purpose: "Group toggles for single or multiple selection."
+  jobs_to_be_done:
+    - "Choose one or more options"
+    - "Switch between modes"
+  anatomy:
+    - "Group container"
+    - "Toggle items"
+  states: ["default", "selected", "disabled"]
+  variants: ["single", "multiple"]
+  use_when: "Users need to pick from related modes or formats."
+  avoid_when: "Options are many or require search."
+  dos:
+    - "Show selected states clearly."
+    - "Limit the number of options."
+  donts:
+    - "Do not include unrelated options."
+    - "Do not hide selection state."
+  accessibility_requirements: "Use role=group and aria-pressed on items."
+  content_guidelines: "Use icons or short labels."
+  interaction_guidelines: "Single or multiple selection based on variant."
+  responsive_guidelines: "Wrap or stack on small screens."
+  common_compositions:
+    - "Formatting controls"
+    - "View mode selectors"
+  paired_patterns: ["Toggle", "Button Group"]
+  design_system_notes: "Use consistent spacing and border radius."
+  shadcn_notes: "Available as Toggle Group in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use when a cluster of toggle options must stay together."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_tooltip:
+  component_name: "Tooltip"
+  component_family: "Feedback"
+  purpose: "Provide brief explanatory text on hover or focus."
+  jobs_to_be_done:
+    - "Clarify icons or labels"
+    - "Provide quick hints"
+  anatomy:
+    - "Trigger"
+    - "Tooltip bubble"
+    - "Arrow"
+  states: ["open", "closed"]
+  variants: ["top", "bottom", "left", "right"]
+  use_when: "Short hints are needed without cluttering UI."
+  avoid_when: "Information is essential for task completion."
+  dos:
+    - "Keep tooltip text short."
+    - "Open on focus for keyboard users."
+  donts:
+    - "Do not place critical instructions only in tooltips."
+    - "Do not use tooltips for long content."
+  accessibility_requirements: "Use aria-describedby and focus interactions."
+  content_guidelines: "Limit to one sentence."
+  interaction_guidelines: "Open on hover or focus; close on blur or escape."
+  responsive_guidelines: "Provide click-to-open on touch devices."
+  common_compositions:
+    - "Icon buttons"
+    - "Form labels"
+  paired_patterns: ["Button", "Kbd"]
+  design_system_notes: "Use consistent delay and placement."
+  shadcn_notes: "Available as Tooltip in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use only for supplemental hints."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."
+
+component_typography:
+  component_name: "Typography"
+  component_family: "Text"
+  purpose: "Provide consistent text styles and hierarchy."
+  jobs_to_be_done:
+    - "Establish visual hierarchy"
+    - "Ensure readable text"
+  anatomy:
+    - "Headings"
+    - "Body text"
+    - "Captions"
+  states: ["default"]
+  variants: ["h1-h6", "body", "muted", "caption"]
+  use_when: "Any textual content needs consistent styling."
+  avoid_when: "Ad hoc inline styles break consistency."
+  dos:
+    - "Use heading levels in order."
+    - "Maintain consistent line height."
+  donts:
+    - "Do not skip heading levels for visual size alone."
+    - "Do not mix too many font styles in one view."
+  accessibility_requirements: "Maintain semantic headings for screen readers."
+  content_guidelines: "Keep line length readable (45-75 characters)."
+  interaction_guidelines: "Non-interactive by default."
+  responsive_guidelines: "Scale font sizes and line heights for small screens."
+  common_compositions:
+    - "Content pages"
+    - "Card titles"
+  paired_patterns: ["Card", "Layout"]
+  design_system_notes: "Define font tokens for size, weight, and line height."
+  shadcn_notes: "Available as Typography in shadcn/ui docs."
+  agent_selection_rules:
+    - "Use the typography scale instead of custom sizes."
+  references: []
+  decision_checks:
+    - "Component is used in contexts described in use_when."
+    - "Accessibility requirements are met in implementation."

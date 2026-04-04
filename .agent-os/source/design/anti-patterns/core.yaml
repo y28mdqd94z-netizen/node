@@ -1,0 +1,19 @@
+version: 1
+anti_patterns:
+  - id: generic-ai-aesthetic
+    name: "Generic AI Aesthetic"
+    severity: high
+    detection: "Default font stacks, purple-on-white palettes, glassmorphism, gradient text without purpose."
+    fix: "Commit to a specific aesthetic direction and tune typography + color intentionally."
+
+  - id: weak-hierarchy
+    name: "Weak Hierarchy"
+    severity: high
+    detection: "Primary action visually matches secondary actions; headings lack clear size/weight steps."
+    fix: "Establish a clear type scale and one dominant CTA per view."
+
+  - id: over-carding
+    name: "Over-Carding"
+    severity: medium
+    detection: "Primary content split into many small cards with equal weight."
+    fix: "Use sectioned layouts or list-detail patterns instead of card walls."

@@ -1,0 +1,229 @@
+version: 1
+entries:
+  - id: ai.data-minimization
+    title: Data minimization and redaction
+    category: ai
+    summary: Send only necessary data to AI systems.
+    definition: Remove or anonymize sensitive data before using AI services.
+    why_it_matters: Reduces privacy risk and exposure of sensitive information.
+    priority_level: P0
+    confidence_score: 0.86
+    evidence_level: high
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - prompts include user data or proprietary content
+    avoid_when:
+      - no sensitive data is involved
+    implementation_rules:
+      - classify data before prompt creation
+      - redact or tokenize sensitive fields
+    tradeoffs:
+      - reduced model context and accuracy
+    anti_patterns:
+      - sending raw PII to external models
+    override_allowed: true
+    override_conditions:
+      - explicit user consent and contractual safeguards
+    override_risks:
+      - privacy violations and legal exposure
+    required_justification:
+      - consent and data processing agreement in place
+    safer_alternatives:
+      - use on-prem or private model deployment
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: neutral
+    agent_rules:
+      - default to redaction for any sensitive input
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - privacy policy updates
+    deprecation_signals:
+      - new data handling requirements
+    sources:
+      - Privacy and AI governance practices
+  - id: ai.prompt-injection-defense
+    title: Prompt injection defenses
+    category: ai
+    summary: Protect system prompts and tool access from untrusted input.
+    definition: Treat user content as untrusted and prevent it from altering system instructions.
+    why_it_matters: Prompt injection can exfiltrate data or trigger unsafe actions.
+    priority_level: P0
+    confidence_score: 0.84
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: high
+    freshness_requirement: must_verify_live
+    use_when:
+      - AI systems that call tools or access data
+    avoid_when:
+      - offline models with no tool access
+    implementation_rules:
+      - separate system instructions from user input
+      - validate tool calls with allowlists
+      - use output filtering and policy checks
+    tradeoffs:
+      - reduced model flexibility
+    anti_patterns:
+      - concatenating untrusted input into system prompts
+    override_allowed: true
+    override_conditions:
+      - constrained sandbox with no sensitive access
+    override_risks:
+      - data exfiltration and unsafe actions
+    required_justification:
+      - threat model showing no impact
+    safer_alternatives:
+      - strict tool gating and output validation
+    performance_impact: slight negative due to checks
+    security_impact: positive
+    cost_impact: moderate additional engineering effort
+    agent_rules:
+      - always treat user content as untrusted
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - new prompt injection techniques
+    deprecation_signals:
+      - platform provides built-in mitigation
+    sources:
+      - AI security research and best practices
+  - id: ai.rag-attribution
+    title: Retrieval augmented generation with attribution
+    category: ai
+    summary: Use retrieval with citations for grounded outputs.
+    definition: Retrieve source documents and require the model to reference them in responses.
+    why_it_matters: Reduces hallucinations and improves trust.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - answering factual or policy questions
+      - summarizing internal documents
+    avoid_when:
+      - creative or open-ended generation tasks
+    implementation_rules:
+      - store documents with metadata and access controls
+      - show citations or source links to users
+    tradeoffs:
+      - added retrieval latency and cost
+    anti_patterns:
+      - generation without grounding on factual tasks
+    override_allowed: true
+    override_conditions:
+      - creative tasks where grounding is unnecessary
+    override_risks:
+      - hallucinated outputs and user mistrust
+    required_justification:
+      - task does not require factual grounding
+    safer_alternatives:
+      - hybrid approach with partial retrieval
+    performance_impact: negative due to retrieval overhead
+    security_impact: positive if access controls are enforced
+    cost_impact: higher due to storage and retrieval
+    agent_rules:
+      - require grounding for factual outputs
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - retrieval stack updates
+    deprecation_signals:
+      - model provides native grounded responses
+    sources:
+      - RAG design patterns
+  - id: ai.evals-guardrails
+    title: Evaluation and guardrails
+    category: ai
+    summary: Use evals and policy checks to control model behavior.
+    definition: Define automated tests and guardrails for model outputs.
+    why_it_matters: Prevents regressions and unsafe behavior.
+    priority_level: P1
+    confidence_score: 0.76
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - deploying AI features to production
+    avoid_when:
+      - internal prototypes without user impact
+    implementation_rules:
+      - create eval sets for critical tasks
+      - monitor model drift and output quality
+    tradeoffs:
+      - ongoing maintenance for evals
+    anti_patterns:
+      - shipping AI without evaluation coverage
+    override_allowed: true
+    override_conditions:
+      - prototype with no production impact
+    override_risks:
+      - unknown regressions in outputs
+    required_justification:
+      - timeline and scope for evaluation later
+    safer_alternatives:
+      - manual review for limited scope
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: moderate ongoing evaluation cost
+    agent_rules:
+      - require evals for high impact AI workflows
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - model updates or drift
+    deprecation_signals:
+      - shift to fully deterministic AI outputs
+    sources:
+      - AI evaluation practices
+  - id: ai.human-in-the-loop
+    title: Human in the loop for high risk decisions
+    category: ai
+    summary: Require human review for high risk AI outputs.
+    definition: Humans must approve AI decisions that affect safety, finance, or legal outcomes.
+    why_it_matters: Prevents harmful automated actions and supports accountability.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - outputs affect money, safety, or legal compliance
+    avoid_when:
+      - low risk content generation
+    implementation_rules:
+      - route high risk outputs to human review
+      - log decisions and overrides
+    tradeoffs:
+      - increased latency and operational cost
+    anti_patterns:
+      - fully automated decisions in regulated areas
+    override_allowed: true
+    override_conditions:
+      - automated decision has formal regulatory approval
+    override_risks:
+      - harmful outcomes without human oversight
+    required_justification:
+      - evidence of acceptable risk and compliance approval
+    safer_alternatives:
+      - threshold based auto-approval with sampling
+    performance_impact: negative due to review latency
+    security_impact: positive
+    cost_impact: higher due to human review
+    agent_rules:
+      - require human review for high risk decisions
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - regulatory changes affecting AI use
+    deprecation_signals:
+      - system moved to fully deterministic workflows
+    sources:
+      - AI governance practices

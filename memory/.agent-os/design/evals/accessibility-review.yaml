@@ -1,0 +1,8 @@
+version: 0.1.0
+source:
+  - .agent-os/lib/ux-ui-knowledgebase/01_foundations/accessibility-principles.yaml
+  - .agent-os/lib/ux-ui-knowledgebase/06_agent-application/interface-generation-rules.yaml
+checks:
+  - contrast
+  - keyboard_focus
+  - non_color_cues

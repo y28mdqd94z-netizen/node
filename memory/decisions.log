@@ -149,3 +149,9 @@
 - Title: Design layer audit + redesign
 - Decision:
 - Rationale:
+
+## 2026-04-04 12:09:12 +1100
+- Command: implement-feature
+- Title: Upgrade Agent OS engineering+design layers
+- Decision:
+- Rationale:

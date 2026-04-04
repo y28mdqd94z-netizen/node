@@ -65,6 +65,7 @@ ensure_memory_files() {
   ensure_file_from_template "project.md"
   ensure_file_from_template "architecture.md"
   ensure_file_from_template "design_system.json"
+  ensure_file_from_template "engineering_context.yaml"
   ensure_file_from_template "api_contracts.yaml"
   ensure_file_from_template "security_audit.md"
   ensure_file_from_template "decisions.log"

@@ -1,0 +1,112 @@
+pattern_single_column_form:
+  pattern_name: "Single-Column Form"
+  problem_solved: "Reduces scanning effort and errors in forms."
+  context: "Most standard forms and data entry flows."
+  structure:
+    - "Top-aligned labels"
+    - "Single vertical flow"
+    - "Primary CTA at bottom"
+  core_elements: ["Label", "Input", "Helper text", "Button"]
+  variants:
+    - "Grouped sections with headings"
+  best_for: "High completion and clarity."
+  avoid_for: "Extremely short forms with 1-2 fields."
+  desktop_considerations: "Keep form width readable (not full width)."
+  mobile_considerations: "Use full width inputs."
+  accessibility_notes: "Ensure labels are programmatically associated."
+  behaviour_rules: "Avoid multiple columns unless fields are tightly related."
+  related_components: ["Form", "Input", "Button"]
+  related_principles: ["Cognitive Load Theory", "Error Prevention"]
+  anti_patterns:
+    - "Split fields into multiple columns without need."
+  implementation_notes: "Use clear error and hint text."
+  evaluation_criteria:
+    - "High form completion rate with low error frequency."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [form, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "High form completion rate with low error frequency."
+pattern_multi_step_form:
+  pattern_name: "Multi-Step Form"
+  problem_solved: "Breaks complex forms into manageable steps."
+  context: "Onboarding, checkout, long data collection."
+  structure:
+    - "Step indicator"
+    - "Focused field group"
+    - "Next/Back controls"
+  core_elements: ["Progress indicator", "Buttons", "Field group"]
+  variants:
+    - "Wizard with summary step"
+    - "Accordion steps"
+  best_for: "Long or complex forms."
+  avoid_for: "Short forms with <= 5 fields."
+  desktop_considerations: "Keep step indicator visible."
+  mobile_considerations: "Use full-screen steps and large controls."
+  accessibility_notes: "Announce step changes to screen readers."
+  behaviour_rules: "Allow users to review and edit previous steps."
+  related_components: ["Progress", "Form", "Button"]
+  related_principles: ["Hick's Law", "Goal Gradient Effect"]
+  anti_patterns:
+    - "Hiding required fields until the end."
+  implementation_notes: "Save progress automatically where possible."
+  evaluation_criteria:
+    - "Users complete the form without confusion."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [form, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users complete the form without confusion."
+pattern_inline_validation:
+  pattern_name: "Inline Validation"
+  problem_solved: "Prevents errors before submission."
+  context: "Forms with strict requirements."
+  structure:
+    - "Field-level validation"
+    - "Inline error or success message"
+  core_elements: ["Input", "Helper text", "Error message"]
+  variants:
+    - "Validation on blur"
+    - "Validation on submit for sensitive fields"
+  best_for: "Signup, payment, and structured data entry."
+  avoid_for: "Interrupting users mid-typing."
+  desktop_considerations: "Use icons with text for feedback."
+  mobile_considerations: "Avoid shifting layout excessively."
+  accessibility_notes: "Ensure errors are announced and linked to fields."
+  behaviour_rules: "Do not validate until user finishes input."
+  related_components: ["Input", "Alert"]
+  related_principles: ["Error Prevention", "Visibility of System Status"]
+  anti_patterns:
+    - "Blocking typing with immediate red errors."
+  implementation_notes: "Reserve space for messages to prevent layout shift."
+  evaluation_criteria:
+    - "Reduced submission errors."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [form, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Reduced submission errors."

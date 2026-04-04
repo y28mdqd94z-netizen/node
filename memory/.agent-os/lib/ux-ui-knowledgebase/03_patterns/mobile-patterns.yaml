@@ -1,0 +1,110 @@
+pattern_bottom_nav:
+  pattern_name: "Bottom Navigation"
+  problem_solved: "Provides easy access to primary sections on mobile."
+  context: "Mobile apps with 3-5 main destinations."
+  structure:
+    - "Icon and label for each tab"
+    - "Active state highlight"
+  core_elements: ["Tab bar", "Icons", "Labels"]
+  variants:
+    - "Scrollable tab bar"
+    - "Center action button"
+  best_for: "Frequent navigation between top-level sections."
+  avoid_for: "More than 5 primary destinations."
+  desktop_considerations: "Not applicable."
+  mobile_considerations: "Keep labels short and icons clear."
+  accessibility_notes: "Ensure labels are visible and focusable."
+  behaviour_rules: "Persist active tab state."
+  related_components: ["Tab bar", "Icon"]
+  related_principles: ["Fitts's Law", "Consistency and Standards"]
+  anti_patterns:
+    - "Using bottom nav for deep settings."
+  implementation_notes: "Use safe-area padding for devices with home indicator."
+  evaluation_criteria:
+    - "Users can reach key sections with one tap."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [mobile, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can reach key sections with one tap."
+pattern_swipe_actions:
+  pattern_name: "Swipe Actions"
+  problem_solved: "Enables quick actions on list items."
+  context: "Email, task lists, and notifications."
+  structure:
+    - "List item"
+    - "Swipe reveal actions"
+  core_elements: ["List", "Action buttons"]
+  variants:
+    - "Leading and trailing actions"
+    - "Destructive swipe with confirm"
+  best_for: "Frequent, repetitive actions."
+  avoid_for: "Critical actions with high risk."
+  desktop_considerations: "Provide alternative actions."
+  mobile_considerations: "Keep action count small (1-2)."
+  accessibility_notes: "Provide non-gesture alternative actions."
+  behaviour_rules: "Do not hide essential actions only behind swipe."
+  related_components: ["List", "Button"]
+  related_principles: ["Flexibility and Efficiency"]
+  anti_patterns:
+    - "Hidden swipe actions with no visual cue."
+  implementation_notes: "Provide haptic feedback where appropriate."
+  evaluation_criteria:
+    - "Users discover and use swipe actions correctly."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [mobile, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users discover and use swipe actions correctly."
+pattern_fab:
+  pattern_name: "Floating Action Button"
+  problem_solved: "Surfaces a primary action in a scrolling view."
+  context: "Content lists with a single primary action."
+  structure:
+    - "Floating button"
+    - "Icon or label"
+  core_elements: ["Button", "Icon"]
+  variants:
+    - "Extended FAB with label"
+  best_for: "One dominant action such as create or add."
+  avoid_for: "Multiple primary actions or complex flows."
+  desktop_considerations: "Use a fixed primary button instead."
+  mobile_considerations: "Avoid covering content or navigation."
+  accessibility_notes: "Ensure size and contrast are sufficient."
+  behaviour_rules: "Hide or shrink on scroll if it blocks content."
+  related_components: ["Button"]
+  related_principles: ["Fitts's Law", "Von Restorff Effect"]
+  anti_patterns:
+    - "Using FAB for navigation instead of action."
+  implementation_notes: "Use safe-area offsets and clear iconography."
+  evaluation_criteria:
+    - "Users find the primary action quickly."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [mobile, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users find the primary action quickly."

@@ -1,0 +1,30 @@
+spacing_system:
+  principle: "Use a consistent spacing scale (multiples of 4px)."
+  recommendation: "Base spacing unit = 4px. Preferred gaps: 8px, 12px, 16px, 24px, 32px, 48px, 64px."
+  do:
+    - "Use tighter spacing within sections (8-16px) and looser spacing between sections (24-32px)."
+    - "Use hairline separators for list rows instead of cards."
+    - "Align edges to create a calm vertical rhythm."
+  dont:
+    - "Card walls with inconsistent padding."
+    - "One-off spacing values that break the rhythm."
+  examples:
+    - "List rows: 12-16px vertical padding; sections: 24-32px."
+    - "Toolbar buttons: 8px gaps; grouped controls: 16px."
+  agent_rules: "Snap layout to the nearest 4px increment; prefer sectioned lists over card grids."
+  references: []
+
+colour_system:
+  principle: "Neutral-first palette with one accent used for action."
+  recommendation: "Use ink-like text colors, soft neutral surfaces, and a single accent for primary actions or active states."
+  do:
+    - "Use color to signal action and status, not decoration."
+    - "Use subtle surface tints for grouping, not heavy fills."
+  dont:
+    - "Multiple saturated accents on one screen."
+    - "Convey critical meaning by color alone."
+  examples:
+    - "Primary button uses the accent; secondary actions use neutral text."
+    - "Section backgrounds are 1-2 steps off white with hairline dividers."
+  agent_rules: "If more than one accent appears, reduce to one and use typography for hierarchy."
+  references: []

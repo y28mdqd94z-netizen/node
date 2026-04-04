@@ -1,0 +1,65 @@
+mental_model_alignment:
+  title: "Mental Model Alignment"
+  summary: "Match the UI to how users think the system works."
+  user_expectation: "Users expect familiar structures and terminology."
+  design_guidance: "Use labels and workflows that mirror real-world tasks."
+  pitfalls: "Developer-centric naming or organization."
+  examples:
+    - "Use 'Projects' instead of 'Entities' if users talk about projects."
+  agent_rules: "Prefer user vocabulary from research or domain language."
+  tags: ["mental_models", "language"]
+
+conceptual_model_mapping:
+  title: "Conceptual Model Mapping"
+  summary: "Expose a clear model of how the system is organized."
+  user_expectation: "Users can predict where information and actions live."
+  design_guidance: "Use consistent navigation structure and breadcrumbs."
+  pitfalls: "Moving features between sections without explanation."
+  examples:
+    - "Billing settings always live under Account > Billing."
+  agent_rules: "Do not change navigation structure without migration cues."
+  tags: ["structure", "information_architecture"]
+
+metaphor_usage:
+  title: "Metaphor and Familiarity"
+  summary: "Metaphors help users understand complex systems quickly."
+  user_expectation: "Common metaphors reduce training effort."
+  design_guidance: "Use metaphors that match the domain and avoid gimmicks."
+  pitfalls: "Metaphors that break down under real use."
+  examples:
+    - "A 'trash' metaphor for deletion with restore options."
+  agent_rules: "If a metaphor is used, keep it consistent across the app."
+  tags: ["metaphor", "learnability"]
+
+progressive_model:
+  title: "Progressive Model Building"
+  summary: "Introduce concepts gradually so users form accurate models."
+  user_expectation: "Users learn core tasks first, advanced later."
+  design_guidance: "Layer complexity through progressive disclosure."
+  pitfalls: "Dumping full system complexity on first use."
+  examples:
+    - "Basic filters shown first, advanced filters hidden."
+  agent_rules: "Stage information from essential to advanced."
+  tags: ["progressive_disclosure", "learning"]
+
+system_status_model:
+  title: "System Status Model"
+  summary: "Users need a clear sense of state and progress."
+  user_expectation: "Actions have visible outcomes and clear states."
+  design_guidance: "Show state changes, progress, and completion cues."
+  pitfalls: "Background actions with no feedback."
+  examples:
+    - "File upload shows progress and completion."
+  agent_rules: "Never leave a critical action without feedback."
+  tags: ["feedback", "state"]
+
+data_model_translation:
+  title: "Data Model Translation"
+  summary: "Translate complex data structures into user-friendly views."
+  user_expectation: "Users can find and manage their information easily."
+  design_guidance: "Group data by user goals, not database schema."
+  pitfalls: "Exposing internal IDs or system terms."
+  examples:
+    - "Show 'Last updated' and 'Owner' instead of raw IDs."
+  agent_rules: "Map backend fields to human-readable labels."
+  tags: ["data_model", "clarity"]

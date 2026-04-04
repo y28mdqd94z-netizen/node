@@ -1,0 +1,67 @@
+{
+  "version": "0.1.0",
+  "generated_at": "2026-04-04T01:18:43.696Z",
+  "core": [
+    "source/design/core/design-core/SKILL.md"
+  ],
+  "skills": [
+    "source/design/skills/accessibility-review/SKILL.md",
+    "source/design/skills/design-core/SKILL.md",
+    "source/design/skills/design-critique/SKILL.md",
+    "source/design/skills/design-system-alignment/SKILL.md",
+    "source/design/skills/distill-simplify/SKILL.md",
+    "source/design/skills/hierarchy-refinement/SKILL.md",
+    "source/design/skills/interaction-refinement/SKILL.md",
+    "source/design/skills/motion-refinement/SKILL.md",
+    "source/design/skills/responsive-refinement/SKILL.md",
+    "source/design/skills/ui-generation/SKILL.md",
+    "source/design/skills/ux-flow-design/SKILL.md",
+    "source/design/skills/ux-writing-refinement/SKILL.md",
+    "source/design/skills/visual-polish/SKILL.md"
+  ],
+  "workflows": [
+    "source/design/workflows/arrange/SKILL.md",
+    "source/design/workflows/audit/SKILL.md",
+    "source/design/workflows/clarify/SKILL.md",
+    "source/design/workflows/critique/SKILL.md",
+    "source/design/workflows/design-context/SKILL.md",
+    "source/design/workflows/distill/SKILL.md",
+    "source/design/workflows/normalize/SKILL.md",
+    "source/design/workflows/polish/SKILL.md",
+    "source/design/workflows/typeset/SKILL.md"
+  ],
+  "references": [
+    "source/design/references/accessibility.md",
+    "source/design/references/behavioral-psychology.md",
+    "source/design/references/color-contrast.md",
+    "source/design/references/design-system-principles.md",
+    "source/design/references/empty-loading-error.md",
+    "source/design/references/forms-inputs.md",
+    "source/design/references/information-hierarchy.md",
+    "source/design/references/interaction-design.md",
+    "source/design/references/interaction-model.md",
+    "source/design/references/mobile-patterns.md",
+    "source/design/references/motion.md",
+    "source/design/references/navigation-patterns.md",
+    "source/design/references/responsive-design.md",
+    "source/design/references/saas-web-patterns.md",
+    "source/design/references/shadcn-components.md",
+    "source/design/references/spacing-layout.md",
+    "source/design/references/spatial-design.md",
+    "source/design/references/tables-data-ui.md",
+    "source/design/references/typography.md",
+    "source/design/references/ux-laws-heuristics.md",
+    "source/design/references/ux-writing.md"
+  ],
+  "anti_patterns": [
+    "source/design/anti-patterns/core.yaml"
+  ],
+  "evals": [
+    "source/design/evals/ui-quality.yaml"
+  ],
+  "templates": [
+    "source/design/templates/audit_report.md",
+    "source/design/templates/critique_report.md",
+    "source/design/templates/design_context.yaml"
+  ]
+}

@@ -1,0 +1,241 @@
+principle_consistency:
+  title: "Consistency and Standards"
+  summary: "Use familiar patterns and consistent wording, layout, and behavior."
+  why_it_matters: "Consistency reduces learning time, prevents errors, and builds trust."
+  applies_to: "Navigation, forms, labels, iconography, and interaction patterns."
+  do:
+    - "Reuse established components and placements."
+    - "Keep terminology consistent across screens."
+    - "Follow platform conventions for navigation and controls."
+  dont:
+    - "Rename the same concept in different areas."
+    - "Change button styles for the same action."
+  related_laws: ["Jakob's Law", "Mental Models"]
+  signals_of_good_use: "Users can predict outcomes and move quickly."
+  signals_of_bad_use: "Users hesitate or ask where features moved."
+  agent_rules: "Prefer existing patterns; document any deviations with rationale."
+  tags: ["consistency", "standards", "learnability"]
+  sources: ["Nielsen Norman Group: Consistency and Standards"]
+  priority: P0
+  evidence_level: A
+  confidence: 0.9
+  enforcement: hard
+  stability: stable
+  override_allowed: false
+  override_conditions: "Not applicable."
+  override_risks: "Legal and ethical failure; blocked users."
+  required_justification: "Not applicable."
+  safer_alternatives: "Rework design to meet contrast and input accessibility."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
+
+principle_visibility:
+  title: "Visibility of System Status"
+  summary: "Keep users informed about what is happening through clear feedback."
+  why_it_matters: "Timely feedback builds confidence and prevents repeated actions."
+  applies_to: "Loading states, background processing, and long-running tasks."
+  do:
+    - "Show progress indicators for operations over 400ms."
+    - "Confirm actions with inline feedback or toasts."
+  dont:
+    - "Leave users guessing whether an action worked."
+  related_laws: ["Doherty Threshold"]
+  signals_of_good_use: "Users wait calmly and do not repeat clicks."
+  signals_of_bad_use: "Repeated clicks, refreshes, or abandonment."
+  agent_rules: "Every user action should trigger immediate visible feedback."
+  tags: ["feedback", "system_status"]
+  sources: ["Nielsen Norman Group: Visibility of System Status"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
+
+principle_user_control:
+  title: "User Control and Freedom"
+  summary: "Support undo, cancel, and clear exits from unwanted states."
+  why_it_matters: "Users recover from mistakes without anxiety."
+  applies_to: "Destructive actions, multi-step flows, and navigation."
+  do:
+    - "Provide undo for reversible actions."
+    - "Include clear cancel or back paths."
+  dont:
+    - "Trap users in modal flows without exits."
+  related_laws: ["Tesler's Law"]
+  signals_of_good_use: "Users explore confidently and recover from errors."
+  signals_of_bad_use: "Users abandon flows due to fear of mistakes."
+  agent_rules: "If an action is destructive, require confirmation and offer undo."
+  tags: ["control", "recovery", "safety"]
+  sources: ["Nielsen Norman Group: User Control and Freedom"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
+
+principle_recognition:
+  title: "Recognition Over Recall"
+  summary: "Make options visible so users do not have to remember them."
+  why_it_matters: "Reduces cognitive load and speeds task completion."
+  applies_to: "Menus, settings, and form assistance."
+  do:
+    - "Expose common actions in context."
+    - "Use labels and visible affordances."
+  dont:
+    - "Hide key actions behind ambiguous icons."
+  related_laws: ["Miller's Law", "Serial Position Effect"]
+  signals_of_good_use: "Users find features without instruction."
+  signals_of_bad_use: "Users rely on search or help for basic tasks."
+  agent_rules: "Prefer visible options over hidden gestures."
+  tags: ["memory", "discoverability"]
+  sources: ["Nielsen Norman Group: Recognition over Recall"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
+
+principle_error_prevention:
+  title: "Error Prevention"
+  summary: "Prevent problems before they occur with constraints and guidance."
+  why_it_matters: "Prevention costs less than recovery for users and support."
+  applies_to: "Forms, destructive actions, data entry."
+  do:
+    - "Validate input early and inline."
+    - "Disable actions that are not available."
+  dont:
+    - "Allow irreversible actions without confirmation."
+  related_laws: ["Poka-Yoke", "Cognitive Load Theory"]
+  signals_of_good_use: "Low error rates and few support requests."
+  signals_of_bad_use: "Frequent error messages after submission."
+  agent_rules: "Add guardrails for destructive or costly actions."
+  tags: ["errors", "validation"]
+  sources: ["Nielsen Norman Group: Error Prevention"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
+
+principle_flexibility:
+  title: "Flexibility and Efficiency"
+  summary: "Support both novice and expert workflows."
+  why_it_matters: "Experts need speed; novices need guidance."
+  applies_to: "Complex tools, dashboards, and repetitive tasks."
+  do:
+    - "Provide shortcuts and bulk actions."
+    - "Allow customization of views."
+  dont:
+    - "Force experts through slow, step-by-step flows."
+  related_laws: ["Pareto Principle"]
+  signals_of_good_use: "Power users complete tasks quickly without errors."
+  signals_of_bad_use: "Users create workarounds or rely on exports."
+  agent_rules: "Offer a simple path plus optional accelerators."
+  tags: ["efficiency", "power_users"]
+  sources: ["Nielsen Norman Group: Flexibility and Efficiency"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
+
+principle_minimalism:
+  title: "Aesthetic and Minimalist Design"
+  summary: "Avoid unnecessary elements and highlight what matters."
+  why_it_matters: "Clutter hides signal and slows decision making."
+  applies_to: "Layouts, data tables, and marketing pages."
+  do:
+    - "Prioritize essential content and actions."
+    - "Use whitespace to create focus."
+  dont:
+    - "Add decoration that competes with functional content."
+  related_laws: ["Occam's Razor", "Hick's Law"]
+  signals_of_good_use: "Users find the primary action quickly."
+  signals_of_bad_use: "Users miss key actions or misread priorities."
+  agent_rules: "If an element does not serve a goal, remove it."
+  tags: ["clarity", "focus"]
+  sources: ["Nielsen Norman Group: Aesthetic and Minimalist Design"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."
+
+principle_accessibility:
+  title: "Accessibility and Inclusion"
+  summary: "Design for diverse abilities, devices, and contexts."
+  why_it_matters: "Accessible systems reach more users and reduce legal risk."
+  applies_to: "Color, typography, input, motion, and semantics."
+  do:
+    - "Meet contrast and touch target guidelines."
+    - "Ensure keyboard and screen reader support."
+  dont:
+    - "Convey meaning by color alone."
+  related_laws: ["Fitts's Law"]
+  signals_of_good_use: "No critical blockers in keyboard-only use."
+  signals_of_bad_use: "Users cannot complete tasks without a mouse."
+  agent_rules: "Treat accessibility as a baseline, not an enhancement."
+  tags: ["accessibility", "inclusive_design"]
+  sources: ["WCAG 2.2", "WAI-ARIA Authoring Practices"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deviation requires explicit rationale and mitigation."
+  override_risks: "Ignoring the principle increases errors or user confusion."
+  required_justification: "State the context and how impact will be measured."
+  safer_alternatives: "Use progressive disclosure or additional guidance instead of full deviation."
+  decision_checks:
+    - "Signals of good use are observed in testing."
+    - "Task success or error rate improves relative to baseline."

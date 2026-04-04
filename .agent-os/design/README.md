@@ -11,8 +11,12 @@ Core goals:
 - Command-style workflows for critique/audit/polish
 - Portable, provider-agnostic skill structure
 
-Use the manifest for retrieval:
-- `.agent-os/design/manifest.json`
+Authoring source of truth:
+- `.agent-os/source/design`
+
+Generated manifests:
+- `.agent-os/manifests/design-manifest.json`
+- `.agent-os/design/manifest.json` (legacy compatibility)
 
 Primary context file:
 - `memory/design_context.yaml`

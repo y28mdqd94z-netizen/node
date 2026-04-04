@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0",
+  "typography": {
+    "primary": "",
+    "secondary": ""
+  },
+  "colors": {
+    "primary": "",
+    "secondary": "",
+    "accent": "",
+    "neutral": ""
+  },
+  "spacing": {
+    "scale": []
+  },
+  "components": [],
+  "notes": ""
+}

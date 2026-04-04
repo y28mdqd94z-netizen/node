@@ -1,0 +1,193 @@
+version: 1
+entries:
+  - id: pattern.modular-monolith
+    title: Modular monolith
+    category: architecture
+    summary: Single deployable with strong internal boundaries.
+    definition: A monolith structured into well-defined modules that enforce ownership and limits on coupling.
+    why_it_matters: Balances simplicity of deployment with modularity and scale.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - early to mid-stage products
+      - teams that need fast iteration
+    avoid_when:
+      - independent scaling or regulatory isolation is required
+    implementation_rules:
+      - define module boundaries and ownership
+      - enforce dependency direction between modules
+      - isolate data access per module
+    tradeoffs:
+      - limited independent scaling
+    anti_patterns:
+      - shared global state across modules
+    override_allowed: true
+    override_conditions:
+      - need independent deployment and scaling now
+    override_risks:
+      - premature microservices complexity
+    required_justification:
+      - concrete scaling or isolation requirement
+    safer_alternatives:
+      - modular monolith with feature flags
+    performance_impact: positive due to in-process calls
+    security_impact: neutral
+    cost_impact: lower operational cost
+    agent_rules:
+      - default to modular monolith unless strong split driver exists
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - scaling constraints require service split
+    deprecation_signals:
+      - repeated coordination bottlenecks between modules
+    sources:
+      - Modern monolith architecture guidance
+  - id: pattern.hexagonal-architecture
+    title: Hexagonal architecture
+    category: architecture
+    summary: Separate domain logic from infrastructure through ports and adapters.
+    definition: Core logic depends on abstract interfaces; external systems implement adapters.
+    why_it_matters: Improves testability and reduces infrastructure coupling.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: medium
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - complex domain logic with multiple integrations
+      - teams needing high testability
+    avoid_when:
+      - small services where layering adds overhead
+    implementation_rules:
+      - define ports in the domain layer
+      - implement adapters for databases and external APIs
+      - keep domain free of framework dependencies
+    tradeoffs:
+      - more indirection and files
+    anti_patterns:
+      - leaking infrastructure types into domain
+    override_allowed: true
+    override_conditions:
+      - limited scope service with simple dependencies
+    override_risks:
+      - tight coupling to infra and difficult testing
+    required_justification:
+      - why simpler layering is sufficient
+    safer_alternatives:
+      - thin service layer with dependency injection
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: slightly higher short term
+    agent_rules:
+      - use when domain logic must remain portable
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - major refactor to reduce coupling
+    deprecation_signals:
+      - organization standardizes on different architecture
+    sources:
+      - Ports and adapters architecture
+  - id: pattern.event-driven-architecture
+    title: Event driven architecture
+    category: architecture
+    summary: Communicate changes via asynchronous events.
+    definition: Components publish events when state changes and subscribers react independently.
+    why_it_matters: Enables decoupling and scalable workflows.
+    priority_level: P2
+    confidence_score: 0.72
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - workflows benefit from loose coupling
+      - multiple consumers need the same state changes
+    avoid_when:
+      - strict transactional consistency is required
+    implementation_rules:
+      - define event schemas and versioning
+      - use idempotent consumers
+      - monitor delivery and lag
+    tradeoffs:
+      - eventual consistency
+      - harder debugging across async boundaries
+    anti_patterns:
+      - emitting events without schema or ownership
+    override_allowed: true
+    override_conditions:
+      - system requires strong consistency or low operational overhead
+    override_risks:
+      - over-coupling or missing async flexibility
+    required_justification:
+      - why synchronous flows are safer or simpler
+    safer_alternatives:
+      - async jobs with explicit triggers
+    performance_impact: positive for decoupling, negative for latency
+    security_impact: neutral
+    cost_impact: higher operational cost for messaging infra
+    agent_rules:
+      - ensure event ownership and schema governance
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - messaging platform change or outage
+    deprecation_signals:
+      - persistent event backlog or delivery failures
+    sources:
+      - Distributed systems and messaging practices
+  - id: pattern.microservices
+    title: Microservices
+    category: architecture
+    summary: Independently deployable services around business capabilities.
+    definition: Split system into separately deployable services with clear ownership and independent scaling.
+    why_it_matters: Enables independent scaling and team autonomy at high complexity.
+    priority_level: P2
+    confidence_score: 0.68
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - strong scaling or isolation requirements exist
+      - teams are organized around services with DevOps maturity
+    avoid_when:
+      - early-stage products without operational capacity
+    implementation_rules:
+      - define clear service boundaries and contracts
+      - invest in observability, CI/CD, and runtime governance
+      - avoid shared databases
+    tradeoffs:
+      - significant operational overhead
+      - harder cross-service debugging
+    anti_patterns:
+      - service sprawl without ownership
+      - shared database across services
+    override_allowed: true
+    override_conditions:
+      - modular monolith meets requirements
+    override_risks:
+      - scaling bottlenecks if monolith grows too large
+    required_justification:
+      - specific scaling or compliance driver
+    safer_alternatives:
+      - modular monolith with bounded contexts
+    performance_impact: negative due to network calls
+    security_impact: positive when boundaries are enforced
+    cost_impact: higher operational cost
+    agent_rules:
+      - do not recommend without explicit scaling or isolation needs
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - repeated deployment coordination issues
+    deprecation_signals:
+      - operational maturity insufficient to support services
+    sources:
+      - Microservices architecture guidance

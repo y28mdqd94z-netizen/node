@@ -1,0 +1,19 @@
+version: 1
+anti_patterns:
+  - id: hidden-dependency
+    name: "Hidden Dependency"
+    severity: high
+    detection: "Relies on implicit global tools, env vars, or undeclared services."
+    fix: "Declare dependencies, update manifests, and document required config."
+
+  - id: silent-breaking-change
+    name: "Silent Breaking Change"
+    severity: high
+    detection: "API or schema changes without migration or versioning."
+    fix: "Add migration steps, versioning, and tests for compatibility."
+
+  - id: no-tests-for-behavior
+    name: "No Tests for Behavior Change"
+    severity: high
+    detection: "New behavior or logic change with no automated test coverage."
+    fix: "Add unit/integration tests covering primary and error paths."

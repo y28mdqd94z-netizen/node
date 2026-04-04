@@ -1,0 +1,14 @@
+version: 1
+checks:
+  - id: tests-required
+    severity: P0
+    prompt: "Behavior changes have automated tests."
+  - id: security-boundaries
+    severity: P0
+    prompt: "Auth boundaries and input validation verified."
+  - id: observability
+    severity: P1
+    prompt: "Errors are logged with safe context."
+  - id: performance-sanity
+    severity: P2
+    prompt: "No obvious N+1 or unbounded loops in hot paths."

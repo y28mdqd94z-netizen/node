@@ -1,0 +1,55 @@
+templates:
+  - id: "dashboard"
+    name: "Overview"
+    description: "High-level status with a clear next action."
+    layout:
+      - "Header with title, status line, and primary action"
+      - "Inline metrics row (text, not cards)"
+      - "Primary list or table"
+      - "Secondary insights in a collapsible section"
+    components: ["Header", "InlineStat", "Table", "List", "Filter", "SectionHeader"]
+
+  - id: "list_detail"
+    name: "List-Detail"
+    description: "Browse records with a calm, inspectable detail view."
+    layout:
+      - "Edge-to-edge list on the left"
+      - "Detail pane or inspector on the right"
+      - "Inline row actions with secondary actions tucked"
+    components: ["List", "Table", "Inspector", "Form", "Drawer"]
+
+  - id: "form"
+    name: "Form Page"
+    description: "Collect input with staged sections and minimal distraction."
+    layout:
+      - "Page title with context line"
+      - "Sectioned form blocks"
+      - "Primary CTA anchored at the end or in a sticky bar"
+    components: ["Form", "Input", "Button", "SectionHeader"]
+
+  - id: "settings"
+    name: "Settings"
+    description: "Manage preferences with sectioned lists and minimal chrome."
+    layout:
+      - "Sidebar or top-level tabs"
+      - "Sectioned settings list"
+      - "Inline descriptions and clear toggles"
+    components: ["Tabs", "List", "Switch", "Form"]
+
+  - id: "auth"
+    name: "Authentication"
+    description: "Sign in, sign up, and recovery with minimal surfaces."
+    layout:
+      - "Centered form with brief context"
+      - "Single primary action"
+      - "Quiet support links"
+    components: ["Card", "Input", "Button", "Link"]
+
+  - id: "document"
+    name: "Document"
+    description: "Long-form content with structured sections and inline actions."
+    layout:
+      - "Title with status line"
+      - "Content blocks separated by spacing and hairlines"
+      - "Inline actions near relevant sections"
+    components: ["SectionHeader", "List", "Button", "Link"]

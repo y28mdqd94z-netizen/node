@@ -1,0 +1,227 @@
+version: 1
+entries:
+  - id: auth.session-vs-token
+    title: Session versus token authentication
+    category: security
+    summary: Choose auth based on threat model and platform needs.
+    definition: Sessions are server-managed; tokens are client-held with limited lifetime and scope.
+    why_it_matters: The choice affects revocation, security, and scalability.
+    priority_level: P0
+    confidence_score: 0.84
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - deciding between web session and API token models
+    avoid_when:
+      - unmanaged tokens without revocation plan
+    implementation_rules:
+      - use short-lived tokens with rotation
+      - provide server-side revocation for sessions
+    tradeoffs:
+      - session stores add infrastructure cost
+    anti_patterns:
+      - long lived tokens without rotation
+    override_allowed: true
+    override_conditions:
+      - system is fully internal with constrained access
+    override_risks:
+      - compromised tokens or session fixation
+    required_justification:
+      - threat model and mitigation plan
+    safer_alternatives:
+      - hybrid model with refresh tokens
+    performance_impact: neutral
+    security_impact: high
+    cost_impact: moderate operational cost
+    agent_rules:
+      - align auth method with threat model and revocation needs
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - auth incidents or token leakage
+    deprecation_signals:
+      - platform changes in auth primitives
+    sources:
+      - OAuth and session security guidance
+  - id: auth.least-privilege
+    title: Least privilege access
+    category: security
+    summary: Grant the minimum permissions necessary.
+    definition: Users and services receive only the access required for their tasks.
+    why_it_matters: Limits blast radius of compromised credentials.
+    priority_level: P0
+    confidence_score: 0.9
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - defining roles, scopes, or service permissions
+    avoid_when:
+      - none
+    implementation_rules:
+      - define role based access scopes
+      - audit and remove unused privileges
+    tradeoffs:
+      - ongoing permission management effort
+    anti_patterns:
+      - admin access for all services
+    override_allowed: true
+    override_conditions:
+      - emergency access with expiration
+    override_risks:
+      - excessive access and data exposure
+    required_justification:
+      - rationale and expiration for expanded access
+    safer_alternatives:
+      - temporary elevation with audit logging
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: moderate operational overhead
+    agent_rules:
+      - default to least privilege in all policies
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - privilege escalation incidents
+    deprecation_signals:
+      - access model replaced by new system
+    sources:
+      - Security best practices
+  - id: auth.mfa-privileged
+    title: Multi-factor authentication for privileged access
+    category: security
+    summary: Require MFA for admin and sensitive actions.
+    definition: Privileged roles must use MFA to reduce risk of account takeover.
+    why_it_matters: MFA significantly reduces compromise risk.
+    priority_level: P1
+    confidence_score: 0.83
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - admin consoles and sensitive workflows
+    avoid_when:
+      - low risk internal tools with no sensitive data
+    implementation_rules:
+      - enforce MFA on privileged roles
+      - provide recovery mechanisms with audit trails
+    tradeoffs:
+      - user friction for administrators
+    anti_patterns:
+      - optional MFA for privileged roles
+    override_allowed: true
+    override_conditions:
+      - emergency access with full logging and short duration
+    override_risks:
+      - account takeover of privileged users
+    required_justification:
+      - emergency rationale and expiration plan
+    safer_alternatives:
+      - step-up authentication for sensitive actions
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: minor operational cost
+    agent_rules:
+      - require MFA for admin access by default
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - account takeover incidents
+    deprecation_signals:
+      - MFA requirements changed by policy
+    sources:
+      - Authentication security guidance
+  - id: auth.secure-password-storage
+    title: Secure password storage
+    category: security
+    summary: Store passwords using strong, slow hashing.
+    definition: Use approved password hashing algorithms with salt and appropriate parameters.
+    why_it_matters: Protects user credentials in the event of a breach.
+    priority_level: P0
+    confidence_score: 0.9
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any system that stores user passwords
+    avoid_when:
+      - passwordless authentication only
+    implementation_rules:
+      - use slow, salted hashing with vetted libraries
+      - never store plaintext passwords
+    tradeoffs:
+      - increased CPU cost for hashing
+    anti_patterns:
+      - storing plaintext or reversible passwords
+    override_allowed: false
+    override_conditions:
+      - none
+    override_risks:
+      - credential compromise and legal exposure
+    required_justification:
+      - not applicable
+    safer_alternatives:
+      - move to passwordless authentication
+    performance_impact: slight negative due to hashing cost
+    security_impact: positive
+    cost_impact: small compute cost
+    agent_rules:
+      - require vetted password hashing for any password storage
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - changes in recommended hashing algorithms
+    deprecation_signals:
+      - algorithm deprecation in security guidance
+    sources:
+      - OWASP password storage guidance
+  - id: auth.separate-authn-authz
+    title: Separate authentication and authorization
+    category: security
+    summary: Keep identity verification and access control distinct.
+    definition: Authentication verifies identity; authorization determines permissions.
+    why_it_matters: Prevents permission bugs and privilege escalation.
+    priority_level: P0
+    confidence_score: 0.88
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any system with user roles or permissions
+    avoid_when:
+      - single-user local tools
+    implementation_rules:
+      - authenticate first, then evaluate authorization policies
+      - centralize authorization logic
+    tradeoffs:
+      - added policy management complexity
+    anti_patterns:
+      - mixing authentication checks with business logic
+    override_allowed: false
+    override_conditions:
+      - none
+    override_risks:
+      - unauthorized access
+    required_justification:
+      - not applicable
+    safer_alternatives:
+      - use a policy engine or centralized guard layer
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: neutral
+    agent_rules:
+      - enforce authorization checks on every protected action
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - authorization bypass incidents
+    deprecation_signals:
+      - migration to centralized auth platform
+    sources:
+      - Access control best practices

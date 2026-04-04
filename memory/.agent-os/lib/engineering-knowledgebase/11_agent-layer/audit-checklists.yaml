@@ -1,0 +1,183 @@
+version: 1
+entries:
+  - id: agent.audit.security
+    title: Security audit checklist
+    category: agent_layer
+    summary: Minimum security checks before release.
+    definition: Validate auth boundaries, input validation, secret handling, and vulnerability status.
+    why_it_matters: Prevents common security failures.
+    priority_level: P0
+    confidence_score: 0.84
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any production release
+    avoid_when:
+      - internal prototypes with no data
+    implementation_rules:
+      - verify auth checks on protected routes
+      - ensure input validation at boundaries
+      - confirm no secrets in client code
+    tradeoffs:
+      - requires review time
+    anti_patterns:
+      - shipping without security review
+    override_allowed: true
+    override_conditions:
+      - emergency hotfix with documented risk acceptance
+    override_risks:
+      - security vulnerabilities in production
+    required_justification:
+      - risk acceptance and mitigation plan
+    safer_alternatives:
+      - targeted security review of changed areas
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: low
+    agent_rules:
+      - run security checklist for all releases
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - new security policy or incident
+    deprecation_signals:
+      - organization adopts new security framework
+    sources:
+      - OWASP guidance
+  - id: agent.audit.privacy
+    title: Privacy and data sensitivity checklist
+    category: agent_layer
+    summary: Validate data handling and retention requirements.
+    definition: Ensure PII is minimized, retained appropriately, and protected.
+    why_it_matters: Prevents compliance violations and user harm.
+    priority_level: P0
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - features handling user or sensitive data
+    avoid_when:
+      - data is fully anonymous and non-sensitive
+    implementation_rules:
+      - verify data classification and retention policies
+      - ensure user consent and access controls
+    tradeoffs:
+      - additional review and documentation
+    anti_patterns:
+      - collecting data without purpose
+    override_allowed: true
+    override_conditions:
+      - legal requirement mandates data collection
+    override_risks:
+      - privacy violations and regulatory exposure
+    required_justification:
+      - documented legal or contractual requirement
+    safer_alternatives:
+      - anonymize or aggregate data
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: moderate compliance cost
+    agent_rules:
+      - require privacy review for sensitive data
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - privacy policy updates
+    deprecation_signals:
+      - adoption of new privacy compliance framework
+    sources:
+      - Privacy compliance practices
+  - id: agent.audit.performance
+    title: Performance and resilience checklist
+    category: agent_layer
+    summary: Validate performance budgets, timeouts, and fallback behavior.
+    definition: Ensure critical paths meet budgets and fail gracefully.
+    why_it_matters: Prevents outages and slow user experience.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: medium
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - releases affecting critical traffic paths
+    avoid_when:
+      - low impact changes
+    implementation_rules:
+      - check latency against budgets
+      - verify timeouts and retries
+    tradeoffs:
+      - additional testing time
+    anti_patterns:
+      - shipping without performance validation
+    override_allowed: true
+    override_conditions:
+      - low impact or internal feature
+    override_risks:
+      - performance regressions
+    required_justification:
+      - impact assessment and monitoring plan
+    safer_alternatives:
+      - partial benchmark on critical endpoints
+    performance_impact: positive
+    security_impact: neutral
+    cost_impact: moderate testing cost
+    agent_rules:
+      - apply checklist to high traffic features
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - performance incidents or SLAs
+    deprecation_signals:
+      - new performance governance policy
+    sources:
+      - SRE reliability practices
+  - id: agent.audit.ai-safety
+    title: AI safety checklist
+    category: agent_layer
+    summary: Validate AI feature safety, privacy, and evaluation coverage.
+    definition: Ensure model outputs are evaluated, guarded, and compliant with data policies.
+    why_it_matters: Reduces risk of unsafe or non-compliant AI behavior.
+    priority_level: P1
+    confidence_score: 0.76
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - any AI feature entering production
+    avoid_when:
+      - offline experimentation with no user impact
+    implementation_rules:
+      - confirm prompt injection defenses
+      - verify eval coverage and monitoring
+    tradeoffs:
+      - additional engineering and review effort
+    anti_patterns:
+      - shipping AI without evaluation or safeguards
+    override_allowed: true
+    override_conditions:
+      - low risk internal prototypes
+    override_risks:
+      - unsafe outputs or policy violations
+    required_justification:
+      - scope and exposure assessment
+    safer_alternatives:
+      - human review or limited rollout
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: moderate
+    agent_rules:
+      - require AI safety checklist for production AI
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - AI policy updates or incidents
+    deprecation_signals:
+      - new AI governance framework
+    sources:
+      - AI safety practices

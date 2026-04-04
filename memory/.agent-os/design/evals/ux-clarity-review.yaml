@@ -1,0 +1,8 @@
+version: 0.1.0
+source:
+  - .agent-os/lib/ux-ui-knowledgebase/05_design-system/design-system-principles.yaml
+  - .agent-os/lib/ux-ui-knowledgebase/05_design-system/content-writing.yaml
+checks:
+  - clear_primary_action
+  - concise_labels
+  - next_step_visibility

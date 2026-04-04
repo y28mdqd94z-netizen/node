@@ -1,0 +1,114 @@
+pattern_checklist_onboarding:
+  pattern_name: "Onboarding Checklist"
+  problem_solved: "Guides users through key setup tasks."
+  context: "Products with 3-7 essential setup steps."
+  structure:
+    - "Welcome message"
+    - "Checklist of tasks"
+    - "Progress indicator"
+  core_elements: ["Checklist", "Progress bar", "CTA"]
+  variants:
+    - "Inline checklist"
+    - "Dedicated onboarding page"
+  best_for: "Complex products that require configuration."
+  avoid_for: "Very simple products with one-step setup."
+  desktop_considerations: "Keep checklist visible on the main dashboard."
+  mobile_considerations: "Use collapsible checklist."
+  accessibility_notes: "Ensure checklist items are keyboard focusable."
+  behaviour_rules: "Mark items complete automatically when possible."
+  related_components: ["List", "Progress", "Button"]
+  related_principles: ["Goal Gradient Effect", "Recognition Over Recall"]
+  anti_patterns:
+    - "Checklist items that do not link to actions."
+  implementation_notes: "Limit to 3-5 high-impact steps."
+  evaluation_criteria:
+    - "Users reach activation within first session."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [onboarding, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users reach activation within first session."
+pattern_guided_tour:
+  pattern_name: "Guided Tour"
+  problem_solved: "Introduces key UI areas for first-time users."
+  context: "Feature-rich interfaces with unfamiliar patterns."
+  structure:
+    - "Step-by-step tooltips"
+    - "Highlighted UI elements"
+    - "Skip option"
+  core_elements: ["Tooltip", "Highlight", "Skip control"]
+  variants:
+    - "Full-screen walkthrough"
+    - "Contextual tips"
+  best_for: "High learning curve products."
+  avoid_for: "Returning users or repeat flows."
+  desktop_considerations: "Avoid covering critical controls."
+  mobile_considerations: "Use fewer steps and larger touch targets."
+  accessibility_notes: "Ensure tips are announced to screen readers."
+  behaviour_rules: "Always allow skipping and resuming later."
+  related_components: ["Tooltip", "Modal"]
+  related_principles: ["User Control and Freedom", "Recognition Over Recall"]
+  anti_patterns:
+    - "Forced tours without skip."
+  implementation_notes: "Personalize steps based on role."
+  evaluation_criteria:
+    - "Users can recall key areas after the tour."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [onboarding, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can recall key areas after the tour."
+pattern_sample_data:
+  pattern_name: "Sample Data Seeding"
+  problem_solved: "Shows value before users enter their own data."
+  context: "Empty dashboards or data-heavy tools."
+  structure:
+    - "Pre-filled example data"
+    - "Clear label that data is sample"
+    - "CTA to add real data"
+  core_elements: ["Table", "Chart", "Call to action"]
+  variants:
+    - "Sandbox project"
+    - "Template-driven sample"
+  best_for: "Products where value depends on data."
+  avoid_for: "Sensitive or compliance-heavy domains."
+  desktop_considerations: "Show full layouts with sample metrics."
+  mobile_considerations: "Use simplified sample datasets."
+  accessibility_notes: "Label sample content clearly."
+  behaviour_rules: "Allow users to delete sample data easily."
+  related_components: ["Table", "Banner"]
+  related_principles: ["Progressive Disclosure"]
+  anti_patterns:
+    - "Sample data that looks like real user data."
+  implementation_notes: "Separate sample data from production records."
+  evaluation_criteria:
+    - "Users understand product value before data entry."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [onboarding, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users understand product value before data entry."

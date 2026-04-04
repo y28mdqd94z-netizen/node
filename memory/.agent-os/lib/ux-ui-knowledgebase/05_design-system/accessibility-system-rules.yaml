@@ -1,0 +1,22 @@
+accessibility_rules:
+  focus:
+    - "Focus ring must be visible with 3:1 contrast against background."
+    - "Never remove focus outline without a replacement."
+
+  keyboard:
+    - "All interactive elements must be reachable by Tab."
+    - "Use logical focus order that matches visual flow."
+
+  contrast:
+    - "Text contrast >= 4.5:1 for normal text."
+    - "Large text contrast >= 3:1."
+
+  target_size:
+    - "Minimum target size 44x44px where possible."
+
+  semantics:
+    - "Use native HTML elements before custom roles."
+    - "Provide labels for all inputs."
+
+  motion:
+    - "Respect reduced motion preferences."

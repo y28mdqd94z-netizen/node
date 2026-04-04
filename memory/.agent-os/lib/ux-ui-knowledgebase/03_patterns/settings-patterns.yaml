@@ -1,0 +1,114 @@
+pattern_settings_sections:
+  pattern_name: "Settings by Sections"
+  problem_solved: "Organizes many settings into manageable groups."
+  context: "Accounts and product preferences."
+  structure:
+    - "Left navigation or tabs"
+    - "Section headers"
+    - "Grouped settings"
+  core_elements: ["Nav", "Section headers", "Form controls"]
+  variants:
+    - "Sidebar navigation"
+    - "Tabbed settings"
+  best_for: "Products with 5+ settings categories."
+  avoid_for: "Very small settings pages."
+  desktop_considerations: "Keep navigation visible."
+  mobile_considerations: "Use accordion or stacked sections."
+  accessibility_notes: "Use landmarks and headings for navigation."
+  behaviour_rules: "Use clear labels that match user language."
+  related_components: ["Tabs", "Sidebar", "Form"]
+  related_principles: ["Consistency and Standards"]
+  anti_patterns:
+    - "Long single-page settings with no grouping."
+  implementation_notes: "Show current section in URL for deep links."
+  evaluation_criteria:
+    - "Users locate a setting within 2 clicks."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [settings, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users locate a setting within 2 clicks."
+pattern_preferences_toggle:
+  pattern_name: "Preference Toggles"
+  problem_solved: "Lets users turn options on/off quickly."
+  context: "Notifications, feature flags, and privacy settings."
+  structure:
+    - "Label"
+    - "Toggle control"
+    - "Optional description"
+  core_elements: ["Toggle", "Label", "Helper text"]
+  variants:
+    - "Grouped toggles"
+    - "Master switch"
+  best_for: "Binary settings."
+  avoid_for: "Complex choices with multiple options."
+  desktop_considerations: "Align toggles in a vertical list."
+  mobile_considerations: "Use large touch targets."
+  accessibility_notes: "Ensure toggles have clear on/off states."
+  behaviour_rules: "Changes apply immediately or clearly require save."
+  related_components: ["Switch", "Label"]
+  related_principles: ["Visibility of System Status"]
+  anti_patterns:
+    - "Using a toggle for destructive actions."
+  implementation_notes: "Provide confirmation for impactful changes."
+  evaluation_criteria:
+    - "Users understand the effect of each toggle."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [settings, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users understand the effect of each toggle."
+pattern_danger_zone:
+  pattern_name: "Danger Zone"
+  problem_solved: "Separates destructive actions from normal settings."
+  context: "Account deletion, data wipes, irreversible actions."
+  structure:
+    - "Section divider"
+    - "Destructive action button"
+    - "Confirmation step"
+  core_elements: ["Alert", "Button", "Dialog"]
+  variants:
+    - "Two-step confirmation"
+    - "Typed confirmation"
+  best_for: "High-risk actions."
+  avoid_for: "Everyday, reversible tasks."
+  desktop_considerations: "Place at bottom of settings page."
+  mobile_considerations: "Use full-width warning patterns."
+  accessibility_notes: "Use clear text and not just color."
+  behaviour_rules: "Always provide recovery information."
+  related_components: ["Alert", "Dialog"]
+  related_principles: ["User Control and Freedom", "Error Prevention"]
+  anti_patterns:
+    - "Destructive actions placed next to safe actions."
+  implementation_notes: "Consider soft-delete where possible."
+  evaluation_criteria:
+    - "Users can identify and avoid destructive actions."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [settings, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can identify and avoid destructive actions."
