@@ -1,0 +1,42 @@
+name: "Settings and Admin"
+id: "pattern.settings_admin.core"
+layer: pattern
+category: settings_admin
+intent: "Organize configuration and administrative tasks."
+problem_solved: "Keeps settings structured and discoverable."
+when_to_use:
+  - "Account, workspace, and system settings."
+when_not_to_use:
+  - "Task-focused flows where settings are secondary."
+anatomy:
+  - "Settings navigation"
+  - "Section headers"
+  - "Form groups"
+  - "Save actions"
+supported_components:
+  - "sidebar"
+  - "tabs"
+  - "form components"
+variants:
+  - "sectioned"
+  - "tabbed"
+  - "sidebar-nav"
+key_states:
+  - "dirty"
+  - "saved"
+  - "error"
+responsive_adaptation:
+  - "Use accordion or single-column sections on mobile."
+shell_compatibility:
+  - "settings-shell"
+  - "portal-shell"
+anti_patterns:
+  - "Mixing user and admin settings without separation."
+  - "Save actions hidden below long forms."
+evaluation_criteria:
+  - "Users can find a setting within 2 clicks."
+implementation_notes:
+  - "Provide unsaved changes warnings."
+context_notes:
+  - "Admin portals require role-based visibility for settings."
+

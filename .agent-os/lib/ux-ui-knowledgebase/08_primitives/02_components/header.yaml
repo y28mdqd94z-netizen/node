@@ -1,0 +1,49 @@
+name: "Header"
+id: "component.header.core"
+layer: component
+category: header
+intent: "Provide global actions, branding, and top-level navigation."
+problem_solved: "Anchors the experience with consistent top controls."
+when_to_use:
+  - "Top-level navigation and global actions."
+when_not_to_use:
+  - "Single-screen tools without navigation."
+anatomy:
+  - "Brand area"
+  - "Primary actions"
+  - "Search or global controls"
+variants:
+  - "standard"
+  - "condensed"
+  - "search-heavy"
+sizes:
+  - "sm"
+  - "md"
+states:
+  - "default"
+  - "sticky"
+behavior_rules:
+  - "Keep primary actions visible on scroll if critical."
+accessibility_requirements:
+  - "Ensure skip-to-content link."
+responsive_behavior:
+  - "Collapse secondary actions into menu on small screens."
+composition_rules:
+  - "Pairs with sidebar for portal shells."
+dependencies:
+  - "tokens.components.header"
+anti_patterns:
+  - "Overcrowded header with too many actions."
+  - "Global actions duplicated elsewhere."
+token_bindings:
+  background: "header.bg.*"
+  text: "header.text.*"
+  border: "header.border.*"
+implementation_mapping:
+  - "Component: Header"
+  - "Props: actions, nav, sticky"
+evaluation_checklist:
+  - "Header supports navigation without stealing focus."
+context_notes:
+  - "Dashboards often use condensed headers to maximize data space."
+

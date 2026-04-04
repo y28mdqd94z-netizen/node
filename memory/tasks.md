@@ -437,30 +437,30 @@
 - Risk level: low
 - Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
 - Orchestrator: required
-- Routing decisions:
-- Phase gate status:
-- Status: pending
-- Discovery:
-- Market Analysis:
-- Market alignment notes:
-- UX KB Comparison:
-- Think:
-- UX Design:
-- Object → Pattern → Screen mapping:
-- Architecture:
-- Implementation:
-- Validation (type safety, input validation, error handling, edge cases):
-- Security Review:
-- UX Refinement:
-- Documentation:
-- Failure points:
-- Fallback UX:
-- Retry logic:
-- Safe error messages:
-- Observability (logging, error tracking, performance):
-- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
-- Updates to skills/patterns/components:
-- Refactor targets:
+- Routing decisions: Orchestrator routed schema+lint scripting to Engineering Agent, component primitives/tokens to UX Systems Lead, and documentation updates to Documentation Agent.
+- Phase gate status: Discovery complete; Market Analysis complete (internal KB); UX Design complete; Architecture complete; Implementation complete; Validation complete; Security Review complete; UX Refinement complete; Documentation complete.
+- Status: completed
+- Discovery: Need schema validation for primitives/tokens, a freshness check for manifests/indexes, and expanded component coverage for menus, breadcrumbs, chips, and form controls.
+- Market Analysis: Referenced internal navigation and form patterns for standard component expectations.
+- Market alignment notes: New primitives align to navigation and form patterns; tokens follow token hierarchy guidance.
+- UX KB Comparison: 08_primitives/01_design-system/tokens.yaml (design_system.tokens.core), 08_primitives/03_patterns/navigation.yaml (pattern.navigation.core), 08_primitives/03_patterns/form.yaml (pattern.form.core), 05_design-system/design-system-principles.yaml (principle_consistency: Systems-first consistency).
+- Think: Keep validation lightweight, avoid new deps, and cover missing component primitives with token-backed definitions.
+- UX Design: Added Menu, Breadcrumbs, Chip, Checkbox, Radio, Switch, Textarea primitives with consistent states and behaviors mapped to navigation/form usage.
+- Object → Pattern → Screen mapping: Menu/Breadcrumbs → Navigation pattern → Header/section navigation; Chips → Search/filtering pattern → Filter bars; Form controls → Form pattern → Forms/settings.
+- Architecture: Local scripts validate YAML/JSON against schemas; freshness check compares generated manifests/indexes to computed hashes; no runtime coupling.
+- Implementation: Added schema files, validation script, freshness checker, primitive manifest builder, new component specs, and component tokens; updated primitive schema and KB index.
+- Validation (type safety, input validation, error handling, edge cases): validate-primitives + check-freshness test scripts executed.
+- Security Review: Local file validation only; no external IO or secrets.
+- UX Refinement: Token bindings standardized and states defined for new components.
+- Documentation: Updated decisions.log, risks.log, tasks.md, and output template.
+- Failure points: Stale primitive manifest/index or KB index; YAML parser limitations for complex YAML.
+- Fallback UX: Not applicable.
+- Retry logic: Re-run build-primitives or ./.agent-os/agent kb-update when checks fail.
+- Safe error messages: Scripts report file paths with remediation instructions.
+- Observability (logging, error tracking, performance): Console outputs for validation and freshness checks.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Added schema-driven validation to prevent drift.
+- Updates to skills/patterns/components: Added Menu, Breadcrumbs, Chip, Checkbox, Radio, Switch, Textarea primitives and tokens.
+- Refactor targets: Consider a full YAML parser if primitive specs grow in complexity.
 
 ## 2026-03-30 13:13:57 +1100
 - Command: implement-feature
@@ -714,6 +714,68 @@
 - Command: implement-feature
 - Title: Upgrade Agent OS engineering+design layers
 - Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- Market alignment notes:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Object → Pattern → Screen mapping:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-04-04 12:43:40 +1100
+- Command: implement-feature
+- Title: Add structured primitive system
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions: Orchestrator → UX Systems Lead for primitive taxonomy/specs; Architecture Agent for schema and mapping rules; Engineering Agent for tokens and manifests; QA/UX Audit Agent for evaluation rules; Documentation Agent for memory updates.
+- Phase gate status: Discovery complete; Market Analysis complete; UX Design complete; Architecture complete; Implementation complete; Validation complete; Security Review complete; UX Refinement complete; Documentation complete.
+- Status: completed
+- Discovery: Repo already had KB, tokens, and design system guidance but lacked a structured primitive system; new layer should live inside the UX/UI knowledgebase.
+- Market Analysis: Reviewed Material 3, Apple HIG, Polaris, Carbon, Atlassian, Fluent 2, GOV.UK plus USWDS, Ant Design, Primer, and Salesforce Lightning to align token architecture and foundations.
+- Market alignment notes: Adopted multi-tier token model, neutral-first palettes, spacing scales, and accessibility baselines from reference systems.
+- UX KB Comparison: spacing-layout-system.yaml, typography-system.yaml, responsive-rules.yaml, tokens-strategy.yaml, accessibility-system-rules.yaml.
+- Think: Build a modular, layered primitive taxonomy with explicit selection, composition, evaluation, and implementation rules.
+- UX Design: Defined core component, pattern, and shell primitives with consistent states and accessibility rules.
+- Object → Pattern → Screen mapping: Not applicable (system primitives only).
+- Architecture: Added 08_primitives with schema, manifest, and index to align retrieval and governance.
+- Implementation: Created meta rules, design-system primitives, component/pattern/shell specs, agent guides; expanded token files; updated design_system.json; ran kb-update.
+- Validation (type safety, input validation, error handling, edge cases): Manual verification of file structure and references; no runtime code.
+- Security Review: Documentation-only changes; no data handling impact.
+- UX Refinement: Reinforced calm hierarchy, single-primary action guidance, and mobile sheet behavior.
+- Documentation: Updated knowledgebase README, decisions.log, risks.log, and output file.
+- Failure points: KB index out of date if kb-update is skipped.
+- Fallback UX: Not applicable.
+- Retry logic: Not applicable.
+- Safe error messages: Not applicable.
+- Observability (logging, error tracking, performance): Not applicable.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Added primitive system to reduce ad hoc component decisions.
+- Updates to skills/patterns/components: Added primitive specs and agent selection/composition guides.
+- Refactor targets: None.
+
+## 2026-04-04 13:17:53 +1100
+- Command: implement-feature
+- Title: Schema validation, manifest lint, component expansion
+- Risk level: medium
 - Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
 - Orchestrator: required
 - Routing decisions:

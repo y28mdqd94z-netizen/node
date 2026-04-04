@@ -1,0 +1,56 @@
+name: "Portal Shell"
+id: "shell.portal_shell.core"
+layer: shell
+category: portal_shell
+intent: "Provide a multi-section shell for customer and partner portals."
+problem_solved: "Standardizes layout and navigation for portal experiences."
+when_to_use:
+  - "Multi-section portals with account and workspace management."
+when_not_to_use:
+  - "Single-task tools or consumer apps."
+anatomy:
+  - "Header"
+  - "Sidebar navigation"
+  - "Main content area"
+  - "Utility rail"
+layout_regions:
+  - "header"
+  - "nav"
+  - "content"
+  - "utilities"
+navigation_model: "sidebar + header utilities"
+compatible_patterns:
+  - "navigation"
+  - "portal"
+  - "settings-admin"
+  - "crud"
+density_assumptions: "default"
+responsive_collapse_logic:
+  - "Sidebar collapses into drawer below md."
+primary_use_cases:
+  - "Account portals"
+  - "Partner management"
+states:
+  - "default"
+  - "collapsed"
+behavior_rules:
+  - "Utilities remain accessible across sections."
+accessibility_requirements:
+  - "Skip links to main content."
+responsive_behavior:
+  - "Header condenses; nav becomes drawer."
+composition_rules:
+  - "Limit to one primary navigation pattern."
+dependencies:
+  - "sidebar"
+  - "header"
+anti_patterns:
+  - "Mixing unrelated product areas in one nav."
+implementation_mapping:
+  - "Layout: AppShell with header + sidebar"
+  - "Navigation: SidebarNav component"
+evaluation_checklist:
+  - "Users can reach primary sections within two steps."
+context_notes:
+  - "Admin portals may require role-based navigation gating."
+

@@ -1,0 +1,52 @@
+name: "Alert"
+id: "component.alert.core"
+layer: component
+category: alert
+intent: "Communicate critical information or status."
+problem_solved: "Provides clear feedback for success, warning, or error."
+when_to_use:
+  - "System-level feedback that needs attention."
+  - "Inline form errors at group level."
+when_not_to_use:
+  - "Transient feedback (use toast)."
+  - "Non-critical hints (use helper text)."
+anatomy:
+  - "Icon"
+  - "Title"
+  - "Message"
+  - "Optional action"
+variants:
+  - "info"
+  - "success"
+  - "warning"
+  - "danger"
+sizes:
+  - "sm"
+  - "md"
+states:
+  - "default"
+behavior_rules:
+  - "Use concise, actionable copy."
+accessibility_requirements:
+  - "Use role=alert for critical messages."
+responsive_behavior:
+  - "Stack actions below text on small screens."
+composition_rules:
+  - "Place alerts near the affected content."
+dependencies:
+  - "tokens.components.alert"
+anti_patterns:
+  - "Too many alerts on a single screen."
+  - "Alerts without clear resolution."
+token_bindings:
+  background: "alert.bg.*"
+  text: "alert.text.*"
+  border: "alert.border.*"
+implementation_mapping:
+  - "Component: Alert"
+  - "Props: variant, title, description, action"
+evaluation_checklist:
+  - "Alert meaning is clear in 5 seconds."
+context_notes:
+  - "Admin tools use inline alerts for system states and validation."
+

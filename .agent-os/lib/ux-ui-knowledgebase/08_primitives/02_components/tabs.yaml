@@ -1,0 +1,53 @@
+name: "Tabs"
+id: "component.tabs.core"
+layer: component
+category: tabs
+intent: "Switch between related views within the same context."
+problem_solved: "Provides organized navigation without leaving the page."
+when_to_use:
+  - "3-6 related sections of equal priority."
+when_not_to_use:
+  - "Deep navigation hierarchies (use sidebar)."
+  - "Single view (no tabs)."
+anatomy:
+  - "Tab list"
+  - "Tab item"
+  - "Tab panel"
+variants:
+  - "underline"
+  - "pill"
+  - "segmented"
+sizes:
+  - "sm"
+  - "md"
+states:
+  - "default"
+  - "active"
+  - "disabled"
+behavior_rules:
+  - "Keep labels short and parallel."
+  - "Persist selected tab in URL when possible."
+accessibility_requirements:
+  - "Arrow keys move focus across tabs."
+  - "Active tab has aria-selected=true."
+responsive_behavior:
+  - "Collapse into dropdown when tabs exceed width."
+composition_rules:
+  - "Use tabs inside a single content surface."
+dependencies:
+  - "tokens.components.tabs"
+anti_patterns:
+  - "Using tabs for sequential steps."
+  - "Too many tabs without grouping."
+token_bindings:
+  text: "tabs.text.*"
+  indicator: "tabs.indicator.*"
+  background: "tabs.bg.*"
+implementation_mapping:
+  - "Component: Tabs"
+  - "Props: value, onValueChange, variant"
+evaluation_checklist:
+  - "Tabs remain legible and scannable."
+context_notes:
+  - "Admin portals use tabs for settings sections."
+

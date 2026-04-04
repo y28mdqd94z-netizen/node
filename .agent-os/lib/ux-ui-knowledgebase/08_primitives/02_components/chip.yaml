@@ -1,0 +1,60 @@
+name: "Chip"
+id: "component.chip.core"
+layer: component
+category: chip
+intent: "Display compact tags, filters, or selections with optional actions."
+problem_solved: "Summarizes metadata and filter states without heavy UI."
+when_to_use:
+  - "Filter tokens in search and list views."
+  - "Tagging or status labels in compact spaces."
+when_not_to_use:
+  - "Primary actions or confirmations."
+  - "Long-form content that requires wrapping."
+anatomy:
+  - "Container"
+  - "Label"
+  - "Optional leading icon"
+  - "Optional remove action"
+variants:
+  - "filter"
+  - "input"
+  - "status"
+sizes:
+  - "sm"
+  - "md"
+states:
+  - "default"
+  - "hover"
+  - "selected"
+  - "disabled"
+  - "removable"
+behavior_rules:
+  - "Selected chips toggle off when activated again."
+  - "Remove action is separate and does not toggle selection."
+accessibility_requirements:
+  - "Chips are focusable and announce selected state."
+  - "Remove button has an accessible label."
+responsive_behavior:
+  - "Wrap chips and allow horizontal scroll for overflow."
+composition_rules:
+  - "Group chips within filter bars or tag lists."
+dependencies:
+  - "tokens.components.chip"
+anti_patterns:
+  - "Using chips for long multi-line labels."
+  - "Stacking chips without spacing in dense layouts."
+token_bindings:
+  background: "chip.bg.*"
+  text: "chip.text.*"
+  border: "chip.border.*"
+  radius: "chip.radius"
+  height: "chip.height.*"
+  padding: "chip.padding.*"
+implementation_mapping:
+  - "Component: Chip"
+  - "Props: selected, onRemove, size, icon"
+evaluation_checklist:
+  - "Selected state is clearly communicated."
+  - "Remove action is easy to target."
+context_notes:
+  - "Use status variants sparingly to avoid visual noise."

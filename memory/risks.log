@@ -207,3 +207,19 @@
 - Severity:
 - Risk level:
 - Mitigation:
+
+## 2026-04-04 12:43:41 +1100
+- Command: implement-feature
+- Title: Add structured primitive system
+- Risk: New primitive system introduces many artifacts without automated validation.
+- Severity: low
+- Risk level: low
+- Mitigation: Provide schema, manifest, and index; update KB index; recommend adding schema validation tests in follow-up.
+
+## 2026-04-04 13:17:54 +1100
+- Command: implement-feature
+- Title: Schema validation, manifest lint, component expansion
+- Risk: The lightweight YAML parser may fail if primitives adopt complex YAML constructs (multi-line blocks, nested maps).
+- Severity: low
+- Risk level: low
+- Mitigation: Keep primitive specs in the simple list/map format or replace the parser with a full YAML dependency if the schema evolves.

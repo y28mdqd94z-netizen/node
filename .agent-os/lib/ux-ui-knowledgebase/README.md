@@ -5,6 +5,7 @@ This **knowledgebase** is organized as a modular collection of YAML and Markdown
 ## Structure
 
 This repository was generated from `design system.md` and follows the proposed folder structure.
+The `08_primitives/` layer adds a structured primitive system for design, UX, UI, and implementation mapping with its own manifest and index.
 
 ## Prioritization of Deliverables
 

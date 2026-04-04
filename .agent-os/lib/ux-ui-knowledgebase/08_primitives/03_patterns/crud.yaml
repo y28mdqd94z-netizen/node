@@ -1,0 +1,43 @@
+name: "CRUD Flows"
+id: "pattern.crud.core"
+layer: pattern
+category: crud
+intent: "Standardize create-read-update-delete workflows."
+problem_solved: "Ensures consistency and safety in data operations."
+when_to_use:
+  - "Admin or data management experiences."
+when_not_to_use:
+  - "Read-only experiences or simple content browsing."
+anatomy:
+  - "List view"
+  - "Detail view"
+  - "Create action"
+  - "Edit and delete actions"
+supported_components:
+  - "table"
+  - "button"
+  - "dialog"
+  - "sheet"
+variants:
+  - "inline-edit"
+  - "detail-edit"
+key_states:
+  - "created"
+  - "updated"
+  - "deleted"
+  - "error"
+responsive_adaptation:
+  - "Use list-detail on mobile."
+shell_compatibility:
+  - "list-management-shell"
+  - "portal-shell"
+anti_patterns:
+  - "Destructive actions without confirmation."
+  - "Edits without clear save feedback."
+evaluation_criteria:
+  - "Users can recover from accidental delete."
+implementation_notes:
+  - "Use optimistic updates with rollback for safety."
+context_notes:
+  - "Internal tools require bulk actions and audit trails."
+

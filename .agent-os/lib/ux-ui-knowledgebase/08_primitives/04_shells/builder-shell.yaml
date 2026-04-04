@@ -1,0 +1,52 @@
+name: "Builder Shell"
+id: "shell.builder_shell.core"
+layer: shell
+category: builder_shell
+intent: "Provide a canvas-first shell for build and edit workflows."
+problem_solved: "Supports complex creation with live preview."
+when_to_use:
+  - "Workflow builders, page builders, and editors."
+when_not_to_use:
+  - "Simple forms or list management."
+anatomy:
+  - "Canvas"
+  - "Property panel"
+  - "Toolbar"
+  - "Outline/layers"
+layout_regions:
+  - "toolbar"
+  - "canvas"
+  - "panel"
+navigation_model: "tool-based"
+compatible_patterns:
+  - "builder"
+  - "overlays"
+density_assumptions: "compact"
+responsive_collapse_logic:
+  - "Panels collapse into sheets on small screens."
+primary_use_cases:
+  - "Template editors"
+  - "Automation builders"
+states:
+  - "default"
+  - "dirty"
+behavior_rules:
+  - "Autosave with clear status."
+accessibility_requirements:
+  - "Keyboard access to canvas controls."
+responsive_behavior:
+  - "Reduce simultaneous panels on mobile."
+composition_rules:
+  - "Toolbar should group primary builder actions."
+dependencies:
+  - "toolbar"
+  - "sidebar"
+anti_patterns:
+  - "No clear save or publish state."
+implementation_mapping:
+  - "Layout: BuilderShell with docked panels"
+evaluation_checklist:
+  - "Users can locate core tools within 2 seconds."
+context_notes:
+  - "Internal tools often pair builder shell with data previews."
+

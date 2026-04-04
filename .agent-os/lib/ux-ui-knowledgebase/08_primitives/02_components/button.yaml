@@ -1,0 +1,64 @@
+name: "Button"
+id: "component.button.core"
+layer: component
+category: button
+intent: "Trigger primary or secondary actions with clear affordance."
+problem_solved: "Provides a consistent action control with predictable states."
+when_to_use:
+  - "Primary task completion and confirmations."
+  - "Secondary actions in toolbars and dialogs."
+when_not_to_use:
+  - "For navigation between pages (use links or tabs)."
+  - "For destructive actions without confirmation context."
+anatomy:
+  - "Container"
+  - "Label"
+  - "Optional icon"
+variants:
+  - "primary"
+  - "secondary"
+  - "tertiary"
+  - "destructive"
+  - "ghost"
+sizes:
+  - "sm"
+  - "md"
+  - "lg"
+states:
+  - "default"
+  - "hover"
+  - "active"
+  - "focus"
+  - "disabled"
+  - "loading"
+behavior_rules:
+  - "Primary button appears once per surface."
+  - "Loading state replaces label with spinner and locks action."
+accessibility_requirements:
+  - "Button label describes action outcome."
+  - "Focus ring visible and meets contrast requirements."
+responsive_behavior:
+  - "Stack buttons vertically on small screens when space is tight."
+composition_rules:
+  - "Use within toolbars, dialogs, cards, and forms."
+dependencies:
+  - "tokens.components.button"
+anti_patterns:
+  - "Multiple primary buttons in the same action group."
+  - "Icon-only primary button without label."
+token_bindings:
+  background: "button.bg.*"
+  text: "button.text.*"
+  border: "button.border.*"
+  radius: "button.radius"
+  height: "button.height.*"
+  padding: "button.padding.*"
+implementation_mapping:
+  - "Component: Button"
+  - "Props: variant, size, loading, iconStart, iconEnd"
+evaluation_checklist:
+  - "Primary action is visually dominant."
+  - "Button states are distinct and accessible."
+context_notes:
+  - "Admin tools favor a quieter secondary style for dense toolbars."
+

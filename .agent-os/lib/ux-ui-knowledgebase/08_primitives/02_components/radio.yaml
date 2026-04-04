@@ -1,0 +1,56 @@
+name: "Radio"
+id: "component.radio.core"
+layer: component
+category: radio
+intent: "Allow users to select a single option from a set."
+problem_solved: "Clarifies mutually exclusive choices with a familiar control."
+when_to_use:
+  - "Single selection from 2-7 options."
+  - "Choosing a default or primary setting."
+when_not_to_use:
+  - "Multi-select choices (use checkbox)."
+  - "Binary on/off toggles (use switch)."
+anatomy:
+  - "Outer circle"
+  - "Inner dot"
+  - "Label"
+  - "Helper text"
+variants:
+  - "default"
+sizes:
+  - "sm"
+  - "md"
+states:
+  - "unchecked"
+  - "checked"
+  - "focus"
+  - "disabled"
+  - "error"
+behavior_rules:
+  - "Selecting an option deselects the previous choice."
+  - "Labels are clickable to change selection."
+accessibility_requirements:
+  - "Use native input semantics and group with fieldset/legend."
+  - "Announce selection changes to assistive tech."
+responsive_behavior:
+  - "Stack radios vertically on narrow screens."
+composition_rules:
+  - "Group radios with a shared legend and helper text."
+dependencies:
+  - "tokens.components.radio"
+anti_patterns:
+  - "Using radios for long lists with many options."
+  - "Hiding labels and relying on icon-only radios."
+token_bindings:
+  background: "radio.bg.*"
+  border: "radio.border.*"
+  dot: "radio.dot.*"
+  size: "radio.size.*"
+implementation_mapping:
+  - "Component: Radio"
+  - "Props: checked, disabled, error, label, name"
+evaluation_checklist:
+  - "Checked state is clear at a glance."
+  - "Focus state meets contrast requirements."
+context_notes:
+  - "Prefer short, parallel option labels for clarity."

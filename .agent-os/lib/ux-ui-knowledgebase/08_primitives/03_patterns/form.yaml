@@ -1,0 +1,43 @@
+name: "Form Pattern"
+id: "pattern.form.core"
+layer: pattern
+category: form
+intent: "Collect structured data with clear validation and feedback."
+problem_solved: "Reduces errors and abandonment in data entry."
+when_to_use:
+  - "Account creation, settings, and data capture."
+when_not_to_use:
+  - "Single quick actions (use inline input)."
+anatomy:
+  - "Section headings"
+  - "Fields"
+  - "Helper text"
+  - "Primary action"
+supported_components:
+  - "input"
+  - "select"
+  - "combobox"
+  - "button"
+variants:
+  - "single-column"
+  - "multi-step"
+  - "inline"
+key_states:
+  - "valid"
+  - "invalid"
+  - "submitting"
+responsive_adaptation:
+  - "Single column on small screens."
+shell_compatibility:
+  - "portal-shell"
+  - "settings-shell"
+anti_patterns:
+  - "Multi-column forms on mobile."
+  - "Error messages that lack guidance."
+evaluation_criteria:
+  - "Errors are shown near fields with clear guidance."
+implementation_notes:
+  - "Validate on blur; summarise errors on submit."
+context_notes:
+  - "Admin forms may need inline bulk-edit controls."
+

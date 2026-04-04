@@ -1,0 +1,39 @@
+name: "List-Detail Views"
+id: "pattern.list_detail.core"
+layer: pattern
+category: list_detail
+intent: "Support scanning lists with quick access to item details."
+problem_solved: "Balances overview and detail without navigation churn."
+when_to_use:
+  - "Data sets where users need quick detail access."
+when_not_to_use:
+  - "Small lists with minimal details."
+anatomy:
+  - "List pane"
+  - "Detail pane"
+  - "Selection state"
+supported_components:
+  - "table"
+  - "card"
+  - "sheet"
+variants:
+  - "split-view"
+  - "detail-drawer"
+key_states:
+  - "selected"
+  - "empty"
+responsive_adaptation:
+  - "Detail pane becomes sheet on small screens."
+shell_compatibility:
+  - "list-management-shell"
+  - "dashboard-shell"
+anti_patterns:
+  - "List-detail without clear selection state."
+  - "Detail pane with no primary action."
+evaluation_criteria:
+  - "Users can move between items without losing context."
+implementation_notes:
+  - "Preserve selection state across reloads when possible."
+context_notes:
+  - "Internal tools use list-detail for records and tickets."
+

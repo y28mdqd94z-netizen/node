@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Primitive Spec",
+  "type": "object",
+  "required": [
+    "name",
+    "id",
+    "layer",
+    "category",
+    "intent",
+    "problem_solved",
+    "when_to_use",
+    "when_not_to_use",
+    "anatomy",
+    "anti_patterns"
+  ],
+  "anyOf": [
+    { "type": "object", "required": ["evaluation_checklist"] },
+    { "type": "object", "required": ["evaluation_criteria"] }
+  ],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z_]+\\.[a-z0-9_]+\\.[a-z0-9_]+$"
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "design_system",
+        "component",
+        "pattern",
+        "shell",
+        "state",
+        "accessibility",
+        "content"
+      ]
+    },
+    "category": { "type": "string", "minLength": 1 },
+    "intent": { "type": "string" },
+    "problem_solved": { "type": "string" },
+    "when_to_use": { "$ref": "#/definitions/stringList" },
+    "when_not_to_use": { "$ref": "#/definitions/stringList" },
+    "anatomy": { "$ref": "#/definitions/stringList" },
+    "variants": { "$ref": "#/definitions/stringList" },
+    "sizes": { "$ref": "#/definitions/stringList" },
+    "states": { "$ref": "#/definitions/stringList" },
+    "behavior_rules": { "$ref": "#/definitions/stringList" },
+    "accessibility_requirements": { "$ref": "#/definitions/stringList" },
+    "responsive_behavior": { "$ref": "#/definitions/stringList" },
+    "composition_rules": { "$ref": "#/definitions/stringList" },
+    "dependencies": { "$ref": "#/definitions/stringList" },
+    "anti_patterns": { "$ref": "#/definitions/stringList" },
+    "token_bindings": { "$ref": "#/definitions/stringMap" },
+    "implementation_mapping": { "$ref": "#/definitions/stringList" },
+    "implementation_notes": { "$ref": "#/definitions/stringList" },
+    "evaluation_checklist": { "$ref": "#/definitions/stringList" },
+    "evaluation_criteria": { "$ref": "#/definitions/stringList" },
+    "supported_components": { "$ref": "#/definitions/stringList" },
+    "key_states": { "$ref": "#/definitions/stringList" },
+    "responsive_adaptation": { "$ref": "#/definitions/stringList" },
+    "responsive_collapse_logic": { "$ref": "#/definitions/stringList" },
+    "shell_compatibility": { "$ref": "#/definitions/stringList" },
+    "compatible_patterns": { "$ref": "#/definitions/stringList" },
+    "layout_regions": { "$ref": "#/definitions/stringList" },
+    "primary_use_cases": { "$ref": "#/definitions/stringList" },
+    "context_notes": { "$ref": "#/definitions/stringList" },
+    "navigation_model": { "type": "string" },
+    "density_assumptions": { "type": "string" },
+    "data_constraints": { "$ref": "#/definitions/stringList" },
+    "analytics_events": { "$ref": "#/definitions/stringList" },
+    "guardrails": { "$ref": "#/definitions/stringList" }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "stringList": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "stringMap": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+name: "Settings Shell"
+id: "shell.settings_shell.core"
+layer: shell
+category: settings_shell
+intent: "Provide a structured shell for settings and configuration."
+problem_solved: "Keeps settings discoverable and consistent."
+when_to_use:
+  - "Account, workspace, and admin settings."
+when_not_to_use:
+  - "Task-focused pages without configuration."
+anatomy:
+  - "Settings nav"
+  - "Section content"
+  - "Save bar"
+layout_regions:
+  - "nav"
+  - "content"
+  - "actions"
+navigation_model: "sidebar or tabs"
+compatible_patterns:
+  - "settings-admin"
+  - "form"
+density_assumptions: "default"
+responsive_collapse_logic:
+  - "Nav becomes accordion on small screens."
+primary_use_cases:
+  - "Account settings"
+  - "Admin configuration"
+states:
+  - "default"
+  - "dirty"
+behavior_rules:
+  - "Persist unsaved changes warnings."
+accessibility_requirements:
+  - "Headings and section landmarks present."
+responsive_behavior:
+  - "Single-column layout with sticky save action."
+composition_rules:
+  - "Group related settings into sections."
+dependencies:
+  - "tabs"
+  - "input"
+anti_patterns:
+  - "Settings with no grouping or structure."
+implementation_mapping:
+  - "Layout: SettingsShell with sectioned forms"
+evaluation_checklist:
+  - "Users can find a setting within two clicks."
+context_notes:
+  - "Admin settings require role-based access controls."
+

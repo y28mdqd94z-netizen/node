@@ -1,0 +1,50 @@
+name: "Color"
+id: "design_system.color.core"
+layer: design_system
+category: color
+intent: "Provide neutral-first palettes with a single accent for action and status."
+problem_solved: "Unstructured color usage reduces clarity and accessibility."
+when_to_use:
+  - "All surfaces, text, borders, and actions."
+when_not_to_use:
+  - "Do not introduce multiple saturated accents on one screen."
+anatomy:
+  - "Neutral scale"
+  - "Accent scale"
+  - "Status colors"
+variants:
+  - "light"
+  - "dark (future theme)"
+states:
+  - "default"
+  - "hover"
+  - "active"
+  - "disabled"
+behavior_rules:
+  - "Use accent only for primary actions and active states."
+  - "Reserve status colors for feedback and alerts."
+accessibility_requirements:
+  - "Text contrast >= 4.5:1 for normal text."
+  - "Do not rely on color alone to convey meaning."
+responsive_behavior:
+  - "Maintain contrast on small screens; avoid low-contrast overlays."
+composition_rules:
+  - "Color tokens drive component tokens, not the reverse."
+dependencies:
+  - "tokens.base.color"
+anti_patterns:
+  - "Decorative color usage that competes with hierarchy."
+token_bindings:
+  text: "color.text.*"
+  background: "color.bg.*"
+  border: "color.border.*"
+  action: "color.action.*"
+implementation_mapping:
+  - "Map base colors to semantic tokens."
+  - "Use semantic tokens in component styles."
+evaluation_checklist:
+  - "Primary actions use the accent color."
+  - "Status colors are not used for decoration."
+context_notes:
+  - "B2B SaaS and admin tools favor lower saturation backgrounds."
+

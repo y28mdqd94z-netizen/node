@@ -1,0 +1,51 @@
+name: "Dashboard Shell"
+id: "shell.dashboard_shell.core"
+layer: shell
+category: dashboard_shell
+intent: "Optimize layout for KPI overview and operational views."
+problem_solved: "Balances navigation with dense metric content."
+when_to_use:
+  - "Analytics and operational dashboards."
+when_not_to_use:
+  - "Content-heavy reading experiences."
+anatomy:
+  - "Header"
+  - "Sidebar or top nav"
+  - "Dashboard grid"
+layout_regions:
+  - "header"
+  - "nav"
+  - "content"
+navigation_model: "sidebar or top nav"
+compatible_patterns:
+  - "dashboard"
+  - "data-heavy"
+  - "search-filtering"
+density_assumptions: "compact"
+responsive_collapse_logic:
+  - "Collapse nav below md; stack grid on small screens."
+primary_use_cases:
+  - "Operational metrics"
+  - "Team dashboards"
+states:
+  - "default"
+behavior_rules:
+  - "Keep KPI row above the fold."
+accessibility_requirements:
+  - "Charts require text alternatives."
+responsive_behavior:
+  - "Stack widgets and prioritize top metrics."
+composition_rules:
+  - "Limit to one primary chart per view."
+dependencies:
+  - "header"
+  - "sidebar"
+anti_patterns:
+  - "Too many widgets without hierarchy."
+implementation_mapping:
+  - "Layout: DashboardGrid with responsive columns"
+evaluation_checklist:
+  - "Top metrics visible without scrolling on desktop."
+context_notes:
+  - "Internal tools may add compact density and keyboard shortcuts."
+

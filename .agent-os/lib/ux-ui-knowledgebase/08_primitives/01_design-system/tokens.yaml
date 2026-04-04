@@ -1,0 +1,47 @@
+name: "Tokens"
+id: "design_system.tokens.core"
+layer: design_system
+category: tokens
+intent: "Define the token architecture and governance."
+problem_solved: "Unstructured tokens lead to inconsistent implementation."
+when_to_use:
+  - "All design and implementation decisions involving values."
+when_not_to_use:
+  - "Do not hard-code values when tokens exist."
+anatomy:
+  - "Base tokens"
+  - "Semantic tokens"
+  - "Component tokens"
+variants:
+  - "theme"
+  - "brand"
+states:
+  - "n/a"
+behavior_rules:
+  - "Semantic tokens reference base tokens."
+  - "Component tokens reference semantic tokens."
+accessibility_requirements:
+  - "Token updates must preserve contrast and target sizes."
+responsive_behavior:
+  - "Tokens support breakpoint-based overrides for spacing and typography."
+composition_rules:
+  - "All components bind to component tokens or semantic tokens."
+dependencies:
+  - ".agent-os/tokens/base.json"
+  - ".agent-os/tokens/semantic.json"
+  - ".agent-os/tokens/components.json"
+anti_patterns:
+  - "Directly using base tokens inside components."
+token_bindings:
+  base: "tokens.base"
+  semantic: "tokens.semantic"
+  component: "tokens.components"
+implementation_mapping:
+  - "Generate CSS variables from token files."
+  - "Expose tokens to design tooling and code."
+evaluation_checklist:
+  - "All component styles reference semantic or component tokens."
+  - "Token changes include a change note."
+context_notes:
+  - "White-label products should override semantic tokens first."
+

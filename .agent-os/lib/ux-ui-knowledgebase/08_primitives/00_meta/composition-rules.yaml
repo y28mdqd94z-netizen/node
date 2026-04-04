@@ -1,0 +1,23 @@
+composition_rules:
+  hierarchy:
+    - "Shells contain patterns; patterns contain components; components bind to tokens."
+    - "State primitives apply across layers and must be defined before composition."
+    - "Accessibility primitives override visual preferences."
+
+  layout:
+    - "One primary pattern per screen; secondary patterns are subordinate."
+    - "Avoid nesting more than two interactive containers (e.g., card within card)."
+    - "Prefer list-detail over grid when detail actions exceed 3 per item."
+
+  interaction:
+    - "Do not mix modal dialog and sheet on the same flow step."
+    - "Use inline validation for forms; reserve banners for system-level errors."
+    - "Provide a single primary action per surface."
+
+  data:
+    - "Use table when column comparisons are primary; use list when scanning is primary."
+    - "Paginate by default for > 50 rows unless virtualized."
+
+  override_rules:
+    - "Any deviation from shell default requires a documented reason and updated evaluation checklist."
+

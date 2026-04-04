@@ -1,0 +1,38 @@
+name: "Radius"
+id: "design_system.radius.core"
+layer: design_system
+category: radius
+intent: "Provide consistent corner treatments across surfaces and controls."
+problem_solved: "Inconsistent radius values create visual dissonance."
+when_to_use:
+  - "All surfaces, cards, inputs, and buttons."
+when_not_to_use:
+  - "Avoid mixing sharp and highly rounded corners in the same surface."
+anatomy:
+  - "Radius scale"
+variants:
+  - "none"
+  - "subtle"
+  - "rounded"
+  - "pill"
+states:
+  - "n/a"
+behavior_rules:
+  - "Use smaller radius for dense data surfaces."
+accessibility_requirements:
+  - "Radius should not reduce touch target size."
+responsive_behavior:
+  - "Maintain radius across breakpoints for recognizability."
+composition_rules:
+  - "Radius tokens apply to components and containers."
+dependencies:
+  - "tokens.base.radius"
+anti_patterns:
+  - "Multiple radius styles within a single component."
+token_bindings:
+  radius: "radius.*"
+implementation_mapping:
+  - "Map to CSS variables and use in component styles."
+evaluation_checklist:
+  - "Radius use aligns with density and hierarchy."
+

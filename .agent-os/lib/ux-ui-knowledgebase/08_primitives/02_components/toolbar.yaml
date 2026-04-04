@@ -1,0 +1,48 @@
+name: "Toolbar"
+id: "component.toolbar.core"
+layer: component
+category: toolbar
+intent: "Group contextual actions for a surface or view."
+problem_solved: "Provides a predictable location for related actions."
+when_to_use:
+  - "Table actions, editors, and dashboards."
+when_not_to_use:
+  - "When actions are unrelated or exceed 7 items."
+anatomy:
+  - "Action group"
+  - "Optional filters"
+  - "Overflow menu"
+variants:
+  - "compact"
+  - "full"
+sizes:
+  - "sm"
+  - "md"
+states:
+  - "default"
+  - "disabled"
+behavior_rules:
+  - "Group related actions; overflow low-priority actions."
+accessibility_requirements:
+  - "Logical tab order across actions."
+responsive_behavior:
+  - "Use overflow menu on small screens."
+composition_rules:
+  - "Pairs with table, list, and editor surfaces."
+dependencies:
+  - "tokens.components.toolbar"
+anti_patterns:
+  - "Toolbar used for global navigation."
+  - "Too many primary buttons in one toolbar."
+token_bindings:
+  background: "toolbar.bg.*"
+  border: "toolbar.border.*"
+  gap: "toolbar.gap"
+implementation_mapping:
+  - "Component: Toolbar"
+  - "Props: actions, overflow, density"
+evaluation_checklist:
+  - "Toolbar actions are scannable and grouped."
+context_notes:
+  - "Builder tools use toolbars for canvas actions."
+

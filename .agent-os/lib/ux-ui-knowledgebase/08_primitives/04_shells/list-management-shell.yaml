@@ -1,0 +1,53 @@
+name: "List Management Shell"
+id: "shell.list_management_shell.core"
+layer: shell
+category: list_management_shell
+intent: "Support record management with list-first layouts."
+problem_solved: "Optimizes for scanning, filtering, and bulk actions."
+when_to_use:
+  - "CRM, ticketing, and inventory management."
+when_not_to_use:
+  - "Single-record workflows."
+anatomy:
+  - "Header"
+  - "Filters toolbar"
+  - "List or table"
+  - "Detail pane (optional)"
+layout_regions:
+  - "header"
+  - "filters"
+  - "content"
+  - "detail"
+navigation_model: "sidebar or top nav"
+compatible_patterns:
+  - "list-detail"
+  - "data-heavy"
+  - "crud"
+density_assumptions: "compact"
+responsive_collapse_logic:
+  - "Detail pane becomes sheet on mobile."
+primary_use_cases:
+  - "Admin lists"
+  - "Operations queues"
+states:
+  - "default"
+behavior_rules:
+  - "Filters remain visible when scrolling."
+accessibility_requirements:
+  - "Keyboard navigation for list rows."
+responsive_behavior:
+  - "Switch to list-detail stacked on small screens."
+composition_rules:
+  - "Pair with pagination and bulk actions."
+dependencies:
+  - "table"
+  - "toolbar"
+anti_patterns:
+  - "Hiding filters for data-heavy lists."
+implementation_mapping:
+  - "Layout: ListManagementShell with sticky filter bar"
+evaluation_checklist:
+  - "Users can filter and act without losing context."
+context_notes:
+  - "Internal tools often use list-detail with side sheet."
+

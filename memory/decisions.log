@@ -155,3 +155,15 @@
 - Title: Upgrade Agent OS engineering+design layers
 - Decision:
 - Rationale:
+
+## 2026-04-04 12:43:41 +1100
+- Command: implement-feature
+- Title: Add structured primitive system
+- Decision: Introduce a dedicated primitive system under the UX/UI knowledgebase with meta rules, design-system primitives, components, patterns, shells, and agent guides; expand token files to include base, semantic, component, and alias layers.
+- Rationale: Keeps primitives modular and retrieval-friendly while aligning tokens and implementation mapping with Agent OS conventions.
+
+## 2026-04-04 13:17:54 +1100
+- Command: implement-feature
+- Title: Schema validation, manifest lint, component expansion
+- Decision: Add JSON schema definitions and a lightweight validator for primitive specs and token files, add freshness checks for primitive manifests/index and KB index, and expand component primitives plus component tokens for menus, breadcrumbs, chips, and core form controls.
+- Rationale: Provides enforceable structure for primitives/tokens, prevents stale metadata, and fills component coverage gaps aligned to navigation and form patterns.

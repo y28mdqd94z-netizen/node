@@ -3,27 +3,113 @@
     "text": {
       "primary": "{color.neutral.900}",
       "secondary": "{color.neutral.600}",
-      "muted": "{color.neutral.500}"
+      "muted": "{color.neutral.500}",
+      "inverse": "{color.neutral.0}"
     },
     "bg": {
       "canvas": "{color.neutral.0}",
       "surface": "{color.neutral.50}",
-      "muted": "{color.neutral.100}"
+      "muted": "{color.neutral.100}",
+      "raised": "{color.neutral.0}"
     },
     "border": {
       "default": "{color.neutral.200}",
-      "strong": "{color.neutral.300}"
+      "strong": "{color.neutral.300}",
+      "focus": "{color.accent.500}"
     },
     "action": {
       "primary": "{color.accent.500}",
       "primary_hover": "{color.accent.600}",
       "primary_pressed": "{color.accent.700}",
-      "primary_text": "{color.neutral.0}"
+      "primary_text": "{color.neutral.0}",
+      "secondary": "{color.neutral.800}",
+      "secondary_text": "{color.neutral.900}"
     },
     "status": {
       "success": "{color.semantic.success}",
       "warning": "{color.semantic.warning}",
-      "danger": "{color.semantic.danger}"
+      "danger": "{color.semantic.danger}",
+      "info": "{color.semantic.info}"
+    },
+    "icon": {
+      "default": "{color.neutral.700}",
+      "muted": "{color.neutral.500}",
+      "inverse": "{color.neutral.0}"
+    },
+    "overlay": {
+      "scrim": "rgba(15, 14, 12, 0.45)"
+    }
+  },
+  "space": {
+    "component": {
+      "xs": "{space.4}",
+      "sm": "{space.8}",
+      "md": "{space.12}",
+      "lg": "{space.16}",
+      "xl": "{space.24}"
+    },
+    "layout": {
+      "gutter": "{space.24}",
+      "section": "{space.32}",
+      "section_lg": "{space.48}"
+    },
+    "stack": {
+      "sm": "{space.8}",
+      "md": "{space.16}",
+      "lg": "{space.24}"
+    }
+  },
+  "radius": {
+    "sm": "{radius.4}",
+    "md": "{radius.8}",
+    "lg": "{radius.12}",
+    "pill": "{radius.999}"
+  },
+  "elevation": {
+    "surface": "{elevation.1}",
+    "raised": "{elevation.2}",
+    "overlay": "{elevation.3}",
+    "modal": "{elevation.4}"
+  },
+  "font": {
+    "family": {
+      "primary": "{font.family.primary}",
+      "mono": "{font.family.mono}"
+    },
+    "size": {
+      "caption": "{font.size.12}",
+      "body_sm": "{font.size.14}",
+      "body": "{font.size.16}",
+      "body_lg": "{font.size.18}",
+      "title_sm": "{font.size.20}",
+      "title": "{font.size.24}",
+      "title_lg": "{font.size.28}"
+    },
+    "line_height": {
+      "caption": "{font.line_height.16}",
+      "body_sm": "{font.line_height.20}",
+      "body": "{font.line_height.24}",
+      "body_lg": "{font.line_height.26}",
+      "title_sm": "{font.line_height.28}",
+      "title": "{font.line_height.32}",
+      "title_lg": "{font.line_height.36}"
+    },
+    "weight": {
+      "regular": "{font.weight.400}",
+      "medium": "{font.weight.500}",
+      "semibold": "{font.weight.600}"
+    }
+  },
+  "motion": {
+    "duration": {
+      "fast": "{motion.duration.fast}",
+      "base": "{motion.duration.base}",
+      "slow": "{motion.duration.slow}"
+    },
+    "easing": {
+      "standard": "{motion.easing.standard}",
+      "emphasized": "{motion.easing.emphasized}",
+      "linear": "{motion.easing.linear}"
     }
   }
 }

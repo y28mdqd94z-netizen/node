@@ -1,0 +1,49 @@
+name: "Pagination"
+id: "component.pagination.core"
+layer: component
+category: pagination
+intent: "Navigate large data sets in predictable chunks."
+problem_solved: "Allows users to control and understand data scope."
+when_to_use:
+  - "Tables or lists with more than 50 items."
+when_not_to_use:
+  - "Infinite scroll experiences or small lists."
+anatomy:
+  - "Page controls"
+  - "Next/previous"
+  - "Page size selector"
+variants:
+  - "simple"
+  - "full"
+  - "compact"
+sizes:
+  - "sm"
+  - "md"
+states:
+  - "default"
+  - "disabled"
+behavior_rules:
+  - "Persist user page size preference."
+  - "Provide total item count when available."
+accessibility_requirements:
+  - "Announce current page and total pages."
+responsive_behavior:
+  - "Use simple next/previous on small screens."
+composition_rules:
+  - "Place near table or list footer."
+dependencies:
+  - "tokens.components.pagination"
+anti_patterns:
+  - "Paginating small lists."
+  - "Hiding current page context."
+token_bindings:
+  text: "pagination.text.*"
+  control: "pagination.control.*"
+implementation_mapping:
+  - "Component: Pagination"
+  - "Props: page, pageSize, total, onPageChange"
+evaluation_checklist:
+  - "User can predict where they are in the data set."
+context_notes:
+  - "Admin portals use pagination with table bulk actions."
+

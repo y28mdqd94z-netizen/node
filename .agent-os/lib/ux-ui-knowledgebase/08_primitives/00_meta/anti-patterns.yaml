@@ -1,0 +1,8 @@
+anti_patterns:
+  - "Card walls with inconsistent padding and no hierarchy."
+  - "Multiple primary actions competing on a single surface."
+  - "Hidden navigation without visible affordance or labels."
+  - "Overloaded toolbars with more than 7 primary controls."
+  - "Modal stacking (dialog over dialog)."
+  - "Mixing dense tables with large-form layouts in one view."
+

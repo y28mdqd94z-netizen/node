@@ -1,0 +1,43 @@
+name: "Overlays Pattern"
+id: "pattern.overlays.core"
+layer: pattern
+category: overlays
+intent: "Surface secondary tasks while keeping context visible."
+problem_solved: "Allows short tasks without full navigation changes."
+when_to_use:
+  - "Secondary tasks, details, and quick edits."
+when_not_to_use:
+  - "Primary workflows that require full focus."
+anatomy:
+  - "Trigger"
+  - "Overlay surface"
+  - "Dismiss control"
+  - "Primary action"
+supported_components:
+  - "dialog"
+  - "sheet"
+  - "button"
+variants:
+  - "modal"
+  - "side-sheet"
+  - "bottom-sheet"
+key_states:
+  - "open"
+  - "loading"
+  - "error"
+responsive_adaptation:
+  - "Prefer bottom sheets on mobile."
+shell_compatibility:
+  - "portal-shell"
+  - "dashboard-shell"
+  - "builder-shell"
+anti_patterns:
+  - "Overlay inside overlay."
+  - "Overlays for long workflows."
+evaluation_criteria:
+  - "User can complete task without losing context."
+implementation_notes:
+  - "Ensure focus trap and scroll lock."
+context_notes:
+  - "Internal tools use side-sheets for quick edits."
+

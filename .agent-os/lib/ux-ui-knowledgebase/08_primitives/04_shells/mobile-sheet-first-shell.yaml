@@ -1,0 +1,52 @@
+name: "Mobile Sheet-first Shell"
+id: "shell.mobile_sheet_first_shell.core"
+layer: shell
+category: mobile_sheet_first_shell
+intent: "Optimize mobile workflows around bottom sheets."
+problem_solved: "Improves mobile task flow without navigation churn."
+when_to_use:
+  - "Mobile-first utilities and quick actions."
+when_not_to_use:
+  - "Desktop-first admin apps."
+anatomy:
+  - "Base screen"
+  - "Bottom sheet"
+  - "Sticky actions"
+layout_regions:
+  - "content"
+  - "sheet"
+  - "actions"
+navigation_model: "bottom or drawer"
+compatible_patterns:
+  - "overlays"
+  - "form"
+  - "onboarding"
+density_assumptions: "comfortable"
+responsive_collapse_logic:
+  - "Expand sheets to full height for complex tasks."
+primary_use_cases:
+  - "Mobile utilities"
+  - "Field workflows"
+states:
+  - "default"
+  - "open"
+behavior_rules:
+  - "Keep primary actions within thumb reach."
+accessibility_requirements:
+  - "Avoid gestures without button alternatives."
+responsive_behavior:
+  - "On md+, revert to side sheet or page."
+composition_rules:
+  - "Do not stack multiple sheets."
+dependencies:
+  - "sheet"
+  - "button"
+anti_patterns:
+  - "Full-screen modal over sheet."
+implementation_mapping:
+  - "Layout: MobileSheetShell with bottom sheet controller"
+evaluation_checklist:
+  - "Primary actions remain accessible while scrolling."
+context_notes:
+  - "Mobile-first field apps use sheet-first for actions."
+

@@ -1,0 +1,49 @@
+name: "Typography"
+id: "design_system.typography.core"
+layer: design_system
+category: typography
+intent: "Establish a readable, calm typographic hierarchy."
+problem_solved: "Inconsistent typography reduces scanning and clarity."
+when_to_use:
+  - "All text styles and hierarchy decisions."
+when_not_to_use:
+  - "Do not introduce new sizes without aligning to the scale."
+anatomy:
+  - "Font families"
+  - "Type scale"
+  - "Text styles"
+variants:
+  - "display"
+  - "body"
+  - "data"
+sizes:
+  - "xs, sm, base, lg, xl, 2xl, 3xl"
+states:
+  - "n/a"
+behavior_rules:
+  - "Use weight and spacing for hierarchy before new sizes."
+  - "Limit to two font families."
+accessibility_requirements:
+  - "Respect user zoom and dynamic type when possible."
+responsive_behavior:
+  - "Increase base size for small screens if readability drops."
+composition_rules:
+  - "Typography tokens bind to headings, body, labels, and data."
+dependencies:
+  - "tokens.base.font"
+anti_patterns:
+  - "Overuse of all-caps or excessive weights."
+token_bindings:
+  family: "font.family.*"
+  size: "font.size.*"
+  line_height: "font.line_height.*"
+  weight: "font.weight.*"
+implementation_mapping:
+  - "Map styles to CSS classes or design tokens."
+  - "Use semantic text styles in components."
+evaluation_checklist:
+  - "Heading levels are consistent across screens."
+  - "Body text remains legible at sm breakpoint."
+context_notes:
+  - "Data-heavy admin views favor slightly tighter line heights."
+

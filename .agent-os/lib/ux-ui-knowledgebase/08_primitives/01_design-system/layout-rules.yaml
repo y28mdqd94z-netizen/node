@@ -1,0 +1,41 @@
+name: "Layout Rules"
+id: "design_system.layout.rules"
+layer: design_system
+category: layout
+intent: "Define grid, density, and layout conventions for structured UIs."
+problem_solved: "Inconsistent layout reduces scanability and flow."
+when_to_use:
+  - "All screen and shell layouts."
+when_not_to_use:
+  - "Avoid ad hoc grids without aligning to the system."
+anatomy:
+  - "Grid columns"
+  - "Gutters"
+  - "Content max widths"
+variants:
+  - "12-column desktop"
+  - "6-column tablet"
+  - "4-column mobile"
+states:
+  - "n/a"
+behavior_rules:
+  - "Use consistent gutters per breakpoint."
+  - "Use list layouts for content-dense pages."
+accessibility_requirements:
+  - "Maintain readable line lengths (60-80 chars)."
+responsive_behavior:
+  - "Reduce columns and collapse sidebars on small screens."
+composition_rules:
+  - "Shell layout regions must align to grid."
+dependencies:
+  - "tokens.base.layout"
+anti_patterns:
+  - "Multi-column forms on mobile."
+token_bindings:
+  grid: "layout.grid.*"
+  gutter: "layout.gutter.*"
+implementation_mapping:
+  - "Map layout tokens to CSS grid or flex utilities."
+evaluation_checklist:
+  - "Layout maintains consistent gutters and alignment."
+

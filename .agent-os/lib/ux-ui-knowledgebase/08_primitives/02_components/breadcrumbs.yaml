@@ -1,0 +1,56 @@
+name: "Breadcrumbs"
+id: "component.breadcrumbs.core"
+layer: component
+category: breadcrumbs
+intent: "Show position within a hierarchy and enable quick backtracking."
+problem_solved: "Provides orientation in deep information structures."
+when_to_use:
+  - "Multi-level navigation paths with 3+ levels."
+  - "Detail views nested within parent collections."
+when_not_to_use:
+  - "Shallow hierarchies (one or two levels)."
+  - "Primary navigation between top-level sections."
+anatomy:
+  - "Trail container"
+  - "Breadcrumb item"
+  - "Separator"
+  - "Current item"
+variants:
+  - "standard"
+  - "with-icons"
+  - "compact"
+sizes:
+  - "sm"
+  - "md"
+states:
+  - "default"
+  - "hover"
+  - "current"
+  - "disabled"
+behavior_rules:
+  - "Only non-current crumbs are interactive."
+  - "Collapse middle crumbs into an overflow menu when space is limited."
+accessibility_requirements:
+  - "Use nav with aria-label=Breadcrumb."
+  - "Render as an ordered list for screen readers."
+responsive_behavior:
+  - "Truncate long labels and use overflow on small screens."
+composition_rules:
+  - "Place below page titles or within section headers."
+dependencies:
+  - "tokens.components.breadcrumbs"
+anti_patterns:
+  - "Using breadcrumbs as the primary navigation."
+  - "Including the current page as a link."
+token_bindings:
+  text: "breadcrumbs.text.*"
+  separator: "breadcrumbs.separator.*"
+  spacing: "breadcrumbs.spacing"
+implementation_mapping:
+  - "Component: Breadcrumbs"
+  - "Props: items, maxItems, onNavigate"
+evaluation_checklist:
+  - "Current location is clearly indicated."
+  - "Overflow behavior remains understandable."
+context_notes:
+  - "Admin tools may prefer compact breadcrumbs to save vertical space."

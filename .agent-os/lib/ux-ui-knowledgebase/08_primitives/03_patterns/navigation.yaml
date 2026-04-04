@@ -1,0 +1,47 @@
+name: "Navigation Pattern"
+id: "pattern.navigation.core"
+layer: pattern
+category: navigation
+intent: "Help users move between primary sections with minimal effort."
+problem_solved: "Reduces navigation friction in multi-section products."
+when_to_use:
+  - "Apps with more than 3 primary sections."
+when_not_to_use:
+  - "Single-purpose tools with one core task."
+anatomy:
+  - "Primary navigation"
+  - "Secondary navigation"
+  - "Breadcrumbs"
+  - "Active state"
+supported_components:
+  - "sidebar"
+  - "header"
+  - "tabs"
+  - "button"
+variants:
+  - "sidebar"
+  - "top-nav"
+  - "bottom-nav"
+  - "hybrid"
+key_states:
+  - "default"
+  - "active"
+  - "collapsed"
+responsive_adaptation:
+  - "Collapse sidebar to drawer below md."
+  - "Use bottom nav for 3-5 primary sections on mobile."
+shell_compatibility:
+  - "portal-shell"
+  - "dashboard-shell"
+  - "settings-shell"
+anti_patterns:
+  - "Hidden navigation without affordance."
+  - "Too many primary sections without grouping."
+evaluation_criteria:
+  - "Users reach primary tasks within two clicks."
+  - "Active location is visible."
+implementation_notes:
+  - "Persist navigation state per user where appropriate."
+context_notes:
+  - "Admin portals favor sidebar navigation with grouped sections."
+

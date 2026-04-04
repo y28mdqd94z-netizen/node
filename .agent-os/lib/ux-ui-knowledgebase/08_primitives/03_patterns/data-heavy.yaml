@@ -1,0 +1,42 @@
+name: "Data-heavy Layouts"
+id: "pattern.data_heavy.core"
+layer: pattern
+category: data_heavy
+intent: "Enable dense data exploration with clarity and control."
+problem_solved: "Prevents overwhelm in data-rich interfaces."
+when_to_use:
+  - "Analytics, reporting, and admin data management."
+when_not_to_use:
+  - "Simple content browsing."
+anatomy:
+  - "Filters and search"
+  - "Data table or grid"
+  - "Bulk actions"
+  - "Pagination"
+supported_components:
+  - "table"
+  - "toolbar"
+  - "pagination"
+  - "select"
+variants:
+  - "table-first"
+  - "split-view"
+key_states:
+  - "loading"
+  - "empty"
+  - "error"
+responsive_adaptation:
+  - "Use list-detail or card list on mobile."
+shell_compatibility:
+  - "dashboard-shell"
+  - "list-management-shell"
+anti_patterns:
+  - "No filtering on large data sets."
+  - "Dense tables on mobile without alternative view."
+evaluation_criteria:
+  - "Users can locate a record within 30 seconds."
+implementation_notes:
+  - "Virtualize rows when data > 200."
+context_notes:
+  - "Internal tools default to compact density and keyboard shortcuts."
+

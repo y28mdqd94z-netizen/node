@@ -1,0 +1,101 @@
+{
+  "name": "primitive-system",
+  "version": "0.1.0",
+  "generated_at": "2026-04-04T02:39:07.375Z",
+  "root": ".agent-os/lib/ux-ui-knowledgebase/08_primitives",
+  "taxonomy": "00_meta/taxonomy.yaml",
+  "schema": "00_meta/primitive-schema.yaml",
+  "index": "index.json",
+  "agent_guides": [
+    "../06_agent-application/pattern-selection-guide.md",
+    "../06_agent-application/component-selection-guide.md",
+    "../06_agent-application/shell-selection-guide.md",
+    "../06_agent-application/primitive-composition-recipes.md",
+    "../06_agent-application/implementation-mapping.md",
+    "../06_agent-application/evaluation-checklists.md"
+  ],
+  "meta": [
+    "00_meta/accessibility-rules.yaml",
+    "00_meta/anti-patterns.yaml",
+    "00_meta/composition-rules.yaml",
+    "00_meta/content-rules.yaml",
+    "00_meta/evaluation-rules.yaml",
+    "00_meta/implementation-mapping-rules.yaml",
+    "00_meta/primitive-schema.yaml",
+    "00_meta/responsive-rules.yaml",
+    "00_meta/selection-rules.yaml",
+    "00_meta/state-model.yaml",
+    "00_meta/taxonomy.yaml"
+  ],
+  "design_system": [
+    "01_design-system/color.yaml",
+    "01_design-system/elevation.yaml",
+    "01_design-system/iconography.yaml",
+    "01_design-system/layout-rules.yaml",
+    "01_design-system/motion.yaml",
+    "01_design-system/radius.yaml",
+    "01_design-system/responsive-breakpoints.yaml",
+    "01_design-system/spacing.yaml",
+    "01_design-system/token-extension-guidance.md",
+    "01_design-system/tokens.yaml",
+    "01_design-system/typography.yaml"
+  ],
+  "components": [
+    "02_components/alert.yaml",
+    "02_components/breadcrumbs.yaml",
+    "02_components/button.yaml",
+    "02_components/card.yaml",
+    "02_components/checkbox.yaml",
+    "02_components/chip.yaml",
+    "02_components/combobox.yaml",
+    "02_components/dialog.yaml",
+    "02_components/empty-state.yaml",
+    "02_components/header.yaml",
+    "02_components/input.yaml",
+    "02_components/menu.yaml",
+    "02_components/pagination.yaml",
+    "02_components/radio.yaml",
+    "02_components/select.yaml",
+    "02_components/sheet.yaml",
+    "02_components/sidebar.yaml",
+    "02_components/switch.yaml",
+    "02_components/table.yaml",
+    "02_components/tabs.yaml",
+    "02_components/textarea.yaml",
+    "02_components/toast.yaml",
+    "02_components/toolbar.yaml"
+  ],
+  "patterns": [
+    "03_patterns/builder.yaml",
+    "03_patterns/crud.yaml",
+    "03_patterns/dashboard.yaml",
+    "03_patterns/data-heavy.yaml",
+    "03_patterns/form.yaml",
+    "03_patterns/list-detail.yaml",
+    "03_patterns/navigation.yaml",
+    "03_patterns/onboarding.yaml",
+    "03_patterns/overlays.yaml",
+    "03_patterns/portal.yaml",
+    "03_patterns/search-filtering.yaml",
+    "03_patterns/settings-admin.yaml"
+  ],
+  "shells": [
+    "04_shells/analytics-shell.yaml",
+    "04_shells/builder-shell.yaml",
+    "04_shells/dashboard-shell.yaml",
+    "04_shells/focus-shell.yaml",
+    "04_shells/list-management-shell.yaml",
+    "04_shells/mobile-sheet-first-shell.yaml",
+    "04_shells/portal-shell.yaml",
+    "04_shells/settings-shell.yaml"
+  ],
+  "state": [
+    "05_state/state-primitives.yaml"
+  ],
+  "accessibility": [
+    "06_accessibility/accessibility-primitives.yaml"
+  ],
+  "content": [
+    "07_content/content-primitives.yaml"
+  ]
+}

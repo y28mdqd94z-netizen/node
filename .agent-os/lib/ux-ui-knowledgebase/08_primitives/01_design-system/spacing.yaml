@@ -1,0 +1,48 @@
+name: "Spacing"
+id: "design_system.spacing.core"
+layer: design_system
+category: spacing
+intent: "Create a predictable rhythm for layout and component spacing."
+problem_solved: "Inconsistent spacing leads to visual noise and weak hierarchy."
+when_to_use:
+  - "All layout and component spacing decisions."
+when_not_to_use:
+  - "Do not introduce one-off spacing values outside the scale."
+anatomy:
+  - "Base unit (4px)"
+  - "Spacing scale (2-128)"
+variants:
+  - "compact"
+  - "default"
+  - "comfortable"
+sizes:
+  - "2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 128"
+states:
+  - "n/a"
+behavior_rules:
+  - "Use 8-16px for intra-group spacing."
+  - "Use 24-32px for section spacing."
+  - "Align edges to a common grid to maintain rhythm."
+accessibility_requirements:
+  - "Increase spacing at small breakpoints to preserve touch targets."
+responsive_behavior:
+  - "Reduce gap count, not gap size, on small screens."
+composition_rules:
+  - "Spacing tokens apply before component overrides."
+dependencies:
+  - "tokens.base.space"
+anti_patterns:
+  - "Random padding values or uneven vertical rhythm."
+token_bindings:
+  base_scale: "space.*"
+  component_gaps: "space.component.*"
+implementation_mapping:
+  - "Map to CSS variables (e.g., --space-4)."
+  - "Use spacing tokens in layout utilities and component styles."
+evaluation_checklist:
+  - "All spacing values are from the scale."
+  - "Section spacing is visually distinct from intra-group spacing."
+context_notes:
+  - "Internal tools and admin portals default to compact spacing."
+  - "Consumer productivity flows use comfortable spacing for readability."
+

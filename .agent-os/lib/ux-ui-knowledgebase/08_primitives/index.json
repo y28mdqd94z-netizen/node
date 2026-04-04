@@ -1,0 +1,396 @@
+{
+  "entries": [
+    {
+      "path": "01_design-system/color.yaml",
+      "name": "Color",
+      "id": "design_system.color.core",
+      "layer": "design_system",
+      "category": "color"
+    },
+    {
+      "path": "01_design-system/elevation.yaml",
+      "name": "Elevation",
+      "id": "design_system.elevation.core",
+      "layer": "design_system",
+      "category": "elevation"
+    },
+    {
+      "path": "01_design-system/iconography.yaml",
+      "name": "Iconography",
+      "id": "design_system.iconography.core",
+      "layer": "design_system",
+      "category": "iconography"
+    },
+    {
+      "path": "01_design-system/layout-rules.yaml",
+      "name": "Layout Rules",
+      "id": "design_system.layout.rules",
+      "layer": "design_system",
+      "category": "layout"
+    },
+    {
+      "path": "01_design-system/motion.yaml",
+      "name": "Motion",
+      "id": "design_system.motion.core",
+      "layer": "design_system",
+      "category": "motion"
+    },
+    {
+      "path": "01_design-system/radius.yaml",
+      "name": "Radius",
+      "id": "design_system.radius.core",
+      "layer": "design_system",
+      "category": "radius"
+    },
+    {
+      "path": "01_design-system/responsive-breakpoints.yaml",
+      "name": "Responsive Breakpoints",
+      "id": "design_system.responsive.breakpoints",
+      "layer": "design_system",
+      "category": "responsive"
+    },
+    {
+      "path": "01_design-system/spacing.yaml",
+      "name": "Spacing",
+      "id": "design_system.spacing.core",
+      "layer": "design_system",
+      "category": "spacing"
+    },
+    {
+      "path": "01_design-system/tokens.yaml",
+      "name": "Tokens",
+      "id": "design_system.tokens.core",
+      "layer": "design_system",
+      "category": "tokens"
+    },
+    {
+      "path": "01_design-system/typography.yaml",
+      "name": "Typography",
+      "id": "design_system.typography.core",
+      "layer": "design_system",
+      "category": "typography"
+    },
+    {
+      "path": "02_components/alert.yaml",
+      "name": "Alert",
+      "id": "component.alert.core",
+      "layer": "component",
+      "category": "alert"
+    },
+    {
+      "path": "02_components/breadcrumbs.yaml",
+      "name": "Breadcrumbs",
+      "id": "component.breadcrumbs.core",
+      "layer": "component",
+      "category": "breadcrumbs"
+    },
+    {
+      "path": "02_components/button.yaml",
+      "name": "Button",
+      "id": "component.button.core",
+      "layer": "component",
+      "category": "button"
+    },
+    {
+      "path": "02_components/card.yaml",
+      "name": "Card",
+      "id": "component.card.core",
+      "layer": "component",
+      "category": "card"
+    },
+    {
+      "path": "02_components/checkbox.yaml",
+      "name": "Checkbox",
+      "id": "component.checkbox.core",
+      "layer": "component",
+      "category": "checkbox"
+    },
+    {
+      "path": "02_components/chip.yaml",
+      "name": "Chip",
+      "id": "component.chip.core",
+      "layer": "component",
+      "category": "chip"
+    },
+    {
+      "path": "02_components/combobox.yaml",
+      "name": "Combobox",
+      "id": "component.combobox.core",
+      "layer": "component",
+      "category": "combobox"
+    },
+    {
+      "path": "02_components/dialog.yaml",
+      "name": "Dialog",
+      "id": "component.dialog.core",
+      "layer": "component",
+      "category": "dialog"
+    },
+    {
+      "path": "02_components/empty-state.yaml",
+      "name": "Empty State",
+      "id": "component.empty_state.core",
+      "layer": "component",
+      "category": "empty_state"
+    },
+    {
+      "path": "02_components/header.yaml",
+      "name": "Header",
+      "id": "component.header.core",
+      "layer": "component",
+      "category": "header"
+    },
+    {
+      "path": "02_components/input.yaml",
+      "name": "Input",
+      "id": "component.input.core",
+      "layer": "component",
+      "category": "input"
+    },
+    {
+      "path": "02_components/menu.yaml",
+      "name": "Menu",
+      "id": "component.menu.core",
+      "layer": "component",
+      "category": "menu"
+    },
+    {
+      "path": "02_components/pagination.yaml",
+      "name": "Pagination",
+      "id": "component.pagination.core",
+      "layer": "component",
+      "category": "pagination"
+    },
+    {
+      "path": "02_components/radio.yaml",
+      "name": "Radio",
+      "id": "component.radio.core",
+      "layer": "component",
+      "category": "radio"
+    },
+    {
+      "path": "02_components/select.yaml",
+      "name": "Select",
+      "id": "component.select.core",
+      "layer": "component",
+      "category": "select"
+    },
+    {
+      "path": "02_components/sheet.yaml",
+      "name": "Sheet",
+      "id": "component.sheet.core",
+      "layer": "component",
+      "category": "sheet"
+    },
+    {
+      "path": "02_components/sidebar.yaml",
+      "name": "Sidebar",
+      "id": "component.sidebar.core",
+      "layer": "component",
+      "category": "sidebar"
+    },
+    {
+      "path": "02_components/switch.yaml",
+      "name": "Switch",
+      "id": "component.switch.core",
+      "layer": "component",
+      "category": "switch"
+    },
+    {
+      "path": "02_components/table.yaml",
+      "name": "Table",
+      "id": "component.table.core",
+      "layer": "component",
+      "category": "table"
+    },
+    {
+      "path": "02_components/tabs.yaml",
+      "name": "Tabs",
+      "id": "component.tabs.core",
+      "layer": "component",
+      "category": "tabs"
+    },
+    {
+      "path": "02_components/textarea.yaml",
+      "name": "Textarea",
+      "id": "component.textarea.core",
+      "layer": "component",
+      "category": "textarea"
+    },
+    {
+      "path": "02_components/toast.yaml",
+      "name": "Toast",
+      "id": "component.toast.core",
+      "layer": "component",
+      "category": "toast"
+    },
+    {
+      "path": "02_components/toolbar.yaml",
+      "name": "Toolbar",
+      "id": "component.toolbar.core",
+      "layer": "component",
+      "category": "toolbar"
+    },
+    {
+      "path": "03_patterns/builder.yaml",
+      "name": "Builder Pattern",
+      "id": "pattern.builder.core",
+      "layer": "pattern",
+      "category": "builder"
+    },
+    {
+      "path": "03_patterns/crud.yaml",
+      "name": "CRUD Flows",
+      "id": "pattern.crud.core",
+      "layer": "pattern",
+      "category": "crud"
+    },
+    {
+      "path": "03_patterns/dashboard.yaml",
+      "name": "Dashboard Pattern",
+      "id": "pattern.dashboard.core",
+      "layer": "pattern",
+      "category": "dashboard"
+    },
+    {
+      "path": "03_patterns/data-heavy.yaml",
+      "name": "Data-heavy Layouts",
+      "id": "pattern.data_heavy.core",
+      "layer": "pattern",
+      "category": "data_heavy"
+    },
+    {
+      "path": "03_patterns/form.yaml",
+      "name": "Form Pattern",
+      "id": "pattern.form.core",
+      "layer": "pattern",
+      "category": "form"
+    },
+    {
+      "path": "03_patterns/list-detail.yaml",
+      "name": "List-Detail Views",
+      "id": "pattern.list_detail.core",
+      "layer": "pattern",
+      "category": "list_detail"
+    },
+    {
+      "path": "03_patterns/navigation.yaml",
+      "name": "Navigation Pattern",
+      "id": "pattern.navigation.core",
+      "layer": "pattern",
+      "category": "navigation"
+    },
+    {
+      "path": "03_patterns/onboarding.yaml",
+      "name": "Onboarding Pattern",
+      "id": "pattern.onboarding.core",
+      "layer": "pattern",
+      "category": "onboarding"
+    },
+    {
+      "path": "03_patterns/overlays.yaml",
+      "name": "Overlays Pattern",
+      "id": "pattern.overlays.core",
+      "layer": "pattern",
+      "category": "overlays"
+    },
+    {
+      "path": "03_patterns/portal.yaml",
+      "name": "Portal Pattern",
+      "id": "pattern.portal.core",
+      "layer": "pattern",
+      "category": "portal"
+    },
+    {
+      "path": "03_patterns/search-filtering.yaml",
+      "name": "Search and Filtering",
+      "id": "pattern.search_filtering.core",
+      "layer": "pattern",
+      "category": "search_filtering"
+    },
+    {
+      "path": "03_patterns/settings-admin.yaml",
+      "name": "Settings and Admin",
+      "id": "pattern.settings_admin.core",
+      "layer": "pattern",
+      "category": "settings_admin"
+    },
+    {
+      "path": "04_shells/analytics-shell.yaml",
+      "name": "Analytics Shell",
+      "id": "shell.analytics_shell.core",
+      "layer": "shell",
+      "category": "analytics_shell"
+    },
+    {
+      "path": "04_shells/builder-shell.yaml",
+      "name": "Builder Shell",
+      "id": "shell.builder_shell.core",
+      "layer": "shell",
+      "category": "builder_shell"
+    },
+    {
+      "path": "04_shells/dashboard-shell.yaml",
+      "name": "Dashboard Shell",
+      "id": "shell.dashboard_shell.core",
+      "layer": "shell",
+      "category": "dashboard_shell"
+    },
+    {
+      "path": "04_shells/focus-shell.yaml",
+      "name": "Focus Shell",
+      "id": "shell.focus_shell.core",
+      "layer": "shell",
+      "category": "focus_shell"
+    },
+    {
+      "path": "04_shells/list-management-shell.yaml",
+      "name": "List Management Shell",
+      "id": "shell.list_management_shell.core",
+      "layer": "shell",
+      "category": "list_management_shell"
+    },
+    {
+      "path": "04_shells/mobile-sheet-first-shell.yaml",
+      "name": "Mobile Sheet-first Shell",
+      "id": "shell.mobile_sheet_first_shell.core",
+      "layer": "shell",
+      "category": "mobile_sheet_first_shell"
+    },
+    {
+      "path": "04_shells/portal-shell.yaml",
+      "name": "Portal Shell",
+      "id": "shell.portal_shell.core",
+      "layer": "shell",
+      "category": "portal_shell"
+    },
+    {
+      "path": "04_shells/settings-shell.yaml",
+      "name": "Settings Shell",
+      "id": "shell.settings_shell.core",
+      "layer": "shell",
+      "category": "settings_shell"
+    },
+    {
+      "path": "05_state/state-primitives.yaml",
+      "name": "State Primitives",
+      "id": "state.interaction.core",
+      "layer": "state",
+      "category": "interaction"
+    },
+    {
+      "path": "06_accessibility/accessibility-primitives.yaml",
+      "name": "Accessibility Primitives",
+      "id": "accessibility.focus.core",
+      "layer": "accessibility",
+      "category": "focus"
+    },
+    {
+      "path": "07_content/content-primitives.yaml",
+      "name": "Content Primitives",
+      "id": "content.labels.core",
+      "layer": "content",
+      "category": "labels"
+    }
+  ]
+}

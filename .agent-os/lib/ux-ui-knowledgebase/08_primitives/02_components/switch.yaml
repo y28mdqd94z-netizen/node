@@ -1,0 +1,56 @@
+name: "Switch"
+id: "component.switch.core"
+layer: component
+category: switch
+intent: "Toggle a binary setting with immediate effect."
+problem_solved: "Communicates on/off state for settings without form submission."
+when_to_use:
+  - "Settings that take effect immediately."
+  - "Enable/disable controls in configuration views."
+when_not_to_use:
+  - "Settings requiring confirmation or validation (use checkbox)."
+  - "Multiple selection lists (use checkbox or multi-select)."
+anatomy:
+  - "Track"
+  - "Thumb"
+  - "Label"
+variants:
+  - "default"
+  - "with-label"
+sizes:
+  - "sm"
+  - "md"
+states:
+  - "off"
+  - "on"
+  - "focus"
+  - "disabled"
+behavior_rules:
+  - "Toggle updates state immediately with clear feedback."
+  - "Label click toggles the switch."
+accessibility_requirements:
+  - "Expose role=switch with aria-checked."
+  - "Ensure focus ring is visible and meets contrast."
+responsive_behavior:
+  - "Increase touch targets on mobile."
+composition_rules:
+  - "Align switches in settings lists with consistent spacing."
+dependencies:
+  - "tokens.components.switch"
+anti_patterns:
+  - "Using switches for destructive actions without confirmation."
+  - "Hiding labels and relying on icon-only toggles."
+token_bindings:
+  track: "switch.track.*"
+  thumb: "switch.thumb.*"
+  border: "switch.border.*"
+  radius: "switch.radius"
+  size: "switch.size.*"
+implementation_mapping:
+  - "Component: Switch"
+  - "Props: checked, disabled, label"
+evaluation_checklist:
+  - "On/off states are visually distinct."
+  - "Toggle animation is not distracting."
+context_notes:
+  - "Use concise labels describing the resulting state."

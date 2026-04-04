@@ -1,0 +1,52 @@
+name: "Analytics Shell"
+id: "shell.analytics_shell.core"
+layer: shell
+category: analytics_shell
+intent: "Provide a shell optimized for analytics and reporting."
+problem_solved: "Supports deep analysis with filters and comparisons."
+when_to_use:
+  - "Reporting and analytics suites."
+when_not_to_use:
+  - "Simple dashboards without deep analysis."
+anatomy:
+  - "Filters panel"
+  - "Primary visualization"
+  - "Secondary insights"
+layout_regions:
+  - "filters"
+  - "content"
+  - "insights"
+navigation_model: "sidebar or top nav"
+compatible_patterns:
+  - "dashboard"
+  - "data-heavy"
+  - "search-filtering"
+density_assumptions: "default"
+responsive_collapse_logic:
+  - "Filters collapse into sheet on small screens."
+primary_use_cases:
+  - "Analytics workspaces"
+  - "Reporting suites"
+states:
+  - "default"
+  - "loading"
+behavior_rules:
+  - "Filters are persistent and easy to reset."
+accessibility_requirements:
+  - "Charts include text alternatives and data summaries."
+responsive_behavior:
+  - "Stack visualizations and prioritize key metrics."
+composition_rules:
+  - "Limit to one primary insight per view."
+dependencies:
+  - "toolbar"
+  - "table"
+anti_patterns:
+  - "Filters scattered across multiple locations."
+implementation_mapping:
+  - "Layout: AnalyticsShell with filter rail"
+evaluation_checklist:
+  - "Users can adjust filters without losing context."
+context_notes:
+  - "B2B analytics favor clear time range controls."
+

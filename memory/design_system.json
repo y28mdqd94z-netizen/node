@@ -12,11 +12,22 @@
     "neutral": "Warm or cool grays for surfaces and dividers"
   },
   "spacing": {
-    "scale": [4, 8, 12, 16, 24, 32, 48, 64]
+    "scale": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64
+    ]
   },
   "tokens": {
     "base": ".agent-os/tokens/base.json",
-    "semantic": ".agent-os/tokens/semantic.json"
+    "semantic": ".agent-os/tokens/semantic.json",
+    "components": ".agent-os/tokens/components.json",
+    "aliases": ".agent-os/tokens/aliases.json"
   },
   "components": [
     "SectionHeader",
@@ -27,5 +38,9 @@
     "Drawer",
     "Inspector"
   ],
-  "notes": "Refined to a calm, systems-first UI signature: minimal chrome, strong hierarchy, progressive disclosure, and clear next action. Token values live in .agent-os/tokens/."
+  "notes": "Refined to a calm, systems-first UI signature: minimal chrome, strong hierarchy, progressive disclosure, and clear next action. Token values live in .agent-os/tokens/.",
+  "primitive_system": {
+    "manifest": ".agent-os/lib/ux-ui-knowledgebase/08_primitives/manifest.json",
+    "index": ".agent-os/lib/ux-ui-knowledgebase/08_primitives/index.json"
+  }
 }
