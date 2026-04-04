@@ -1,0 +1,230 @@
+version: 1
+entries:
+  - id: agent.codegen.safe-defaults
+    title: Minimal safe defaults
+    category: agent_layer
+    summary: Generate code that is safe and minimal by default.
+    definition: Prefer simple, secure implementations over complex optimizations.
+    why_it_matters: Reduces risk of bugs and security issues.
+    priority_level: P0
+    confidence_score: 0.84
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - generating new features or components
+    avoid_when:
+      - explicit performance requirements demand optimization
+    implementation_rules:
+      - start with clear, readable logic
+      - add validation and error handling
+    tradeoffs:
+      - may not be the most optimized approach
+    anti_patterns:
+      - premature optimization in generated code
+    override_allowed: true
+    override_conditions:
+      - performance or cost constraints require complexity
+    override_risks:
+      - increased bug surface
+    required_justification:
+      - measured constraints requiring optimization
+    safer_alternatives:
+      - incremental optimization after profiling
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: neutral
+    agent_rules:
+      - always include input validation and safe defaults
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - production incidents caused by generated code
+    deprecation_signals:
+      - new code generation policy
+    sources:
+      - Secure coding practices
+  - id: agent.codegen.repo-conventions
+    title: Align with repo conventions
+    category: agent_layer
+    summary: Follow existing patterns, naming, and tooling.
+    definition: Generated code should match the repository's established conventions and style.
+    why_it_matters: Reduces integration friction and maintenance cost.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - modifying or adding code in existing repos
+    avoid_when:
+      - greenfield repositories without conventions
+    implementation_rules:
+      - scan existing files for style and structure
+      - reuse local utilities instead of adding duplicates
+    tradeoffs:
+      - slower initial generation due to discovery
+    anti_patterns:
+      - introducing new patterns without justification
+    override_allowed: true
+    override_conditions:
+      - existing conventions are unsafe or outdated
+    override_risks:
+      - inconsistency and maintenance burden
+    required_justification:
+      - why existing patterns are insufficient
+    safer_alternatives:
+      - minimal deviation with documented rationale
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: lower long term
+    agent_rules:
+      - prefer existing utilities and structures
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - repository adopts new conventions
+    deprecation_signals:
+      - migration to new code style or framework
+    sources:
+      - Engineering workflow practices
+  - id: agent.codegen.no-hidden-deps
+    title: No hidden dependencies
+    category: agent_layer
+    summary: Avoid adding implicit or untracked dependencies.
+    definition: All dependencies must be explicit and documented.
+    why_it_matters: Hidden dependencies cause build and runtime failures.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - adding new libraries or services
+    avoid_when:
+      - none
+    implementation_rules:
+      - update dependency manifests explicitly
+      - document required environment variables
+    tradeoffs:
+      - added documentation effort
+    anti_patterns:
+      - implicit reliance on global tools
+    override_allowed: true
+    override_conditions:
+      - local experiments with no shared use
+    override_risks:
+      - broken builds and deployment failures
+    required_justification:
+      - justification for temporary hidden dependency
+    safer_alternatives:
+      - add dependency explicitly with minimal scope
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: neutral
+    agent_rules:
+      - never rely on undeclared dependencies
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - build failures due to missing dependencies
+    deprecation_signals:
+      - dependency management tooling changes
+    sources:
+      - Build and dependency management practices
+  - id: agent.codegen.tests-for-critical
+    title: Tests for critical paths
+    category: agent_layer
+    summary: Generate tests for high impact features.
+    definition: Critical logic must include automated tests that cover invariants and edge cases.
+    why_it_matters: Prevents regressions in important workflows.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - billing, auth, data integrity, or critical workflows
+    avoid_when:
+      - trivial UI changes with no logic
+    implementation_rules:
+      - include unit and integration tests
+      - cover edge cases and failure paths
+    tradeoffs:
+      - additional development time
+    anti_patterns:
+      - shipping critical features without tests
+    override_allowed: true
+    override_conditions:
+      - emergency hotfix with immediate follow-up test plan
+    override_risks:
+      - regressions in core flows
+    required_justification:
+      - documented follow-up test plan
+    safer_alternatives:
+      - limited smoke tests as stopgap
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: higher short term, lower long term
+    agent_rules:
+      - require tests for any critical path changes
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - incidents due to missing tests
+    deprecation_signals:
+      - move to formal verification for critical components
+    sources:
+      - Testing best practices
+  - id: agent.codegen.tests-for-frontend-backend
+    title: Comprehensive tests for frontend and backend changes
+    category: agent_layer
+    summary: Always generate tests for new or modified frontend and backend behavior.
+    definition: Any frontend or backend feature or logic change must include automated tests covering primary flows, edge cases, and error states.
+    why_it_matters: Prevents regressions and makes future changes safer across the UI and API surface.
+    priority_level: P0
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - new or modified frontend components with state or behavior
+      - new or modified backend endpoints, services, or domain logic
+      - cross-cutting changes that affect UI and API contracts
+    avoid_when:
+      - documentation-only changes
+      - purely visual tweaks with no behavioral impact
+    implementation_rules:
+      - include unit tests for core logic
+      - include component or integration tests for user flows and state transitions
+      - include API integration or contract tests for backend endpoints
+      - cover validation errors and failure paths
+      - keep tests deterministic and aligned to repo test tooling
+    tradeoffs:
+      - additional development time
+    anti_patterns:
+      - shipping frontend or backend behavior without tests
+      - only happy-path tests for new features
+    override_allowed: false
+    safer_alternatives:
+      - minimal smoke tests as a stopgap
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: higher short term, lower long term
+    agent_rules:
+      - require tests for any frontend or backend behavior change
+      - if tests cannot be added, stop and request scope change
+    last_verified: 2026-03-30
+    verification_method: internal_review
+    update_triggers:
+      - incidents due to missing frontend or backend tests
+      - repeated regressions in UI or API behavior
+    deprecation_signals:
+      - replacement by formal verification or contract testing mandates
+    sources:
+      - Testing best practices

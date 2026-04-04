@@ -1,0 +1,25 @@
+version: 1
+priority_levels:
+  P0:
+    meaning: Non-negotiable for security, correctness, or data integrity.
+    enforcement: Must be followed; override only with formal exception.
+    default_action: Block implementation until satisfied or exception approved.
+  P1:
+    meaning: Strong default for production systems.
+    enforcement: Follow unless documented tradeoff exists.
+    default_action: Apply unless override is logged.
+  P2:
+    meaning: Recommended best practice; context dependent.
+    enforcement: Apply when benefits exceed costs.
+    default_action: Prefer but optional.
+  P3:
+    meaning: Advisory guidance.
+    enforcement: Use when convenient or beneficial.
+    default_action: Optional.
+confidence_usage:
+  - high_confidence: use as default
+  - low_confidence: seek safer alternative or verify
+application_rules:
+  - prefer P0 and P1 from stable_core when uncertain
+  - if entries conflict, choose higher priority and higher evidence
+  - document any override in a decision log

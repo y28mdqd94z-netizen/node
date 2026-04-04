@@ -1,0 +1,40 @@
+design_qa_checks:
+  - id: token_usage
+    check: "All colors and spacing use design tokens."
+    method: "Inspect styles and verify token references."
+    severity: "high"
+
+  - id: typography
+    check: "Typography matches defined scale and line heights."
+    method: "Compare against typography system spec."
+    severity: "medium"
+
+  - id: alignment
+    check: "Elements align to grid and baselines."
+    method: "Check key edges and column alignment."
+    severity: "medium"
+
+  - id: states
+    check: "All interactive states are implemented."
+    method: "Test hover, focus, disabled, loading, and error states."
+    severity: "high"
+
+  - id: responsive
+    check: "Layouts respond correctly at breakpoints."
+    method: "Review viewport widths and ensure no overflow."
+    severity: "high"
+
+  - id: data_extremes
+    check: "UI handles long text, empty data, and large numbers."
+    method: "Test with edge-case content."
+    severity: "medium"
+
+  - id: localization
+    check: "UI supports longer strings and RTL where applicable."
+    method: "Simulate 30-50% longer copy."
+    severity: "medium"
+
+  - id: accessibility
+    check: "Focus order, contrast, and labels meet requirements."
+    method: "Run accessibility review checklist."
+    severity: "high"

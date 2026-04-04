@@ -1,0 +1,228 @@
+version: 1
+entries:
+  - id: react.composition-over-inheritance
+    title: Composition over inheritance
+    category: frontend
+    summary: Compose components instead of relying on class inheritance.
+    definition: Build UI by combining small components and passing behavior through props.
+    why_it_matters: Improves reuse and keeps components flexible.
+    priority_level: P1
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - building reusable UI components
+    avoid_when:
+      - extremely simple one-off components
+    implementation_rules:
+      - pass behavior via props and children
+      - avoid deep inheritance trees
+    tradeoffs:
+      - prop drilling if composition is not structured
+    anti_patterns:
+      - large base components with complex inheritance
+    override_allowed: true
+    override_conditions:
+      - legacy class components require minimal changes
+    override_risks:
+      - tight coupling and brittle components
+    required_justification:
+      - why composition is not feasible in this case
+    safer_alternatives:
+      - wrapper components and render props
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: neutral
+    agent_rules:
+      - prefer composition for new React components
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - framework guidance changes
+    deprecation_signals:
+      - migration to a different UI framework
+    sources:
+      - React documentation
+  - id: react.controlled-vs-uncontrolled
+    title: Controlled versus uncontrolled inputs
+    category: frontend
+    summary: Choose controlled inputs when validation and state sync are needed.
+    definition: Controlled inputs keep state in React; uncontrolled inputs rely on the DOM with refs.
+    why_it_matters: Impacts validation, performance, and complexity of forms.
+    priority_level: P1
+    confidence_score: 0.78
+    evidence_level: high
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - complex forms with validation or dependent fields
+    avoid_when:
+      - simple forms where performance and simplicity matter
+    implementation_rules:
+      - use controlled inputs for validation and derived state
+      - use uncontrolled inputs for simple, high-performance forms
+    tradeoffs:
+      - controlled inputs can be slower on large forms
+    anti_patterns:
+      - mixing controlled and uncontrolled behavior in the same field
+    override_allowed: true
+    override_conditions:
+      - performance constraints require uncontrolled inputs
+    override_risks:
+      - state desync or validation gaps
+    required_justification:
+      - why selected approach is appropriate
+    safer_alternatives:
+      - hybrid approach with form libraries
+    performance_impact: varies by approach
+    security_impact: neutral
+    cost_impact: neutral
+    agent_rules:
+      - document rationale for controlled or uncontrolled choices
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - form performance regressions
+    deprecation_signals:
+      - shift to framework managed forms
+    sources:
+      - React documentation
+  - id: react.hooks-rules
+    title: Rules of hooks
+    category: frontend
+    summary: Use hooks consistently and only at the top level.
+    definition: Hooks must be called in the same order on every render and only from React functions.
+    why_it_matters: Violations cause unpredictable behavior and runtime errors.
+    priority_level: P0
+    confidence_score: 0.9
+    evidence_level: high
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - any React component using hooks
+    avoid_when:
+      - class components without hooks
+    implementation_rules:
+      - call hooks at the top level only
+      - extract custom hooks for shared logic
+    tradeoffs:
+      - requires rethinking control flow
+    anti_patterns:
+      - calling hooks in loops or conditions
+    override_allowed: false
+    override_conditions:
+      - none
+    override_risks:
+      - runtime crashes and undefined behavior
+    required_justification:
+      - not applicable
+    safer_alternatives:
+      - refactor logic into custom hooks
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: neutral
+    agent_rules:
+      - enforce hook rules in linting and review
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - framework changes to hook semantics
+    deprecation_signals:
+      - deprecation of hooks in framework
+    sources:
+      - React documentation
+  - id: react.memoization-measured
+    title: Memoization only when measured
+    category: frontend
+    summary: Use memoization for proven performance issues.
+    definition: Apply memoization after measuring actual render bottlenecks, not preemptively.
+    why_it_matters: Overuse adds complexity and can harm performance.
+    priority_level: P2
+    confidence_score: 0.74
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - profiling shows expensive renders
+    avoid_when:
+      - small components without measured issues
+    implementation_rules:
+      - measure before and after memoization
+      - avoid memoizing functions that change frequently
+    tradeoffs:
+      - added complexity and potential stale props
+    anti_patterns:
+      - blanket memoization without profiling
+    override_allowed: true
+    override_conditions:
+      - critical performance requirements validated by tests
+    override_risks:
+      - unnecessary complexity and subtle bugs
+    required_justification:
+      - profiling data that supports memoization
+    safer_alternatives:
+      - reduce component re-renders by splitting components
+    performance_impact: positive when targeted, negative when overused
+    security_impact: neutral
+    cost_impact: neutral
+    agent_rules:
+      - require profiling evidence for memoization
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - performance regressions tied to renders
+    deprecation_signals:
+      - framework changes reduce need for memoization
+    sources:
+      - React performance guidance
+  - id: react.server-render-when-needed
+    title: Server rendering when needed
+    category: frontend
+    summary: Use server rendering for SEO or first paint requirements.
+    definition: Render critical content on the server when SEO, TTFB, or initial UX requires it.
+    why_it_matters: Improves perceived performance and search visibility.
+    priority_level: P1
+    confidence_score: 0.76
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - public pages with SEO needs
+      - slow client devices or networks
+    avoid_when:
+      - highly interactive apps where client rendering is sufficient
+    implementation_rules:
+      - render primary content server-side
+      - hydrate only necessary interactive parts
+    tradeoffs:
+      - added complexity for data loading and hydration
+    anti_patterns:
+      - server rendering all pages without need
+    override_allowed: true
+    override_conditions:
+      - no SEO requirement and acceptable client performance
+    override_risks:
+      - poor first paint and search visibility
+    required_justification:
+      - metrics showing acceptable client render
+    safer_alternatives:
+      - static generation for stable pages
+    performance_impact: positive for first paint, negative for server load
+    security_impact: neutral
+    cost_impact: higher server compute cost
+    agent_rules:
+      - evaluate SEO and first paint before choosing rendering mode
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - framework rendering changes
+    deprecation_signals:
+      - shift to a non-SSR capable framework
+    sources:
+      - React and web rendering guidance

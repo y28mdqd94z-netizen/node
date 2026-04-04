@@ -1,0 +1,72 @@
+rules:
+  - id: form_grouping
+    rule: "Group related fields into sections with headings."
+    rationale: "Reduces cognitive load and improves scanability."
+    examples:
+      - "Billing address grouped separately from shipping address."
+
+  - id: primary_action
+    rule: "Only one primary action per screen or section."
+    rationale: "Prevents decision fatigue and clarifies intent."
+    examples:
+      - "One primary CTA at the bottom of a form."
+
+  - id: destructive_actions
+    rule: "Separate destructive actions from standard actions."
+    rationale: "Reduces accidental data loss."
+    examples:
+      - "Danger zone section for deletion."
+
+  - id: table_actions
+    rule: "Place row-level actions at the end of the row."
+    rationale: "Improves scan order and consistency."
+    examples:
+      - "Actions column on the far right."
+
+  - id: modal_content
+    rule: "Keep modal content focused on a single task."
+    rationale: "Modals interrupt flow and should be concise."
+    examples:
+      - "Confirm deletion modal with brief summary."
+
+  - id: card_density
+    rule: "Avoid mixing dense data tables with cards in the same view."
+    rationale: "Inconsistent density harms visual rhythm."
+    examples:
+      - "Use cards for summary, tables for detail."
+
+  - id: feedback_placement
+    rule: "Place validation feedback near the related field."
+    rationale: "Users fix errors faster when feedback is contextual."
+    examples:
+      - "Inline error message below the input."
+
+  - id: navigation_consistency
+    rule: "Keep global navigation consistent across all pages."
+    rationale: "Reduces re-learning and supports orientation."
+    examples:
+      - "Persistent top or side navigation."
+
+  - id: list_row_structure
+    rule: "Use edge-to-edge list rows with hairline separators and consistent row height."
+    rationale: "Supports calm scanning and reduces visual noise."
+    examples:
+      - "Rows with 12-16px vertical padding and 1px dividers."
+
+  - id: list_row_actions
+    rule: "Keep row-level actions secondary and reveal them on hover/focus or via overflow."
+    rationale: "Prevents action clutter and preserves hierarchy."
+    examples:
+      - "Inline primary action with a more-menu for secondary actions."
+
+  - id: inspector_usage
+    rule: "Use an inspector panel for detail edits while keeping list context visible."
+    rationale: "Maintains orientation and speeds multi-item review."
+    examples:
+      - "Right-side inspector that opens when a row is selected."
+
+  - id: sheet_usage
+    rule: "Use sheets/drawers for focused tasks or multi-step edits; avoid full-screen modals when possible."
+    rationale: "Keeps users oriented and reduces context loss."
+    examples:
+      - "Edit task drawer with sectioned fields and a sticky primary action."

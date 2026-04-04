@@ -616,3 +616,127 @@
 - Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
 - Updates to skills/patterns/components:
 - Refactor targets:
+
+## 2026-03-30 13:36:28 +1100
+- Command: design-feature
+- Title: Repo compliance confirmation
+- Risk level: low
+- Skills invoked: market-analysis, choose-ui-pattern, simplify-flow, reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, select-patterns, select-components
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- Market alignment notes:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Object → Pattern → Screen mapping:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-03-30 14:37:32 +1100
+- Command: implement-feature
+- Title: Update agent testing requirements
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions: Orchestrator -> Engineering Agent (instruction update), QA / UX Audit Agent (test enforcement), Documentation Agent (log updates)
+- Phase gate status: Discovery complete; Market Analysis N/A; Design Decision complete; Architecture N/A; Implementation complete; Security Review complete; UX Refinement N/A; Documentation complete
+- Status: complete
+- Discovery: Clarified request to update agent instructions with test creation + execution requirement
+- Market Analysis: N/A (internal instruction update)
+- Market alignment notes: N/A
+- UX KB Comparison: N/A (no UX/UI decisions)
+- Think: Ensure instructions enforce test creation and per-prompt execution for new code
+- UX Design: N/A
+- Object → Pattern → Screen mapping: N/A
+- Architecture: N/A
+- Implementation: Updated AGENTS.md testing requirements; updated memory output
+- Validation (type safety, input validation, error handling, edge cases): N/A
+- Security Review: Low risk, documentation-only change
+- UX Refinement: N/A
+- Documentation: Updated memory output and logs
+- Failure points: N/A
+- Fallback UX: N/A
+- Retry logic: N/A
+- Safe error messages: N/A
+- Observability (logging, error tracking, performance): N/A
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Added explicit testing enforcement to reduce regressions
+- Updates to skills/patterns/components: N/A
+- Refactor targets: N/A
+
+## 2026-04-04 11:43:41 +1100
+- Command: design-feature
+- Title: Design layer audit + redesign
+- Risk level: low
+- Skills invoked: market-analysis, choose-ui-pattern, simplify-flow, reduce-cognitive-load, define-interaction-model, accessibility-check, apply-ux-laws, select-patterns, select-components
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- Market alignment notes:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Object → Pattern → Screen mapping:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-04-04 12:09:12 +1100
+- Command: implement-feature
+- Title: Upgrade Agent OS engineering+design layers
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions:
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- Market alignment notes:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Object → Pattern → Screen mapping:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:

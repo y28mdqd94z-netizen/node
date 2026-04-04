@@ -1,0 +1,20 @@
+version: 0.1.0
+last_updated: "YYYY-MM-DD"
+stack:
+  runtime: ""
+  languages: []
+  frameworks: []
+repo_conventions:
+  formatting: ""
+  linting: ""
+  structure: ""
+  testing: ""
+deployment:
+  environment: ""
+  ci_cd: ""
+security:
+  data_sensitivity: ""
+  auth_model: ""
+performance:
+  expectations: ""
+notes: ""

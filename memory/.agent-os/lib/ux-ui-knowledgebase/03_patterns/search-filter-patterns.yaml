@@ -1,0 +1,113 @@
+pattern_global_search:
+  pattern_name: "Global Search"
+  problem_solved: "Lets users find content across the product."
+  context: "Products with multiple content types."
+  structure:
+    - "Search input"
+    - "Results grouped by type"
+    - "Keyboard shortcuts"
+  core_elements: ["Input", "Results list", "Filters"]
+  variants:
+    - "Command palette"
+    - "Search with autocomplete"
+  best_for: "Large or complex products."
+  avoid_for: "Small products with few screens."
+  desktop_considerations: "Support keyboard focus and shortcuts."
+  mobile_considerations: "Provide dedicated search screen."
+  accessibility_notes: "Ensure results are announced and navigable."
+  behaviour_rules: "Retain recent searches and show suggestions."
+  related_components: ["Input", "List", "Shortcut"]
+  related_principles: ["Recognition Over Recall"]
+  anti_patterns:
+    - "Search results without clear categories."
+  implementation_notes: "Prioritize results by relevance and recency."
+  evaluation_criteria:
+    - "Users can find top tasks within 2 queries."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [search, filter, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can find top tasks within 2 queries."
+pattern_faceted_filters:
+  pattern_name: "Faceted Filters"
+  problem_solved: "Allows narrowing results by multiple attributes."
+  context: "Search results, e-commerce, analytics."
+  structure:
+    - "Filter panel"
+    - "Active filter chips"
+    - "Results list"
+  core_elements: ["Checkbox", "Select", "Chips"]
+  variants:
+    - "Inline filters"
+    - "Sidebar filters"
+  best_for: "Large datasets with multiple attributes."
+  avoid_for: "Small datasets with simple sorting."
+  desktop_considerations: "Keep filters visible and sticky."
+  mobile_considerations: "Use modal filter sheet."
+  accessibility_notes: "Ensure filter controls are labeled."
+  behaviour_rules: "Show count per filter option when possible."
+  related_components: ["Checkbox", "Chip", "Drawer"]
+  related_principles: ["Progressive Disclosure"]
+  anti_patterns:
+    - "Hiding applied filters without clear visibility."
+  implementation_notes: "Provide clear reset and save options."
+  evaluation_criteria:
+    - "Users can narrow to relevant results quickly."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [search, filter, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users can narrow to relevant results quickly."
+pattern_saved_filters:
+  pattern_name: "Saved Filters and Views"
+  problem_solved: "Allows users to return to common searches."
+  context: "Power users and recurring tasks."
+  structure:
+    - "Save view action"
+    - "Saved views list"
+  core_elements: ["Button", "List", "Menu"]
+  variants:
+    - "Team-shared views"
+    - "Default views"
+  best_for: "Repeat analysis and monitoring."
+  avoid_for: "One-off searches."
+  desktop_considerations: "Place saved views near filters."
+  mobile_considerations: "Use compact list or menu."
+  accessibility_notes: "Allow naming and editing views via keyboard."
+  behaviour_rules: "Persist view state (filters, columns, sorting)."
+  related_components: ["Menu", "Input"]
+  related_principles: ["Flexibility and Efficiency"]
+  anti_patterns:
+    - "Saving views without clear feedback."
+  implementation_notes: "Allow rename, delete, and share actions."
+  evaluation_criteria:
+    - "Users adopt saved views for frequent tasks."
+  priority: P2
+  evidence_level: C
+  confidence: 0.65
+  enforcement: soft
+  stability: stable
+  context_tags: [search, filter, pattern]
+  override_allowed: true
+  override_conditions: "Use an alternative pattern if user goals or platform constraints conflict."
+  override_risks: "Pattern mismatch reduces discoverability or increases errors."
+  required_justification: "Explain the context conflict and mitigation."
+  safer_alternatives: "Select a pattern from the same category that fits the constraints."
+  decision_checks:
+    - "Users adopt saved views for frequent tasks."

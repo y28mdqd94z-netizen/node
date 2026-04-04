@@ -1,0 +1,45 @@
+terms:
+  - term: "Affordance"
+    definition: "A visual cue that suggests how an element can be used."
+
+  - term: "CTA"
+    definition: "Call to action; the primary action a user should take."
+
+  - term: "Cognitive Load"
+    definition: "The amount of mental effort required to complete a task."
+
+  - term: "Progressive Disclosure"
+    definition: "Revealing advanced options only when needed."
+
+  - term: "Semantic Token"
+    definition: "A design token named by purpose rather than raw value."
+
+  - term: "Skeleton Loading"
+    definition: "Placeholder UI shown while content loads."
+
+  - term: "Empty State"
+    definition: "A view shown when no content exists yet."
+
+  - term: "Focus Ring"
+    definition: "Visible outline indicating the focused element for keyboard users."
+
+  - term: "Information Architecture"
+    definition: "The structure and organization of content in a product."
+
+  - term: "Modal"
+    definition: "An overlay that requires user attention before returning to the main UI."
+
+  - term: "Primary Action"
+    definition: "The most important action on a screen."
+
+  - term: "Responsive Design"
+    definition: "Layouts that adapt to different screen sizes."
+
+  - term: "Touch Target"
+    definition: "The interactive area a user can tap or click."
+
+  - term: "Toast"
+    definition: "A temporary notification message that does not block UI."
+
+  - term: "Wizard"
+    definition: "A multi-step flow that breaks complex tasks into stages."

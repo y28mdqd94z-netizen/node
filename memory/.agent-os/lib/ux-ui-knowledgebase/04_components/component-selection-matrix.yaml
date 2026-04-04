@@ -1,0 +1,200 @@
+matrix:
+  - job: "Choose one from a small set (<= 5)"
+    primary_component: "Radio Group"
+    alternatives: ["Segmented Control"]
+    use_when: "All options are equally important and visible."
+    avoid_when: "Options are long or numerous."
+    notes: "Keep labels short and clear."
+    priority: P1
+    evidence_level: B
+    confidence: 0.8
+    enforcement: soft
+    stability: stable
+    override_allowed: true
+    override_conditions: "Horizontal space is constrained or options are paired."
+    override_risks: "Hidden options reduce clarity."
+    required_justification: "Explain the layout constraint and provide visible labels."
+    safer_alternatives: "Segmented control with clear labels."
+    decision_checks:
+      - "Users choose the intended option without confusion."
+      - "Error rate or rework does not increase after selection."
+
+  - job: "Choose one from a large set"
+    primary_component: "Select"
+    alternatives: ["Combobox", "Autocomplete"]
+    use_when: "Options exceed 5 or require search."
+    avoid_when: "Only 2-3 options."
+    notes: "Provide typeahead when list is long."
+    priority: P1
+    evidence_level: B
+    confidence: 0.8
+    enforcement: soft
+    stability: stable
+    override_allowed: true
+    override_conditions: "Options must remain visible for comparison."
+    override_risks: "Long visible lists increase cognitive load."
+    required_justification: "Explain why visibility is required and add grouping."
+    safer_alternatives: "Grouped radio lists or search-enabled menu."
+    decision_checks:
+      - "Users choose the intended option without confusion."
+      - "Error rate or rework does not increase after selection."
+
+  - job: "Choose multiple options"
+    primary_component: "Checkbox Group"
+    alternatives: ["Multi-select", "Token input"]
+    use_when: "Multiple selections are allowed."
+    avoid_when: "Only one option should be selected."
+    notes: "Include 'Select all' if list is long."
+    priority: P1
+    evidence_level: B
+    confidence: 0.8
+    enforcement: soft
+    stability: stable
+    override_allowed: true
+    override_conditions: "Options are numerous and require search."
+    override_risks: "Multi-select increases complexity."
+    required_justification: "Describe search/filter support."
+    safer_alternatives: "Token input with search and clear selection state."
+    decision_checks:
+      - "Users choose the intended option without confusion."
+      - "Error rate or rework does not increase after selection."
+
+  - job: "Toggle a setting"
+    primary_component: "Switch"
+    alternatives: ["Checkbox"]
+    use_when: "Immediate on/off state."
+    avoid_when: "Requires confirmation or multiple choices."
+    notes: "Label should describe the state, not the action."
+    priority: P1
+    evidence_level: C
+    confidence: 0.7
+    enforcement: soft
+    stability: stable
+    override_allowed: true
+    override_conditions: "State change is risky and needs confirmation."
+    override_risks: "Accidental toggles cause errors."
+    required_justification: "Explain the risk and add confirmation or undo."
+    safer_alternatives: "Checkbox with explicit apply action."
+    decision_checks:
+      - "Users choose the intended option without confusion."
+      - "Error rate or rework does not increase after selection."
+
+  - job: "Enter short text"
+    primary_component: "Text Input"
+    alternatives: ["Inline edit"]
+    use_when: "Single-line input."
+    avoid_when: "Long-form content."
+    notes: "Always include a label."
+    priority: P2
+    evidence_level: C
+    confidence: 0.7
+    enforcement: soft
+    stability: stable
+    override_allowed: true
+    override_conditions: "Inline editing is required for fast workflows."
+    override_risks: "Inline editing reduces discoverability."
+    required_justification: "Explain the power-user need and add affordances."
+    safer_alternatives: "Editable field with explicit edit icon."
+    decision_checks:
+      - "Users choose the intended option without confusion."
+      - "Error rate or rework does not increase after selection."
+
+  - job: "Enter long text"
+    primary_component: "Textarea"
+    alternatives: ["Rich text editor"]
+    use_when: "Multi-paragraph input."
+    avoid_when: "Short labels or single-line values."
+    notes: "Provide character count if limits apply."
+    priority: P2
+    evidence_level: C
+    confidence: 0.7
+    enforcement: soft
+    stability: stable
+    override_allowed: true
+    override_conditions: "Formatting is required for the content."
+    override_risks: "Rich text adds complexity and cognitive load."
+    required_justification: "Explain formatting needs and defaults."
+    safer_alternatives: "Plain text with markdown preview."
+    decision_checks:
+      - "Users choose the intended option without confusion."
+      - "Error rate or rework does not increase after selection."
+
+  - job: "Confirm destructive action"
+    primary_component: "Confirmation Dialog"
+    alternatives: ["Inline confirmation"]
+    use_when: "Action is irreversible or high impact."
+    avoid_when: "Low-risk actions."
+    notes: "Offer undo when possible."
+    priority: P0
+    evidence_level: B
+    confidence: 0.85
+    enforcement: hard
+    stability: stable
+    override_allowed: true
+    override_conditions: "Undo is immediate and clearly visible."
+    override_risks: "Accidental data loss."
+    required_justification: "Describe undo and user visibility."
+    safer_alternatives: "Soft confirmation with undo."
+    decision_checks:
+      - "Users choose the intended option without confusion."
+      - "Error rate or rework does not increase after selection."
+
+  - job: "Show status or category"
+    primary_component: "Badge"
+    alternatives: ["Tag", "Chip"]
+    use_when: "Compact status indicators."
+    avoid_when: "Long descriptive text."
+    notes: "Do not rely on color alone."
+    priority: P2
+    evidence_level: C
+    confidence: 0.7
+    enforcement: soft
+    stability: stable
+    override_allowed: true
+    override_conditions: "Status needs full explanation."
+    override_risks: "Ambiguous status labels."
+    required_justification: "Explain the additional detail and add tooltips."
+    safer_alternatives: "Inline status text with icon."
+    decision_checks:
+      - "Users choose the intended option without confusion."
+      - "Error rate or rework does not increase after selection."
+
+  - job: "Navigate between pages"
+    primary_component: "Pagination"
+    alternatives: ["Infinite scroll"]
+    use_when: "Users need predictable page boundaries."
+    avoid_when: "Continuous discovery browsing."
+    notes: "Provide page size control if needed."
+    priority: P2
+    evidence_level: C
+    confidence: 0.7
+    enforcement: soft
+    stability: stable
+    override_allowed: true
+    override_conditions: "Users are in exploration mode."
+    override_risks: "Infinite scroll reduces control and orientation."
+    required_justification: "Explain discovery need and provide back-to-top cues."
+    safer_alternatives: "Load more button with batching."
+    decision_checks:
+      - "Users choose the intended option without confusion."
+      - "Error rate or rework does not increase after selection."
+
+  - job: "Provide feedback"
+    primary_component: "Toast"
+    alternatives: ["Inline Alert", "Banner"]
+    use_when: "Non-blocking confirmation."
+    avoid_when: "Critical errors or required actions."
+    notes: "Use banners for system-wide issues."
+    priority: P1
+    evidence_level: B
+    confidence: 0.75
+    enforcement: soft
+    stability: stable
+    override_allowed: true
+    override_conditions: "User must read or act immediately."
+    override_risks: "Toast is missed and action is unclear."
+    required_justification: "Explain urgency and choose inline or banner."
+    safer_alternatives: "Inline alert or banner."
+    decision_checks:
+      - "Users choose the intended option without confusion."
+      - "Error rate or rework does not increase after selection."

@@ -1,0 +1,14 @@
+version: 1
+checks:
+  - id: hierarchy-primary-action
+    severity: P1
+    prompt: "Is there one dominant primary action per view?"
+  - id: accessibility-contrast
+    severity: P0
+    prompt: "Does body text meet 4.5:1 contrast and focus rings remain visible?"
+  - id: empty-loading-error
+    severity: P1
+    prompt: "Are empty, loading, and error states defined with recovery guidance?"
+  - id: typography-scale
+    severity: P2
+    prompt: "Is the type scale clear and consistent across headings?"

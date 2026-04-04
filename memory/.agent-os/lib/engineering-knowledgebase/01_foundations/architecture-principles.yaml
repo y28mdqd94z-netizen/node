@@ -1,0 +1,194 @@
+version: 1
+entries:
+  - id: architecture.bounded-contexts
+    title: Bounded contexts
+    category: architecture
+    summary: Align system boundaries with business domains.
+    definition: Group related models and logic into cohesive domains with explicit interfaces between them.
+    why_it_matters: Reduces cross-team coupling and clarifies ownership.
+    priority_level: P1
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - defining service or module boundaries
+      - separating distinct business domains
+    avoid_when:
+      - small single-team projects with minimal domain complexity
+    implementation_rules:
+      - define domain vocabularies and ownership
+      - prevent cross-context database writes
+      - use explicit interfaces between contexts
+    tradeoffs:
+      - initial domain modeling effort
+    anti_patterns:
+      - shared database writes across domains
+      - ambiguous ownership of critical models
+    override_allowed: true
+    override_conditions:
+      - early-stage product with evolving domain model
+    override_risks:
+      - tight coupling and hard refactors later
+    required_justification:
+      - why domain boundaries are premature now
+    safer_alternatives:
+      - modular monolith with clear internal boundaries
+    performance_impact: neutral
+    security_impact: positive through clearer boundaries
+    cost_impact: neutral short term, lower long term
+    agent_rules:
+      - map domain ownership before service splits
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - frequent cross-team conflicts over data ownership
+    deprecation_signals:
+      - domain boundaries no longer map to product reality
+    sources:
+      - Domain-driven design practices
+  - id: architecture.data-ownership-single-writer
+    title: Single writer data ownership
+    category: architecture
+    summary: Each data entity has a single system of record.
+    definition: Only one component owns writes for a given data entity; others consume via APIs or events.
+    why_it_matters: Prevents data divergence and consistency bugs.
+    priority_level: P0
+    confidence_score: 0.88
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - multiple services interact with the same entities
+      - building integrations across domains
+    avoid_when:
+      - read-only data replication with clear source of truth
+    implementation_rules:
+      - define explicit source of truth per entity
+      - expose mutations through a single API or command path
+      - use events or replicas for read access
+    tradeoffs:
+      - potential latency for cross-domain writes
+    anti_patterns:
+      - dual writes to separate systems
+      - ad hoc database sharing
+    override_allowed: true
+    override_conditions:
+      - temporary migration with strict reconciliation
+    override_risks:
+      - data divergence and reconciliation failures
+    required_justification:
+      - why single-writer is not feasible temporarily
+      - reconciliation plan and monitoring
+    safer_alternatives:
+      - queue writes through a single owner service
+    performance_impact: neutral to slight negative for cross-service calls
+    security_impact: positive
+    cost_impact: lower long term by avoiding data repair
+    agent_rules:
+      - enforce single-writer ownership for entities
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - data inconsistencies across services
+    deprecation_signals:
+      - entity ownership changes due to re-architecture
+    sources:
+      - Distributed systems best practices
+  - id: architecture.dependency-direction
+    title: Dependency direction
+    category: architecture
+    summary: Dependencies point from high-level policy to low-level details.
+    definition: Core domain logic should not depend on infrastructure details; adapters depend on domain interfaces.
+    why_it_matters: Enables testability and reduces coupling to infrastructure.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - designing service layers or clean architecture
+      - creating reusable business logic
+    avoid_when:
+      - very small apps where layering adds no value
+    implementation_rules:
+      - define interfaces in core domain
+      - keep infrastructure code in adapters
+      - avoid direct imports from domain into infra
+    tradeoffs:
+      - more files and indirection
+    anti_patterns:
+      - domain code calling infrastructure SDKs directly
+    override_allowed: true
+    override_conditions:
+      - scoped proof of concept with minimal lifetime
+    override_risks:
+      - infrastructure lock-in and fragile tests
+    required_justification:
+      - why layering is not worth the cost now
+    safer_alternatives:
+      - thin wrapper layer around infra calls
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: slight increase short term, lower long term
+    agent_rules:
+      - keep domain logic independent of infrastructure
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - repeated difficulty testing domain logic
+    deprecation_signals:
+      - architectural shift to new layering model
+    sources:
+      - Clean architecture principles
+  - id: architecture.build-for-failure
+    title: Build for failure
+    category: architecture
+    summary: Treat partial failures and timeouts as normal conditions.
+    definition: Systems must tolerate downstream failure, latency spikes, and retries without cascading outages.
+    why_it_matters: Most production incidents involve partial failure rather than total outages.
+    priority_level: P1
+    confidence_score: 0.83
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - calling external services or networks
+      - coordinating multi-step workflows
+    avoid_when:
+      - purely in-memory operations with no external calls
+    implementation_rules:
+      - set timeouts and retry budgets
+      - implement circuit breakers for unstable dependencies
+      - design for graceful degradation
+    tradeoffs:
+      - added complexity and failure handling code
+    anti_patterns:
+      - unbounded retries
+      - missing timeouts on external calls
+    override_allowed: true
+    override_conditions:
+      - component is fully isolated and not user-facing
+    override_risks:
+      - cascading failures and outages
+    required_justification:
+      - why failure handling is unnecessary here
+    safer_alternatives:
+      - minimal timeouts and single retry
+    performance_impact: slightly negative due to added checks
+    security_impact: neutral
+    cost_impact: neutral
+    agent_rules:
+      - always define timeouts for external calls
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - incident involving cascading failure
+    deprecation_signals:
+      - standard platform provides built-in resilience
+    sources:
+      - Reliability engineering practices

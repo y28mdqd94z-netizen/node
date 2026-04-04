@@ -1,0 +1,106 @@
+content_writing:
+  title: "UI Microcopy"
+  intent: "Provide clear, action-oriented UI text aligned with the Calm Systems UI tone."
+
+  tone_alignment:
+    - "Calm, minimal, high-signal language."
+    - "Action-oriented and task-first."
+    - "Short, direct, and specific phrasing."
+    - "Prefer verbs and active voice."
+
+  microcopy_principles:
+    - "Lead with the user task and expected outcome."
+    - "Use plain language; avoid jargon and internal terms."
+    - "Be specific about what happens next."
+    - "Keep copy short; remove filler words."
+    - "Use consistent terms for repeated actions and states."
+
+  labels_and_ctas:
+    do:
+      - "Start with a verb: 'Save changes', 'Create project'."
+      - "Name the object of the action, not the implementation."
+      - "Prefer explicit outcomes over generic 'OK'."
+      - "Match tense to action (imperative for actions)."
+    avoid:
+      - "Vague labels like 'Submit' or 'OK' without context."
+      - "Multiple actions in one label."
+      - "Jargon, internal acronyms, or system-only terms."
+
+  helper_text:
+    do:
+      - "Explain format or constraints in one short sentence."
+      - "Place guidance next to the field it applies to."
+      - "Use examples when ambiguity is likely."
+    avoid:
+      - "Repeating the label without adding information."
+      - "Lengthy paragraphs or policy text."
+
+  empty_states:
+    do:
+      - "State why the list is empty and what to do next."
+      - "Offer a primary action when possible."
+      - "Keep tone neutral and encouraging."
+    avoid:
+      - "Apologies without guidance."
+      - "Hidden or unclear actions."
+
+  error_states:
+    do:
+      - "Explain the problem and how to fix it."
+      - "Point to the exact field or step when possible."
+      - "Keep blame-free language."
+    avoid:
+      - "Generic 'Something went wrong' with no recovery path."
+      - "Error codes without guidance."
+
+  success_states:
+    do:
+      - "Confirm the outcome in past tense."
+      - "Keep confirmation short and quiet."
+      - "Offer a next step if it helps the task flow."
+    avoid:
+      - "Overly celebratory or noisy copy."
+
+  confirmations_and_undo:
+    do:
+      - "Prefer undo for reversible actions."
+      - "For destructive actions, name the impact and permanence."
+      - "Use explicit button labels: 'Delete project' not 'Delete'."
+    avoid:
+      - "Ambiguous confirm dialogs."
+
+  accessibility_localization:
+    do:
+      - "Use plain language at a general reading level."
+      - "Avoid idioms, sarcasm, or culture-specific references."
+      - "Leave room for longer translations."
+      - "Do not rely on color alone for meaning."
+    avoid:
+      - "Gendered language or slang."
+
+  review_checks:
+    - "Each label is actionable and specific."
+    - "States explain cause and next step."
+    - "Helper text reduces ambiguity."
+    - "Copy aligns with Calm Systems UI tone."
+
+  examples:
+    do:
+      - "Save changes"
+      - "Invite teammate"
+      - "Password must be at least 12 characters"
+      - "No projects yet. Create your first project."
+      - "Payment failed. Check your card details."
+    dont:
+      - "OK"
+      - "Submit"
+      - "Invalid input"
+      - "Nothing here"
+      - "Error 401"
+
+  sources:
+    - "Microsoft Style Guide: Top 10 tips for style and voice"
+    - "GOV.UK Writing for GOV.UK"
+    - "Apple Human Interface Guidelines: Menus (Labels)"
+    - "Atlassian Design System: Content guidelines"
+    - "Mailchimp Content Style Guide"

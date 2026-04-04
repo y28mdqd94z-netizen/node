@@ -1,0 +1,37 @@
+version: 0.1.0
+last_updated: "YYYY-MM-DD"
+product:
+  name: ""
+  purpose: ""
+  differentiation: ""
+users:
+  primary: ""
+  secondary: ""
+  usage_context: ""
+brand:
+  personality: ["", "", ""]
+  tone: ""
+  anti_references: []
+principles:
+  - ""
+  - ""
+  - ""
+interaction:
+  preferences: ""
+  platform_constraints: ""
+accessibility:
+  target_level: ""
+  notes: ""
+visual_style:
+  direction: ""
+  typography: ""
+  color: ""
+  layout: ""
+motion:
+  philosophy: ""
+content:
+  tone: ""
+  ux_writing_constraints: ""
+references:
+  inspirational_examples: []
+  avoided_examples: []

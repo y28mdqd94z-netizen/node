@@ -1,0 +1,81 @@
+pattern_top_nav_bar:
+  pattern_name: "Top Navigation Bar"
+  problem_solved: "Provides global navigation accessible at the top edge of the screen."
+  context: "Suitable for applications with several broad sections. Common in SaaS dashboards."
+  structure:
+    - "Logo or Home button on left"
+    - "Horizontal list of section links (dashboard, reports, settings)"
+    - "Optional user menu/avatar on far right"
+  core_elements: ["Logo", "Nav items", "User menu"]
+  variants:
+    - "Sticky vs static top bar"
+    - "Collapsible (hamburger) menu in narrow views"
+  best_for: "Desktop apps with moderate number of categories (<7)."
+  avoid_for: "Mobile view with many links (use bottom nav or burger)."
+  desktop_considerations: "Align main nav to left; top is an edge (Fitts’s law advantage)【6†L216-L225】."
+  mobile_considerations: "Use hamburger or tab bar on bottom; beware of hidden options (Jakob’s law recommends familiar icon usage)."
+  accessibility_notes: "Ensure skip-navigation links or landmarks for screen readers. Buttons must be keyboard-focusable."
+  behaviour_rules: "Keep top nav items concise (label lengths similar). On scroll, consider hiding or shrinking if space is tight."
+  related_components: ["Navigation Menu", "Dropdown Menu", "Breadcrumb"]
+  related_principles: ["Consistency", "Jakob’s Law", "Serial Position Effect"]
+  anti_patterns:
+    - "Overcrowded top bar (too many items in one line)."
+    - "Non-standard icons without text, causing confusion."
+  implementation_notes: "Follow platform conventions (e.g. Mac’s menu bar vs Windows taskbar). On web, use semantic `<nav>`."
+  evaluation_criteria:
+    - "All main sections reachable in ≤2 clicks."
+    - "Labels match user terminology (testing for understandability)."
+  references: ["Pencil&Paper: Navigation Best Practices【32†L64-L72】"]
+  priority: P1
+  evidence_level: C
+  confidence: 0.7
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Deep hierarchy, long labels, or >7 sections require vertical space."
+  override_risks: "Crowded top nav reduces scanability and increases errors."
+  required_justification: "Explain hierarchy depth and provide an alternative navigation model."
+  safer_alternatives: "Sidebar navigation or grouped top nav with overflow."
+  decision_checks:
+    - "Primary destinations reachable within two clicks."
+
+pattern_sidebar_nav:
+  pattern_name: "Sidebar (Vertical) Navigation"
+  problem_solved: "Offers vertical list of sections, allowing longer labels and grouping."
+  context: "Enterprise apps and dashboards; beneficial when many sections or nested menus exist."
+  structure:
+    - "Logo or collapse button at top"
+    - "Vertical menu items (with icons and labels)"
+    - "Collapse/expand sub-menus"
+  core_elements: ["Menu container", "Icon+Label items", "Sub-menu chevrons"]
+  variants:
+    - "Persistent (always visible) vs. collapsible"
+    - "Icon-only mode (collapsed) vs. full expanded"
+  best_for: "Desktop/tablet layouts; apps with 5–10 sections or multiple sub-levels."
+  avoid_for: "Minimalist apps with <4 sections (top nav or tab bar suffices)."
+  desktop_considerations: "Allow collapse to icons-only for more workspace; use hover tooltips for collapsed labels."
+  mobile_considerations: "Often hidden behind a hamburger menu; avoid permanently visible sidebar on small screens."
+  accessibility_notes: "Ensure collapsed labels are announced (aria-label). Provide keyboard shortcuts for expand/collapse."
+  behaviour_rules: "Highlight current section; allow deep linking (URL reflects menu path)."
+  related_components: ["Button (Collapse)", "Accordion"]
+  related_principles: ["Consistency", "Spatial Memory (users learn position)"]
+  anti_patterns:
+    - "Deeply nested submenus (>3 levels) causing disorientation."
+    - "Inconsistent item order across sections."
+  implementation_notes: "Use CSS grid/flex for sticky sidebar. Test with keyboard-only navigation."
+  evaluation_criteria:
+    - "Active section visually distinct."
+    - "Key actions reachable within 3 clicks."
+  references: []
+  priority: P1
+  evidence_level: C
+  confidence: 0.75
+  enforcement: soft
+  stability: stable
+  override_allowed: true
+  override_conditions: "Primary device is mobile or content width is constrained."
+  override_risks: "Sidebar reduces content space and can distract."
+  required_justification: "Provide device constraints and content-density rationale."
+  safer_alternatives: "Top nav with grouped sections or a hybrid layout."
+  decision_checks:
+    - "Active section is visible without scrolling on desktop."

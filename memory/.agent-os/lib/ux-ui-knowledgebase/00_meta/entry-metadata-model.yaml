@@ -1,0 +1,70 @@
+entry_metadata_model:
+  version: 1
+  required_for_new_entries:
+    - id
+    - title
+    - summary
+    - priority
+    - evidence_level
+    - confidence
+    - enforcement
+    - stability
+    - context_tags
+    - use_when
+    - avoid_when
+    - tradeoffs
+    - override_allowed
+    - override_conditions
+    - override_risks
+    - required_justification
+    - safer_alternatives
+    - decision_checks
+  recommended_for_existing_entries:
+    - priority
+    - evidence_level
+    - confidence
+    - enforcement
+    - stability
+    - context_tags
+    - override_allowed
+    - override_conditions
+    - override_risks
+    - required_justification
+    - safer_alternatives
+
+  priority_model:
+    P0: "Non-negotiable baseline (safety, accessibility, legal/compliance)."
+    P1: "Strong default; only override with clear justification."
+    P2: "Contextual; use when conditions match."
+    P3: "Advisory or optional guidance."
+
+  evidence_levels:
+    A: "Quantitative evidence (experiments, analytics, controlled studies)."
+    B: "Qualitative evidence (user research, usability tests, interviews)."
+    C: "Heuristic or expert consensus."
+    D: "Speculative or emerging practice."
+
+  enforcement_levels:
+    hard: "Must follow unless explicitly overridden with risk mitigation."
+    soft: "Default guidance; can be adapted without formal override."
+
+  stability_levels:
+    stable: "Unlikely to change; foundational principles."
+    evolving: "May shift with platform norms or new evidence."
+    experimental: "Emerging patterns; require validation."
+
+  override_model:
+    fields:
+      - override_allowed
+      - override_conditions
+      - override_risks
+      - required_justification
+      - safer_alternatives
+    notes:
+      - "Overrides must document rationale and mitigation."
+      - "If override_allowed is false, treat rule as P0 hard unless compliance allows exception."
+
+  decision_check_model:
+    notes:
+      - "Decision checks are measurable criteria used to validate the rule in context."
+      - "At least one check should be outcome-based (completion time, error rate, success rate)."

@@ -1,0 +1,22 @@
+critique_mode:
+  output_format:
+    - "Short summary of overall quality."
+    - "List of issues ordered by severity."
+    - "Concrete fixes for each issue."
+    - "Open questions or assumptions."
+
+  severity_levels:
+    - "high: blocks task completion or accessibility."
+    - "medium: causes friction or confusion."
+    - "low: polish or minor improvements."
+
+  focus_areas:
+    - "Hierarchy and clarity"
+    - "Navigation and discoverability"
+    - "Form usability and validation"
+    - "Feedback and system status"
+    - "Accessibility and responsiveness"
+
+  guardrails:
+    - "Avoid subjective style-only feedback unless it affects usability."
+    - "Tie each critique to a user impact."

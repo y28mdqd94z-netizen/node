@@ -1,0 +1,107 @@
+accessibility_perceivable:
+  title: "Perceivable"
+  summary: "Information must be presented in ways users can perceive."
+  do:
+    - "Provide text alternatives for non-text content."
+    - "Ensure sufficient contrast for text and UI elements."
+  dont:
+    - "Rely on color alone to convey meaning."
+  tests:
+    - "Contrast ratio >= 4.5:1 for normal text."
+  agent_rules: "Always pair color cues with text or icons."
+  tags: ["perceivable", "contrast"]
+  sources: ["WCAG 2.2"]
+
+accessibility_operable:
+  title: "Operable"
+  summary: "Users must be able to operate the interface with different inputs."
+  do:
+    - "Support full keyboard navigation."
+    - "Ensure focus is visible and logical."
+  dont:
+    - "Trap focus in custom components."
+  tests:
+    - "Complete primary flows without a mouse."
+  agent_rules: "Define focus order and skip links for long pages."
+  tags: ["keyboard", "focus"]
+  sources: ["WCAG 2.2"]
+
+accessibility_understandable:
+  title: "Understandable"
+  summary: "Content and operation should be clear and predictable."
+  do:
+    - "Use plain language and consistent labels."
+    - "Explain errors and how to fix them."
+  dont:
+    - "Use jargon without explanation."
+  tests:
+    - "Error messages explain cause and solution."
+  agent_rules: "Always include hint text for complex inputs."
+  tags: ["clarity", "language"]
+  sources: ["WCAG 2.2"]
+
+accessibility_robust:
+  title: "Robust"
+  summary: "Content should work with current and future technologies."
+  do:
+    - "Use semantic HTML and ARIA correctly."
+    - "Ensure components expose proper roles."
+  dont:
+    - "Overuse ARIA where native elements suffice."
+  tests:
+    - "Screen reader reads labels and states correctly."
+  agent_rules: "Prefer native elements over custom where possible."
+  tags: ["semantics", "compatibility"]
+  sources: ["WAI-ARIA Authoring Practices"]
+
+inclusive_design:
+  title: "Inclusive Design"
+  summary: "Design for diverse abilities, cultures, and contexts."
+  do:
+    - "Use inclusive language and imagery."
+    - "Support different time zones and locales."
+  dont:
+    - "Assume one cultural norm or ability baseline."
+  tests:
+    - "Content supports localization and longer strings."
+  agent_rules: "Check for bias in copy and imagery choices."
+  tags: ["inclusive_design", "localization"]
+
+focus_management:
+  title: "Focus Management"
+  summary: "Keep focus predictable during navigation and state changes."
+  do:
+    - "Move focus to dialogs and back on close."
+    - "Announce dynamic updates."
+  dont:
+    - "Steal focus unexpectedly."
+  tests:
+    - "Dialogs trap focus and return it correctly."
+  agent_rules: "Define focus targets for major state transitions."
+  tags: ["focus", "a11y"]
+
+motion_safety:
+  title: "Motion and Sensory Safety"
+  summary: "Avoid motion that can cause discomfort."
+  do:
+    - "Respect reduced motion settings."
+    - "Avoid large, fast, or looping animations."
+  dont:
+    - "Use flashing or strobing effects."
+  tests:
+    - "Reduced motion preference disables non-essential motion."
+  agent_rules: "All animations must be skippable or subtle."
+  tags: ["motion", "safety"]
+
+readability:
+  title: "Readability and Language"
+  summary: "Ensure text is readable and understandable."
+  do:
+    - "Use adequate line height and spacing."
+    - "Keep copy concise and direct."
+  dont:
+    - "Use tiny text or low contrast."
+  tests:
+    - "Body text >= 14-16px equivalent."
+  agent_rules: "Avoid dense paragraphs; use scannable structure."
+  tags: ["typography", "readability"]

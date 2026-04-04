@@ -1,0 +1,72 @@
+principle_clarity:
+  title: "Calm clarity"
+  summary: "Make the interface easy to read and act on in seconds."
+  rationale: "High-signal hierarchy reduces cognitive load and errors."
+  rules:
+    - "Default to one primary action per view."
+    - "Use short, direct labels that describe the next action."
+    - "Prefer structure and spacing over decorative ornament."
+
+principle_consistency:
+  title: "Systems-first consistency"
+  summary: "Use the same patterns for the same problems, with minimal visual variance."
+  rationale: "Consistency reduces decision fatigue and accelerates comprehension."
+  rules:
+    - "Reuse components and tokens."
+    - "Follow platform conventions unless there is a clear, documented benefit."
+
+principle_accessibility:
+  title: "Accessibility"
+  summary: "Ensure the system works for diverse abilities and devices."
+  rationale: "Accessible design expands reach and reduces risk."
+  rules:
+    - "Meet contrast and keyboard requirements."
+    - "Provide text alternatives for non-text content."
+
+principle_scalability:
+  title: "Composable structure"
+  summary: "Design composable layouts that scale without visual clutter."
+  rationale: "Structured systems stay calm as features grow."
+  rules:
+    - "Prefer list-detail, sectioned pages, and sheets over bespoke one-offs."
+    - "Avoid card walls for primary content."
+
+principle_feedback:
+  title: "Quiet feedback"
+  summary: "Every action should have a visible response without adding noise."
+  rationale: "Feedback builds confidence and prevents repeated actions."
+  rules:
+    - "Provide immediate response to user actions."
+    - "Use inline feedback before toasts or banners."
+
+principle_efficiency:
+  title: "Actionable efficiency"
+  summary: "Support fast completion without sacrificing clarity."
+  rationale: "Experts need speed while novices need guidance."
+  rules:
+    - "Surface the primary action early; keep advanced actions tucked."
+    - "Provide shortcuts and bulk actions only where proven useful."
+
+principle_content_first:
+  title: "Content over chrome"
+  summary: "Let content and tasks lead; minimize visual noise."
+  rationale: "Users come for information and tasks, not decoration."
+  rules:
+    - "Use minimal framing and quiet surfaces."
+    - "Keep key content visible without excessive scrolling."
+
+principle_progressive_disclosure:
+  title: "Progressive disclosure"
+  summary: "Reveal complexity only when it becomes relevant."
+  rationale: "Progressive disclosure keeps cognitive load low for most users."
+  rules:
+    - "Hide advanced settings behind toggles, drawers, or accordions."
+    - "Make destructive or irreversible actions a second step."
+
+principle_governance:
+  title: "Governance"
+  summary: "Changes should be intentional and documented."
+  rationale: "Governance prevents fragmentation."
+  rules:
+    - "Track changes to tokens and components."
+    - "Deprecate before removing."

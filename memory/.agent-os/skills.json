@@ -1,0 +1,115 @@
+{
+  "version": "0.1.0",
+  "micro_skills": [
+    {
+      "id": "market-analysis",
+      "domain": "research",
+      "description": "Research industry examples and derive patterns/features/components/styling before UX decisions."
+    },
+    {
+      "id": "choose-ui-pattern",
+      "domain": "design",
+      "description": "Select appropriate UI patterns for the task context."
+    },
+    {
+      "id": "simplify-flow",
+      "domain": "design",
+      "description": "Reduce steps and complexity in user flows."
+    },
+    {
+      "id": "reduce-cognitive-load",
+      "domain": "design",
+      "description": "Improve clarity and reduce mental effort."
+    },
+    {
+      "id": "define-interaction-model",
+      "domain": "design",
+      "description": "Specify interaction states, transitions, and feedback."
+    },
+    {
+      "id": "content-writing",
+      "domain": "design",
+      "description": "Write UI microcopy (labels, helper text, states, confirmations) using the content-writing knowledgebase rules aligned with the Calm Systems UI tone."
+    },
+    {
+      "id": "accessibility-check",
+      "domain": "design",
+      "description": "Assess accessibility concerns and constraints."
+    },
+    {
+      "id": "apply-ux-laws",
+      "domain": "design",
+      "description": "Apply UX laws and principles from the local knowledgebase to decisions."
+    },
+    {
+      "id": "select-patterns",
+      "domain": "design",
+      "description": "Select patterns using the knowledgebase pattern selection logic, with PRD object mapping and market alignment before screen design."
+    },
+    {
+      "id": "select-components",
+      "domain": "design",
+      "description": "Select components using the knowledgebase component selection matrix."
+    },
+    {
+      "id": "ux-evaluation-checks",
+      "domain": "design",
+      "description": "Run UX evaluation and audit checklists from the knowledgebase."
+    },
+    {
+      "id": "define-architecture",
+      "domain": "engineering",
+      "description": "Define system boundaries, data flow, and contracts."
+    },
+    {
+      "id": "implement-component",
+      "domain": "engineering",
+      "description": "Build UI components with clear state and behavior."
+    },
+    {
+      "id": "implement-api",
+      "domain": "engineering",
+      "description": "Implement API endpoints and validation."
+    },
+    {
+      "id": "state-management-check",
+      "domain": "engineering",
+      "description": "Validate state ownership and update patterns."
+    },
+    {
+      "id": "performance-check",
+      "domain": "engineering",
+      "description": "Evaluate and address performance risks."
+    },
+    {
+      "id": "security-review",
+      "domain": "security",
+      "description": "Review system for security risks and mitigations."
+    },
+    {
+      "id": "data-sensitivity-check",
+      "domain": "security",
+      "description": "Assess PII and sensitive data handling."
+    },
+    {
+      "id": "auth-boundary-check",
+      "domain": "security",
+      "description": "Validate authentication and authorization boundaries."
+    },
+    {
+      "id": "api-security-check",
+      "domain": "security",
+      "description": "Check API exposure, validation, and abuse risks."
+    },
+    {
+      "id": "frontend-security-check",
+      "domain": "security",
+      "description": "Check frontend risks like XSS and token storage."
+    },
+    {
+      "id": "dependency-risk-check",
+      "domain": "security",
+      "description": "Assess dependency risks and supply chain exposure."
+    }
+  ]
+}

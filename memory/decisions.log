@@ -131,3 +131,27 @@
 - Title: Agent reasoning vs steps question
 - Decision:
 - Rationale:
+
+## 2026-03-30 13:36:28 +1100
+- Command: design-feature
+- Title: Repo compliance confirmation
+- Decision:
+- Rationale:
+
+## 2026-03-30 14:37:33 +1100
+- Command: implement-feature
+- Title: Update agent testing requirements
+- Decision: Add explicit testing requirements to AGENTS.md for new code/features and per-prompt test execution.
+- Rationale: Enforces coverage and consistent validation to reduce regressions.
+
+## 2026-04-04 11:43:41 +1100
+- Command: design-feature
+- Title: Design layer audit + redesign
+- Decision:
+- Rationale:
+
+## 2026-04-04 12:09:12 +1100
+- Command: implement-feature
+- Title: Upgrade Agent OS engineering+design layers
+- Decision:
+- Rationale:

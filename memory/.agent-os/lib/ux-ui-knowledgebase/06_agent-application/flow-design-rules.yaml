@@ -1,0 +1,140 @@
+flow_rules:
+  - id: define_goal
+    rule: "Start by defining the single primary user goal for the flow."
+    rationale: "Clear goals reduce scope creep and extra steps."
+    priority: P1
+    evidence_level: C
+    confidence: 0.75
+    enforcement: soft
+    stability: stable
+    context_tags: [flow_design, goal_definition]
+    use_when: "Any multi-step or multi-screen flow."
+    avoid_when: "Never; multiple goals should be split into separate flows."
+    tradeoffs: "Tighter scope improves completion but may require extra entry points."
+    override_allowed: true
+    override_conditions: "The flow must support parallel goals for expert workflows."
+    override_risks: "Users lose clarity about the next step and drop off."
+    required_justification: "Explain why combining goals is necessary and how clarity is preserved."
+    safer_alternatives: "Split the flow or add a goal selector entry step."
+    decision_checks:
+      - "Users can state the main goal in a quick comprehension test."
+
+  - id: minimize_steps
+    rule: "Keep core flows to the minimum number of steps."
+    rationale: "Fewer steps reduce drop-off."
+    priority: P1
+    evidence_level: B
+    confidence: 0.8
+    enforcement: soft
+    stability: stable
+    context_tags: [flow_design, efficiency]
+    use_when: "High-frequency or time-sensitive tasks."
+    avoid_when: "Regulated or high-risk actions that require confirmation."
+    tradeoffs: "Fewer steps can reduce clarity for complex tasks."
+    override_allowed: true
+    override_conditions: "Additional steps materially reduce risk or improve accuracy."
+    override_risks: "Extra steps increase abandonment."
+    required_justification: "Describe the risk mitigated by added steps."
+    safer_alternatives: "Use inline validation or progressive disclosure instead of full steps."
+    decision_checks:
+      - "Completion rate does not drop with added steps."
+
+  - id: progressive_disclosure
+    rule: "Delay advanced options until the user needs them."
+    rationale: "Reduces cognitive load for first-time users."
+    priority: P1
+    evidence_level: C
+    confidence: 0.7
+    enforcement: soft
+    stability: stable
+    context_tags: [progressive_disclosure, complexity]
+    use_when: "Flows with optional or advanced settings."
+    avoid_when: "Expert tools where speed and visibility are critical."
+    tradeoffs: "Hiding options improves clarity but may reduce discoverability for power users."
+    override_allowed: true
+    override_conditions: "User cohort is primarily expert or requires visible control."
+    override_risks: "Novices become overwhelmed."
+    required_justification: "Provide evidence of expert usage and add guidance for novices."
+    safer_alternatives: "Provide an advanced toggle or saved presets."
+    decision_checks:
+      - "Novice users complete tasks without requesting hidden options."
+
+  - id: show_progress
+    rule: "Show progress for flows longer than two steps."
+    rationale: "Progress indicators increase completion."
+    priority: P2
+    evidence_level: B
+    confidence: 0.7
+    enforcement: soft
+    stability: stable
+    context_tags: [progress, motivation]
+    use_when: "Multi-step flows where completion is non-trivial."
+    avoid_when: "Very short flows where progress creates noise."
+    tradeoffs: "Progress indicators add UI complexity but improve confidence."
+    override_allowed: true
+    override_conditions: "Flow is short or steps are not sequential."
+    override_risks: "Users feel lost or unsure how long the process will take."
+    required_justification: "Explain why progress adds noise or misleads users."
+    safer_alternatives: "Use inline step labels or section headers."
+    decision_checks:
+      - "Users can estimate remaining effort within one step."
+
+  - id: error_recovery
+    rule: "Provide clear recovery paths for errors."
+    rationale: "Users should never be blocked without guidance."
+    priority: P0
+    evidence_level: A
+    confidence: 0.9
+    enforcement: hard
+    stability: stable
+    context_tags: [error_recovery, reliability]
+    use_when: "Any flow with validation or network dependency."
+    avoid_when: "Never."
+    tradeoffs: "None acceptable for blocking errors."
+    override_allowed: false
+    override_conditions: "Not applicable."
+    override_risks: "Users are blocked and abandon tasks."
+    required_justification: "Not applicable."
+    safer_alternatives: "Add inline error messaging and retry paths."
+    decision_checks:
+      - "Users can recover without contacting support."
+
+  - id: confirmation
+    rule: "Confirm destructive or irreversible actions."
+    rationale: "Prevents accidental loss and builds trust."
+    priority: P0
+    evidence_level: B
+    confidence: 0.85
+    enforcement: hard
+    stability: stable
+    context_tags: [safety, destructive_actions]
+    use_when: "Irreversible or high-impact actions."
+    avoid_when: "Low-risk, easily reversible actions."
+    tradeoffs: "Confirmation adds friction but prevents critical mistakes."
+    override_allowed: true
+    override_conditions: "Undo is provided and clearly visible."
+    override_risks: "Accidental data loss or irreversible outcomes."
+    required_justification: "Explain the undo safety net and how users discover it."
+    safer_alternatives: "Soft confirmation with undo or delayed commit."
+    decision_checks:
+      - "Users report confidence before committing destructive actions."
+
+  - id: save_state
+    rule: "Persist state between steps whenever possible."
+    rationale: "Users can resume without rework."
+    priority: P2
+    evidence_level: B
+    confidence: 0.7
+    enforcement: soft
+    stability: stable
+    context_tags: [state, resilience]
+    use_when: "Long or interruptible flows."
+    avoid_when: "Security-sensitive flows where persistence is risky."
+    tradeoffs: "Persistence improves completion but can create stale or risky data."
+    override_allowed: true
+    override_conditions: "Security or compliance forbids storing interim data."
+    override_risks: "Users lose progress and abandon."
+    required_justification: "State the security constraint and provide a clear warning."
+    safer_alternatives: "Shorten the flow or add draft encryption."
+    decision_checks:
+      - "Abandoned flows can be resumed without data loss."

@@ -1,0 +1,227 @@
+version: 1
+entries:
+  - id: data.schema-migrations
+    title: Schema migrations with version control
+    category: data
+    summary: Manage database schema changes via migrations.
+    definition: Apply schema changes through ordered, reversible migrations tracked in source control.
+    why_it_matters: Prevents drift between environments and reduces data loss risk.
+    priority_level: P0
+    confidence_score: 0.86
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - any persistent database schema change
+    avoid_when:
+      - ephemeral local databases for tests only
+    implementation_rules:
+      - use forward-only migrations with rollback plan
+      - verify migrations on staging data
+    tradeoffs:
+      - extra deployment steps and coordination
+    anti_patterns:
+      - manual schema edits in production
+    override_allowed: true
+    override_conditions:
+      - emergency hotfix with immediate migration follow-up
+    override_risks:
+      - schema drift and data loss
+    required_justification:
+      - why migration tooling could not be used
+    safer_alternatives:
+      - temporary patch with immediate migration commit
+    performance_impact: neutral
+    security_impact: positive through control and audit
+    cost_impact: moderate operational effort
+    agent_rules:
+      - never change schema without a migration
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - schema drift incidents
+    deprecation_signals:
+      - migration tooling replaced
+    sources:
+      - Database operations practices
+  - id: data.indexing-strategy
+    title: Indexing strategy based on queries
+    category: data
+    summary: Build indexes to match query patterns.
+    definition: Index only what is queried and measure impact on write performance.
+    why_it_matters: Indexes improve read performance but can slow writes.
+    priority_level: P1
+    confidence_score: 0.8
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - read heavy tables or slow queries
+    avoid_when:
+      - small tables with minimal queries
+    implementation_rules:
+      - use query plans to guide indexing
+      - remove unused indexes periodically
+    tradeoffs:
+      - increased storage and write cost
+    anti_patterns:
+      - adding indexes without measuring benefit
+    override_allowed: true
+    override_conditions:
+      - write throughput is the primary constraint
+    override_risks:
+      - slow queries and timeouts
+    required_justification:
+      - evidence that indexes harm write performance
+    safer_alternatives:
+      - partial or composite indexes
+    performance_impact: positive for reads, negative for writes
+    security_impact: neutral
+    cost_impact: higher storage usage
+    agent_rules:
+      - add indexes based on measured query patterns
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - slow query reports
+    deprecation_signals:
+      - data access patterns significantly change
+    sources:
+      - Database performance tuning guides
+  - id: data.transactions-consistency
+    title: Transactions and consistency
+    category: data
+    summary: Use transactions for multi-step data integrity.
+    definition: Group related writes in a transaction to preserve invariants.
+    why_it_matters: Prevents partial writes and inconsistent state.
+    priority_level: P1
+    confidence_score: 0.82
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - multi-step updates requiring atomicity
+    avoid_when:
+      - independent operations that can tolerate partial success
+    implementation_rules:
+      - keep transactions short
+      - handle rollback and retry behavior
+    tradeoffs:
+      - potential lock contention
+    anti_patterns:
+      - long running transactions
+    override_allowed: true
+    override_conditions:
+      - operations are independent and safe to separate
+    override_risks:
+      - data inconsistency
+    required_justification:
+      - explanation of safe separation
+    safer_alternatives:
+      - single statement updates
+    performance_impact: negative under high contention
+    security_impact: neutral
+    cost_impact: neutral
+    agent_rules:
+      - use transactions when invariants span multiple writes
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - integrity issues from partial updates
+    deprecation_signals:
+      - move to an event-sourced model
+    sources:
+      - Database transaction guidance
+  - id: data.soft-delete
+    title: Soft delete with retention
+    category: data
+    summary: Use soft deletes when data recovery or audit is required.
+    definition: Mark records as deleted while retaining them for recovery and auditing.
+    why_it_matters: Enables recovery and legal compliance.
+    priority_level: P2
+    confidence_score: 0.7
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - legal or audit requirements require retention
+    avoid_when:
+      - strict data minimization and immediate deletion requirements
+    implementation_rules:
+      - include deleted flag and timestamps
+      - exclude deleted records from normal queries
+    tradeoffs:
+      - increased storage and query complexity
+    anti_patterns:
+      - failing to filter out deleted data
+    override_allowed: true
+    override_conditions:
+      - regulatory requirement for immediate deletion
+    override_risks:
+      - inability to recover or audit
+    required_justification:
+      - data retention policy conflict
+    safer_alternatives:
+      - archive to cold storage with access controls
+    performance_impact: slight negative due to filtering
+    security_impact: neutral
+    cost_impact: higher storage cost
+    agent_rules:
+      - use soft delete only when required by policy
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - policy change on data retention
+    deprecation_signals:
+      - shift to full deletion requirements
+    sources:
+      - Data retention practices
+  - id: data.retention-privacy
+    title: Data retention and privacy controls
+    category: data
+    summary: Minimize and expire sensitive data.
+    definition: Retain only necessary data and enforce deletion schedules.
+    why_it_matters: Reduces privacy risk and compliance exposure.
+    priority_level: P0
+    confidence_score: 0.86
+    evidence_level: high
+    knowledge_layer: stable_core
+    volatility_level: low
+    freshness_requirement: none
+    use_when:
+      - storing user or business sensitive data
+    avoid_when:
+      - data is strictly non-sensitive and anonymous
+    implementation_rules:
+      - define retention policies by data class
+      - automate deletion and anonymization
+    tradeoffs:
+      - reduced historical analytics capability
+    anti_patterns:
+      - retaining data without a business purpose
+    override_allowed: true
+    override_conditions:
+      - legal or contractual requirement to retain
+    override_risks:
+      - regulatory violations and reputational damage
+    required_justification:
+      - documented legal retention requirement
+    safer_alternatives:
+      - anonymize and aggregate data
+    performance_impact: positive due to smaller datasets
+    security_impact: positive
+    cost_impact: lower storage cost long term
+    agent_rules:
+      - always define data retention for sensitive data
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - regulatory updates affecting retention
+    deprecation_signals:
+      - policy changes to retention schedules
+    sources:
+      - Privacy and data governance practices

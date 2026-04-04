@@ -1,0 +1,103 @@
+cog_cognitive_load:
+  title: "Cognitive Load Theory"
+  summary: "Working memory is limited; reduce unnecessary mental effort."
+  implications_for_ui: "Simplify choices, group information, and avoid visual clutter."
+  apply_when: "Designing menus, complex flows, or dense dashboards."
+  avoid_when: "When users need full detail and are trained experts."
+  strategies:
+    - "Chunk related items into groups."
+    - "Use progressive disclosure for advanced options."
+  related_laws: ["Miller's Law", "Hick's Law"]
+  agent_rules: "If options exceed 7, group or filter."
+  tags: ["memory", "complexity"]
+
+cog_selective_attention:
+  title: "Selective Attention"
+  summary: "People focus on a small subset of information at any moment."
+  implications_for_ui: "Use hierarchy and contrast to guide attention."
+  apply_when: "Designing key CTAs or critical alerts."
+  avoid_when: "Highlighting too many items at once."
+  strategies:
+    - "Limit accents to one or two elements per view."
+    - "Use whitespace to reduce competing noise."
+  related_laws: ["Von Restorff Effect"]
+  agent_rules: "Only one primary visual emphasis per screen."
+  tags: ["attention", "visual_hierarchy"]
+
+cog_change_blindness:
+  title: "Change Blindness"
+  summary: "Users may not notice changes without clear cues."
+  implications_for_ui: "Animate or highlight updates that matter."
+  apply_when: "Live updates, auto-refreshing data, or inline edits."
+  avoid_when: "Subtle changes with no visual indicator."
+  strategies:
+    - "Use brief highlight or motion to show change."
+    - "Confirm edits with a message."
+  related_laws: ["Peak-End Rule"]
+  agent_rules: "Surface important state changes with visible cues."
+  tags: ["feedback", "awareness"]
+
+cog_decision_fatigue:
+  title: "Decision Fatigue"
+  summary: "Too many decisions reduce quality and motivation."
+  implications_for_ui: "Reduce unnecessary choices and provide defaults."
+  apply_when: "Onboarding, settings, and long forms."
+  avoid_when: "Forcing users to answer low-impact questions."
+  strategies:
+    - "Use smart defaults and recommended options."
+    - "Defer advanced choices to later steps."
+  related_laws: ["Hick's Law", "Pareto Principle"]
+  agent_rules: "Only ask for what is required at this moment."
+  tags: ["choice", "friction"]
+
+cog_anchoring:
+  title: "Anchoring Bias"
+  summary: "Users rely heavily on the first piece of information they see."
+  implications_for_ui: "Initial values and ordering shape perception."
+  apply_when: "Pricing, comparisons, or settings defaults."
+  avoid_when: "Leading users to unfair or unintended outcomes."
+  strategies:
+    - "Choose honest defaults that represent typical use."
+    - "Order options by relevance, not by persuasion."
+  related_laws: ["Serial Position Effect"]
+  agent_rules: "Review default values for bias and fairness."
+  tags: ["bias", "pricing"]
+
+cog_loss_aversion:
+  title: "Loss Aversion"
+  summary: "Losses feel more significant than equivalent gains."
+  implications_for_ui: "Risk messaging and reversibility matter."
+  apply_when: "Destructive actions or plan downgrades."
+  avoid_when: "Overusing fear-based messaging."
+  strategies:
+    - "Provide clear undo or recovery paths."
+    - "Explain consequences in plain language."
+  related_laws: ["User Control and Freedom"]
+  agent_rules: "Make risky actions explicit and reversible when possible."
+  tags: ["risk", "messaging"]
+
+cog_social_proof:
+  title: "Social Proof"
+  summary: "People look to others' behavior to decide what to do."
+  implications_for_ui: "Surface credible signals like usage stats or reviews."
+  apply_when: "Onboarding, feature adoption, or trust building."
+  avoid_when: "Manipulative or unverifiable claims."
+  strategies:
+    - "Show verified counts or trusted endorsements."
+    - "Use examples from similar users or teams."
+  related_laws: ["Authority Bias"]
+  agent_rules: "Only present social proof when it is credible."
+  tags: ["trust", "adoption"]
+
+cog_goal_gradient:
+  title: "Goal Gradient Effect"
+  summary: "Motivation increases as users see progress toward a goal."
+  implications_for_ui: "Progress indicators can increase completion."
+  apply_when: "Multi-step flows and onboarding."
+  avoid_when: "Very short tasks where a bar adds noise."
+  strategies:
+    - "Use progress bars or checklists."
+    - "Show remaining steps or time."
+  related_laws: ["Zeigarnik Effect"]
+  agent_rules: "If a flow has more than 2 steps, show progress."
+  tags: ["motivation", "progress"]

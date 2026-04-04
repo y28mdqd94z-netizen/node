@@ -1,0 +1,17 @@
+version: 0.1.0
+source:
+  - .agent-os/lib/ux-ui-knowledgebase/06_agent-application/critique-mode-rules.yaml
+rubric:
+  summary: "Short overall quality statement."
+  severity_order: [high, medium, low]
+  focus_areas:
+    - hierarchy
+    - navigation
+    - forms
+    - feedback
+    - accessibility
+  output_format:
+    - summary
+    - issues_ordered_by_severity
+    - fixes
+    - open_questions

@@ -21,6 +21,12 @@ Commands may be prefixed with `/` (e.g. `/.agent-os/agent /scan-repo`).
 - Operating spec: `.agent-os/system.md`
 - Codex project instructions: `AGENTS.md` (applies repo-wide)
 
+## Source Authoring
+
+- Author engineering + design skills in `.agent-os/source/`
+- Generate manifests with `node .agent-os/scripts/build-manifests.mjs`
+- Legacy `.agent-os/design/` remains for compatibility
+
 ## Orchestration (Required)
 
 - The Orchestrator must be invoked at the start of every task

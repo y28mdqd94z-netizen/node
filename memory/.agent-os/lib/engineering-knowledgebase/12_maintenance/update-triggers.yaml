@@ -1,0 +1,182 @@
+version: 1
+entries:
+  - id: maint.trigger.framework-update
+    title: Framework update trigger
+    category: maintenance
+    summary: Re-evaluate guidance when core frameworks change.
+    definition: Major framework releases can invalidate patterns and APIs.
+    why_it_matters: Prevents stale guidance and broken implementations.
+    priority_level: P1
+    confidence_score: 0.76
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - a major framework release occurs
+    avoid_when:
+      - minor patch updates without breaking changes
+    implementation_rules:
+      - review affected entries within one quarter
+      - update sources and examples
+    tradeoffs:
+      - maintenance overhead
+    anti_patterns:
+      - ignoring major framework changes
+    override_allowed: true
+    override_conditions:
+      - framework change does not impact tracked areas
+    override_risks:
+      - outdated guidance
+    required_justification:
+      - evidence of no impact
+    safer_alternatives:
+      - partial review of high risk entries
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: moderate review cost
+    agent_rules:
+      - flag related entries for review on major updates
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - framework major release
+    deprecation_signals:
+      - framework end of life
+    sources:
+      - Framework release management practices
+  - id: maint.trigger.security-advisory
+    title: Security advisory trigger
+    category: maintenance
+    summary: Update guidance when security advisories are published.
+    definition: Known vulnerabilities require immediate review of related entries.
+    why_it_matters: Reduces exposure to known exploits.
+    priority_level: P0
+    confidence_score: 0.84
+    evidence_level: high
+    knowledge_layer: volatile
+    volatility_level: high
+    freshness_requirement: must_verify_live
+    use_when:
+      - new vulnerability advisory is published
+    avoid_when:
+      - none
+    implementation_rules:
+      - assess impact within days
+      - update entries and mitigations
+    tradeoffs:
+      - rapid response workload
+    anti_patterns:
+      - delaying response to critical advisories
+    override_allowed: false
+    override_conditions:
+      - none
+    override_risks:
+      - exposure to known exploits
+    required_justification:
+      - not applicable
+    safer_alternatives:
+      - emergency mitigation or disabling affected features
+    performance_impact: neutral
+    security_impact: positive
+    cost_impact: potentially high response cost
+    agent_rules:
+      - prioritize advisory-driven updates
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - security advisory published
+    deprecation_signals:
+      - vulnerable component removed
+    sources:
+      - Security advisory practices
+  - id: maint.trigger.platform-change
+    title: Platform change trigger
+    category: maintenance
+    summary: Re-check vendor-specific guidance when platforms change.
+    definition: Platform policies, pricing, or runtime limits can invalidate entries.
+    why_it_matters: Prevents outdated operational guidance.
+    priority_level: P1
+    confidence_score: 0.74
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - vendor platform announces changes
+    avoid_when:
+      - no platform impact
+    implementation_rules:
+      - verify any vendor-specific entries
+      - update constraints and limits
+    tradeoffs:
+      - maintenance workload
+    anti_patterns:
+      - ignoring platform policy changes
+    override_allowed: true
+    override_conditions:
+      - changes are not relevant to current usage
+    override_risks:
+      - broken deployments or unexpected cost
+    required_justification:
+      - evidence of no impact
+    safer_alternatives:
+      - partial review of impacted entries
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: moderate review cost
+    agent_rules:
+      - flag vendor-specific guidance on change
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - platform announcement or pricing change
+    deprecation_signals:
+      - platform deprecates a feature
+    sources:
+      - Platform operations practices
+  - id: maint.trigger.agent-failure
+    title: Repeated agent failure trigger
+    category: maintenance
+    summary: Update guidance when agents repeatedly fail on a task.
+    definition: Repeated errors indicate gaps or ambiguity in guidance.
+    why_it_matters: Keeps the knowledgebase aligned with real usage.
+    priority_level: P1
+    confidence_score: 0.7
+    evidence_level: medium
+    knowledge_layer: semi_volatile
+    volatility_level: medium
+    freshness_requirement: periodic_review
+    use_when:
+      - agents fail on the same task multiple times
+    avoid_when:
+      - one-off user errors
+    implementation_rules:
+      - review and clarify affected entries
+      - add examples and edge cases
+    tradeoffs:
+      - maintenance effort
+    anti_patterns:
+      - ignoring repeated failures
+    override_allowed: true
+    override_conditions:
+      - failures are due to external constraints
+    override_risks:
+      - degraded agent performance
+    required_justification:
+      - evidence of external cause
+    safer_alternatives:
+      - add clarifying notes without full rewrite
+    performance_impact: neutral
+    security_impact: neutral
+    cost_impact: moderate maintenance cost
+    agent_rules:
+      - log repeated failures and trigger review
+    last_verified: 2026-03-29
+    verification_method: internal_review
+    update_triggers:
+      - repeated agent failure reports
+    deprecation_signals:
+      - agents no longer use the affected entries
+    sources:
+      - Continuous improvement practices

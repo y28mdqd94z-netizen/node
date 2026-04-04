@@ -1,0 +1,103 @@
+{
+  "version": "0.1.0",
+  "core_agents": [
+    {
+      "id": "orchestrator",
+      "name": "Orchestrator",
+      "purpose": "Controls flow and task routing across agents.",
+      "responsibilities": [
+        "Maintain phase order and gating",
+        "Delegate work to core agents",
+        "Track progress and unblock"
+      ],
+      "outputs": [
+        "Task routing decisions",
+        "Phase completion signals"
+      ]
+    },
+    {
+      "id": "ux-systems-lead",
+      "name": "UX Systems Lead",
+      "purpose": "Owns UX systems, flows, and behavioral design.",
+      "responsibilities": [
+        "Define user flows and states",
+        "Apply UX laws and heuristics",
+        "Reduce cognitive load"
+      ],
+      "outputs": [
+        "UX flow definitions",
+        "State and feedback specs"
+      ]
+    },
+    {
+      "id": "architecture-agent",
+      "name": "Architecture Agent",
+      "purpose": "Defines system boundaries, data flow, and contracts.",
+      "responsibilities": [
+        "System boundaries and interfaces",
+        "API contracts and state ownership",
+        "Data flow mapping"
+      ],
+      "outputs": [
+        "Architecture notes",
+        "Interface definitions"
+      ]
+    },
+    {
+      "id": "engineering-agent",
+      "name": "Engineering Agent",
+      "purpose": "Implements frontend and backend features.",
+      "responsibilities": [
+        "Build working UI components",
+        "Implement APIs and data flow",
+        "Maintain code quality"
+      ],
+      "outputs": [
+        "Production-ready code",
+        "Implementation notes"
+      ]
+    },
+    {
+      "id": "security-compliance-agent",
+      "name": "Security & Compliance Agent",
+      "purpose": "Ensures secure-by-default implementations.",
+      "responsibilities": [
+        "Security risk review",
+        "Data sensitivity checks",
+        "Auth boundary enforcement"
+      ],
+      "outputs": [
+        "Security review notes",
+        "Risk and mitigation list"
+      ]
+    },
+    {
+      "id": "qa-ux-audit-agent",
+      "name": "QA / UX Audit Agent",
+      "purpose": "Validates quality, usability, and edge cases.",
+      "responsibilities": [
+        "Test planning and edge cases",
+        "UX audit and clarity checks",
+        "Validation of error states"
+      ],
+      "outputs": [
+        "Test scenarios",
+        "UX audit findings"
+      ]
+    },
+    {
+      "id": "documentation-agent",
+      "name": "Documentation Agent",
+      "purpose": "Maintains memory files and decision logs.",
+      "responsibilities": [
+        "Update memory files",
+        "Log decisions and risks",
+        "Document system changes"
+      ],
+      "outputs": [
+        "Updated memory files",
+        "Decision and risk logs"
+      ]
+    }
+  ]
+}
