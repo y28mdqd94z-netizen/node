@@ -9,5 +9,10 @@
 - Use `./.agent-os/agent` commands to create task logs and output templates.
 - If you edit the knowledgebase, run `./.agent-os/agent kb-update`.
 
+## Market Analysis Rules
+- Infer the industry from chat context when none is stated.
+- If competitors are provided, use them and add 3–5 additional best‑in‑class examples.
+- If required inputs are missing, explicitly ask before proceeding.
+
 ## Scope
 These instructions apply to the entire repository.

@@ -103,3 +103,75 @@
 - Severity: low
 - Risk level: low
 - Mitigation: Update README whenever `.agent-os/` layout changes.
+
+## 2026-03-30 11:48:14 +1100
+- Command: implement-feature
+- Title: Update AGENTS instructions for competitor inference
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 12:04:50 +1100
+- Command: design-feature
+- Title: Add UI microcopy writing skill
+- Risk: Microcopy rules may be too generic for specific product contexts or feel overly prescriptive.
+- Severity: low
+- Risk level: low
+- Mitigation: Treat the guidance as a baseline, allow documented overrides, and iterate based on real UI usage.
+
+## 2026-03-30 12:18:50 +1100
+- Command: design-feature
+- Title: Pattern-driven screen planning
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 13:07:23 +1100
+- Command: implement-feature
+- Title: Answer engineering workflow test creation question
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 13:13:57 +1100
+- Command: implement-feature
+- Title: Require comprehensive tests for frontend/back-end changes
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 13:15:43 +1100
+- Command: implement-feature
+- Title: Make frontend/backend test requirement non-overridable
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 13:28:06 +1100
+- Command: architect-feature
+- Title: Agent OS update PRP
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 13:31:36 +1100
+- Command: implement-feature
+- Title: Agent OS update PRP file
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 13:32:58 +1100
+- Command: design-feature
+- Title: Agent reasoning vs steps question
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:

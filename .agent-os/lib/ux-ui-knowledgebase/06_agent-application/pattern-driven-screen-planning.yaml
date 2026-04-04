@@ -1,0 +1,99 @@
+pattern_driven_screen_planning:
+  - id: prd_object_extraction
+    title: "Extract PRD Objects and Jobs"
+    summary: "Identify core entities and their primary jobs-to-be-done from the PRD; infer when missing."
+    rule: "List core objects/entities and primary jobs before pattern selection; if the PRD doesn't list them, infer from nouns and flows."
+    priority: P1
+    evidence_level: C
+    confidence: 0.7
+    enforcement: soft
+    stability: stable
+    context_tags: [prd, object_model, pattern_selection]
+    use_when: "Any PRD-driven design planning."
+    avoid_when: "An explicit, approved object model already exists."
+    tradeoffs: "Inference speeds planning but may misclassify; explicit objects increase accuracy."
+    override_allowed: true
+    override_conditions: "Stakeholders provide an authoritative object list."
+    override_risks: "Missing objects lead to wrong patterns or screens."
+    required_justification: "State why inference is skipped and where the object list is sourced."
+    safer_alternatives: "Run a brief clarification pass and document assumptions."
+    decision_checks:
+      - "Each primary task references at least one object."
+      - "Objects are used consistently in subsequent mapping."
+
+  - id: market_pattern_alignment
+    title: "Align Patterns With Market Evidence"
+    summary: "Compare market analysis patterns to knowledgebase patterns and prefer market-dominant choices."
+    rule: "List dominant market patterns, map to 03_patterns entries, and document deviations with rationale."
+    priority: P1
+    evidence_level: B
+    confidence: 0.7
+    enforcement: soft
+    stability: stable
+    context_tags: [market_analysis, pattern_selection]
+    use_when: "Market analysis has been performed or competitors are known."
+    avoid_when: "No market references exist and the product is novel."
+    tradeoffs: "Market alignment improves familiarity but may limit innovation."
+    override_allowed: true
+    override_conditions: "PRD requirements or differentiation strategy conflict with market norms."
+    override_risks: "Nonstandard patterns reduce learnability."
+    required_justification: "Explain deviation and mitigation (onboarding, cues, progressive disclosure)."
+    safer_alternatives: "Hybrid patterns that retain familiar navigation or list behaviors."
+    decision_checks:
+      - "Selected patterns include at least one market-aligned baseline for each core task."
+
+  - id: object_pattern_screen_mapping
+    title: "Map Objects to Patterns and Screens"
+    summary: "Translate objects and jobs into concrete screens using pattern structures."
+    rule: "Produce an Object → Pattern → Screen mapping table and derive screens from pattern structure."
+    priority: P1
+    evidence_level: C
+    confidence: 0.75
+    enforcement: hard
+    stability: stable
+    context_tags: [screen_planning, pattern_selection]
+    use_when: "Defining screens for a PRD or new feature set."
+    avoid_when: "Never."
+    tradeoffs: "Mapping adds planning overhead but improves traceability."
+    override_allowed: false
+    override_conditions: "Not applicable."
+    override_risks: "Screens drift from object model and tasks."
+    required_justification: "Not applicable."
+    safer_alternatives: "Not applicable."
+    decision_checks:
+      - "Every screen traces to at least one object and pattern."
+      - "Each selected pattern is represented in at least one screen."
+
+  - id: portal_pattern_baseline
+    title: "Portal Baseline Pattern Set"
+    summary: "Use existing portal-relevant patterns as the default toolkit."
+    rule: "When building portal-style tools, start with navigation + dashboard + list/detail + tables + forms + search + settings patterns from 03_patterns."
+    priority: P2
+    evidence_level: C
+    confidence: 0.65
+    enforcement: soft
+    stability: stable
+    context_tags: [portal, admin, pattern_selection]
+    use_when: "Tools for creating and managing objects in a portal context."
+    avoid_when: "Single-purpose consumer apps with minimal navigation."
+    tradeoffs: "Baseline set speeds planning but may over-specify patterns."
+    override_allowed: true
+    override_conditions: "PRD or market analysis indicates different core workflows."
+    override_risks: "Overly heavy UI for simple tasks."
+    required_justification: "State why the portal baseline is unnecessary and what replaces it."
+    safer_alternatives: "Use lighter navigation plus a single primary list or form."
+    decision_checks:
+      - "Selected patterns cover navigation, list/detail, creation/editing, discovery, and settings where relevant."
+    pattern_refs:
+      - "03_patterns/navigation-patterns.yaml#pattern_sidebar_nav"
+      - "03_patterns/navigation-patterns.yaml#pattern_top_nav_bar"
+      - "03_patterns/admin-patterns.yaml#pattern_list_detail"
+      - "03_patterns/table-and-data-grid-patterns.yaml#pattern_basic_table"
+      - "03_patterns/table-and-data-grid-patterns.yaml#pattern_data_grid"
+      - "03_patterns/table-and-data-grid-patterns.yaml#pattern_bulk_actions"
+      - "03_patterns/form-patterns.yaml#pattern_single_column_form"
+      - "03_patterns/form-patterns.yaml#pattern_multi_step_form"
+      - "03_patterns/dashboard-patterns.yaml#pattern_kpi_summary"
+      - "03_patterns/search-filter-patterns.yaml#pattern_global_search"
+      - "03_patterns/search-filter-patterns.yaml#pattern_faceted_filters"
+      - "03_patterns/settings-patterns.yaml#pattern_settings_sections"

@@ -212,12 +212,13 @@
     },
     {
       "path": "11_agent-layer/code-generation-rules.yaml",
-      "entry_count": 4,
+      "entry_count": 5,
       "entries": [
         "agent.codegen.safe-defaults",
         "agent.codegen.repo-conventions",
         "agent.codegen.no-hidden-deps",
-        "agent.codegen.tests-for-critical"
+        "agent.codegen.tests-for-critical",
+        "agent.codegen.tests-for-frontend-backend"
       ]
     },
     {
@@ -350,6 +351,7 @@
     "agent.codegen.repo-conventions": "11_agent-layer/code-generation-rules.yaml",
     "agent.codegen.no-hidden-deps": "11_agent-layer/code-generation-rules.yaml",
     "agent.codegen.tests-for-critical": "11_agent-layer/code-generation-rules.yaml",
+    "agent.codegen.tests-for-frontend-backend": "11_agent-layer/code-generation-rules.yaml",
     "agent.decision-ladder": "11_agent-layer/decision-frameworks.yaml",
     "agent.evidence-volatility-matrix": "11_agent-layer/decision-frameworks.yaml",
     "agent.safe-defaults-when-uncertain": "11_agent-layer/decision-frameworks.yaml",

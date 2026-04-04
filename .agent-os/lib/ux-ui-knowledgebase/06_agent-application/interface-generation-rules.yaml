@@ -19,6 +19,27 @@ interface_generation:
     decision_checks:
       - "Primary content is found within 5 seconds in a quick scan test."
 
+  - id: pattern_first_screen_planning
+    rule: "Select patterns before composing screens."
+    notes: "Use PRD objects + market analysis to choose 03_patterns entries, then derive screens from pattern structure."
+    priority: P1
+    evidence_level: C
+    confidence: 0.7
+    enforcement: soft
+    stability: stable
+    context_tags: [pattern_selection, screen_planning]
+    use_when: "Defining new screens or flows from a PRD."
+    avoid_when: "A locked legacy layout already dictates patterns."
+    tradeoffs: "Pattern-first planning improves consistency but adds upfront mapping work."
+    override_allowed: true
+    override_conditions: "Legacy constraints or platform standards pre-define layout."
+    override_risks: "Screens drift from established patterns and become inconsistent."
+    required_justification: "State the constraint and how consistency will be maintained."
+    safer_alternatives: "Map legacy layout to the closest 03_patterns entry and document deviations."
+    decision_checks:
+      - "Object → Pattern → Screen mapping is documented."
+      - "Selected patterns are cited before screen composition."
+
   - id: component_consistency
     rule: "Reuse existing components and tokens before creating new ones."
     notes: "Consistency improves learnability and speeds delivery."

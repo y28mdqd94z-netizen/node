@@ -5,9 +5,9 @@
   "generated_at": "2026-03-29",
   "taxonomy": "taxonomy.yaml",
   "schema_version": 1,
-  "updated_at": "2026-03-29",
-  "files_indexed": 57,
-  "entries_indexed": 143,
-  "content_hash": "c71b552f3a6d25205a51cc87472d3e3a7457c22c3bfb2d8760da99b238b2bf7c",
+  "updated_at": "2026-03-30",
+  "files_indexed": 59,
+  "entries_indexed": 148,
+  "content_hash": "823f50868b3c2d165e46dc216d606b4fd33ffc39e8602e47cf4529da8e78b121",
   "index_path": "memory/ux_kb_index.json"
 }
