@@ -175,3 +175,27 @@
 - Severity:
 - Risk level:
 - Mitigation:
+
+## 2026-03-30 13:36:28 +1100
+- Command: design-feature
+- Title: Repo compliance confirmation
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-03-30 14:37:33 +1100
+- Command: implement-feature
+- Title: Update agent testing requirements
+- Risk: Test execution requirement may be blocked if no test runner or tests exist.
+- Severity: low
+- Risk level: low
+- Mitigation: Attempt to locate and run relevant tests; if unavailable, report the gap and reason.
+
+## 2026-04-04 11:43:41 +1100
+- Command: design-feature
+- Title: Design layer audit + redesign
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:

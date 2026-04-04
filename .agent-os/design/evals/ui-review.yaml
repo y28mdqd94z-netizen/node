@@ -1,0 +1,10 @@
+version: 0.1.0
+source:
+  - .agent-os/lib/ux-ui-knowledgebase/02_design-evaluation/ui-review-checklist.yaml
+checks:
+  - layout_grid
+  - typography_scale
+  - color_contrast
+  - component_consistency
+  - states_complete
+  - responsive_behavior

@@ -1,0 +1,82 @@
+{
+  "version": "0.1.0",
+  "generated": "2026-04-04",
+  "core": [
+    "core/principles.md",
+    "core/context-model.md",
+    "core/philosophy.md"
+  ],
+  "skills": [
+    "skills/accessibility-review/SKILL.md",
+    "skills/design-core/SKILL.md",
+    "skills/design-critique/SKILL.md",
+    "skills/design-system-alignment/SKILL.md",
+    "skills/distill-simplify/SKILL.md",
+    "skills/hierarchy-refinement/SKILL.md",
+    "skills/interaction-refinement/SKILL.md",
+    "skills/motion-refinement/SKILL.md",
+    "skills/responsive-refinement/SKILL.md",
+    "skills/ui-generation/SKILL.md",
+    "skills/ux-flow-design/SKILL.md",
+    "skills/ux-writing-refinement/SKILL.md",
+    "skills/visual-polish/SKILL.md"
+  ],
+  "workflows": [
+    "workflows/arrange/SKILL.md",
+    "workflows/audit/SKILL.md",
+    "workflows/clarify/SKILL.md",
+    "workflows/critique/SKILL.md",
+    "workflows/distill/SKILL.md",
+    "workflows/normalize/SKILL.md",
+    "workflows/polish/SKILL.md",
+    "workflows/typeset/SKILL.md"
+  ],
+  "references": [
+    "references/accessibility.md",
+    "references/behavioral-psychology.md",
+    "references/color-contrast.md",
+    "references/design-system-principles.md",
+    "references/empty-loading-error.md",
+    "references/forms-inputs.md",
+    "references/information-hierarchy.md",
+    "references/interaction-design.md",
+    "references/mobile-patterns.md",
+    "references/motion.md",
+    "references/navigation-patterns.md",
+    "references/responsive-design.md",
+    "references/saas-web-patterns.md",
+    "references/shadcn-components.md",
+    "references/spacing-layout.md",
+    "references/tables-data-ui.md",
+    "references/typography.md",
+    "references/ux-laws-heuristics.md",
+    "references/ux-writing.md"
+  ],
+  "anti_patterns": [
+    "anti-patterns/ai-slop-ui.md",
+    "anti-patterns/clutter.md",
+    "anti-patterns/empty-loading-error-neglect.md",
+    "anti-patterns/inaccessible-patterns.md",
+    "anti-patterns/noisy-onboarding.md",
+    "anti-patterns/over-carding.md",
+    "anti-patterns/overcomplicated-flows.md",
+    "anti-patterns/poor-responsiveness.md",
+    "anti-patterns/weak-contrast.md",
+    "anti-patterns/weak-hierarchy.md"
+  ],
+  "evals": [
+    "evals/accessibility-review.yaml",
+    "evals/critique-rubric.yaml",
+    "evals/design-system-consistency.yaml",
+    "evals/hierarchy-review.yaml",
+    "evals/responsiveness-review.yaml",
+    "evals/tone-brand-fit.yaml",
+    "evals/ui-review.yaml",
+    "evals/ux-clarity-review.yaml"
+  ],
+  "templates": [
+    "templates/audit_report.md",
+    "templates/critique_report.md",
+    "templates/design_context.yaml"
+  ]
+}

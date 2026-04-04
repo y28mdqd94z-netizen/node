@@ -9,6 +9,10 @@
 - Use `./.agent-os/agent` commands to create task logs and output templates.
 - If you edit the knowledgebase, run `./.agent-os/agent kb-update`.
 
+## Testing Requirements
+- When creating new features or code, also create or update test files to maximize coverage.
+- Run relevant tests at the end of each completed prompt and report results. If tests cannot be run, explain why.
+
 ## Market Analysis Rules
 - Infer the industry from chat context when none is stated.
 - If competitors are provided, use them and add 3–5 additional best‑in‑class examples.
