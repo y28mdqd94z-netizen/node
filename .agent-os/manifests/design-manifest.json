@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "generated_at": "2026-04-04T01:18:43.696Z",
+  "generated_at": "2026-04-04T07:03:09.781Z",
   "core": [
     "source/design/core/design-core/SKILL.md"
   ],
@@ -37,6 +37,7 @@
     "source/design/references/design-system-principles.md",
     "source/design/references/empty-loading-error.md",
     "source/design/references/forms-inputs.md",
+    "source/design/references/iconography.md",
     "source/design/references/information-hierarchy.md",
     "source/design/references/interaction-design.md",
     "source/design/references/interaction-model.md",

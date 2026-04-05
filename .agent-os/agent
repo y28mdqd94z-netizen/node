@@ -41,6 +41,8 @@ Flags:
   --cap <n>           File cap for repo map (default: 5000)
   --risk-level <lvl>  Risk level: low|medium|high (default: low)
   --confirm-high-risk Required if --risk-level high
+  --agents <csv>      Override agent routing (supports +add,-remove tokens)
+  --skills <csv>      Override skill routing (supports +add,-remove tokens)
   --title <text>      Explicit title for the task/output
 
 Notes:
@@ -95,6 +97,12 @@ TITLE_ARGS=()
 CAP=5000
 RISK_LEVEL="low"
 CONFIRM_HIGH=false
+AGENTS_OVERRIDE=""
+SKILLS_OVERRIDE=""
+ROUTE_AGENTS=""
+ROUTE_SKILLS=""
+ROUTE_RULES=""
+ROUTE_SOURCE=""
 
 join_title() {
   if [[ ${#TITLE_ARGS[@]} -eq 0 ]]; then
@@ -140,6 +148,54 @@ skills_for_command() {
   esac
 }
 
+route_task() {
+  local cmd="$1"
+  local title
+  title=$(join_title)
+  local output=""
+  ROUTE_AGENTS=""
+  ROUTE_SKILLS=""
+  ROUTE_RULES=""
+  ROUTE_SOURCE="fallback-static"
+
+  if command -v node >/dev/null 2>&1 && [[ -f "$SCRIPT_DIR/scripts/route-task.mjs" && -f "$SCRIPT_DIR/orchestrator/routing.yaml" ]]; then
+    output=$(node "$SCRIPT_DIR/scripts/route-task.mjs" \
+      --command "$cmd" \
+      --title "$title" \
+      --risk-level "$RISK_LEVEL" \
+      --config "$SCRIPT_DIR/orchestrator/routing.yaml" \
+      --repo-map "$MEMORY_DIR/repo_map.json" \
+      --agents "$AGENTS_OVERRIDE" \
+      --skills "$SKILLS_OVERRIDE" 2>/dev/null || true)
+  fi
+
+  if [[ -n "$output" ]]; then
+    while IFS= read -r line; do
+      case "$line" in
+        agents=*) ROUTE_AGENTS="${line#agents=}" ;;
+        skills=*) ROUTE_SKILLS="${line#skills=}" ;;
+        rules=*) ROUTE_RULES="${line#rules=}" ;;
+      esac
+    done <<< "$output"
+    ROUTE_SOURCE="dynamic"
+  else
+    ROUTE_SKILLS=$(skills_for_command "$cmd")
+    ROUTE_AGENTS="orchestrator"
+    ROUTE_RULES="none"
+    ROUTE_SOURCE="fallback-static"
+  fi
+
+  if [[ -z "$ROUTE_SKILLS" ]]; then
+    ROUTE_SKILLS="none"
+  fi
+  if [[ -z "$ROUTE_AGENTS" ]]; then
+    ROUTE_AGENTS="none"
+  fi
+  if [[ -z "$ROUTE_RULES" ]]; then
+    ROUTE_RULES="none"
+  fi
+}
+
 write_output_template() {
   local cmd="$1"
   local title
@@ -153,6 +209,8 @@ write_output_template() {
 - Timestamp: $(timestamp)
 - Risk level: ${RISK_LEVEL}
 - Orchestrator: required (routing notes below)
+- Routing decisions:
+- Phase gate status:
 
 ## 2. MARKET ANALYSIS
 - Domain/category inference + assumptions
@@ -198,8 +256,12 @@ append_task() {
   local cmd="$1"
   local title
   title=$(join_title)
-  local skills
-  skills=$(skills_for_command "$cmd")
+  route_task "$cmd"
+  local skills="$ROUTE_SKILLS"
+  local agents_override_display="none"
+  local skills_override_display="none"
+  [[ -n "$AGENTS_OVERRIDE" ]] && agents_override_display="$AGENTS_OVERRIDE"
+  [[ -n "$SKILLS_OVERRIDE" ]] && skills_override_display="$SKILLS_OVERRIDE"
   ensure_log_files
   cat <<TASK_EOF >> "$MEMORY_DIR/tasks.md"
 
@@ -209,7 +271,7 @@ append_task() {
 - Risk level: ${RISK_LEVEL}
 - Skills invoked: ${skills}
 - Orchestrator: required
-- Routing decisions:
+- Routing decisions: Orchestrator → Agents: ${ROUTE_AGENTS}; Rules: ${ROUTE_RULES}; Overrides: agents=${agents_override_display}, skills=${skills_override_display}; Source: ${ROUTE_SOURCE}
 - Phase gate status:
 - Status: pending
 - Discovery:
@@ -275,6 +337,8 @@ parse_common_flags() {
   RISK_LEVEL="low"
   CONFIRM_HIGH=false
   TITLE_ARGS=()
+  AGENTS_OVERRIDE=""
+  SKILLS_OVERRIDE=""
   while [[ $# -gt 0 ]]; do
     case "$1" in
       --cap)
@@ -291,6 +355,14 @@ parse_common_flags() {
         ;;
       --title)
         TITLE_ARGS+=("$2")
+        shift 2
+        ;;
+      --agents)
+        AGENTS_OVERRIDE="$2"
+        shift 2
+        ;;
+      --skills)
+        SKILLS_OVERRIDE="$2"
         shift 2
         ;;
       --)

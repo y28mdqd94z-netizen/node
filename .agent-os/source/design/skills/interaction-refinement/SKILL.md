@@ -16,6 +16,7 @@ Invoke `design-core` first to ensure context is established.
 - `.agent-os/source/design/references/interaction-design.md`
 - `.agent-os/source/design/references/motion.md`
 - `.agent-os/source/design/references/empty-loading-error.md`
+- `.agent-os/source/design/references/iconography.md`
 
 ## Output Expectations
 - Define hover/focus/disabled/loading/error states.

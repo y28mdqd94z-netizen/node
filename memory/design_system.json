@@ -29,6 +29,14 @@
     "components": ".agent-os/tokens/components.json",
     "aliases": ".agent-os/tokens/aliases.json"
   },
+  "iconography": {
+    "default_library": "lucide-react",
+    "notes": "Use a single icon set; map icon size and stroke to tokens for consistency.",
+    "token_mapping": {
+      "size": "icon.size.*",
+      "stroke": "icon.stroke.*"
+    }
+  },
   "components": [
     "SectionHeader",
     "List",

@@ -179,3 +179,21 @@
 - Title: Add start-new-project command
 - Decision:
 - Rationale:
+
+## 2026-04-04 17:34:04 +1100
+- Command: implement-feature
+- Title: Dynamic Orchestrator Routing
+- Decision:
+- Rationale:
+
+## 2026-04-04 17:54:26 +1100
+- Command: implement-feature
+- Title: Add lucide-react icons to primitives and update design skills
+- Decision: Standardize iconography guidance on lucide-react for React implementations, with token-driven size/stroke mapping, and reference it across core design skills.
+- Rationale: Keeps icon usage consistent across primitives and ensures design workflows explicitly align to tokenized icon sizing, stroke, and accessibility rules.
+
+## 2026-04-04 19:33:01 +1100
+- Command: implement-feature
+- Title: Confirm lucide-react as default icon set
+- Decision: Declare lucide-react as the default icon library in the base design system configuration.
+- Rationale: Makes the default explicit for all future applications while preserving token-based sizing and stroke consistency.

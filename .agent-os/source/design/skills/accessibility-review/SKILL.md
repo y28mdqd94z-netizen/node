@@ -16,6 +16,7 @@ Invoke `design-core` first to ensure context is established.
 - `.agent-os/source/design/references/color-contrast.md`
 - `.agent-os/source/design/references/interaction-design.md`
 - `.agent-os/source/design/references/ux-writing.md`
+- `.agent-os/source/design/references/iconography.md`
 
 ## Output Expectations
 - Check contrast, keyboard access, focus, and copy clarity.

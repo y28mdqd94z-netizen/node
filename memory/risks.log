@@ -239,3 +239,27 @@
 - Severity:
 - Risk level:
 - Mitigation:
+
+## 2026-04-04 17:34:04 +1100
+- Command: implement-feature
+- Title: Dynamic Orchestrator Routing
+- Risk:
+- Severity:
+- Risk level:
+- Mitigation:
+
+## 2026-04-04 17:54:26 +1100
+- Command: implement-feature
+- Title: Add lucide-react icons to primitives and update design skills
+- Risk: Implementations that do not use lucide-react may need to translate icon guidance to their existing library.
+- Severity: low
+- Risk level: low
+- Mitigation: Treat lucide-react as the default for React; document the mapping for alternate icon sets if a project standard differs.
+
+## 2026-04-04 19:33:01 +1100
+- Command: implement-feature
+- Title: Confirm lucide-react as default icon set
+- Risk: Non-React or pre-existing icon standards may conflict with the default setting.
+- Severity: low
+- Risk level: low
+- Mitigation: Allow overrides in project-specific design contexts when lucide-react is not appropriate.

@@ -1,0 +1,148 @@
+{
+  "version": "0.1.0",
+  "defaults": {
+    "start-new-project": {
+      "agents": ["orchestrator", "documentation-agent"],
+      "skills": []
+    },
+    "design-feature": {
+      "agents": ["orchestrator", "ux-systems-lead", "qa-ux-audit-agent", "documentation-agent"],
+      "skills": [
+        "market-analysis",
+        "choose-ui-pattern",
+        "simplify-flow",
+        "reduce-cognitive-load",
+        "define-interaction-model",
+        "accessibility-check",
+        "apply-ux-laws",
+        "select-patterns",
+        "select-components"
+      ]
+    },
+    "architect-feature": {
+      "agents": ["orchestrator", "architecture-agent", "security-compliance-agent", "documentation-agent"],
+      "skills": [
+        "define-architecture",
+        "state-management-check",
+        "performance-check",
+        "api-security-check",
+        "auth-boundary-check"
+      ]
+    },
+    "build-ui": {
+      "agents": ["orchestrator", "ux-systems-lead", "engineering-agent", "qa-ux-audit-agent", "documentation-agent"],
+      "skills": [
+        "market-analysis",
+        "implement-component",
+        "state-management-check",
+        "performance-check",
+        "frontend-security-check",
+        "accessibility-check",
+        "select-components"
+      ]
+    },
+    "implement-feature": {
+      "agents": [
+        "orchestrator",
+        "architecture-agent",
+        "engineering-agent",
+        "security-compliance-agent",
+        "qa-ux-audit-agent",
+        "documentation-agent"
+      ],
+      "skills": [
+        "market-analysis",
+        "implement-component",
+        "implement-api",
+        "state-management-check",
+        "performance-check",
+        "security-review",
+        "api-security-check",
+        "frontend-security-check",
+        "data-sensitivity-check",
+        "auth-boundary-check",
+        "dependency-risk-check"
+      ]
+    },
+    "refine-ui": {
+      "agents": ["orchestrator", "ux-systems-lead", "qa-ux-audit-agent", "documentation-agent"],
+      "skills": [
+        "reduce-cognitive-load",
+        "define-interaction-model",
+        "accessibility-check",
+        "apply-ux-laws",
+        "ux-evaluation-checks"
+      ]
+    },
+    "ux-audit": {
+      "agents": ["orchestrator", "qa-ux-audit-agent", "ux-systems-lead", "documentation-agent"],
+      "skills": [
+        "accessibility-check",
+        "reduce-cognitive-load",
+        "ux-evaluation-checks"
+      ]
+    },
+    "security-review": {
+      "agents": ["orchestrator", "security-compliance-agent", "documentation-agent"],
+      "skills": [
+        "security-review",
+        "data-sensitivity-check",
+        "auth-boundary-check",
+        "api-security-check",
+        "frontend-security-check",
+        "dependency-risk-check"
+      ]
+    },
+    "compress-context": {
+      "agents": ["orchestrator", "documentation-agent"],
+      "skills": []
+    }
+  },
+  "rules": [
+    {
+      "id": "risk-security",
+      "when": {
+        "risk_level": ["medium", "high"]
+      },
+      "add_agents": ["security-compliance-agent"],
+      "add_skills": [
+        "security-review",
+        "api-security-check",
+        "frontend-security-check",
+        "data-sensitivity-check",
+        "auth-boundary-check",
+        "dependency-risk-check"
+      ]
+    },
+    {
+      "id": "title-security",
+      "when": {
+        "title_keywords": ["auth", "pii", "security", "token", "oauth"]
+      },
+      "add_agents": ["security-compliance-agent"],
+      "add_skills": [
+        "security-review",
+        "api-security-check",
+        "frontend-security-check",
+        "data-sensitivity-check",
+        "auth-boundary-check",
+        "dependency-risk-check"
+      ]
+    },
+    {
+      "id": "title-market-analysis",
+      "when": {
+        "title_keywords": ["market", "benchmark", "competitor", "industry"]
+      },
+      "add_agents": ["ux-systems-lead"],
+      "add_skills": ["market-analysis"]
+    },
+    {
+      "id": "title-performance",
+      "when": {
+        "title_keywords": ["perf", "latency", "optimize", "performance"]
+      },
+      "add_skills": ["performance-check"]
+    }
+  ]
+}

@@ -34,6 +34,16 @@ Commands may be prefixed with `/` (e.g. `/.agent-os/agent /scan-repo`).
 - Outputs and task logs must include routing notes and phase gate status
 - If Orchestrator is not invoked, stop and re-run the task
 
+## Dynamic Routing
+
+- Routing config: `.agent-os/orchestrator/routing.yaml` (JSON-compatible YAML)
+- Routing engine: `node .agent-os/scripts/route-task.mjs`
+- Defaults live under `defaults.<command>` with `agents` and `skills`
+- Rules are evaluated in order and can add/remove agents or skills
+- CLI overrides: `--agents <csv>` supports `+add,-remove` tokens or a full override list
+- CLI overrides: `--skills <csv>` supports `+add,-remove` tokens or a full override list
+- Fallback: if `node` or the routing config is missing, static defaults are used
+
 ## Outputs
 
 Feature commands create a structured output template in `memory/outputs/` that follows the required format:

@@ -16,6 +16,7 @@ Invoke `design-core` first to ensure context is established.
 - `.agent-os/source/design/references/spacing-layout.md`
 - `.agent-os/source/design/references/typography.md`
 - `.agent-os/source/design/references/color-contrast.md`
+- `.agent-os/source/design/references/iconography.md`
 
 ## Output Expectations
 - Remove visual noise; align to tokens.

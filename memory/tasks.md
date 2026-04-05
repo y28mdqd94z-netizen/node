@@ -864,3 +864,96 @@
 - Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
 - Updates to skills/patterns/components:
 - Refactor targets:
+
+## 2026-04-04 17:34:04 +1100
+- Command: implement-feature
+- Title: Dynamic Orchestrator Routing
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions: Orchestrator → Agents: orchestrator, architecture-agent, engineering-agent, security-compliance-agent, qa-ux-audit-agent, documentation-agent; Rules: none; Overrides: agents=none, skills=none; Source: dynamic
+- Phase gate status:
+- Status: pending
+- Discovery:
+- Market Analysis:
+- Market alignment notes:
+- UX KB Comparison:
+- Think:
+- UX Design:
+- Object → Pattern → Screen mapping:
+- Architecture:
+- Implementation:
+- Validation (type safety, input validation, error handling, edge cases):
+- Security Review:
+- UX Refinement:
+- Documentation:
+- Failure points:
+- Fallback UX:
+- Retry logic:
+- Safe error messages:
+- Observability (logging, error tracking, performance):
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells):
+- Updates to skills/patterns/components:
+- Refactor targets:
+
+## 2026-04-04 17:54:26 +1100
+- Command: implement-feature
+- Title: Add lucide-react icons to primitives and update design skills
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions: Orchestrator → Agents: orchestrator, architecture-agent, engineering-agent, security-compliance-agent, qa-ux-audit-agent, documentation-agent; Rules: none; Overrides: agents=none, skills=none; Source: dynamic
+- Phase gate status: Discovery complete; Market Analysis complete (iconography primitive alignment); UX Design complete; Architecture complete; Implementation complete; Validation complete; Security Review complete; UX Refinement complete; Documentation complete.
+- Status: completed
+- Discovery: Standardize iconography primitive for React with a single icon set and ensure design skills reference the iconography guidance.
+- Market Analysis: Selected lucide-react as the default React icon set to ensure consistent, open-source icon coverage aligned to existing iconography rules.
+- Market alignment notes: Single icon set + token-driven size/stroke mapping keeps icon usage consistent across primitives.
+- UX KB Comparison: 08_primitives/01_design-system/iconography.yaml (design_system.iconography.core).
+- Think: Add lucide-react mapping in iconography primitive, introduce iconography reference, and wire it into relevant design skills.
+- UX Design: Reinforced icon usage rules (outline for actions, label requirements, consistent sizing/stroke).
+- Object → Pattern → Screen mapping: Not applicable (design-system primitive updates only).
+- Architecture: Knowledgebase + skill documentation updates only; no runtime boundaries changed.
+- Implementation: Updated iconography primitive token bindings + mapping; added iconography reference; updated design skill references; regenerated KB index/manifest via kb-update.
+- Validation (type safety, input validation, error handling, edge cases): kb-update, validate-primitives.test.sh, check-freshness.test.sh.
+- Security Review: Documentation-only changes; no new attack surface. Reminder to keep accessible labels for icon-only controls.
+- UX Refinement: Explicitly codified icon consistency and accessibility in skills and primitives.
+- Documentation: Updated decisions.log, risks.log, tasks.md, and output template.
+- Failure points: Projects using non-lucide icon libraries may need to translate guidance.
+- Fallback UX: Use existing icon set while preserving token-based size/stroke and accessibility rules.
+- Retry logic: Re-run `./.agent-os/agent kb-update` if indexes are stale.
+- Safe error messages: Not applicable.
+- Observability (logging, error tracking, performance): Not applicable.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Centralized iconography guidance to reduce repeated icon decisions.
+- Updates to skills/patterns/components: Iconography primitive now references lucide-react; design skills updated to reference iconography guidance.
+- Refactor targets: None.
+
+## 2026-04-04 19:33:01 +1100
+- Command: implement-feature
+- Title: Confirm lucide-react as default icon set
+- Risk level: low
+- Skills invoked: market-analysis, implement-component, implement-api, state-management-check, performance-check, security-review, api-security-check, frontend-security-check, data-sensitivity-check, auth-boundary-check, dependency-risk-check
+- Orchestrator: required
+- Routing decisions: Orchestrator → Agents: orchestrator, architecture-agent, engineering-agent, security-compliance-agent, qa-ux-audit-agent, documentation-agent; Rules: none; Overrides: agents=none, skills=none; Source: dynamic
+- Phase gate status: Discovery complete; Market Analysis complete; UX Design complete; Architecture complete; Implementation complete; Validation complete; Security Review complete; UX Refinement complete; Documentation complete.
+- Status: completed
+- Discovery: Ensure the base repo explicitly declares a default icon library for future apps.
+- Market Analysis: Reuse existing iconography primitive guidance; lucide-react is the chosen React icon set.
+- Market alignment notes: Default icon library aligns with single icon set guidance for consistency.
+- UX KB Comparison: 08_primitives/01_design-system/iconography.yaml (design_system.iconography.core).
+- Think: Make the default icon set explicit in the design system configuration to prevent ambiguity.
+- UX Design: No UX changes; configuration-only update.
+- Object → Pattern → Screen mapping: Not applicable.
+- Architecture: Documentation/config update only; no runtime changes.
+- Implementation: Added iconography default library details to `memory/design_system.json`.
+- Validation (type safety, input validation, error handling, edge cases): Ran validate-primitives and check-freshness tests.
+- Security Review: No new code or dependencies; ensure icon-only controls remain labeled.
+- UX Refinement: Not applicable.
+- Documentation: Updated decisions.log, risks.log, tasks.md, and output template.
+- Failure points: Downstream projects may need to override the icon library if not using React.
+- Fallback UX: Use the project’s existing icon library while preserving token-based mapping and accessibility rules.
+- Retry logic: Not applicable.
+- Safe error messages: Not applicable.
+- Observability (logging, error tracking, performance): Not applicable.
+- Self-improvement (inefficiencies, repeated logic, UX inconsistencies, code smells): Default icon library now centralized in design system config.
+- Updates to skills/patterns/components: Design system config updated with default icon library.
+- Refactor targets: None.

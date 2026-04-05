@@ -16,6 +16,7 @@ Invoke `design-core` first to ensure context is established.
 - `.agent-os/source/design/references/information-hierarchy.md`
 - `.agent-os/source/design/references/ux-writing.md`
 - `.agent-os/source/design/references/accessibility.md`
+- `.agent-os/source/design/references/iconography.md`
 
 ## Output Expectations
 - Output issues ordered by severity with fixes and questions.

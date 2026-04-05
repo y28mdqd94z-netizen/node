@@ -16,6 +16,7 @@ Invoke `design-core` first to ensure context is established.
 - `.agent-os/source/design/references/design-system-principles.md`
 - `.agent-os/source/design/references/spacing-layout.md`
 - `.agent-os/source/design/references/color-contrast.md`
+- `.agent-os/source/design/references/iconography.md`
 
 ## Output Expectations
 - Map decisions to tokens/components; justify exceptions.

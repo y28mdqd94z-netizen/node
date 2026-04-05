@@ -33,9 +33,14 @@ anti_patterns:
   - "Decorative icons that compete with primary content."
 token_bindings:
   size: "icon.size.*"
+  stroke: "icon.stroke.*"
   color: "color.icon.*"
 implementation_mapping:
   - "Use a single icon set with size tokens."
+  - "React: use lucide-react as the default icon set."
+  - "Map icon.size.* to the `size` prop."
+  - "Map icon.stroke.* to the `strokeWidth` prop."
+  - "Set `aria-hidden` for decorative icons; add `aria-label` for icon-only controls."
 evaluation_checklist:
   - "Icons are consistent in stroke and size."
-
+  - "Icon set is consistent (no mixed libraries)."
